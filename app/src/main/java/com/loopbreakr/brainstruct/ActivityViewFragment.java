@@ -11,11 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class FragmentActivityView extends Fragment {
+public class ActivityViewFragment extends Fragment {
     private Toolbar toolbar;
 
 
-    public FragmentActivityView() {
+    public ActivityViewFragment() {
         // Required empty public constructor
     }
 

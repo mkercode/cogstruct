@@ -8,7 +8,56 @@
 
     <fragment
         android:id="@+id/fragmentCbtActivities"
-        android:name="com.loopbreakr.brainstruct.FragmentUiHome"
+        android:name="com.loopbreakr.brainstruct.UiHomeFragment"
         android:label="fragment_cbt_activities"
-        tools:layout="@layout/fragment_ui_home" />
+        tools:layout="@layout/fragment_ui_home" >
+        <action
+            android:id="@+id/action_fragmentCbtActivities_to_thoughtJournalFragment"
+            app:destination="@id/TJViewFragment" />
+        <action
+            android:id="@+id/action_fragmentCbtActivities_to_prosAndConsFragment"
+            app:destination="@id/PCViewFragment" />
+        <action
+            android:id="@+id/action_fragmentCbtActivities_to_HIGHViewFragment"
+            app:destination="@id/HIGHViewFragment" />
+        <action
+            android:id="@+id/action_fragmentCbtActivities_to_BBViewFragment"
+            app:destination="@id/BBViewFragment" />
+        <action
+            android:id="@+id/action_fragmentCbtActivities_to_IBViewFragment"
+            app:destination="@id/IBViewFragment" />
+        <action
+            android:id="@+id/action_fragmentCbtActivities_to_ABCViewFragment"
+            app:destination="@id/ABCViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/TJViewFragment"
+        android:name="com.loopbreakr.brainstruct.TJViewFragment"
+        android:label="fragment_thought_journal"
+        tools:layout="@layout/fragment_thought_journal" />
+    <fragment
+        android:id="@+id/PCViewFragment"
+        android:name="com.loopbreakr.brainstruct.PCViewFragnment"
+        android:label="fragment_pros_and_cons"
+        tools:layout="@layout/fragment_pros_and_cons" />
+    <fragment
+        android:id="@+id/HIGHViewFragment"
+        android:name="com.loopbreakr.brainstruct.HIGHViewFragment"
+        android:label="fragment_high_view"
+        tools:layout="@layout/fragment_high_view" />
+    <fragment
+        android:id="@+id/BBViewFragment"
+        android:name="com.loopbreakr.brainstruct.BBViewFragment"
+        android:label="fragment_b_b_view"
+        tools:layout="@layout/fragment_b_b_view" />
+    <fragment
+        android:id="@+id/IBViewFragment"
+        android:name="com.loopbreakr.brainstruct.IBViewFragment"
+        android:label="fragment_i_b_view"
+        tools:layout="@layout/fragment_i_b_view" />
+    <fragment
+        android:id="@+id/ABCViewFragment"
+        android:name="com.loopbreakr.brainstruct.ABCViewFragment"
+        android:label="fragment_a_b_c_view"
+        tools:layout="@layout/fragment_a_b_c_view" />
 </navigation>

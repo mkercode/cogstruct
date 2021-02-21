@@ -4,9 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FragmentUiHome">
-
-
+    tools:context=".UiHomeFragment">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/homeScrollView"
@@ -22,7 +20,6 @@
             android:layout_height="match_parent"
             app:defaultNavHost="true"
             app:navGraph="@navigation/bottom_menu_navigation" />
-
 
     </androidx.core.widget.NestedScrollView>
 
