@@ -12,10 +12,10 @@
         android:label="fragment_cbt_activities"
         tools:layout="@layout/fragment_ui_home" >
         <action
-            android:id="@+id/action_fragmentCbtActivities_to_thoughtJournalFragment"
+            android:id="@+id/action_fragmentCbtActivities_to_TJViewFragment"
             app:destination="@id/TJViewFragment" />
         <action
-            android:id="@+id/action_fragmentCbtActivities_to_prosAndConsFragment"
+            android:id="@+id/action_fragmentCbtActivities_to_PCViewFragment"
             app:destination="@id/PCViewFragment" />
         <action
             android:id="@+id/action_fragmentCbtActivities_to_HIGHViewFragment"
