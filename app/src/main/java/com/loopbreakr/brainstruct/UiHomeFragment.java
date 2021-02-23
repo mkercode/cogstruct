@@ -14,12 +14,14 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 
 public class UiHomeFragment extends Fragment {
     private Toolbar toolbar;
     private NavController navController;
     private CardView thoughtJournalCard, prosConsCard, howdIGetHereCard, badBehaviorsCard, identifyBarriersCard, abcsCard;
+    private ImageView settingsIcon, insightsIcon, learnMoreIcon, aboutIcon;
 
     public UiHomeFragment() {
         // Required empty public constructor
@@ -44,7 +46,7 @@ public class UiHomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
         setToolbar(view);
-        findCardViews(view);
+        findViews(view);
         setListenerBehavior();
 
     }
@@ -54,13 +56,21 @@ public class UiHomeFragment extends Fragment {
         toolbar.setOverflowIcon(ContextCompat.getDrawable(requireActivity(), R.drawable.ic_logout));
     }
 
-    private void findCardViews(View view) {
+    private void findViews(View view) {
+        //find cardviews
         thoughtJournalCard = view.findViewById(R.id.thought_journal_card);
         prosConsCard = view.findViewById(R.id.pros_cons_card);
         howdIGetHereCard = view.findViewById(R.id.howd_i_get_here_card);
         badBehaviorsCard = view.findViewById(R.id.bad_behaviors_card);
         identifyBarriersCard = view.findViewById(R.id.identify_barriers_card);
         abcsCard = view.findViewById(R.id.abcs_card);
+
+        //find bottom menu icons
+        settingsIcon = view.findViewById(R.id.settings_image);
+        insightsIcon = view.findViewById(R.id.insights_image);
+        learnMoreIcon = view.findViewById(R.id.learn_more_image);
+        aboutIcon = view.findViewById(R.id.about_image);
+
     }
 
     private void setListenerBehavior() {
@@ -70,6 +80,11 @@ public class UiHomeFragment extends Fragment {
         badBehaviorsCard.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_BBViewFragment));
         identifyBarriersCard.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_IBViewFragment));
         abcsCard.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_ABCViewFragment));
+
+        settingsIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_settingsFragment));
+        insightsIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_insightsFragment));
+        learnMoreIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_learnMoreFragment));
+        aboutIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_aboutFragment));
     }
 
 }

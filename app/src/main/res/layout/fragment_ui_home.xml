@@ -305,11 +305,14 @@
 
     <!-- BOTTOM MENU !-->
 <include layout="@layout/layout_bottom_menu"
-    android:id="@+id/bottomBar"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:id="@+id/bottomBar"
     android:layout_gravity="bottom"
-    app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
     android:columnOrderPreserved="true"
-     />
+    app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+    android:alignmentMode="alignBounds"
+    android:columnCount="4"
+    android:rowCount="1"
+    android:layout_height="100dp" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

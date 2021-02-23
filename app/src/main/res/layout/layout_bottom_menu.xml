@@ -3,9 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorToolbarStart"
-    android:alignmentMode="alignBounds"
-    android:columnCount="4"
-    android:rowCount="1">
+    >
 
         <LinearLayout
             android:layout_width="0dp"
@@ -23,7 +21,8 @@
                 android:layout_marginTop="12dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:src="@drawable/settings_icon" />
+                android:src="@drawable/settings_icon"
+                android:focusable="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -51,7 +50,8 @@
                 android:layout_marginTop="12dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:src="@drawable/insights_icon" />
+                android:src="@drawable/insights_icon"
+                android:focusable="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -80,7 +80,8 @@
                 android:layout_marginTop="12dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:src="@drawable/learn_more_icon" />
+                android:src="@drawable/learn_more_icon"
+                android:focusable="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -109,7 +110,8 @@
                 android:layout_marginTop="12dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:src="@drawable/logo_hat_icon" />
+                android:src="@drawable/logo_hat_icon"
+                android:focusable="true" />
 
             <TextView
                 android:layout_width="match_parent"
