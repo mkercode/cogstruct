@@ -5,4 +5,6 @@
     <string name="thought_journal_description">Thought journals can help you recognize and change unhelpful thought patterns. The purpose of this exercise is to get you into the habit of paying attention to your thoughts.</string>
     <string name="suggestion_button_text">Send us a suggestion</string>
     <string name="suggestion_text">Have an idea for an activity you think would be helpful?</string>
+    <string name="abcs_description">The ABC\'s stand for Activating events, Beliefs, and Conequences. The purpose of this worksheet to recognize the link between the things that happen to us, unhelpful beliefs/thoughts, and the consequences of these thoughts and events.</string>
+    <string name="bad_behaviors_description">Unhelpful behaviors occur for many reasons. In this activity we will do a chain analysis to help us find these reasons so we can problem solve… and try to prevent the behaviors next time!</string>
 </resources>

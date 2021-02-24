@@ -20,7 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
-            android:id="@+id/titleText"
+            android:id="@+id/thought_journal_title"
             android:layout_width="fill_parent"
             android:layout_height="100dp"
             android:fontFamily="casual"
@@ -41,29 +41,43 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="32dp"
             android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
             android:gravity="center_horizontal"
             android:text="@string/thought_journal_description"
             android:textColor="@color/colorGreenText"
             android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/begin_buton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/thought_journal_icon"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/thought_journal_description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleText"
+            app:layout_constraintTop_toBottomOf="@+id/thought_journal_title"
             app:srcCompat="@drawable/thought_journal_full" />
 
 
+        <Button
+            android:id="@+id/begin_buton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/rounded_button_background"
+            android:gravity="center"
+            android:text="Begin!"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

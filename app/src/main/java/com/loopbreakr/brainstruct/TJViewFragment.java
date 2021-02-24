@@ -30,7 +30,7 @@ public class TJViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_thought_journal, container, false);
+        return inflater.inflate(R.layout.fragment_tj_view, container, false);
     }
 
     @Override
@@ -43,17 +43,10 @@ public class TJViewFragment extends Fragment {
         backToolbar = view.findViewById(R.id.back_toolbar);
 
         ((AppCompatActivity)getActivity()).setSupportActionBar(backToolbar);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(true);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         backToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        backToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();
-            }
-        });
+        backToolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
     }
 
 

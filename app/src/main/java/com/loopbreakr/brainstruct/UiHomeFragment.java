@@ -61,7 +61,7 @@ public class UiHomeFragment extends Fragment {
         thoughtJournalCard = view.findViewById(R.id.thought_journal_card);
         prosConsCard = view.findViewById(R.id.pros_cons_card);
         howdIGetHereCard = view.findViewById(R.id.howd_i_get_here_card);
-        badBehaviorsCard = view.findViewById(R.id.bad_behaviors_card);
+        badBehaviorsCard = view.findViewById(R.id.negative_thoughts_card);
         identifyBarriersCard = view.findViewById(R.id.identify_barriers_card);
         abcsCard = view.findViewById(R.id.abcs_card);
 

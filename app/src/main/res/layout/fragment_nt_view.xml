@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ABCViewFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".NTViewFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,12 +18,12 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
-            android:id="@+id/abcs_title"
+            android:id="@+id/bad_behaviors_title"
             android:layout_width="fill_parent"
             android:layout_height="100dp"
             android:fontFamily="casual"
             android:gravity="center"
-            android:text="ABC's"
+            android:text="Bad Behaviors"
             android:textColor="@color/colorWhite"
             android:textSize="36sp"
             android:textStyle="bold"
@@ -33,15 +33,15 @@
 
 
         <TextView
-            android:id="@+id/abcs_description"
+            android:id="@+id/bad_behaviors_description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
             android:layout_marginBottom="24dp"
             android:gravity="center_horizontal"
-            android:text="@string/abcs_description"
+            android:text="@string/bad_behaviors_description"
             android:textColor="@color/colorGreenText"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/begin_buton"
@@ -49,18 +49,18 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-            android:id="@+id/abcs_icon"
+            android:id="@+id/bad_behaviors_icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/abcs_description"
+            app:layout_constraintBottom_toTopOf="@+id/bad_behaviors_description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/abcs_title"
-            app:srcCompat="@drawable/abcs_full" />
+            app:layout_constraintTop_toBottomOf="@+id/bad_behaviors_title"
+            app:srcCompat="@drawable/negative_thoughts_full" />
 
 
         <Button
@@ -76,5 +76,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </FrameLayout>

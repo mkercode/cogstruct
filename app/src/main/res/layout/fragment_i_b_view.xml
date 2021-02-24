@@ -3,12 +3,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".IBViewFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/back_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
+        <TextView
+            android:id="@+id/identify_barriers_title"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="Bad Behaviors"
+            android:textColor="@color/colorWhite"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/back_toolbar" />
+
+
+        <TextView
+            android:id="@+id/identify_barriers_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center_horizontal"
+            android:text="What about good/effective bahaviors? When there was a helpful behavior or action that we planned to do but didn't, this activity can helps identify what stopped us from doing it."
+            android:textColor="@color/colorGreenText"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/begin_buton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/identify_barriers_icon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/identify_barriers_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/identify_barriers_title"
+            app:srcCompat="@drawable/identify_barriers_full" />
+
+
+        <Button
+            android:id="@+id/begin_buton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/rounded_button_background"
+            android:gravity="center"
+            android:text="Begin!"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
