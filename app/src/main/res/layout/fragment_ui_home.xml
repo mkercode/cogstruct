@@ -281,7 +281,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Have an idea for an activity you think would be helpful?"
+                    android:text="@string/suggestion_text"
                     android:textColor="#59B65A"
                     android:textSize="16sp" />
                 <Button
@@ -292,7 +292,7 @@
                     android:layout_margin="12dp"
                     android:background="@drawable/rounded_button_background"
                     android:textSize="12sp"
-                    android:text="Send us a suggestion"/>
+                    android:text="@string/suggestion_button_text"/>
             </LinearLayout>
 
         </GridLayout>

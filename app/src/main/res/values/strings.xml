@@ -2,4 +2,7 @@
     <string name="app_name">BrainStruct</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="thought_journal_description">Thought journals can help you recognize and change unhelpful thought patterns. The purpose of this exercise is to get you into the habit of paying attention to your thoughts.</string>
+    <string name="suggestion_button_text">Send us a suggestion</string>
+    <string name="suggestion_text">Have an idea for an activity you think would be helpful?</string>
 </resources>
