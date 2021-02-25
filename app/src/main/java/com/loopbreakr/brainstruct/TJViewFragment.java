@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 
 
 public class TJViewFragment extends Fragment {
-    private Toolbar backToolbar;
 
     public TJViewFragment() {
         // Required empty public constructor
@@ -40,7 +39,7 @@ public class TJViewFragment extends Fragment {
     }
 
     private void setBackToolBar(View view) {
-        backToolbar = view.findViewById(R.id.back_toolbar);
+        Toolbar backToolbar = view.findViewById(R.id.back_toolbar);
 
         ((AppCompatActivity)getActivity()).setSupportActionBar(backToolbar);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);

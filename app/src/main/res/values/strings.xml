@@ -1,26 +1,31 @@
 <resources>
     <string name="app_name">BrainStruct</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="thought_journal_description">Thought journals can help you recognize and change unhelpful thought patterns. The purpose of this exercise is to get you into the habit of paying attention to your thoughts.</string>
-    <string name="suggestion_button_text">Send us a suggestion</string>
-    <string name="suggestion_text">Have an idea for an activity you think would be helpful?</string>
+
     <string name="thought_journal_title">Thought Journal</string>
     <string name="how_d_i_get_here_title">How\'d I get Here?</string>
     <string name="pros_and_cons_title">Pros and Cons</string>
     <string name="bad_behaviors_title">Bad Behaviors</string>
     <string name="identify_barriers_title">Identify Barriers</string>
     <string name="abcs_title">ABC\'s</string>
+
+    <string name="pros_and_cons_icon_description">Pros and cons icon</string>
+    <string name="how_d_i_get_here_icon_description">How\'d I get here icon</string>
+    <string name="bad_behaviors_icon_description">Bad behaviors icon</string>
+    <string name="abcs_icon_description">ABC\'s icon</string>
+    <string name="thought_journal_icon_description">Thought journal icon</string>
+    <string name="identify_barriers_icon_description">Identify barriers icon</string>
+
+    <string name="thought_journal_description">Thought journals can help you recognize and change unhelpful thought patterns. The purpose of this exercise is to get you into the habit of paying attention to your thoughts.</string>
     <string name="abcs_description">The ABC\'s stand for Activating events, Beliefs, and Conequences. The purpose of this activity to recognize the link between the things that happen to us, unhelpful beliefs/thoughts, and the consequences of these thoughts and events.</string>
     <string name="bad_behaviors_description">Already identified the unhelpful behavior you\'dlike to change? In this activity we will problem solve… and try to prevent the behavior next time an urge pops up!</string>
     <string name="howd_i_get_here_description">This activity can help you analyze the chain of events and reactions that contributed to a behavior step by step. So we can prevent it next time.</string>
     <string name="identify_barriers_description">What about good/effective bahaviors? When there was a helpful behavior or action that we planned to do but didn\'t, this activity can helps identify what stopped us from doing it.</string>
     <string name="pros_and_cons_description">This activity can help you look at things objectively by weighing the pros and cons of continuing or stopping engagement in a specific thought, behavior, or habit.</string>>
-    <string name="pros_and_cons_icon_description">Pros and cons icon</string>
-    <string name="how_d_i_get_here_icon_description">How\'d I get here icon</string>
-    <string name="bad_behaviors_icon_description">Bad behaviors icon</string>
-    <string name="abcs_icon_description">ABC\'s icon</string>
+
+    <string name="suggestion_button_text">Send us a suggestion</string>
+    <string name="suggestion_text">Have an idea for an activity you think would be helpful?</string>
+
     <string name="begin_button_text">Begin!</string>
-    <string name="thought_journal_icon_description">Thought journal icon</string>
-    <string name="identify_barriers_icon_description">Identify barriers icon</string>
 </resources>
