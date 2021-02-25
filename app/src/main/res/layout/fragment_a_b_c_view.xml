@@ -23,7 +23,7 @@
             android:layout_height="100dp"
             android:fontFamily="casual"
             android:gravity="center"
-            android:text="ABC's"
+            android:text="@string/abcs_title"
             android:textColor="@color/colorWhite"
             android:textSize="36sp"
             android:textStyle="bold"
@@ -60,18 +60,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/abcs_title"
-            app:srcCompat="@drawable/abcs_full" />
+            app:srcCompat="@drawable/abcs_full"
+            android:contentDescription="@string/abcs_icon_description" />
 
 
         <Button
             android:id="@+id/begin_buton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/rounded_button_background"
             android:gravity="center"
-            android:text="Begin!"
-            android:textSize="18sp"
+            android:text="@string/begin_button_text"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

@@ -187,7 +187,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/negative_thoughts_png" />
+                        android:src="@drawable/bad_behaviors_png" />
 
                     <TextView
                         android:layout_width="wrap_content"

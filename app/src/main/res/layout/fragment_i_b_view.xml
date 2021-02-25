@@ -23,7 +23,7 @@
             android:layout_height="100dp"
             android:fontFamily="casual"
             android:gravity="center"
-            android:text="Bad Behaviors"
+            android:text="@string/identify_barriers_title"
             android:textColor="@color/colorWhite"
             android:textSize="36sp"
             android:textStyle="bold"
@@ -41,7 +41,7 @@
             android:layout_marginEnd="36dp"
             android:layout_marginBottom="24dp"
             android:gravity="center_horizontal"
-            android:text="What about good/effective bahaviors? When there was a helpful behavior or action that we planned to do but didn't, this activity can helps identify what stopped us from doing it."
+            android:text="@string/identify_barriers_description"
             android:textColor="@color/colorGreenText"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/begin_buton"
@@ -60,17 +60,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/identify_barriers_title"
-            app:srcCompat="@drawable/identify_barriers_full" />
+            app:srcCompat="@drawable/identify_barriers_full"
+            android:contentDescription="@string/identify_barriers_icon_description" />
 
 
         <Button
             android:id="@+id/begin_buton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/rounded_button_background"
             android:gravity="center"
-            android:text="Begin!"
+            android:text="@string/begin_button_text"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
