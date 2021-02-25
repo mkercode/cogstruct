@@ -44,7 +44,7 @@
             android:gravity="center_horizontal"
             android:text="@string/thought_journal_description"
             android:textColor="@color/colorGreenText"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/begin_buton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
