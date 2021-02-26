@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/thought_journal_navigation"
+    app:startDestination="@id/tjPageOne">
+
+    <fragment
+        android:id="@+id/tjPageOne"
+        android:name="com.loopbreakr.brainstruct.TJPageOne"
+        android:label="fragment_tj_page_one"
+        tools:layout="@layout/fragment_tj_page_one" >
+        <action
+            android:id="@+id/action_tjPageOne_to_tjPageTwo"
+            app:destination="@id/tjPageTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/tjPageTwo"
+        android:name="com.loopbreakr.brainstruct.TJPageTwo"
+        android:label="fragment_tj_page_two"
+        tools:layout="@layout/fragment_tj_page_two" >
+        <action
+            android:id="@+id/action_tjPageTwo_to_tjPageThree"
+            app:destination="@id/tjPageThree" />
+    </fragment>
+    <fragment
+        android:id="@+id/tjPageThree"
+        android:name="com.loopbreakr.brainstruct.TJPageThree"
+        android:label="fragment_tj_page_three"
+        tools:layout="@layout/fragment_tj_page_three" >
+        <action
+            android:id="@+id/action_tjPageThree_to_tjPageFour"
+            app:destination="@id/tjPageFour" />
+    </fragment>
+    <fragment
+        android:id="@+id/tjPageFour"
+        android:name="com.loopbreakr.brainstruct.TJPageFour"
+        android:label="fragment_tj_page_four"
+        tools:layout="@layout/fragment_tj_page_four" >
+        <action
+            android:id="@+id/action_tjPageFour_to_tjPageFive"
+            app:destination="@id/tjPageFive" />
+    </fragment>
+    <fragment
+        android:id="@+id/tjPageFive"
+        android:name="com.loopbreakr.brainstruct.TJPageFive"
+        android:label="fragment_tj_page_five"
+        tools:layout="@layout/fragment_tj_page_five" />
+</navigation>

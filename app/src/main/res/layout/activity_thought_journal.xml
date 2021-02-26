@@ -4,6 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThoughtJournalActivity">
+    tools:context=".TJActivity">
 
+
+    <fragment
+        android:id="@+id/thought_journal_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/thought_journal_navigation"
+        tools:layout_editor_absoluteX="212dp"
+        tools:layout_editor_absoluteY="378dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
