@@ -44,7 +44,7 @@
             android:text="@string/identify_barriers_description"
             android:textColor="@color/colorGreenText"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/begin_buton"
+            app:layout_constraintBottom_toTopOf="@+id/begin_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -65,7 +65,7 @@
 
 
         <Button
-            android:id="@+id/begin_buton"
+            android:id="@+id/begin_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"

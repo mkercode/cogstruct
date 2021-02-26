@@ -22,7 +22,8 @@
     <string name="bad_behaviors_description">Already identified the unhelpful behavior you\'dlike to change? In this activity we will problem solve… and try to prevent the behavior next time an urge pops up!</string>
     <string name="howd_i_get_here_description">This activity can help you analyze the chain of events and reactions that contributed to a behavior step by step. So we can prevent it next time.</string>
     <string name="identify_barriers_description">What about good/effective bahaviors? When there was a helpful behavior or action that we planned to do but didn\'t, this activity can helps identify what stopped us from doing it.</string>
-    <string name="pros_and_cons_description">This activity can help you look at things objectively by weighing the pros and cons of continuing or stopping engagement in a specific thought, behavior, or habit.</string>>
+    <string name="pros_and_cons_description">This activity can help you look at things objectively by weighing the pros and cons of continuing or stopping engagement in a specific thought, behavior, or habit.</string>
+    >
 
     <string name="suggestion_button_text">Send us a suggestion</string>
     <string name="suggestion_text">Have an idea for an activity you think would be helpful?</string>
