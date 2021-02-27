@@ -29,4 +29,25 @@
     <string name="suggestion_text">Have an idea for an activity you think would be helpful?</string>
 
     <string name="begin_button_text">Begin!</string>
+    <string name="return_button_text">Return</string>
+    <string name="next_button_string">Next</string>
+    <string name="place_behavior_question">Where did the behavior occur?</string>
+    <string name="behavior_time_question">At what time did it occur?</string>
+    <string name="morning">Morning</string>
+    <string name="noonish">Noonish</string>
+    <string name="afternoon">Afternoon</string>
+    <string name="evening">Evening</string>
+    <string name="at_night">At night</string>
+    <string name="place_hint">Hint: A specific place, i.e home</string>
+    <string name="tj_page_one_title">Situation</string>
+    <string name="tj_page_two_title">Details</string>
+    <string name="tj_details_hint">Hint: Re-tell the events that occured objectively, as if you are watching them in a movie</string>
+    <string name="tj_details_question"> Optional: What happened before you engaged in the behavior?</string>
+    <string name="back_button_text">Back</string>
+    <string name="tj_page_three_title">Behavior</string>
+    <string name="what_is_the_unhelpful_behavior_that_you_engaged_in">What is the unhelpful behavior that you engaged in?</string>
+    <string name="tj_page_one_who_question">Who were you with?</string>
+    <string name="tj_page_one_people_hint">If you weren\'t alone, enter who you were with.</string>
+    <string name="with_others">With others</string>
+    <string name="alone">Alone</string>
 </resources>

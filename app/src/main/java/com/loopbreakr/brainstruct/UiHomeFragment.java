@@ -23,6 +23,7 @@ public class UiHomeFragment extends Fragment {
     private CardView thoughtJournalCard, prosConsCard, howdIGetHereCard, badBehaviorsCard, identifyBarriersCard, abcsCard;
     private ImageView settingsIcon, insightsIcon, learnMoreIcon, aboutIcon;
 
+
     public UiHomeFragment() {
         // Required empty public constructor
     }

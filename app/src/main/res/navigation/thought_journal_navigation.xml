@@ -45,5 +45,14 @@
         android:id="@+id/tjPageFive"
         android:name="com.loopbreakr.brainstruct.TJPageFive"
         android:label="fragment_tj_page_five"
-        tools:layout="@layout/fragment_tj_page_five" />
+        tools:layout="@layout/fragment_tj_page_five" >
+        <action
+            android:id="@+id/action_tjPageFive_to_tjPageSix"
+            app:destination="@id/tjPageSix" />
+    </fragment>
+    <fragment
+        android:id="@+id/tjPageSix"
+        android:name="com.loopbreakr.brainstruct.TJPageSix"
+        android:label="fragment_tj_page_six"
+        tools:layout="@layout/fragment_tj_page_six" />
 </navigation>

@@ -1,5 +1,6 @@
 package com.loopbreakr.brainstruct;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,9 +12,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 
 
 public class TJViewFragment extends Fragment {
+    private Button beginButton;
 
     public TJViewFragment() {
         // Required empty public constructor
@@ -36,6 +40,18 @@ public class TJViewFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setBackToolBar(view);
+        setBeginButton(view);
+
+    }
+
+    private void setBeginButton(View view) {
+        beginButton = view.findViewById(R.id.begin_button);
+        beginButton.setOnClickListener(v -> openActivity());
+    }
+
+    private void openActivity(){
+        Intent intent = new Intent(this.requireActivity(), TJActivity.class);
+        startActivity(intent);
     }
 
     private void setBackToolBar(View view) {
