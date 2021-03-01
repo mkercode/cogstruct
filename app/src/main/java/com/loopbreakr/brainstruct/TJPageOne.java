@@ -2,15 +2,12 @@ package com.loopbreakr.brainstruct;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,17 +16,13 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-
-
 public class TJPageOne extends Fragment {
     private TJViewModel tjViewModel;
     private EditText placeInput, peopleInput;
     private RadioGroup timeRadioGroup , peopleRadioGroup;
     private Button returnButton, nextButton;
 
-    public TJPageOne() {
-        // Required empty public constructor
-    }
+    public TJPageOne() { }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
