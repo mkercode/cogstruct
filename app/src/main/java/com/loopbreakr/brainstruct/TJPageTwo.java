@@ -7,10 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
-import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +43,7 @@ public class TJPageTwo extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
-        setTextInput();
+        setViewModelData();
         setButtons(view);
     }
 
@@ -55,10 +53,8 @@ public class TJPageTwo extends Fragment {
         nextButton = view.findViewById(R.id.page_two_next);
     }
 
-    private void setTextInput(){
-        if(!tjViewModel.getSituationText().equals("") && !tjViewModel.getSituationText().equals(null) ){
-            detailsInput.setText(tjViewModel.getSituationText());
-        }
+    private void setViewModelData(){
+        detailsInput.setText(tjViewModel.getSituationText());
     }
 
     private void setButtons(View view) {

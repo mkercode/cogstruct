@@ -12,8 +12,8 @@ public class TJViewModel extends ViewModel {
     private String emotionText = "";
     private String emotionalActionText = "";
     private ArrayList<String> thoughtArray;
-
-
+    private int timeRadioId = -1;
+    private int peopleRadioId = -1;
 
     public void setlocationText(CharSequence input) {
         locationText = input.toString();
@@ -39,8 +39,12 @@ public class TJViewModel extends ViewModel {
 
     public void setEmotionalActionText(CharSequence input){ emotionalActionText = input.toString(); }
 
-    public void setThoughtArray(ArrayList<String> input){ thoughtArray = input;
-    }
+    public void setThoughtArray(ArrayList<String> input){ thoughtArray = input; }
+
+    public void setTimeRadioId(int input) { timeRadioId = input; }
+
+    public void setPeopleRadioId(int input) { peopleRadioId = input; }
+
 
     public String getLocationText() {
         return locationText;
@@ -52,5 +56,7 @@ public class TJViewModel extends ViewModel {
     public String getEmotionText(){ return emotionText; }
     public String getEmotionalActionText(){ return emotionalActionText; }
     public ArrayList<String> getThoughtArray(){ return thoughtArray; }
+    public int getTimeRadioId() { return timeRadioId; }
+    public int getPeopleRadioId() { return peopleRadioId; }
 
 }

@@ -41,7 +41,8 @@ public class TJPageOne extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
-        setRadioGroups(view);
+        setViewModelData(view);
+        getRadioGroupInput(view);
         setButtons();
     }
 
@@ -54,14 +55,25 @@ public class TJPageOne extends Fragment {
         peopleRadioGroup = view.findViewById(R.id.people_radiogroup);
     }
 
-    private void setRadioGroups(View view) {
+    private void setViewModelData(View view) {
+        placeInput.setText(tjViewModel.getLocationText());
+        timeRadioGroup.check(tjViewModel.getTimeRadioId());
+        peopleRadioGroup.check(tjViewModel.getPeopleRadioId());
+        if(tjViewModel.getPeopleRadioId() != R.id.alone){
+            peopleInput.setText(tjViewModel.getPeopleText());
+        }
+    }
+
+    private void getRadioGroupInput(View view) {
         timeRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
             RadioButton timeRadioButton = (RadioButton) view.findViewById(checkedId);
             tjViewModel.setTimeText(timeRadioButton.getText());
+            tjViewModel.setTimeRadioId(checkedId);
         });
         peopleRadioGroup.setOnCheckedChangeListener(((group, checkedId) -> {
             RadioButton peopleRadioButton = (RadioButton) view.findViewById(checkedId);
             tjViewModel.setPeopleText(peopleRadioButton.getText());
+            tjViewModel.setPeopleRadioId(checkedId);
         }));
     }
 
@@ -81,7 +93,7 @@ public class TJPageOne extends Fragment {
 
     private void getTextInputs() {
         tjViewModel.setlocationText(placeInput.getText());
-        if(tjViewModel.getPeopleText().equals("With others")){
+        if(tjViewModel.getPeopleRadioId() != R.id.alone){
             tjViewModel.setPeopleText(peopleInput.getText());
         }
     }
