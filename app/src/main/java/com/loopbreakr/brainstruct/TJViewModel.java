@@ -19,11 +19,11 @@ public class TJViewModel extends ViewModel {
         locationText = input.toString();
     }
 
-    public void setTimeText(String input) {
-        timeText = input;
+    public void setTimeText(CharSequence input) {
+        timeText = input.toString();
     }
 
-    public void setPeopleText(String input) {peopleText = input;}
+    public void setPeopleText(CharSequence input) {peopleText = input.toString();}
 
     public void setSituationText(CharSequence input){
         situationText = input.toString();

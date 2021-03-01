@@ -57,11 +57,11 @@ public class TJPageOne extends Fragment {
     private void setRadioGroups(View view) {
         timeRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
             RadioButton timeRadioButton = (RadioButton) view.findViewById(checkedId);
-            tjViewModel.setTimeText(timeRadioButton.getText().toString());
+            tjViewModel.setTimeText(timeRadioButton.getText());
         });
         peopleRadioGroup.setOnCheckedChangeListener(((group, checkedId) -> {
             RadioButton peopleRadioButton = (RadioButton) view.findViewById(checkedId);
-            tjViewModel.setPeopleText(peopleRadioButton.getText().toString());
+            tjViewModel.setPeopleText(peopleRadioButton.getText());
         }));
     }
 
@@ -73,16 +73,16 @@ public class TJPageOne extends Fragment {
         });
 
         nextButton.setOnClickListener(v ->{
-            getInputs();
+            getTextInputs();
             NavController navController = Navigation.findNavController(getView());
             navController.navigate(R.id.action_tjPageOne_to_tjPageTwo);
         });
     }
 
-    private void getInputs() {
-        tjViewModel.setlocationText(placeInput.getText().toString());
+    private void getTextInputs() {
+        tjViewModel.setlocationText(placeInput.getText());
         if(tjViewModel.getPeopleText().equals("With others")){
-            tjViewModel.setPeopleText(peopleInput.getText().toString());
+            tjViewModel.setPeopleText(peopleInput.getText());
         }
     }
 }

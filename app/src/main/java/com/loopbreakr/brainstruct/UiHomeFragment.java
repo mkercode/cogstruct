@@ -88,4 +88,5 @@ public class UiHomeFragment extends Fragment {
         aboutIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_aboutFragment));
     }
 
+
 }
