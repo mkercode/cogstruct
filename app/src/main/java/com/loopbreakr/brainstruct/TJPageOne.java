@@ -5,7 +5,11 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,16 +18,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 
 
 public class TJPageOne extends Fragment {
-
     private TJViewModel tjViewModel;
     private EditText placeInput, peopleInput;
     private RadioGroup timeRadioGroup , peopleRadioGroup;
-    private RadioButton timeRadioButton, peopleRadioButton;
     private Button returnButton, nextButton;
 
     public TJPageOne() {
@@ -33,7 +34,8 @@ public class TJPageOne extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
+        tjViewModel = new ViewModelProvider(requireActivity()).get(TJViewModel.class);
+      }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,7 +48,7 @@ public class TJPageOne extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
-        setRadioGroups();
+        setRadioGroups(view);
         setButtons();
     }
 
@@ -59,13 +61,14 @@ public class TJPageOne extends Fragment {
         peopleRadioGroup = view.findViewById(R.id.people_radiogroup);
     }
 
-    private void setRadioGroups() {
-        peopleRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-            // Get the selected Radio Button
-            timeRadioButton = (RadioButton)group.findViewById(checkedId);
+    private void setRadioGroups(View view) {
+        timeRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            RadioButton timeRadioButton = (RadioButton) view.findViewById(checkedId);
+            tjViewModel.setTimeText(timeRadioButton.getText().toString());
         });
-        timeRadioGroup.setOnCheckedChangeListener(((group, checkedId) -> {
-            peopleRadioButton = (RadioButton)group.findViewById(checkedId);
+        peopleRadioGroup.setOnCheckedChangeListener(((group, checkedId) -> {
+            RadioButton peopleRadioButton = (RadioButton) view.findViewById(checkedId);
+            tjViewModel.setPeopleText(peopleRadioButton.getText().toString());
         }));
     }
 
@@ -77,29 +80,16 @@ public class TJPageOne extends Fragment {
         });
 
         nextButton.setOnClickListener(v ->{
-            int selectedTimeId = timeRadioGroup.getCheckedRadioButtonId();
-            if (selectedTimeId == -1) {
-
-            }
-            else {
-                RadioButton radioButton = (RadioButton)timeRadioGroup
-                        .findViewById(selectedTimeId);
-
-                Toast.makeText(getActivity().getApplicationContext(), radioButton.getText(), Toast.LENGTH_SHORT).show();
-            }
-
-
-            int selectedPeopleId = timeRadioGroup.getCheckedRadioButtonId();
-            if (selectedPeopleId == -1) {
-
-            }
-            else {
-                RadioButton radioButton
-                        = (RadioButton)timeRadioGroup
-                        .findViewById(selectedTimeId);
-                // Now display the value of selected item by the Toast message
-                Toast.makeText(getActivity().getApplicationContext(), radioButton.getText(), Toast.LENGTH_SHORT).show();
-            }
+            getInputs();
+            NavController navController = Navigation.findNavController(getView());
+            navController.navigate(R.id.action_tjPageOne_to_tjPageTwo);
         });
+    }
+
+    private void getInputs() {
+        tjViewModel.setlocationText(placeInput.getText().toString());
+        if(tjViewModel.getPeopleText().equals("With others")){
+            tjViewModel.setPeopleText(peopleInput.getText().toString());
+        }
     }
 }
