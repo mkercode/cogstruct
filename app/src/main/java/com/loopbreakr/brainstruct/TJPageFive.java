@@ -8,11 +8,16 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class TJPageFive extends Fragment {
     private TJViewModel tjViewModel;
@@ -64,6 +69,8 @@ public class TJPageFive extends Fragment {
         submitButton.setOnClickListener(v ->{
             getTextInput();
             controller.navigate(R.id.action_tjPageFive_to_tjPageSix);
+            List<String> items = Arrays.asList(tjViewModel.getThoughtText().split("\\s*,\\s*"));
+            Log.d("LOGGING....", "Arraylist: " + items);
         });
     }
 
