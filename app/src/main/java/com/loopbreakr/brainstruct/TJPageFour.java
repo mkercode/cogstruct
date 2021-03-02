@@ -46,7 +46,7 @@ public class TJPageFour extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
-        setViewModelData();
+        getViewModelData();
         getInputData(view);
         setButtons();
     }
@@ -59,7 +59,7 @@ public class TJPageFour extends Fragment {
         nextButton = view.findViewById(R.id.page_four_next);
     }
 
-    private void setViewModelData() {
+    private void getViewModelData() {
         emotionRadioGroup.check(tjViewModel.getEmotionRadioId());
         emotionDetailsInput.setText(tjViewModel.getEmotionDetailText());
         emotionRatingBar.setRating(tjViewModel.getEmotionRating());
