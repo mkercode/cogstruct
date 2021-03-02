@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
@@ -67,10 +68,15 @@ public class TJPageFive extends Fragment {
             controller.navigate(R.id.tjPageFour);
         });
         submitButton.setOnClickListener(v ->{
-            getTextInput();
-            controller.navigate(R.id.action_tjPageFive_to_tjPageSix);
-            List<String> items = Arrays.asList(tjViewModel.getThoughtText().split("\\s*,\\s*"));
-            Log.d("LOGGING....", "Arraylist: " + items);
+            if(thoughtInput.getText().toString().isEmpty() || thoughtInput.getText().toString().equals("") || thoughtInput.getText().toString().equals(null)){
+                Toast.makeText(getActivity().getApplicationContext(), "Please journal your thoughts above!",Toast.LENGTH_SHORT).show();
+            }
+            else{
+                getTextInput();
+                List<String> items = Arrays.asList(tjViewModel.getThoughtText().split("\\s*,\\s*"));
+                Log.d("LOGGING....", "Arraylist: " + items);
+                controller.navigate(R.id.action_tjPageFive_to_tjPageSix);
+            }
         });
     }
 
