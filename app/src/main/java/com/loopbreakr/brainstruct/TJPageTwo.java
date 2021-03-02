@@ -44,7 +44,7 @@ public class TJPageTwo extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
         setViewModelData();
-        setButtons(view);
+        setButtons();
     }
 
     private void findViews(View view) {
@@ -57,17 +57,16 @@ public class TJPageTwo extends Fragment {
         detailsInput.setText(tjViewModel.getSituationText());
     }
 
-    private void setButtons(View view) {
+    private void setButtons() {
+        NavController controller = Navigation.findNavController(getView());
         backButton.setOnClickListener(v -> {
             getTextInput();
-            NavController controller = Navigation.findNavController(view);
             controller.popBackStack(R.id.tjPageOne, true);
             controller.navigate(R.id.tjPageOne);
         });
         nextButton.setOnClickListener(v -> {
             getTextInput();
-            NavController navController = Navigation.findNavController(getView());
-            navController.navigate(R.id.action_tjPageTwo_to_tjPageThree);
+            controller.navigate(R.id.action_tjPageTwo_to_tjPageThree);
 
         });
     }

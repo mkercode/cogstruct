@@ -112,7 +112,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/main_emotion_radiogroup" />
 
                 <RatingBar
-                    android:id="@+id/ratingBar"
+                    android:id="@+id/emotion_rating_bar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -134,14 +134,14 @@
                     app:layout_constraintTop_toBottomOf="@+id/main_emotion_radiogroup" />
 
                 <EditText
-                    android:id="@+id/details_input"
+                    android:id="@+id/emotion_details_input"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:autofillHints=""
                     android:ems="15"
                     android:gravity="top"
-                    android:hint="I.e multiple empoions, bodily sensations ect"
+                    android:hint="I.e multiple emotions, bodily sensations, emotional actions, ect"
                     android:inputType="textAutoCorrect|textMultiLine"
                     android:maxLines="5"
                     android:minLines="5" />
