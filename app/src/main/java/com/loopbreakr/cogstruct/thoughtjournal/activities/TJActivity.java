@@ -1,10 +1,12 @@
-package com.loopbreakr.cogstruct;
+package com.loopbreakr.cogstruct.thoughtjournal.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Bundle;
+
+import com.loopbreakr.cogstruct.R;
 
 
 public class TJActivity extends AppCompatActivity {

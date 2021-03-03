@@ -1,5 +1,6 @@
 package com.loopbreakr.cogstruct;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -88,5 +89,10 @@ public class UiHomeFragment extends Fragment {
         aboutIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_aboutFragment));
     }
 
+    private void signOut(){
+        Intent intent = new Intent(this.requireActivity(), LoginActivity.class);
+        startActivity(intent);
+        requireActivity().finish();
+    }
 
 }

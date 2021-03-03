@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/tjPageOne"
-        android:name="com.loopbreakr.cogstruct.TJPageOne"
+        android:name="com.loopbreakr.cogstruct.thoughtjournal.fragments.TJPageOne"
         android:label="fragment_tj_page_one"
         tools:layout="@layout/fragment_tj_page_one" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/tjPageTwo"
-        android:name="com.loopbreakr.cogstruct.TJPageTwo"
+        android:name="com.loopbreakr.cogstruct.thoughtjournal.fragments.TJPageTwo"
         android:label="fragment_tj_page_two"
         tools:layout="@layout/fragment_tj_page_two" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/tjPageThree"
-        android:name="com.loopbreakr.cogstruct.TJPageThree"
+        android:name="com.loopbreakr.cogstruct.thoughtjournal.fragments.TJPageThree"
         android:label="fragment_tj_page_three"
         tools:layout="@layout/fragment_tj_page_three" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/tjPageFour"
-        android:name="com.loopbreakr.cogstruct.TJPageFour"
+        android:name="com.loopbreakr.cogstruct.thoughtjournal.fragments.TJPageFour"
         android:label="fragment_tj_page_four"
         tools:layout="@layout/fragment_tj_page_four" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/tjPageFive"
-        android:name="com.loopbreakr.cogstruct.TJPageFive"
+        android:name="com.loopbreakr.cogstruct.thoughtjournal.fragments.TJPageFive"
         android:label="fragment_tj_page_five"
         tools:layout="@layout/fragment_tj_page_five" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/tjPageSix"
-        android:name="com.loopbreakr.cogstruct.TJPageSix"
+        android:name="com.loopbreakr.cogstruct.thoughtjournal.fragments.TJPageSix"
         android:label="fragment_tj_page_six"
         tools:layout="@layout/fragment_tj_page_six" />
 </navigation>

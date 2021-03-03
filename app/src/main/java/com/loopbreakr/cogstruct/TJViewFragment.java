@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.loopbreakr.cogstruct.thoughtjournal.activities.TJActivity;
+
 
 public class TJViewFragment extends Fragment {
     private Button beginButton;

@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct;
+package com.loopbreakr.cogstruct.thoughtjournal.models;
 
 import androidx.lifecycle.ViewModel;
 

@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct;
+package com.loopbreakr.cogstruct.thoughtjournal.fragments;
 
 import android.os.Bundle;
 
@@ -17,6 +17,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
+
+import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
 
 public class TJPageFour extends Fragment {
     private TJViewModel tjViewModel;
