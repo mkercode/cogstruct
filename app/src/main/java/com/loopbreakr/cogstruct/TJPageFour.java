@@ -1,4 +1,4 @@
-package com.loopbreakr.brainstruct;
+package com.loopbreakr.cogstruct;
 
 import android.os.Bundle;
 
@@ -67,7 +67,7 @@ public class TJPageFour extends Fragment {
 
     private void getInputData(View view){
         emotionRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-            RadioButton emotionRadioButton = (RadioButton) view.findViewById(checkedId);
+            RadioButton emotionRadioButton =  view.findViewById(checkedId);
             tjViewModel.setEmotionText(emotionRadioButton.getText());
             tjViewModel.setEmotionRadioId(checkedId);
         });
@@ -75,7 +75,7 @@ public class TJPageFour extends Fragment {
     }
 
     private void setButtons() {
-        NavController controller = Navigation.findNavController(getView());
+        NavController controller = Navigation.findNavController(requireView());
         backButton.setOnClickListener(v -> {
             setTextInput();
             controller.popBackStack(R.id.tjPageThree, true);

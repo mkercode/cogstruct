@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BrainStruct</string>
+    <string name="app_name">CogStruct</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -41,7 +41,7 @@
     <string name="place_hint">Hint: A specific place, i.e home</string>
     <string name="tj_page_one_title">Situation</string>
     <string name="tj_page_two_title">Details</string>
-    <string name="tj_details_hint">Hint: Re-tell the events that occured objectively, as if you are watching them in a movie</string>
+    <string name="tj_details_hint">Hint: Re-tell the events that occurred objectively, as if you are watching them in a movie</string>
     <string name="tj_details_question"> Optional: What happened before you engaged in the behavior?</string>
     <string name="back_button_text">Back</string>
     <string name="tj_page_three_title">Behavior</string>
@@ -50,4 +50,11 @@
     <string name="tj_page_one_people_hint">If you weren\'t alone, enter who you were with.</string>
     <string name="with_others">With others</string>
     <string name="alone">Alone</string>
+    <string name="tj_thoughts_description">What was going through your mind at the moment? Enter the thoughts you had at the time, sparated by commas.</string>
+    <string name="tj_thoughts_hint">Enter list here!</string>
+    <string name="submit_button_text">Submit</string>
+    <string name="tj_thoughts_title">Thoughts</string>
+    <string name="tj_thoughts_image_description">Thought Bubble Image</string>
+    <string name="tj_movie_image_description">Movie Image</string>
+    <string name="tj_emotion_description">What is the main emotion you experienced at the time?</string>
 </resources>

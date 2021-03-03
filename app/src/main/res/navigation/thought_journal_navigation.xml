@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/tjPageOne"
-        android:name="com.loopbreakr.brainstruct.TJPageOne"
+        android:name="com.loopbreakr.cogstruct.TJPageOne"
         android:label="fragment_tj_page_one"
         tools:layout="@layout/fragment_tj_page_one" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/tjPageTwo"
-        android:name="com.loopbreakr.brainstruct.TJPageTwo"
+        android:name="com.loopbreakr.cogstruct.TJPageTwo"
         android:label="fragment_tj_page_two"
         tools:layout="@layout/fragment_tj_page_two" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/tjPageThree"
-        android:name="com.loopbreakr.brainstruct.TJPageThree"
+        android:name="com.loopbreakr.cogstruct.TJPageThree"
         android:label="fragment_tj_page_three"
         tools:layout="@layout/fragment_tj_page_three" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/tjPageFour"
-        android:name="com.loopbreakr.brainstruct.TJPageFour"
+        android:name="com.loopbreakr.cogstruct.TJPageFour"
         android:label="fragment_tj_page_four"
         tools:layout="@layout/fragment_tj_page_four" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/tjPageFive"
-        android:name="com.loopbreakr.brainstruct.TJPageFive"
+        android:name="com.loopbreakr.cogstruct.TJPageFive"
         android:label="fragment_tj_page_five"
         tools:layout="@layout/fragment_tj_page_five" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/tjPageSix"
-        android:name="com.loopbreakr.brainstruct.TJPageSix"
+        android:name="com.loopbreakr.cogstruct.TJPageSix"
         android:label="fragment_tj_page_six"
         tools:layout="@layout/fragment_tj_page_six" />
 </navigation>

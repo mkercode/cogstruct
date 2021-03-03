@@ -1,4 +1,4 @@
-package com.loopbreakr.brainstruct;
+package com.loopbreakr.cogstruct;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import java.util.Objects;
 
 public class TJPageOne extends Fragment {
     private TJViewModel tjViewModel;
@@ -66,12 +68,12 @@ public class TJPageOne extends Fragment {
 
     private void getRadioGroupInput(View view) {
         timeRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-            RadioButton timeRadioButton = (RadioButton) view.findViewById(checkedId);
+            RadioButton timeRadioButton =  view.findViewById(checkedId);
             tjViewModel.setTimeText(timeRadioButton.getText());
             tjViewModel.setTimeRadioId(checkedId);
         });
         peopleRadioGroup.setOnCheckedChangeListener(((group, checkedId) -> {
-            RadioButton peopleRadioButton = (RadioButton) view.findViewById(checkedId);
+            RadioButton peopleRadioButton =  view.findViewById(checkedId);
             tjViewModel.setPeopleText(peopleRadioButton.getText());
             tjViewModel.setPeopleRadioId(checkedId);
         }));
@@ -81,12 +83,12 @@ public class TJPageOne extends Fragment {
         returnButton.setOnClickListener(v ->{
             Intent intent = new Intent(this.requireActivity(), MainActivity.class);
             startActivity(intent);
-            getActivity().finish();
+            requireActivity().finish();
         });
 
         nextButton.setOnClickListener(v ->{
             setTextInput();
-            NavController controller = Navigation.findNavController(getView());
+            NavController controller = Navigation.findNavController(requireView());
             controller.navigate(R.id.action_tjPageOne_to_tjPageTwo);
         });
     }

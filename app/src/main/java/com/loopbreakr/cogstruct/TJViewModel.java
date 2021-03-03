@@ -1,7 +1,6 @@
-package com.loopbreakr.brainstruct;
+package com.loopbreakr.cogstruct;
 
 import androidx.lifecycle.ViewModel;
-import java.util.ArrayList;
 
 public class TJViewModel extends ViewModel {
     private String locationText = "";

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="view_model"
-            type="com.loopbreakr.brainstruct.TJViewModel" />
+            type="com.loopbreakr.cogstruct.TJViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

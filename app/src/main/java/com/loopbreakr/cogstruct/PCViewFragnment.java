@@ -1,4 +1,4 @@
-package com.loopbreakr.brainstruct;
+package com.loopbreakr.cogstruct;
 
 import android.os.Bundle;
 
@@ -12,15 +12,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-public class BBViewFragment extends Fragment {
-    private Toolbar backToolbar;
+import java.util.Objects;
 
 
-    public BBViewFragment() {
+public class PCViewFragnment extends Fragment {
+
+
+    public PCViewFragnment() {
         // Required empty public constructor
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class BBViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bb_view, container, false);
+        return inflater.inflate(R.layout.fragment_pros_and_cons, container, false);
     }
 
     @Override
@@ -43,10 +43,10 @@ public class BBViewFragment extends Fragment {
     private void setBackToolBar(View view) {
         Toolbar backToolbar = view.findViewById(R.id.back_toolbar);
 
-        ((AppCompatActivity)getActivity()).setSupportActionBar(backToolbar);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+        ((AppCompatActivity) requireActivity()).setSupportActionBar(backToolbar);
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
 
         backToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        backToolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
+        backToolbar.setNavigationOnClickListener(v -> requireActivity().onBackPressed());
     }
 }

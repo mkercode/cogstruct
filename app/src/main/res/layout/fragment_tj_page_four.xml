@@ -6,7 +6,7 @@
     <data>
         <variable
             name="view_model"
-            type="com.loopbreakr.brainstruct.TJViewModel" />
+            type="com.loopbreakr.cogstruct.TJViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -45,7 +45,7 @@
                     android:layout_height="56dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="32dp"
-                    android:text="What is the main emotion you experienced at the time?"
+                    android:text="@string/tj_emotion_description"
                     android:textColor="@color/colorGreenText"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"

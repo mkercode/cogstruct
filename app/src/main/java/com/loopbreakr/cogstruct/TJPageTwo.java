@@ -1,11 +1,10 @@
-package com.loopbreakr.brainstruct;
+package com.loopbreakr.cogstruct;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -17,12 +16,13 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-public class TJPageThree extends Fragment {
+public class TJPageTwo extends Fragment {
     private TJViewModel tjViewModel;
-    private EditText behaviorInput;
+    private EditText detailsInput;
     private Button backButton, nextButton;
 
-    public TJPageThree() {
+
+    public TJPageTwo() {
         // Required empty public constructor
     }
 
@@ -36,7 +36,7 @@ public class TJPageThree extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tj_page_three, container, false);
+        return inflater.inflate(R.layout.fragment_tj_page_two, container, false);
     }
 
     @Override
@@ -48,30 +48,30 @@ public class TJPageThree extends Fragment {
     }
 
     private void findViews(View view) {
-        behaviorInput = view.findViewById(R.id.behavior_input);
-        backButton = view.findViewById(R.id.page_three_back);
-        nextButton = view.findViewById(R.id.page_three_next);
+        detailsInput = view.findViewById(R.id.details_input);
+        backButton = view.findViewById(R.id.page_two_back);
+        nextButton = view.findViewById(R.id.page_two_next);
     }
 
-    private void setViewModelData() {
-        behaviorInput.setText(tjViewModel.getBehaviorText());
+    private void setViewModelData(){
+        detailsInput.setText(tjViewModel.getSituationText());
     }
-
 
     private void setButtons() {
-        NavController controller = Navigation.findNavController(getView());
+        NavController controller = Navigation.findNavController(requireView());
         backButton.setOnClickListener(v -> {
             getTextInput();
-            controller.popBackStack(R.id.tjPageTwo, true);
-            controller.navigate(R.id.tjPageTwo);
+            controller.popBackStack(R.id.tjPageOne, true);
+            controller.navigate(R.id.tjPageOne);
         });
         nextButton.setOnClickListener(v -> {
             getTextInput();
-            controller.navigate(R.id.action_tjPageThree_to_tjPageFour);
+            controller.navigate(R.id.action_tjPageTwo_to_tjPageThree);
+
         });
     }
 
-    private void getTextInput() {
-        tjViewModel.setBehaviorText(behaviorInput.getText());
+    private void getTextInput(){
+        tjViewModel.setSituationText(detailsInput.getText());
     }
 }

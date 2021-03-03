@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
         <data>
                 <variable
                     name="viewModel"
-                    type="com.loopbreakr.brainstruct.TJViewModel"/>
+                    type="com.loopbreakr.cogstruct.TJViewModel"/>
 
         </data>
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,7 +37,8 @@
             android:src="@drawable/ic_brain_movie"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/page_two_title" />
+            app:layout_constraintTop_toBottomOf="@+id/page_two_title"
+            android:contentDescription="@string/tj_movie_image_description" />
 
         <TextView
             android:id="@+id/details_question"

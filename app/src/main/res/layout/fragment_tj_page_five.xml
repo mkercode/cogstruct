@@ -6,7 +6,7 @@
     <data>
         <variable
             name="view_model"
-            type="com.loopbreakr.brainstruct.TJViewModel" />
+            type="com.loopbreakr.cogstruct.TJViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"
-            android:text="Thoughts"
+            android:text="@string/tj_thoughts_title"
             android:textColor="@color/colorGreenText"
             android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
-            android:text="What was going through your mind at the moment? Enter the thoughts you had at the time, sparated by commas."
+            android:text="@string/tj_thoughts_description"
             android:textColor="@color/colorGreenText"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +53,7 @@
             android:autofillHints=""
             android:ems="15"
             android:gravity="top"
-            android:hint="Enter list here!"
+            android:hint="@string/tj_thoughts_hint"
             android:inputType="textAutoCorrect|textMultiLine"
             android:maxLines="4"
             android:minLines="4"
@@ -69,7 +69,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/rounded_button_background"
-            android:text="Submit"
+            android:text="@string/submit_button_text"
             android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -112,7 +112,8 @@
             app:layout_constraintBottom_toTopOf="@+id/progress_indicator"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/page_five_title" />
+            app:layout_constraintTop_toBottomOf="@+id/page_five_title"
+            android:contentDescription="@string/tj_thoughts_image_description" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

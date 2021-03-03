@@ -1,4 +1,4 @@
-package com.loopbreakr.brainstruct;
+package com.loopbreakr.cogstruct;
 
 import android.os.Bundle;
 
@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class TJPageFive extends Fragment {
     private TJViewModel tjViewModel;
@@ -61,7 +62,7 @@ public class TJPageFive extends Fragment {
     }
 
     private void setButtons() {
-        NavController controller = Navigation.findNavController(getView());
+        NavController controller = Navigation.findNavController(requireView());
         backButton.setOnClickListener(v ->{
             getTextInput();
             controller.popBackStack(R.id.tjPageFour, true);
@@ -69,7 +70,7 @@ public class TJPageFive extends Fragment {
         });
         submitButton.setOnClickListener(v ->{
             if(thoughtInput.getText().toString().isEmpty() || thoughtInput.getText().toString().equals("") || thoughtInput.getText().toString().equals(null)){
-                Toast.makeText(getActivity().getApplicationContext(), "Please journal your thoughts above!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireActivity().getApplicationContext(), "Please journal your thoughts above!",Toast.LENGTH_SHORT).show();
             }
             else{
                 getTextInput();

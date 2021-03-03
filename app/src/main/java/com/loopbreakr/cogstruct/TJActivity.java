@@ -1,4 +1,4 @@
-package com.loopbreakr.brainstruct;
+package com.loopbreakr.cogstruct;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
