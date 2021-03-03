@@ -68,7 +68,7 @@ public class UiHomeFragment extends Fragment {
         abcsCard = view.findViewById(R.id.abcs_card);
 
         //find bottom menu icons
-        settingsIcon = view.findViewById(R.id.settings_image);
+        settingsIcon = view.findViewById(R.id.logs_image);
         insightsIcon = view.findViewById(R.id.insights_image);
         learnMoreIcon = view.findViewById(R.id.learn_more_image);
         aboutIcon = view.findViewById(R.id.about_image);

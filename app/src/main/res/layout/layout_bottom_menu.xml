@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorToolbarStart"
     >
@@ -13,22 +15,22 @@
             android:layout_columnWeight="1">
 
             <ImageView
-                android:id="@+id/settings_image"
+                android:id="@+id/logs_image"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_margin="5dp"
                 android:layout_gravity="center"
+                android:layout_margin="5dp"
                 android:layout_marginTop="12dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:src="@drawable/settings_icon"
-                android:focusable="true" />
+                android:focusable="true"
+                app:srcCompat="@drawable/logs_icon" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="Settings"
+                android:text="Logs"
                 android:textAlignment="center"
                 android:textColor="@color/colorGreenText"
                 android:textSize="13sp" />
@@ -50,7 +52,7 @@
                 android:layout_marginTop="12dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:src="@drawable/insights_icon"
+                app:srcCompat="@drawable/insights_icon"
                 android:focusable="true" />
 
             <TextView
@@ -80,7 +82,7 @@
                 android:layout_marginTop="12dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:src="@drawable/learn_more_icon"
+                app:srcCompat="@drawable/learn_more_icon"
                 android:focusable="true" />
 
             <TextView
@@ -110,7 +112,7 @@
                 android:layout_marginTop="12dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
-                android:src="@drawable/logo_hat_icon"
+                app:srcCompat="@drawable/logo_hat_icon"
                 android:focusable="true" />
 
             <TextView
