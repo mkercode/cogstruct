@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "582490112641",
+    "project_id": "cogstruct",
+    "storage_bucket": "cogstruct.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582490112641:android:842db05592e16e16050380",
+        "android_client_info": {
+          "package_name": "com.loopbreakr.cogstruct"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582490112641-m8oil3o2kfjarjtvq3l88euvq1mhropu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhavopqSCchX19Oh0EsjX9OUPEV8o7GBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582490112641-m8oil3o2kfjarjtvq3l88euvq1mhropu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
