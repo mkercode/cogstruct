@@ -13,6 +13,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -58,6 +59,18 @@ public class UiHomeFragment extends Fragment {
         toolbar.setOverflowIcon(ContextCompat.getDrawable(requireActivity(), R.drawable.ic_logout));
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_logout) {
+            logOut();
+            return true;
+        }
+        else{
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+
     private void findViews(View view) {
         //find cardviews
         thoughtJournalCard = view.findViewById(R.id.thought_journal_card);
@@ -89,7 +102,7 @@ public class UiHomeFragment extends Fragment {
         aboutIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_aboutFragment));
     }
 
-    private void signOut(){
+    private void logOut(){
         Intent intent = new Intent(this.requireActivity(), LoginActivity.class);
         startActivity(intent);
         requireActivity().finish();

@@ -41,9 +41,10 @@ public class LoginActivity extends AppCompatActivity {
                 .setAvailableProviders(Arrays.asList(
                         new AuthUI.IdpConfig.EmailBuilder().build(),
                         new AuthUI.IdpConfig.GoogleBuilder().build()))
-                .setLogo(R.drawable.logo_with_hardhat)
+                .setTheme(R.style.LoginTheme)
                 .build();
         startActivityForResult(intent, AUTHUI_REQUEST_CODE);
+
     }
     //check code to see if sign in is succesful
     @Override

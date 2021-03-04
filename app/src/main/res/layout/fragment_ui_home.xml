@@ -34,13 +34,13 @@
                 android:layout_height="45dp"/>
 
             <TextView
-                android:id="@+id/thought_journal_title"
+                android:id="@+id/app_title"
                 android:layout_width="fill_parent"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:fontFamily="casual"
                 android:gravity="center"
-                android:text="MindKraft"
+                android:text="@string/app_name"
                 android:textColor="@color/colorWhite"
                 android:textSize="36sp"
                 android:textStyle="bold" />
