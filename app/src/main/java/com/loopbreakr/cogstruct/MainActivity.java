@@ -52,4 +52,7 @@ public class MainActivity extends AppCompatActivity implements FirebaseAuth.Auth
     protected void signOutClicked(){
         AuthUI.getInstance().signOut(this);
     }
+    protected void sendToFirestore(){
+
+    }
 }

@@ -20,4 +20,8 @@ public class TJActivity extends AppCompatActivity {
         NavHostFragment thoughtJournal = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.thought_journal_fragment);
         NavController thoughtJournalController = thoughtJournal.getNavController();
     }
+
+    protected void sendtoFirestore(){
+
+    }
 }
