@@ -2,10 +2,10 @@ package com.loopbreakr.cogstruct;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener{
@@ -39,13 +39,17 @@ public class MainActivity extends AppCompatActivity implements FirebaseAuth.Auth
     @Override
     public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
         if(firebaseAuth.getCurrentUser() == null){
-            logOut();
+            openLogin();
         }
     }
 
-    private void logOut() {
+    private void openLogin() {
             Intent intent =  new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();
+    }
+
+    protected void signOutClicked(){
+        AuthUI.getInstance().signOut(this);
     }
 }

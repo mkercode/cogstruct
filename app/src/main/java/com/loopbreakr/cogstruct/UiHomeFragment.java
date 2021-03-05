@@ -57,18 +57,18 @@ public class UiHomeFragment extends Fragment {
     private void setToolbar(View view) {
         toolbar = view.findViewById(R.id.homeToolBar);
         toolbar.setOverflowIcon(ContextCompat.getDrawable(requireActivity(), R.drawable.ic_logout));
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                if(item.getItemId() == R.id.action_logout){
+                    ((MainActivity)requireActivity()).signOutClicked();
+                }
+                return false;
+            }
+        });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_logout) {
-            logOut();
-            return true;
-        }
-        else{
-            return super.onOptionsItemSelected(item);
-        }
-    }
+
 
 
     private void findViews(View view) {
