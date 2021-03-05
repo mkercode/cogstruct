@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         authorizationCheck();
         Button button = findViewById(R.id.logreg_button);
-        button.setOnClickListener(v -> handleLoginRegister(button));
+        button.setOnClickListener(v -> handleLoginRegister());
     }
 
     private void authorizationCheck() {
@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         }
     }
-    private void handleLoginRegister(Button view) {
+    private void handleLoginRegister() {
         Intent intent = AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setAvailableProviders(Arrays.asList(
@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         startActivityForResult(intent, AUTHUI_REQUEST_CODE);
 
     }
-    //check code to see if sign in is succesful
+    //check code to see if sign in is successful
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -55,12 +55,6 @@ public class LoginActivity extends AppCompatActivity {
                 // We have signed in the user or we have a new user
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 Log.d(TAG, "onActivityResult: " + user.toString());
-                //Checking for User (New/Old)
-                if (user.getMetadata().getCreationTimestamp() == user.getMetadata().getLastSignInTimestamp()) {
-                    //This is a New User
-                } else {
-                    //This is a returning user
-                }
 
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
