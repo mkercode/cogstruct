@@ -9,10 +9,10 @@ public class ThoughtJournalObject {
     private String behavior;
     private String emotion;
     private String emotionDetail;
-    private String[] thoughts;
+    private String thoughts;
     private float emotionRating;
 
-    public ThoughtJournalObject(String userId, String location, String time, String people, String situation, String behavior, String emotion, String emotionDetail, String[] thoughts, float emotionRating) {
+    public ThoughtJournalObject(String userId, String location, String time, String people, String situation, String behavior, String emotion, float emotionRating, String emotionDetail, String thoughts) {
         this.userId = userId;
         this.location = location;
         this.time = time;
@@ -20,9 +20,9 @@ public class ThoughtJournalObject {
         this.situation = situation;
         this.behavior = behavior;
         this.emotion = emotion;
+        this.emotionRating = emotionRating;
         this.emotionDetail = emotionDetail;
         this.thoughts = thoughts;
-        this.emotionRating = emotionRating;
     }
 
     public ThoughtJournalObject() {
@@ -92,11 +92,11 @@ public class ThoughtJournalObject {
         this.emotionDetail = emotionDetail;
     }
 
-    public String[] getThoughts() {
+    public String getThoughts() {
         return thoughts;
     }
 
-    public void setThoughts(String[] thoughts) {
+    public void setThoughts(String thoughts) {
         this.thoughts = thoughts;
     }
 

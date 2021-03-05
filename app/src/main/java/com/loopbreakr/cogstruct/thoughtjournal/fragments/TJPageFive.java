@@ -76,8 +76,6 @@ public class TJPageFive extends Fragment {
             }
             else{
                 getTextInput();
-                List<String> items = Arrays.asList(tjViewModel.getThoughtText().split("\\s*,\\s*"));
-                Log.d("LOGGING....", "Arraylist: " + items);
                 controller.navigate(R.id.action_tjPageFive_to_tjPageSix);
             }
         });
