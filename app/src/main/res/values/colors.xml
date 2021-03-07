@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#F83A7D</color>
+    <color name="colorPrimary">#EF6888</color>
     <color name="colorPrimaryDark">#C30A4A</color>
     <color name="ColorAccent">#FF03DAC5</color>
     <color name="colorBottomCardStart">#28F67B</color>
@@ -13,4 +13,6 @@
     <color name="colorWhite">#FFFFFFFF</color>
     <color name="colorTransparent">#00000000</color>
     <color name="lightGrey">#79000000</color>
+    <color name="colorToolBarAccent">#54B197</color>
+    <color name="colorRedMuted">#CC5973</color>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorToolbarStart"
+    android:background="@drawable/bottom_bar_backround"
     >
 
         <LinearLayout
@@ -32,7 +32,7 @@
                 android:layout_marginTop="3dp"
                 android:text="Logs"
                 android:textAlignment="center"
-                android:textColor="@color/colorGreenText"
+                android:textColor="@color/colorWhite"
                 android:textSize="13sp" />
         </LinearLayout>
 
@@ -61,7 +61,7 @@
                 android:layout_marginTop="3dp"
                 android:text="Insights"
                 android:textAlignment="center"
-                android:textColor="@color/colorGreenText"
+                android:textColor="@color/colorWhite"
                 android:textSize="13sp" />
         </LinearLayout>
 
@@ -91,7 +91,7 @@
                 android:layout_marginTop="3dp"
                 android:text="Learn More"
                 android:textAlignment="center"
-                android:textColor="@color/colorGreenText"
+                android:textColor="@color/colorWhite"
                 android:textSize="13sp" />
         </LinearLayout>
 
@@ -121,7 +121,7 @@
                 android:layout_marginTop="3dp"
                 android:text="About"
                 android:textAlignment="center"
-                android:textColor="@color/colorGreenText"
+                android:textColor="@color/colorWhite"
                 android:textSize="13sp" />
         </LinearLayout>
 

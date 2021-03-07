@@ -10,10 +10,11 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/page_one_next"
                 >
             <LinearLayout
                 android:id="@+id/linear_layout"
@@ -177,8 +178,8 @@
                     android:gravity="top"
                     android:hint="@string/tj_page_one_people_hint"
                     android:inputType="textAutoCorrect|textMultiLine"
-                    android:maxLines="4"
-                    android:minLines="4" />
+                    android:maxLines="2"
+                    android:minLines="2" />
             </LinearLayout>
             </ScrollView>
 

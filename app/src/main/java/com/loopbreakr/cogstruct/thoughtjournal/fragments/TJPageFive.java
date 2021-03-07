@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,13 +19,10 @@ import android.widget.Toast;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class TJPageFive extends Fragment {
     private TJViewModel tjViewModel;
     private EditText thoughtInput;
-    private Button backButton, submitButton;
+    private Button backButton, reviewButton;
 
     public TJPageFive() {
         // Required empty public constructor
@@ -56,7 +52,7 @@ public class TJPageFive extends Fragment {
     private void findViews(View view) {
         thoughtInput = view.findViewById(R.id.thought_input);
         backButton = view.findViewById(R.id.page_five_back);
-        submitButton = view.findViewById(R.id.tj_submit);
+        reviewButton = view.findViewById(R.id.tj_review);
     }
 
     private void getViewModelData() {
@@ -70,7 +66,7 @@ public class TJPageFive extends Fragment {
             controller.popBackStack(R.id.tjPageFour, true);
             controller.navigate(R.id.tjPageFour);
         });
-        submitButton.setOnClickListener(v ->{
+        reviewButton.setOnClickListener(v ->{
             if(thoughtInput.getText().toString().isEmpty() || thoughtInput.getText().toString().equals("") || thoughtInput.getText().toString() == null){
                 Toast.makeText(requireActivity().getApplicationContext(), "Please journal your thoughts above!",Toast.LENGTH_SHORT).show();
             }

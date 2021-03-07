@@ -57,4 +57,9 @@
     <string name="tj_thoughts_image_description">Thought Bubble Image</string>
     <string name="tj_movie_image_description">Movie Image</string>
     <string name="tj_emotion_description">What is the main emotion you experienced at the time?</string>
+    <string name="review_button_text">Review</string>
+    <string name="tj_review_title">Review</string>
+    <string name="tj_review_description">Review Your Answers</string>
+    <string name="field_optional">Field Optional</string>
+    <string name="field_required">Field Required!</string>
 </resources>

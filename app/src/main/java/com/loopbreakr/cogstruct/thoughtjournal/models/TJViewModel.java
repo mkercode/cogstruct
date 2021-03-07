@@ -2,6 +2,9 @@ package com.loopbreakr.cogstruct.thoughtjournal.models;
 
 import androidx.lifecycle.ViewModel;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class TJViewModel extends ViewModel {
     private String locationText = "";
     private String timeText = "";
@@ -15,6 +18,7 @@ public class TJViewModel extends ViewModel {
     private int peopleRadioId = -1;
     private int emotionRadioId = -1;
     private float emotionRating = 0;
+    private String emotionRatingString = "";
 
     public void setlocationText(CharSequence input) {
         locationText = input.toString();
@@ -37,7 +41,10 @@ public class TJViewModel extends ViewModel {
     public void setTimeRadioId(int input) { timeRadioId = input; }
     public void setPeopleRadioId(int input) { peopleRadioId = input; }
     public void setEmotionRadioId(int input) { emotionRadioId = input; }
-    public void setEmotionRating(float input) { emotionRating = input; }
+
+    public void setEmotionRating(float input) {
+        emotionRating = input;
+        emotionRatingString = Float.toString(input);}
 
     public String getLocationText() {
         return locationText;
@@ -53,5 +60,10 @@ public class TJViewModel extends ViewModel {
     public int getPeopleRadioId() { return peopleRadioId; }
     public int getEmotionRadioId() { return emotionRadioId; }
     public float getEmotionRating() { return emotionRating; }
+
+    public String getEmotionRatingString(){
+        return emotionRatingString;
+    }
+
 
 }
