@@ -39,10 +39,10 @@
         android:id="@+id/review_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/tj_submit"
-        android:layout_marginBottom="8dp"
         app:layout_constraintTop_toBottomOf="@+id/review_text">
 
         <GridLayout
@@ -62,7 +62,7 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 android:padding="4dp"
-                android:text="Where did it happen?"
+                android:text="@string/place_review_question"
                 android:textColor="@color/colorGreenText"
                 android:textSize="15sp" />
 
@@ -79,7 +79,7 @@
                     android:id="@+id/place_review"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Field Required!"
+                    android:text="@string/field_required"
                     android:gravity="top"
                     style="@style/requiredText"/>
             </LinearLayout>
@@ -92,7 +92,7 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 android:padding="4dp"
-                android:text="When did it happen?"
+                android:text="@string/time_review_question"
                 android:textColor="@color/colorGreenText"
                 android:textSize="15sp" />
             <LinearLayout
@@ -107,7 +107,7 @@
                     android:id="@+id/time_review"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Field Required!"
+                    android:text="@string/field_required"
                     android:gravity="top"
                     style="@style/requiredText"/>
             </LinearLayout>
@@ -121,7 +121,7 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 android:padding="4dp"
-                android:text="Who was I with?"
+                android:text="@string/people_review_question"
                 android:textColor="@color/colorGreenText"
                 android:textSize="15sp" />
             <LinearLayout
@@ -149,8 +149,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                android:paddingStart="4dp"
-                android:paddingTop="4dp"
+                android:padding="4dp"
                 android:text="@string/tj_page_two_title"
                 android:textColor="@color/colorGreenText"
                 android:textSize="15sp" />
@@ -180,7 +179,7 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 android:padding="4dp"
-                android:text="What did I do?"
+                android:text="@string/behavior_review_question"
                 android:textColor="@color/colorGreenText"
                 android:textSize="15sp" />
 
@@ -210,9 +209,8 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                android:paddingStart="4dp"
-                android:paddingTop="4dp"
-                android:text="What did I feel?"
+                android:padding="4dp"
+                android:text="@string/emotion_review_question"
                 android:textColor="@color/colorGreenText"
                 android:textSize="15sp" />
             <LinearLayout
@@ -228,7 +226,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:text="Main emotion:"
+                    android:text="@string/main_emotion_review_question"
                     android:textColor="@color/colorGreenText"
                     android:textSize="13sp" />
                 <TextView
@@ -243,7 +241,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:text="Intensity:"
+                    android:text="@string/intensity_review_question"
                     android:textColor="@color/colorGreenText"
                     android:textSize="13sp" />
                 <TextView
@@ -258,7 +256,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:text="Details:"
+                    android:text="@string/details_review_question"
                     android:textColor="@color/colorGreenText"
                     android:textSize="13sp" />
                 <TextView
@@ -279,7 +277,7 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 android:padding="4dp"
-                android:text="What were my thoughts?"
+                android:text="@string/thoughts_review_question"
                 android:textColor="@color/colorGreenText"
                 android:textSize="15sp" />
 
@@ -312,7 +310,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_button_background"
-        android:text="Submit"
+        android:text="@string/submit_button"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -328,7 +326,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_button_background"
-        android:text="Edit"
+        android:text="@string/edit_button"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

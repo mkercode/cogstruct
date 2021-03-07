@@ -14,6 +14,17 @@
         android:layout_height="match_parent"
         tools:context=".thoughtjournal.fragments.TJPageThree">
 
+        <View
+            android:id="@+id/page_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@id/page_three_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:clickable="false"/>
+
 
         <TextView
             android:id="@+id/page_three_title"
@@ -51,6 +62,7 @@
             android:autofillHints=""
             android:ems="15"
             android:gravity="top"
+            android:hint="Enter behavior here"
             android:inputType="textAutoCorrect|textMultiLine"
             android:maxLines="4"
             android:minLines="4"
@@ -61,8 +73,6 @@
             android:id="@+id/page_three_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/rounded_button_background"
@@ -71,24 +81,24 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+
         <TextView
             android:id="@+id/progress_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
+            android:elevation="2dp"
             android:text="3/5"
+            android:textColor="@color/colorWhite"
             android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/page_three_back"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/page_three_next"
-            app:layout_constraintStart_toEndOf="@+id/page_three_back" />
+            app:layout_constraintStart_toEndOf="@+id/page_three_back"
+            app:layout_constraintTop_toTopOf="@+id/view" />
 
         <Button
             android:id="@+id/page_three_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/rounded_button_background"
@@ -96,6 +106,16 @@
             android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bottom_bar_backround"
+            android:paddingTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/page_content" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

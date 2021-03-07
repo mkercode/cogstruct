@@ -8,220 +8,234 @@
             tools:context=".thoughtjournal.fragments.TJPageOne"
             android:orientation="vertical">
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/page_one_next"
-                >
-            <LinearLayout
-                android:id="@+id/linear_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toTopOf="@+id/tj_return"
-               >
-
-                <TextView
-                    android:id="@+id/page_one_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/tj_page_one_title"
-                    android:textColor="@color/colorGreenText"
-                    android:textSize="36sp" />
-
-                <TextView
-                    android:id="@+id/place_question"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/place_behavior_question"
-                    android:textColor="@color/colorGreenText"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/place_input"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="24dp"
-                    android:autofillHints=""
-                    android:ems="15"
-                    android:gravity="top"
-                    android:hint="@string/place_hint"
-                    android:inputType="textAutoCorrect|textMultiLine"
-                    android:maxLines="4"
-                    android:minLines="4" />
-
-                <!-- add RadioGroup which contain the many RadioButton-->
-                <TextView
-                    android:id="@+id/time_question"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="36dp"
-                    android:text="@string/behavior_time_question"
-                    android:textColor="@color/colorGreenText"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/placeInput" />
-
-                <RadioGroup
-                    android:id="@+id/time_radiogroup"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/timeQuestion"
-                    >
-
-                    <RadioButton
-                        android:id="@+id/morning"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/morning"
-                        android:textColor="@color/lightGrey"
-                        android:textSize="16sp" />
-
-                    <RadioButton
-                        android:id="@+id/noonish"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/noonish"
-                        android:textColor="@color/lightGrey"
-                        android:textSize="16sp" />
-
-                    <RadioButton
-                        android:id="@+id/afternoon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/afternoon"
-                        android:textColor="@color/lightGrey"
-                        android:textSize="16sp" />
-
-                    <RadioButton
-                        android:id="@+id/evening"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/evening"
-                        android:textColor="@color/lightGrey"
-                        android:textSize="16sp" />
-
-                    <RadioButton
-                        android:id="@+id/night"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/at_night"
-                        android:textColor="@color/lightGrey"
-                        android:textSize="16sp" />
-                </RadioGroup>
+    <ScrollView
+        android:id="@+id/review_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/page_one_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="pa"
+        app:layout_constraintTop_toTopOf="parent">
 
 
-                <TextView
-                    android:id="@+id/people_question"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="36dp"
-                    android:text="@string/tj_page_one_who_question"
-                    android:textColor="@color/colorGreenText"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/placeInput" />
-
-                <RadioGroup
-                    android:id="@+id/people_radiogroup"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/timeQuestion">
-
-                    <RadioButton
-                        android:id="@+id/alone"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/alone"
-                        android:textColor="@color/lightGrey"
-                        android:textSize="16sp" />
-
-                    <RadioButton
-                        android:id="@+id/with_others"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/with_others"
-                        android:textColor="@color/lightGrey"
-                        android:textSize="16sp" />
-                </RadioGroup>
-
-                <EditText
-                    android:id="@+id/people_input"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-
-                    android:autofillHints=""
-                    android:ems="15"
-                    android:gravity="top"
-                    android:hint="@string/tj_page_one_people_hint"
-                    android:inputType="textAutoCorrect|textMultiLine"
-                    android:maxLines="2"
-                    android:minLines="2" />
-            </LinearLayout>
-            </ScrollView>
-
-
-            <Button
-                android:id="@+id/page_one_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/rounded_button_background"
-                android:text="@string/next_button_string"
-                android:textSize="13sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/tj_return"
+            >
 
             <TextView
-                android:id="@+id/progress_indicator"
+                android:id="@+id/page_one_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_centerHorizontal="true"
-                android:text="1/5"
-                android:textSize="18sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tj_return"
-                app:layout_constraintEnd_toStartOf="@+id/page_one_next"
-                app:layout_constraintStart_toEndOf="@+id/tj_return" />
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:text="@string/tj_page_one_title"
+                android:textColor="@color/colorGreenText"
+                android:textSize="36sp" />
 
-            <Button
-                android:id="@+id/tj_return"
+            <TextView
+                android:id="@+id/place_question"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/rounded_button_background"
-                android:text="@string/return_button_text"
-                android:textSize="13sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/place_behavior_question"
+                android:textColor="@color/colorGreenText"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/place_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:autofillHints=""
+                android:ems="15"
+                android:gravity="top"
+                android:hint="@string/place_hint"
+                android:inputType="textAutoCorrect|textMultiLine"
+                android:maxLines="4"
+                android:minLines="4" />
+
+            <!-- add RadioGroup which contain the many RadioButton-->
+            <TextView
+                android:id="@+id/time_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+                android:text="@string/behavior_time_question"
+                android:textColor="@color/colorGreenText"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placeInput" />
+
+            <RadioGroup
+                android:id="@+id/time_radiogroup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timeQuestion"
+                >
+
+                <RadioButton
+                    android:id="@+id/morning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/morning"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/noonish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/noonish"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/afternoon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/afternoon"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/evening"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/evening"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/night"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/at_night"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="16sp" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/people_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+                android:text="@string/tj_page_one_who_question"
+                android:textColor="@color/colorGreenText"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placeInput" />
+
+            <RadioGroup
+                android:id="@+id/people_radiogroup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timeQuestion">
+
+                <RadioButton
+                    android:id="@+id/alone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alone"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/with_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/with_others"
+                    android:textColor="@color/lightGrey"
+                    android:textSize="16sp" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/people_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+
+                android:autofillHints=""
+                android:ems="15"
+                android:gravity="top"
+                android:hint="@string/tj_page_one_people_hint"
+                android:inputType="textAutoCorrect|textMultiLine"
+                android:maxLines="2"
+                android:minLines="2" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/page_one_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_button_background"
+        android:text="@string/submit_button"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="2dp"/>
+
+
+    <TextView
+        android:id="@+id/progress_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1/5"
+        android:textSize="18sp"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tj_return"
+        app:layout_constraintEnd_toStartOf="@+id/page_one_next"
+        app:layout_constraintStart_toEndOf="@+id/tj_return"
+        android:elevation="2dp"/>
+
+    <Button
+        android:id="@+id/tj_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_button_background"
+        android:text="@string/edit_button"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingTop="8dp"
+        android:elevation="2dp"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bottom_bar_backround"
+        android:paddingTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/review_content" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

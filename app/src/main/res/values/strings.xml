@@ -62,4 +62,15 @@
     <string name="tj_review_description">Review Your Answers</string>
     <string name="field_optional">Field Optional</string>
     <string name="field_required">Field Required!</string>
+    <string name="submit_button">Submit</string>
+    <string name="edit_button">Edit</string>
+    <string name="thoughts_review_question">What were my thoughts?</string>
+    <string name="details_review_question">Details:</string>
+    <string name="intensity_review_question">Intensity:</string>
+    <string name="main_emotion_review_question">Main emotion:</string>
+    <string name="emotion_review_question">What did I feel?</string>
+    <string name="behavior_review_question">What did I do?</string>
+    <string name="people_review_question">Who was I with?</string>
+    <string name="time_review_question">When did it happen?</string>
+    <string name="place_review_question">Where did it happen?</string>
 </resources>
