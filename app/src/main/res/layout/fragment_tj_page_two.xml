@@ -95,14 +95,13 @@
             android:id="@+id/progress_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="2dp"
-            android:text="3/5"
-            android:textColor="@color/colorWhite"
+            android:text="2/5"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBaseline_toBaselineOf="@+id/page_two_back"
             app:layout_constraintEnd_toStartOf="@+id/page_two_next"
             app:layout_constraintStart_toEndOf="@+id/page_two_back"
-            app:layout_constraintTop_toTopOf="@+id/view" />
+            android:elevation="2dp" />
 
         <Button
             android:id="@+id/page_two_back"

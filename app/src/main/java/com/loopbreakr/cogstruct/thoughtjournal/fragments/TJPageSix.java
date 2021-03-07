@@ -1,5 +1,6 @@
 package com.loopbreakr.cogstruct.thoughtjournal.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.loopbreakr.cogstruct.MainActivity;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.thoughtjournal.activities.TJActivity;
 import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
@@ -108,6 +110,10 @@ public class TJPageSix extends Fragment{
             }
             else{
                 submitData();
+                Toast.makeText(requireActivity().getApplicationContext(), "Saved in logs", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this.requireActivity(), MainActivity.class);
+                startActivity(intent);
+                requireActivity().finish();
             }
         });
     }

@@ -67,13 +67,8 @@ public class TJPageFive extends Fragment {
             controller.navigate(R.id.tjPageFour);
         });
         reviewButton.setOnClickListener(v ->{
-            if(thoughtInput.getText().toString().isEmpty() || thoughtInput.getText().toString().equals("") || thoughtInput.getText().toString() == null){
-                Toast.makeText(requireActivity().getApplicationContext(), "Please journal your thoughts above!",Toast.LENGTH_SHORT).show();
-            }
-            else{
-                getTextInput();
-                controller.navigate(R.id.action_tjPageFive_to_tjPageSix);
-            }
+            getTextInput();
+            controller.navigate(R.id.action_tjPageFive_to_tjPageSix);
         });
     }
 
