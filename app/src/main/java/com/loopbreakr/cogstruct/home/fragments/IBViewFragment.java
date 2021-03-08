@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct;
+package com.loopbreakr.cogstruct.home.fragments;
 
 import android.os.Bundle;
 
@@ -12,14 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.loopbreakr.cogstruct.R;
+
 import java.util.Objects;
 
 
-public class ABCViewFragment extends Fragment {
+public class IBViewFragment extends Fragment {
 
-    public ABCViewFragment() {
+    public IBViewFragment() {
         // Required empty public constructor
     }
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +34,7 @@ public class ABCViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_a_b_c_view, container, false);
+        return inflater.inflate(R.layout.fragment_ib_view, container, false);
     }
 
     @Override

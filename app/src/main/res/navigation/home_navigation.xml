@@ -8,9 +8,9 @@
 
     <fragment
         android:id="@+id/fragmentCbtActivities"
-        android:name="com.loopbreakr.cogstruct.UiHomeFragment"
+        android:name="com.loopbreakr.cogstruct.UiFragment"
         android:label="fragment_cbt_activities"
-        tools:layout="@layout/fragment_ui_home" >
+        tools:layout="@layout/fragment_ui" >
         <action
             android:id="@+id/action_fragmentCbtActivities_to_TJViewFragment"
             app:destination="@id/TJViewFragment" />
@@ -30,9 +30,6 @@
             android:id="@+id/action_fragmentCbtActivities_to_ABCViewFragment"
             app:destination="@id/ABCViewFragment" />
         <action
-            android:id="@+id/action_fragmentCbtActivities_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
-        <action
             android:id="@+id/action_fragmentCbtActivities_to_insightsFragment"
             app:destination="@id/insightsFragment" />
         <action
@@ -44,52 +41,47 @@
     </fragment>
     <fragment
         android:id="@+id/TJViewFragment"
-        android:name="com.loopbreakr.cogstruct.TJViewFragment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.TJViewFragment"
         android:label="fragment_thought_journal"
         tools:layout="@layout/fragment_tj_view" />
     <fragment
         android:id="@+id/PCViewFragment"
-        android:name="com.loopbreakr.cogstruct.PCViewFragnment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.PCViewFragnment"
         android:label="fragment_pros_and_cons"
         tools:layout="@layout/fragment_pros_and_cons" />
     <fragment
         android:id="@+id/HIGHViewFragment"
-        android:name="com.loopbreakr.cogstruct.HIGHViewFragment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.HIGHViewFragment"
         android:label="fragment_high_view"
         tools:layout="@layout/fragment_high_view" />
     <fragment
         android:id="@+id/BBViewFragment"
-        android:name="com.loopbreakr.cogstruct.BBViewFragment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.BBViewFragment"
         android:label="fragment_bb_view"
         tools:layout="@layout/fragment_bb_view" />
     <fragment
         android:id="@+id/IBViewFragment"
-        android:name="com.loopbreakr.cogstruct.IBViewFragment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.IBViewFragment"
         android:label="fragment_i_b_view"
-        tools:layout="@layout/fragment_i_b_view" />
+        tools:layout="@layout/fragment_ib_view" />
     <fragment
         android:id="@+id/ABCViewFragment"
-        android:name="com.loopbreakr.cogstruct.ABCViewFragment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.ABCViewFragment"
         android:label="fragment_a_b_c_view"
         tools:layout="@layout/fragment_a_b_c_view" />
     <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.loopbreakr.cogstruct.SettingsFragment"
-        android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
-    <fragment
         android:id="@+id/insightsFragment"
-        android:name="com.loopbreakr.cogstruct.InsightsFragment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.InsightsFragment"
         android:label="fragment_insights"
         tools:layout="@layout/fragment_insights" />
     <fragment
         android:id="@+id/learnMoreFragment"
-        android:name="com.loopbreakr.cogstruct.LearnMoreFragment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.LearnMoreFragment"
         android:label="fragment_learn_more"
         tools:layout="@layout/fragment_learn_more" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.loopbreakr.cogstruct.AboutFragment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
 </navigation>

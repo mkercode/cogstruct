@@ -28,6 +28,7 @@ import java.util.List;
 
 public class TJPageSix extends Fragment{
     private TJViewModel tjViewModel;
+    private List<String> requiredInputs;
     TextView placeReview, timeReview, peopleReview, situationReview, behaviorReview, mainEmotionReview, emotionIntensityReview, emotionDetailsReview, thoughtsReview;
     List<TextView> requiredFields;
     Button editButton, submitButton;
@@ -55,10 +56,7 @@ public class TJPageSix extends Fragment{
         getViews(view);
         fillTextViews();
         setButtons();
-        submitData();
     }
-
-
 
     private void getViews(View view) {
         placeReview = view.findViewById(R.id.place_review);
@@ -77,6 +75,7 @@ public class TJPageSix extends Fragment{
     private void fillTextViews() {
         List<TextView> textFields =  new ArrayList<>(Arrays. asList(placeReview, timeReview, peopleReview, situationReview, behaviorReview, mainEmotionReview, emotionIntensityReview, emotionDetailsReview));
         List<String> inputs =  new ArrayList<>(Arrays. asList(tjViewModel.getLocationText(), tjViewModel.getTimeText(), tjViewModel.getPeopleText(),tjViewModel.getSituationText(), tjViewModel.getBehaviorText(),tjViewModel.getEmotionText(), tjViewModel.getEmotionRatingString(), tjViewModel.getEmotionDetailText()));
+        requiredInputs =  new ArrayList<>(Arrays. asList(tjViewModel.getLocationText(), tjViewModel.getTimeText(), tjViewModel.getPeopleText(), tjViewModel.getBehaviorText(),tjViewModel.getEmotionText(), tjViewModel.getEmotionRatingString(), tjViewModel.getThoughtText()));
 
         for(int i = 0; i < textFields.size(); i++){
             if(!inputs.get(i).equals("")){
@@ -96,24 +95,24 @@ public class TJPageSix extends Fragment{
     }
 
     private void setButtons() {
+
         editButton.setOnClickListener(v ->{
             NavController controller = Navigation.findNavController(requireView());
             controller.popBackStack(R.id.tjPageFive, true);
             controller.navigate(R.id.tjPageFive);
 
         });
-        submitButton.setOnClickListener(v ->{
-            List<String> requiredInputs =  new ArrayList<>(Arrays. asList(tjViewModel.getLocationText(), tjViewModel.getTimeText(), tjViewModel.getPeopleText(), tjViewModel.getBehaviorText(),tjViewModel.getEmotionText(), tjViewModel.getEmotionRatingString(), tjViewModel.getThoughtText()));
 
-            if(requiredInputs.contains("")){
-                Toast.makeText(requireActivity().getApplicationContext(), "Please fill in all required fields!", Toast.LENGTH_SHORT).show();
-            }
-            else{
+        submitButton.setOnClickListener(v ->{
+            if(!requiredInputs.contains("")){
                 submitData();
                 Toast.makeText(requireActivity().getApplicationContext(), "Saved in logs", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this.requireActivity(), MainActivity.class);
                 startActivity(intent);
                 requireActivity().finish();
+            }
+            else{
+                Toast.makeText(requireActivity().getApplicationContext(), "Please fill in all required fields!", Toast.LENGTH_SHORT).show();
             }
         });
     }

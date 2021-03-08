@@ -19,14 +19,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 
-public class UiHomeFragment extends Fragment {
+public class UiFragment extends Fragment {
     private Toolbar toolbar;
     private NavController navController;
     private CardView thoughtJournalCard, prosConsCard, howdIGetHereCard, badBehaviorsCard, identifyBarriersCard, abcsCard;
     private ImageView settingsIcon, insightsIcon, learnMoreIcon, aboutIcon;
 
 
-    public UiHomeFragment() {
+    public UiFragment() {
         // Required empty public constructor
     }
 
@@ -39,7 +39,7 @@ public class UiHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_ui_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_ui, container, false);
         return view;
     }
 
@@ -96,7 +96,6 @@ public class UiHomeFragment extends Fragment {
         identifyBarriersCard.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_IBViewFragment));
         abcsCard.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_ABCViewFragment));
 
-        settingsIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_settingsFragment));
         insightsIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_insightsFragment));
         learnMoreIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_learnMoreFragment));
         aboutIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_aboutFragment));
