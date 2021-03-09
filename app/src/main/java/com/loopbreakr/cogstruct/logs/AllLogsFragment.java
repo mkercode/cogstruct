@@ -74,22 +74,50 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
     //handle click behavior
     @Override
     public void clickLog(DocumentSnapshot snapshot) {
-        int navId = 0;
 
         if (snapshot != null) {
-            //save snapshot fields to object and get corresponding form fragment for that object in a case/switch statement
-            if(snapshot.getString("formName").equals("Thought Journal"))
-            {
+            //clear all prior data in viewmodel
+            logsViewModel.clearAll();
+            NavController controller = Navigation.findNavController(requireView());
+            controller.navigate(getSnapshotData(snapshot));
+            Log.i("LOGGER"," "+ logsViewModel.getThoughtJournalLog().getDateCreated());
+        }
+    }
+
+    //save snapshot fields to object and get corresponding form fragment for that object in a case/switch statement
+    private int getSnapshotData(DocumentSnapshot snapshot){
+        int navId = 0;
+
+        switch (snapshot.getString("formName")){
+            case "Thought Journal":
                 thoughtJournalLog = snapshot.toObject(ThoughtJournalObject.class);
                 logsViewModel.setSnapshot(snapshot);
-                logsViewModel.setForm(thoughtJournalLog);
+                logsViewModel.setThoughtJournalLog(thoughtJournalLog);
                 navId = R.id.action_allLogsFragment_to_tjLogFragment;
-                Log.i("LOGGER"," "+ ((ThoughtJournalObject) logsViewModel.getForm()).getDateCreated());
-            }
+                break;
 
-            NavController controller = Navigation.findNavController(requireView());
-            controller.navigate(navId);
+            case "Pros and Cons":
+                navId = R.id.action_allLogsFragment_to_prosConsLogFragment;
+                break;
+
+            case "How'd I get here?":
+                navId = R.id.action_allLogsFragment_to_HIGHLogFragment;
+                break;
+
+            case "Bad Behaviors":
+                navId = R.id.action_allLogsFragment_to_BBLogFragment;
+                break;
+
+            case "Identify Barriers":
+                navId = R.id.action_allLogsFragment_to_IBLogFragment;
+                break;
+
+            case "ABC's":
+                navId = R.id.action_allLogsFragment_to_ABCLogFragment;
+                break;
         }
+
+        return navId;
     }
 
     //listen for auth states changed
