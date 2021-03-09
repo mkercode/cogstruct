@@ -3,27 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/logs_navigation"
-    app:startDestination="@id/logsFragment">
+    app:startDestination="@id/allLogsFragment">
     <fragment
-        android:id="@+id/logsFragment"
-        android:name="com.loopbreakr.cogstruct.logs.LogsFragment"
-        android:label="fragment_logs"
-        tools:layout="@layout/fragment_logs" >
-        <action
-            android:id="@+id/action_logsFragment_to_allLogsFragment2"
-            app:destination="@id/allLogsFragment2" />
-        <action
-            android:id="@+id/action_logsFragment_to_TJLogsFragment2"
-            app:destination="@id/TJLogsFragment2" />
-    </fragment>
-    <fragment
-        android:id="@+id/allLogsFragment2"
+        android:id="@+id/allLogsFragment"
         android:name="com.loopbreakr.cogstruct.logs.AllLogsFragment"
         android:label="fragment_all_logs"
-        tools:layout="@layout/fragment_all_logs" />
+        tools:layout="@layout/fragment_all_logs" >
+        <action
+            android:id="@+id/action_allLogsFragment_to_LogsViewFragment"
+            app:destination="@id/LogsViewFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/TJLogsFragment2"
-        android:name="com.loopbreakr.cogstruct.logs.TJLogsFragment"
-        android:label="fragment_t_j_logs"
+        android:id="@+id/LogsViewFragment"
+        android:name="com.loopbreakr.cogstruct.logs.LogsViewFragment"
+        android:label="fragment_log_view"
         tools:layout="@layout/fragment_t_j_logs" />
 </navigation>

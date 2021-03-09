@@ -1,108 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:scrollbars="vertical"
     tools:context=".logs.LogsActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/logs_fragment_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/app_bar_head"
-        android:fitsSystemWindows="true">
-
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|enterAlways"
-            android:id="@+id/collapse_toolbar">
-
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@drawable/toolbar_header">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorWhite"
-                        android:text="By Activity:"
-                        android:textSize="15dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="16dp">
-                        <Button
-                            android:id="@+id/all_logs"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="All"
-                            style="@style/logsButton"/>
-                        <Button
-                            android:id="@+id/thought_journal_logs"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/thought_journal_title"
-                            style="@style/logsButton" />
-                        <Button
-                            android:id="@+id/pros_and_cons_logs"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/pros_and_cons_title"
-                            style="@style/logsButton"/>
-                        <Button
-                            android:id="@+id/howd_i_get_here_logs"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/how_d_i_get_here_title"
-                            style="@style/logsButton" />
-                        <Button
-                            android:id="@+id/bad_behaviors_logs"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/bad_behaviors_title"
-                            style="@style/logsButton" />
-                        <Button
-                            android:id="@+id/identify_barriers_logs"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/identify_barriers_title"
-                            style="@style/logsButton" />
-                        <Button
-                            android:id="@+id/abcs_logs"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/abcs_title"
-                            style="@style/logsButton" />
-                    </LinearLayout>
-                </LinearLayout>
-            </HorizontalScrollView>
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <FrameLayout
-        android:id="@+id/dashboard_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/all_logs_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-    </FrameLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/logs_navigation" />
+</FrameLayout>

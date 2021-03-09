@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 
 import com.loopbreakr.cogstruct.R;
 
-public class LogsFragment extends Fragment {
+public class LogsViewFragment extends Fragment {
 
-    public LogsFragment() {
+    public LogsViewFragment() {
         // Required empty public constructor
     }
 
@@ -25,6 +25,6 @@ public class LogsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_logs, container, false);
+        return inflater.inflate(R.layout.fragment_t_j_logs, container, false);
     }
 }
