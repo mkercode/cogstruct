@@ -5,13 +5,15 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,25 +26,23 @@ import com.loopbreakr.cogstruct.logs.objects.LogsPreview;
 import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 
 public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateListener, LogsRecyclerAdapter.LogsListener {
+    private LogsViewModel logsViewModel;
     private RecyclerView recyclerView;
     private LogsRecyclerAdapter logsRecyclerAdapter;
     ThoughtJournalObject thoughtJournalLog;
-    public final String failTAG = "FAILED OPERATION ";
-    public final String successTAG = "SUCCEEDED OPERATION ";
 
-    public AllLogsFragment() {
-        // Required empty public constructor
-    }
+
+    public AllLogsFragment() { }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        logsViewModel = new ViewModelProvider(requireActivity()).get(LogsViewModel.class);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_all_logs, container, false);
     }
 
@@ -50,7 +50,6 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setRecyclerView(view);
-
     }
 
     private void setRecyclerView(View view) {
@@ -67,30 +66,40 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
                 .setQuery(query, LogsPreview.class)
                 .build();
 
+        //bind to adapter
         logsRecyclerAdapter = new LogsRecyclerAdapter(options, this);
         recyclerView.setAdapter(logsRecyclerAdapter);
-        //listen for updates in realtime to add to recyclerview
         logsRecyclerAdapter.startListening();
     }
 
+    //handle click behavior
     @Override
     public void clickLog(DocumentSnapshot snapshot) {
+        int navId = 0;
+
         if (snapshot != null) {
-            if(snapshot.get("formName").equals("Thought Journal"))
+            //save snapshot fields to object and get corresponding form fragment for that object in a case/switch statement
+            if(snapshot.getString("formName").equals("Thought Journal"))
             {
                 thoughtJournalLog = snapshot.toObject(ThoughtJournalObject.class);
-                Log.i("LOGGER","Emotion "+ thoughtJournalLog);
+                logsViewModel.setSnapshot(snapshot);
+                logsViewModel.setForm(thoughtJournalLog);
+                Log.i("LOGGER"," "+ ((ThoughtJournalObject) logsViewModel.getForm()).getDateCreated());
             }
+
+            NavController controller = Navigation.findNavController(requireView());
+            controller.navigate(navId);
         }
     }
 
+
+
+    //listen for auth states changed
     @Override
     public void onStart() {
         super.onStart();
-        //listen for auth state changed
         FirebaseAuth.getInstance().addAuthStateListener(this);
     }
-
     @Override
     public void onStop() {
         super.onStop();
@@ -100,9 +109,10 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
         }
     }
 
-    //monitor if the json web token expires
+    //handle behavior on auth state change
     @Override
     public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+        //if token expires
         if(firebaseAuth.getCurrentUser() == null){
             ((LogsActivity)requireActivity()).logOut();
             return;

@@ -3,26 +3,17 @@ package com.loopbreakr.cogstruct.logs;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.LoginActivity;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.logs.adapters.LogsRecyclerAdapter;
-import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 
-import java.util.List;
 
 public class LogsActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private LogsRecyclerAdapter logsRecyclerAdapter;
-    ThoughtJournalObject thoughtJournalLog;
     public final String failTAG = "FAILED OPERATION ";
     public final String successTAG = "SUCCEEDED OPERATION ";
-    public List<DocumentSnapshot> snapshotList;
-    public List<DocumentSnapshot> documentList;
+
 
 
     @Override
@@ -38,4 +29,5 @@ public class LogsActivity extends AppCompatActivity {
         startActivity(intent);
         this.finish();
     }
+
 }
