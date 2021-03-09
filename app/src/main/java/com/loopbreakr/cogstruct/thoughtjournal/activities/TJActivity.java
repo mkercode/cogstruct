@@ -24,14 +24,9 @@ public class TJActivity extends AppCompatActivity {
         setContentView(R.layout.activity_thought_journal);
         NavHostFragment thoughtJournal = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.thought_journal_fragment);
         NavController thoughtJournalController = thoughtJournal.getNavController();
-
     }
 
-
-
-
     public void sendToFirestore(String location, String time, String people, String situation, String behavior, String emotion, float emotionRating, String emotionDetail, String thoughts){
-
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         String dateCreated = getTimeDate();
         ThoughtJournalObject thoughtJournalEntry = new ThoughtJournalObject(dateCreated,userId,location,time,people,situation,behavior,emotion,emotionRating,emotionDetail,thoughts);

@@ -287,11 +287,13 @@
                     android:textColor="#59B65A"
                     android:textSize="16sp" />
                 <Button
-                    android:id="@+id/begin_button"
+                    android:id="@+id/suggestion_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_margin="12dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
                     android:background="@drawable/rounded_button_background"
                     android:textSize="12sp"
                     android:text="@string/suggestion_button_text"/>

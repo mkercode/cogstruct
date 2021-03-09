@@ -13,6 +13,6 @@
     <color name="colorWhite">#FFFFFFFF</color>
     <color name="colorTransparent">#00000000</color>
     <color name="lightGrey">#79000000</color>
-    <color name="colorToolBarAccent">#54B197</color>
+    <color name="colorToolBarAccent">#43A86B</color>
     <color name="colorRedMuted">#CC5973</color>
 </resources>

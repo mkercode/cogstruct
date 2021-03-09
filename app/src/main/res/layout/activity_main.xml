@@ -10,7 +10,7 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:background="@drawable/toolbar_header"
+        android:background="@drawable/rounded_toolbar_header"
         android:orientation="vertical"
         android:layout_gravity="top"/>
 
