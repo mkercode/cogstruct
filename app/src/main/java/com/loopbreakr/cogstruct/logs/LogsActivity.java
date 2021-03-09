@@ -1,18 +1,19 @@
 package com.loopbreakr.cogstruct.logs;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import android.content.Intent;
 import android.os.Bundle;
-import com.google.firebase.firestore.DocumentSnapshot;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.loopbreakr.cogstruct.LoginActivity;
 import com.loopbreakr.cogstruct.R;
 
 
-public class LogsActivity extends AppCompatActivity {
-    public final String failTAG = "FAILED OPERATION ";
-    public final String successTAG = "SUCCEEDED OPERATION ";
+public class LogsActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener {
 
 
 
@@ -25,9 +26,16 @@ public class LogsActivity extends AppCompatActivity {
     }
 
     public void logOut(){
+        Toast.makeText(this,"Network Error!",Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         this.finish();
     }
 
+    @Override
+    public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+        if(firebaseAuth.getCurrentUser() == null){
+            logOut();
+        }
+    }
 }

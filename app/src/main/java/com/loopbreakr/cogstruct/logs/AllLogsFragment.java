@@ -1,15 +1,14 @@
 package com.loopbreakr.cogstruct.logs;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +29,6 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
     private RecyclerView recyclerView;
     private LogsRecyclerAdapter logsRecyclerAdapter;
     ThoughtJournalObject thoughtJournalLog;
-
 
     public AllLogsFragment() { }
 
@@ -68,6 +66,7 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
 
         //bind to adapter
         logsRecyclerAdapter = new LogsRecyclerAdapter(options, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         recyclerView.setAdapter(logsRecyclerAdapter);
         logsRecyclerAdapter.startListening();
     }
@@ -84,6 +83,7 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
                 thoughtJournalLog = snapshot.toObject(ThoughtJournalObject.class);
                 logsViewModel.setSnapshot(snapshot);
                 logsViewModel.setForm(thoughtJournalLog);
+                navId = R.id.action_allLogsFragment_to_tjLogFragment;
                 Log.i("LOGGER"," "+ ((ThoughtJournalObject) logsViewModel.getForm()).getDateCreated());
             }
 
@@ -91,8 +91,6 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
             controller.navigate(navId);
         }
     }
-
-
 
     //listen for auth states changed
     @Override
@@ -115,7 +113,6 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
         //if token expires
         if(firebaseAuth.getCurrentUser() == null){
             ((LogsActivity)requireActivity()).logOut();
-            return;
         }
         //recreate recyclerview when state changed
         createRecyclerView(firebaseAuth.getCurrentUser());

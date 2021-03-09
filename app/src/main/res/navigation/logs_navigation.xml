@@ -10,12 +10,52 @@
         android:label="fragment_all_logs"
         tools:layout="@layout/fragment_all_logs" >
         <action
-            android:id="@+id/action_allLogsFragment_to_LogsViewFragment"
-            app:destination="@id/LogsViewFragment" />
+            android:id="@+id/action_allLogsFragment_to_tjLogFragment"
+            app:destination="@id/tjLogFragment" />
+        <action
+            android:id="@+id/action_allLogsFragment_to_prosConsLogFragment"
+            app:destination="@id/prosConsLogFragment" />
+        <action
+            android:id="@+id/action_allLogsFragment_to_HIGHLogFragment"
+            app:destination="@id/HIGHLogFragment" />
+        <action
+            android:id="@+id/action_allLogsFragment_to_BBLogFragment"
+            app:destination="@id/BBLogFragment" />
+        <action
+            android:id="@+id/action_allLogsFragment_to_IBLogFragment"
+            app:destination="@id/IBLogFragment" />
+        <action
+            android:id="@+id/action_allLogsFragment_to_ABCLogFragment"
+            app:destination="@id/ABCLogFragment" />
     </fragment>
     <fragment
-        android:id="@+id/LogsViewFragment"
-        android:name="com.loopbreakr.cogstruct.logs.LogsViewFragment"
-        android:label="fragment_log_view"
-        tools:layout="@layout/fragment_t_j_logs" />
+        android:id="@+id/tjLogFragment"
+        android:name="com.loopbreakr.cogstruct.logs.TjLogFragment"
+        android:label="fragment_tj_log"
+        tools:layout="@layout/fragment_tj_log" />
+    <fragment
+        android:id="@+id/prosConsLogFragment"
+        android:name="com.loopbreakr.cogstruct.logs.ProsConsLogFragment"
+        android:label="fragment_pros_cons_log"
+        tools:layout="@layout/fragment_pros_cons_log" />
+    <fragment
+        android:id="@+id/HIGHLogFragment"
+        android:name="com.loopbreakr.cogstruct.logs.HIGHLogFragment"
+        android:label="fragment_high_log"
+        tools:layout="@layout/fragment_h_i_g_h_log" />
+    <fragment
+        android:id="@+id/BBLogFragment"
+        android:name="com.loopbreakr.cogstruct.logs.BBLogFragment"
+        android:label="fragment_bb_log"
+        tools:layout="@layout/fragment_b_b_log" />
+    <fragment
+        android:id="@+id/IBLogFragment"
+        android:name="com.loopbreakr.cogstruct.logs.IBLogFragment"
+        android:label="fragment_ib_log"
+        tools:layout="@layout/fragment_i_b_log" />
+    <fragment
+        android:id="@+id/ABCLogFragment"
+        android:name="com.loopbreakr.cogstruct.logs.ABCLogFragment"
+        android:label="fragment_abc_log"
+        tools:layout="@layout/fragment_a_b_c_log" />
 </navigation>
