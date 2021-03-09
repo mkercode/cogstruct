@@ -13,17 +13,18 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.loopbreakr.cogstruct.logs.LogsActivity;
 
 
 public class UiFragment extends Fragment {
     private Toolbar toolbar;
     private NavController navController;
     private CardView thoughtJournalCard, prosConsCard, howdIGetHereCard, badBehaviorsCard, identifyBarriersCard, abcsCard;
-    private ImageView settingsIcon, insightsIcon, learnMoreIcon, aboutIcon;
+    private ImageView logsIcon, insightsIcon, learnMoreIcon, aboutIcon;
 
 
     public UiFragment() {
@@ -39,8 +40,7 @@ public class UiFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_ui, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_ui, container, false);
     }
 
 
@@ -57,18 +57,13 @@ public class UiFragment extends Fragment {
     private void setToolbar(View view) {
         toolbar = view.findViewById(R.id.homeToolBar);
         toolbar.setOverflowIcon(ContextCompat.getDrawable(requireActivity(), R.drawable.ic_logout));
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                if(item.getItemId() == R.id.action_logout){
-                    ((MainActivity)requireActivity()).signOutClicked();
-                }
-                return false;
+        toolbar.setOnMenuItemClickListener(item -> {
+            if(item.getItemId() == R.id.action_logout){
+                ((MainActivity)requireActivity()).signOutClicked();
             }
+            return false;
         });
     }
-
-
 
 
     private void findViews(View view) {
@@ -79,9 +74,8 @@ public class UiFragment extends Fragment {
         badBehaviorsCard = view.findViewById(R.id.negative_thoughts_card);
         identifyBarriersCard = view.findViewById(R.id.identify_barriers_card);
         abcsCard = view.findViewById(R.id.abcs_card);
-
         //find bottom menu icons
-        settingsIcon = view.findViewById(R.id.logs_image);
+        logsIcon = view.findViewById(R.id.logs_image);
         insightsIcon = view.findViewById(R.id.insights_image);
         learnMoreIcon = view.findViewById(R.id.learn_more_image);
         aboutIcon = view.findViewById(R.id.about_image);
@@ -95,10 +89,13 @@ public class UiFragment extends Fragment {
         badBehaviorsCard.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_BBViewFragment));
         identifyBarriersCard.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_IBViewFragment));
         abcsCard.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_ABCViewFragment));
-
         insightsIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_insightsFragment));
         learnMoreIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_learnMoreFragment));
         aboutIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_aboutFragment));
+        logsIcon.setOnClickListener(v ->{
+            Intent intent = new Intent(this.requireActivity(), LogsActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void logOut(){

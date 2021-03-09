@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct.thoughtjournal;
+package com.loopbreakr.cogstruct.thoughtjournal.objects;
 
 public class ThoughtJournalObject {
     private String dateCreated;
@@ -11,9 +11,11 @@ public class ThoughtJournalObject {
     private String emotion;
     private String emotionDetail;
     private String thoughts;
+    private String formName;
     private float emotionRating;
 
-    public ThoughtJournalObject( String dateCreated, String userId, String location, String time, String people, String situation, String behavior, String emotion, float emotionRating, String emotionDetail, String thoughts) {
+    public ThoughtJournalObject(String dateCreated, String userId, String location, String time, String people, String situation, String behavior, String emotion, float emotionRating, String emotionDetail, String thoughts) {
+        this.formName = "Thought Journal";
         this.dateCreated = dateCreated;
         this.userId = userId;
         this.location = location;
@@ -28,6 +30,14 @@ public class ThoughtJournalObject {
     }
 
     public ThoughtJournalObject() {
+    }
+
+    public String getFormName() {
+        return formName;
+    }
+
+    public void setFormName(String formName){
+        this.formName = formName;
     }
 
     public String getDateCreated() {
