@@ -21,7 +21,6 @@ import com.loopbreakr.cogstruct.logs.LogsActivity;
 
 
 public class UiFragment extends Fragment {
-    private Toolbar toolbar;
     private NavController navController;
     private CardView thoughtJournalCard, prosConsCard, howdIGetHereCard, badBehaviorsCard, identifyBarriersCard, abcsCard;
     private ImageView logsIcon, insightsIcon, learnMoreIcon, aboutIcon;
@@ -55,7 +54,7 @@ public class UiFragment extends Fragment {
     }
 
     private void setToolbar(View view) {
-        toolbar = view.findViewById(R.id.homeToolBar);
+        Toolbar toolbar = view.findViewById(R.id.homeToolBar);
         toolbar.setOverflowIcon(ContextCompat.getDrawable(requireActivity(), R.drawable.ic_logout));
         toolbar.setOnMenuItemClickListener(item -> {
             if(item.getItemId() == R.id.action_logout){

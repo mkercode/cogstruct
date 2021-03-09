@@ -17,10 +17,10 @@ import com.loopbreakr.cogstruct.R;
 import java.util.Objects;
 
 
-public class PCViewFragnment extends Fragment {
+public class PCViewFragment extends Fragment {
 
 
-    public PCViewFragnment() {
+    public PCViewFragment() {
         // Required empty public constructor
     }
 

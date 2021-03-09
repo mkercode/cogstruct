@@ -20,7 +20,7 @@ import java.util.Arrays;
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "Login/Register Activity";
-    int AUTHUI_REQUEST_CODE = 1001;
+    private final int AUTHUI_REQUEST_CODE = 1001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

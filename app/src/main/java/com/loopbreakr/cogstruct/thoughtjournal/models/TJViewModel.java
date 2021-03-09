@@ -2,8 +2,6 @@ package com.loopbreakr.cogstruct.thoughtjournal.models;
 
 import androidx.lifecycle.ViewModel;
 
-import java.util.Arrays;
-import java.util.List;
 
 public class TJViewModel extends ViewModel {
     private String locationText = "";
@@ -20,7 +18,7 @@ public class TJViewModel extends ViewModel {
     private float emotionRating = 0;
     private String emotionRatingString = "";
 
-    public void setlocationText(CharSequence input) {
+    public void setLocationText(CharSequence input) {
         locationText = input.toString();
     }
     public void setTimeText(CharSequence input) {

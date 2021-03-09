@@ -96,7 +96,7 @@ public class TJPageOne extends Fragment {
     }
 
     private void setTextInput() {
-        tjViewModel.setlocationText(placeInput.getText());
+        tjViewModel.setLocationText(placeInput.getText());
         if(tjViewModel.getPeopleRadioId() != R.id.alone){
             tjViewModel.setPeopleText(peopleInput.getText());
         }

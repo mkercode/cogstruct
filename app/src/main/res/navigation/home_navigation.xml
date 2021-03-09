@@ -46,7 +46,7 @@
         tools:layout="@layout/fragment_tj_view" />
     <fragment
         android:id="@+id/PCViewFragment"
-        android:name="com.loopbreakr.cogstruct.home.fragments.PCViewFragnment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.PCViewFragment"
         android:label="fragment_pros_and_cons"
         tools:layout="@layout/fragment_pros_and_cons" />
     <fragment

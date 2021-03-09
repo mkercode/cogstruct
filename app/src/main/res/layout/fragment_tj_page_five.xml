@@ -133,7 +133,7 @@
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@drawable/bottom_bar_backround"
+            android:background="@drawable/bottom_bar_background"
             android:clickable="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

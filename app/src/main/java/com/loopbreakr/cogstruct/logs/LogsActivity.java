@@ -1,6 +1,5 @@
 package com.loopbreakr.cogstruct.logs;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -8,18 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-
-import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.loopbreakr.cogstruct.LoginActivity;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.logs.adapters.LogsRecyclerAdapter;
-import com.loopbreakr.cogstruct.logs.objects.LogsPreview;
 import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 
 import java.util.List;

@@ -55,6 +55,6 @@ public class LogsRecyclerAdapter extends FirestoreRecyclerAdapter<LogsPreview, L
     }
     public interface LogsListener {
         //handle numTimes increments when clicking +/-
-        public void clickLog(DocumentSnapshot snapshot);
+        void clickLog(DocumentSnapshot snapshot);
     }
 }
