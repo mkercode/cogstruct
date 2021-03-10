@@ -9,7 +9,7 @@
         android:id="@+id/tjPageOne"
         android:name="com.loopbreakr.cogstruct.thoughtjournal.fragments.TJPageOne"
         android:label="fragment_tj_page_one"
-        tools:layout="@layout/fragment_tj_page_one" >
+        tools:layout="@layout/tj_fragment_page_one" >
         <action
             android:id="@+id/action_tjPageOne_to_tjPageTwo"
             app:destination="@id/tjPageTwo" />
@@ -18,7 +18,7 @@
         android:id="@+id/tjPageTwo"
         android:name="com.loopbreakr.cogstruct.thoughtjournal.fragments.TJPageTwo"
         android:label="fragment_tj_page_two"
-        tools:layout="@layout/fragment_tj_page_two" >
+        tools:layout="@layout/tj_fragment_page_two" >
         <action
             android:id="@+id/action_tjPageTwo_to_tjPageThree"
             app:destination="@id/tjPageThree" />
@@ -27,7 +27,7 @@
         android:id="@+id/tjPageThree"
         android:name="com.loopbreakr.cogstruct.thoughtjournal.fragments.TJPageThree"
         android:label="fragment_tj_page_three"
-        tools:layout="@layout/fragment_tj_page_three" >
+        tools:layout="@layout/tj_fragment_page_three" >
         <action
             android:id="@+id/action_tjPageThree_to_tjPageFour"
             app:destination="@id/tjPageFour" />
@@ -36,7 +36,7 @@
         android:id="@+id/tjPageFour"
         android:name="com.loopbreakr.cogstruct.thoughtjournal.fragments.TJPageFour"
         android:label="fragment_tj_page_four"
-        tools:layout="@layout/fragment_tj_page_four" >
+        tools:layout="@layout/tj_fragment_page_four" >
         <action
             android:id="@+id/action_tjPageFour_to_tjPageFive"
             app:destination="@id/tjPageFive" />
@@ -45,7 +45,7 @@
         android:id="@+id/tjPageFive"
         android:name="com.loopbreakr.cogstruct.thoughtjournal.fragments.TJPageFive"
         android:label="fragment_tj_page_five"
-        tools:layout="@layout/fragment_tj_page_five" >
+        tools:layout="@layout/tj_fragment_page_five" >
         <action
             android:id="@+id/action_tjPageFive_to_tjPageSix"
             app:destination="@id/tjPageSix" />
@@ -54,5 +54,5 @@
         android:id="@+id/tjPageSix"
         android:name="com.loopbreakr.cogstruct.thoughtjournal.fragments.TJPageSix"
         android:label="fragment_tj_page_six"
-        tools:layout="@layout/fragment_tj_page_six" />
+        tools:layout="@layout/tj_fragment_page_six" />
 </navigation>

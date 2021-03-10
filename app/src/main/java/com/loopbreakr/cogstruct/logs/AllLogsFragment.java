@@ -41,7 +41,7 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_all_logs, container, false);
+        return inflater.inflate(R.layout.logs_fragment_all, container, false);
     }
 
     @Override
@@ -87,7 +87,6 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
     //save snapshot fields to object and get corresponding form fragment for that object in a case/switch statement
     private int getSnapshotData(DocumentSnapshot snapshot){
         int navId = 0;
-
         switch (snapshot.getString("formName")){
             case "Thought Journal":
                 thoughtJournalLog = snapshot.toObject(ThoughtJournalObject.class);
@@ -116,7 +115,6 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
                 navId = R.id.action_allLogsFragment_to_ABCLogFragment;
                 break;
         }
-
         return navId;
     }
 

@@ -61,6 +61,6 @@ public class BBLogFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_b_b_log, container, false);
+        return inflater.inflate(R.layout.logs_fragment_bb, container, false);
     }
 }

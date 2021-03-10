@@ -38,7 +38,7 @@ public class TJPageOne extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tj_page_one, container, false);
+        return inflater.inflate(R.layout.tj_fragment_page_one, container, false);
     }
 
     @Override

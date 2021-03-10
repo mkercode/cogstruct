@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".logs.TjLogFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review_text">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tj_log_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:text="@string/thought_journal_title"
+                android:textColor="@color/colorGreenText"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tj_log_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:textColor="@color/colorGreenText"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tj_log_title" />
+
+
+            <TextView
+                android:id="@+id/place_log_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/place_review_question"
+                android:textColor="@color/colorGreenText"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tj_log_date" />
+
+
+            <TextView
+                android:id="@+id/place_log"
+                style="@style/optionalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/edit_place_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/place_log_question" />
+
+            <ImageView
+                android:id="@+id/edit_place_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/edit_icon"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/place_log"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/place_log"
+                app:srcCompat="@drawable/ic_edit" />
+
+
+            <TextView
+                android:id="@+id/time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/time_review_question"
+                android:textColor="@color/colorGreenText"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/place_log" />
+
+
+            <TextView
+                android:id="@+id/time_log"
+                style="@style/optionalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/edit_time_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/time_text" />
+
+            <ImageView
+                android:id="@+id/edit_time_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/edit_icon"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/time_log"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/time_log"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <TextView
+                android:id="@+id/people_log_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/people_review_question"
+                android:textColor="@color/colorGreenText"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/time_log" />
+
+            <TextView
+                android:id="@+id/people_log"
+                style="@style/optionalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text=""
+                app:layout_constraintEnd_toStartOf="@+id/edit_people_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/people_log_question" />
+
+
+            <ImageView
+                android:id="@+id/edit_people_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/edit_icon"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/people_log"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/people_log"
+                app:srcCompat="@drawable/ic_edit" />
+
+
+            <TextView
+                android:id="@+id/situation_log_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/logs_situation_question"
+                android:textColor="@color/colorGreenText"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/people_log" />
+
+            <TextView
+                android:id="@+id/situation_log"
+                style="@style/optionalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text=""
+                app:layout_constraintEnd_toStartOf="@+id/edit_situation_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/situation_log_question" />
+
+            <ImageView
+                android:id="@+id/edit_situation_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/edit_icon"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/situation_log"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/situation_log"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <TextView
+                android:id="@+id/behavior_log_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/logs_behavior_question"
+                android:textColor="@color/colorGreenText"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/situation_log" />
+
+            <TextView
+                android:id="@+id/behavior_log"
+                style="@style/optionalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text=""
+                app:layout_constraintEnd_toStartOf="@+id/edit_behavior_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/behavior_log_question" />
+
+            <ImageView
+                android:id="@+id/edit_behavior_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/edit_icon"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/behavior_log"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/behavior_log"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <TextView
+                android:id="@+id/emotion_log_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/logs_main_emotion_question"
+                android:textColor="@color/colorGreenText"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/behavior_log" />
+
+            <TextView
+                android:id="@+id/emotion_log"
+                style="@style/optionalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text=""
+                app:layout_constraintEnd_toStartOf="@+id/edit_emotion_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emotion_log_question" />
+
+            <ImageView
+                android:id="@+id/edit_emotion_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/edit_icon"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/emotion_log"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/emotion_log"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <TextView
+                android:id="@+id/emotion_rating_log_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/ilog_emotion_intensity_question"
+                android:textColor="@color/colorGreenText"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emotion_log" />
+
+            <TextView
+                android:id="@+id/emotion_rating_log"
+                style="@style/optionalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text=""
+                app:layout_constraintEnd_toStartOf="@+id/edit_emotion_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emotion_rating_log_question" />
+
+            <TextView
+                android:id="@+id/emotion_details_log_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/log_additional_details"
+                android:textColor="@color/colorGreenText"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emotion_rating_log" />
+
+            <TextView
+                android:id="@+id/emotion_details_log"
+                style="@style/optionalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text=""
+                app:layout_constraintEnd_toStartOf="@+id/edit_emotion_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emotion_details_log_question" />
+
+
+
+            <TextView
+                android:id="@+id/thoughts_log_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/log_thougths_question"
+                android:textColor="@color/colorGreenText"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emotion_details_log" />
+
+            <TextView
+                android:id="@+id/thoughts_log"
+                style="@style/optionalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text=""
+                app:layout_constraintEnd_toStartOf="@+id/edit_thoughts_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thoughts_log_question" />
+
+            <ImageView
+                android:id="@+id/edit_thoughts_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/edit_icon"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/thoughts_log"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/thoughts_log"
+                app:srcCompat="@drawable/ic_edit" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+</LinearLayout>

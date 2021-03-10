@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements FirebaseAuth.Auth
             setContentView(R.layout.loading_screen);
         }
         else{
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.home_activity_main);
         }
     }
 

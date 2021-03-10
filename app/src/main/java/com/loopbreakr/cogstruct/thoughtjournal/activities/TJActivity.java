@@ -21,7 +21,7 @@ public class TJActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thought_journal);
+        setContentView(R.layout.tj_activity);
         NavHostFragment thoughtJournal = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.thought_journal_fragment);
         NavController thoughtJournalController = thoughtJournal.getNavController();
     }

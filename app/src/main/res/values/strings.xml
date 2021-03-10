@@ -73,4 +73,12 @@
     <string name="people_review_question">Who was I with?</string>
     <string name="time_review_question">When did it happen?</string>
     <string name="place_review_question">Where did it happen?</string>
+    <string name="edit_icon">Edit Icon</string>
+    <string name="review_text">Review Text</string>
+    <string name="logs_behavior_question">What was the unhelpful behavior?</string>
+    <string name="logs_situation_question">Situation details:</string>
+    <string name="logs_main_emotion_question">What was the main emotion experienced?</string>
+    <string name="ilog_emotion_intensity_question">Intensity rating:</string>
+    <string name="log_additional_details">Additional details:</string>
+    <string name="log_thougths_question">Thoughts experienced:</string>
 </resources>
