@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/editLog"
-        android:title="Edit"
+    <item android:id="@+id/action_editLog"
+        android:title="@string/edit"
         app:showAsAction="never"/>
 
-    <item android:id="@+id/deleteLog"
-        android:title="Delete"
+    <item android:id="@+id/action_deleteLog"
+        android:title="@string/delete"
         app:showAsAction="never"/>
 
 </menu>

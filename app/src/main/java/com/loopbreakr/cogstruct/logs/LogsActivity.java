@@ -2,6 +2,7 @@ package com.loopbreakr.cogstruct.logs;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import android.content.Intent;
@@ -24,6 +25,7 @@ public class LogsActivity extends AppCompatActivity implements FirebaseAuth.Auth
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.logs_fragment_container);
         NavController navController = navHostFragment.getNavController();
     }
+
 
     public void logOut(){
         Toast.makeText(this,"Network Error!",Toast.LENGTH_LONG).show();

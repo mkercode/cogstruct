@@ -81,4 +81,7 @@
     <string name="ilog_emotion_intensity_question">Intensity rating:</string>
     <string name="log_additional_details">Additional details:</string>
     <string name="log_thougths_question">Thoughts experienced:</string>
+    <string name="logs_empty_field">Field not completed.</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
 </resources>

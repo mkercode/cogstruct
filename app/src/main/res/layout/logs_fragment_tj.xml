@@ -7,6 +7,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".logs.TjLogsFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/logsToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/bottom_bar_background"
+        app:menu="@menu/logs_view_menu"
+        android:theme="@style/Theme.MaterialComponents.NoActionBar"
+        app:popupTheme="@style/PopupMenuStyle" />
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -53,7 +62,7 @@
                 android:layout_margin="16dp"
                 android:text="@string/place_review_question"
                 android:textColor="@color/colorGreenText"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tj_log_date" />
 
@@ -64,21 +73,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                app:layout_constraintEnd_toStartOf="@+id/edit_place_icon"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/place_log_question" />
-
-            <ImageView
-                android:id="@+id/edit_place_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="@string/edit_icon"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/place_log"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/place_log"
-                app:srcCompat="@drawable/ic_edit" />
 
 
             <TextView
@@ -88,7 +86,7 @@
                 android:layout_margin="16dp"
                 android:text="@string/time_review_question"
                 android:textColor="@color/colorGreenText"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/place_log" />
 
@@ -99,21 +97,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                app:layout_constraintEnd_toStartOf="@+id/edit_time_icon"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/time_log_question" />
-
-            <ImageView
-                android:id="@+id/edit_time_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="@string/edit_icon"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/time_log"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/time_log"
-                app:srcCompat="@drawable/ic_edit" />
 
             <TextView
                 android:id="@+id/people_log_question"
@@ -122,7 +109,7 @@
                 android:layout_margin="16dp"
                 android:text="@string/people_review_question"
                 android:textColor="@color/colorGreenText"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/time_log" />
 
@@ -133,22 +120,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text=""
-                app:layout_constraintEnd_toStartOf="@+id/edit_people_icon"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/people_log_question" />
-
-
-            <ImageView
-                android:id="@+id/edit_people_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="@string/edit_icon"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/people_log"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/people_log"
-                app:srcCompat="@drawable/ic_edit" />
 
 
             <TextView
@@ -158,7 +133,7 @@
                 android:layout_margin="16dp"
                 android:text="@string/logs_situation_question"
                 android:textColor="@color/colorGreenText"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/people_log" />
 
@@ -169,21 +144,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text=""
-                app:layout_constraintEnd_toStartOf="@+id/edit_situation_icon"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/situation_log_question" />
-
-            <ImageView
-                android:id="@+id/edit_situation_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="@string/edit_icon"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/situation_log"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/situation_log"
-                app:srcCompat="@drawable/ic_edit" />
 
             <TextView
                 android:id="@+id/behavior_log_question"
@@ -192,7 +156,7 @@
                 android:layout_margin="16dp"
                 android:text="@string/logs_behavior_question"
                 android:textColor="@color/colorGreenText"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/situation_log" />
 
@@ -203,21 +167,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text=""
-                app:layout_constraintEnd_toStartOf="@+id/edit_behavior_icon"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/behavior_log_question" />
-
-            <ImageView
-                android:id="@+id/edit_behavior_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="@string/edit_icon"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/behavior_log"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/behavior_log"
-                app:srcCompat="@drawable/ic_edit" />
 
             <TextView
                 android:id="@+id/emotion_log_question"
@@ -226,7 +179,7 @@
                 android:layout_margin="16dp"
                 android:text="@string/logs_main_emotion_question"
                 android:textColor="@color/colorGreenText"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/behavior_log" />
 
@@ -237,21 +190,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text=""
-                app:layout_constraintEnd_toStartOf="@+id/edit_emotion_icon"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emotion_log_question" />
-
-            <ImageView
-                android:id="@+id/edit_emotion_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="@string/edit_icon"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/emotion_log"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/emotion_log"
-                app:srcCompat="@drawable/ic_edit" />
 
             <TextView
                 android:id="@+id/emotion_rating_log_question"
@@ -260,7 +202,7 @@
                 android:layout_margin="16dp"
                 android:text="@string/ilog_emotion_intensity_question"
                 android:textColor="@color/colorGreenText"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emotion_log" />
 
@@ -271,7 +213,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text=""
-                app:layout_constraintEnd_toStartOf="@+id/edit_emotion_icon"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emotion_rating_log_question" />
 
@@ -282,7 +225,7 @@
                 android:layout_margin="16dp"
                 android:text="@string/log_additional_details"
                 android:textColor="@color/colorGreenText"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emotion_rating_log" />
 
@@ -293,7 +236,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text=""
-                app:layout_constraintEnd_toStartOf="@+id/edit_emotion_icon"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emotion_details_log_question" />
 
@@ -306,7 +250,7 @@
                 android:layout_margin="16dp"
                 android:text="@string/log_thougths_question"
                 android:textColor="@color/colorGreenText"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/emotion_details_log" />
 
@@ -317,24 +261,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text=""
-                app:layout_constraintEnd_toStartOf="@+id/edit_thoughts_icon"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/thoughts_log_question" />
-
-            <ImageView
-                android:id="@+id/edit_thoughts_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="@string/edit_icon"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="@+id/thoughts_log"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/thoughts_log"
-                app:srcCompat="@drawable/ic_edit" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </ScrollView>
 </LinearLayout>

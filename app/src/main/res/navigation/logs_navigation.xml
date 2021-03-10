@@ -32,7 +32,11 @@
         android:id="@+id/tjLogFragment"
         android:name="com.loopbreakr.cogstruct.logs.TjLogsFragment"
         android:label="fragment_tj_log"
-        tools:layout="@layout/logs_fragment_tj" />
+        tools:layout="@layout/logs_fragment_tj" >
+        <action
+            android:id="@+id/action_tjLogFragment_to_TJLogEditFragment"
+            app:destination="@id/TJLogEditFragment" />
+    </fragment>
     <fragment
         android:id="@+id/prosConsLogFragment"
         android:name="com.loopbreakr.cogstruct.logs.ProsConsLogsFragment"
@@ -58,4 +62,9 @@
         android:name="com.loopbreakr.cogstruct.logs.ABCLogsFragment"
         android:label="fragment_abc_log"
         tools:layout="@layout/logs_fragment_abc" />
+    <fragment
+        android:id="@+id/TJLogEditFragment"
+        android:name="com.loopbreakr.cogstruct.TJLogEditFragment"
+        android:label="fragment_t_j_log_edit"
+        tools:layout="@layout/logs_fragment_tj_edit" />
 </navigation>
