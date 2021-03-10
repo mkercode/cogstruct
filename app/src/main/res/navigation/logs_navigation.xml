@@ -30,32 +30,32 @@
     </fragment>
     <fragment
         android:id="@+id/tjLogFragment"
-        android:name="com.loopbreakr.cogstruct.logs.TjLogFragment"
+        android:name="com.loopbreakr.cogstruct.logs.TjLogsFragment"
         android:label="fragment_tj_log"
         tools:layout="@layout/logs_fragment_tj" />
     <fragment
         android:id="@+id/prosConsLogFragment"
-        android:name="com.loopbreakr.cogstruct.logs.ProsConsLogFragment"
+        android:name="com.loopbreakr.cogstruct.logs.ProsConsLogsFragment"
         android:label="fragment_pros_cons_log"
         tools:layout="@layout/logs_fragment_pros_cons" />
     <fragment
         android:id="@+id/HIGHLogFragment"
-        android:name="com.loopbreakr.cogstruct.logs.HIGHLogFragment"
+        android:name="com.loopbreakr.cogstruct.logs.HIGHLogsFragment"
         android:label="fragment_high_log"
         tools:layout="@layout/logs_fragment_high" />
     <fragment
         android:id="@+id/BBLogFragment"
-        android:name="com.loopbreakr.cogstruct.logs.BBLogFragment"
+        android:name="com.loopbreakr.cogstruct.logs.BBLogsFragment"
         android:label="fragment_bb_log"
         tools:layout="@layout/logs_fragment_bb" />
     <fragment
         android:id="@+id/IBLogFragment"
-        android:name="com.loopbreakr.cogstruct.logs.IBLogFragment"
+        android:name="com.loopbreakr.cogstruct.logs.IBLogsFragment"
         android:label="fragment_ib_log"
         tools:layout="@layout/logs_fragment_ib" />
     <fragment
         android:id="@+id/ABCLogFragment"
-        android:name="com.loopbreakr.cogstruct.logs.ABCLogFragment"
+        android:name="com.loopbreakr.cogstruct.logs.ABCLogsFragment"
         android:label="fragment_abc_log"
         tools:layout="@layout/logs_fragment_abc" />
 </navigation>

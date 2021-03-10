@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".logs.TjLogFragment">
+    tools:context=".logs.TjLogsFragment">
 
 
     <ScrollView
@@ -82,7 +82,7 @@
 
 
             <TextView
-                android:id="@+id/time_text"
+                android:id="@+id/time_log_question"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -101,7 +101,7 @@
                 android:layout_margin="16dp"
                 app:layout_constraintEnd_toStartOf="@+id/edit_time_icon"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/time_text" />
+                app:layout_constraintTop_toBottomOf="@+id/time_log_question" />
 
             <ImageView
                 android:id="@+id/edit_time_icon"
