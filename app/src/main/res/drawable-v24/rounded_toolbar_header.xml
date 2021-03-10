@@ -9,6 +9,7 @@
             android:shape="oval">
             <gradient
                 android:startColor="@color/colorToolbarStart"
+                android:centerColor="@color/colorToolBarAccent"
                 android:endColor="@color/colorToolBarAccent"
                 android:angle="90" />
         </shape>

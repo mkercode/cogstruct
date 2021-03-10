@@ -1,14 +1,358 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TJLogEditFragment">
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".logs.TJLogsEditFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/edit_logs_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="65dp"
+        android:background="@drawable/header_logs_background"
+        app:menu="@menu/logs_edit_menu"
+        android:theme="@style/Theme.MaterialComponents.NoActionBar"
+        app:popupTheme="@style/PopupMenuStyle" />
 
-</FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review_text">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tj_log_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:text="@string/thought_journal_title"
+            android:textColor="@color/colorGreenText"
+            android:textSize="36sp" />
+
+
+        <TextView
+            android:id="@+id/tj_edit_log_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textColor="@color/colorGreenText"
+            android:textSize="15sp"
+            android:textStyle="italic" />
+
+
+        <TextView
+            android:id="@+id/place_log_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/place_review_question"
+            android:textColor="@color/colorGreenText"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/place_edit_log"
+            android:textColor="@color/lightGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="15sp"
+            android:inputType="textAutoCorrect|textMultiLine"
+            android:ems="15"
+            android:minLines="2"
+            android:maxLines="2" />
+
+
+        <TextView
+            android:id="@+id/time_log_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/time_review_question"
+            android:textColor="@color/colorGreenText"
+            android:textSize="18sp" />
+
+
+        <RadioGroup
+            android:id="@+id/time_log_radiogroup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            >
+
+            <RadioButton
+                android:id="@+id/morning_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/morning"
+                android:textColor="@color/lightGrey"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/noonish_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/noonish"
+                android:textColor="@color/lightGrey"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/afternoon_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/afternoon"
+                android:textColor="@color/lightGrey"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/evening_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/evening"
+                android:textColor="@color/lightGrey"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/night_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/at_night"
+                android:textColor="@color/lightGrey"
+                android:textSize="15sp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/people_log_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/people_review_question"
+            android:textColor="@color/colorGreenText"
+            android:textSize="18sp" />
+
+
+        <RadioGroup
+            android:id="@+id/people_log_radiogroup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeQuestion">
+
+            <RadioButton
+                android:id="@+id/alone_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alone"
+                android:textColor="@color/lightGrey"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/with_othersLog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/with_others"
+                android:textColor="@color/lightGrey"
+                android:textSize="15sp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/people_text_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/tj_page_one_people_hint"
+            android:textColor="@color/colorGreenText"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/people_edit_log"
+            android:textColor="@color/lightGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="15sp"
+            android:inputType="textAutoCorrect|textMultiLine"
+            android:ems="15"
+            android:minLines="2"
+            android:maxLines="2" />
+
+        <TextView
+            android:id="@+id/situation_log_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/logs_situation_question"
+            android:textColor="@color/colorGreenText"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/situation_edit_log"
+            android:textColor="@color/lightGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="15sp"
+            android:inputType="textAutoCorrect|textMultiLine"
+            android:ems="15"
+            android:minLines="2"
+            android:maxLines="2" />
+
+        <TextView
+            android:id="@+id/behavior_log_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/logs_behavior_question"
+            android:textColor="@color/colorGreenText"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/situation_log" />
+
+        <EditText
+            android:id="@+id/behavior_edit_log"
+            android:textColor="@color/lightGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="15sp"
+            android:inputType="textAutoCorrect|textMultiLine"
+            android:ems="15"
+            android:minLines="2"
+            android:maxLines="2" />
+
+        <TextView
+            android:id="@+id/emotion_log_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/logs_main_emotion_question"
+            android:textColor="@color/colorGreenText"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/behavior_log" />
+
+        <RadioGroup
+            android:id="@+id/emotion_log_radiogroup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_emotion_question">
+
+            <RadioButton
+                android:id="@+id/sadness_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sadness"
+                android:textColor="@color/lightGrey"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/anger_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anger"
+                android:textColor="@color/lightGrey"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/fear_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fear"
+                android:textColor="@color/lightGrey"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/happiness_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Happiness"
+                android:textColor="@color/lightGrey"
+                android:textSize="16sp" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/emotion_rating_log_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/ilog_emotion_intensity_question"
+            android:textColor="@color/colorGreenText"
+            android:textSize="18sp" />
+
+        <RatingBar
+            android:id="@+id/emotion_rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emotional_intensity_question" />
+
+        <TextView
+            android:id="@+id/emotion_details_log_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/log_additional_details"
+            android:textColor="@color/colorGreenText"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emotion_rating_log" />
+
+        <EditText
+            android:id="@+id/emotion_details_edit_log"
+            android:textColor="@color/lightGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="15sp"
+            android:inputType="textAutoCorrect|textMultiLine"
+            android:ems="15"
+            android:minLines="2"
+            android:maxLines="2" />
+
+
+
+        <TextView
+            android:id="@+id/thoughts_log_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/log_thougths_question"
+            android:textColor="@color/colorGreenText"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/thoughts_edit_log"
+            android:textColor="@color/lightGrey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="15sp"
+            android:inputType="textAutoCorrect|textMultiLine"
+            android:ems="15"
+            android:minLines="2"
+            android:maxLines="2" />
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

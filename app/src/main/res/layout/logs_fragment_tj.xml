@@ -10,8 +10,8 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/logsToolbar"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@drawable/bottom_bar_background"
+        android:layout_height="65dp"
+        android:background="@drawable/header_logs_background"
         app:menu="@menu/logs_view_menu"
         android:theme="@style/Theme.MaterialComponents.NoActionBar"
         app:popupTheme="@style/PopupMenuStyle" />

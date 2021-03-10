@@ -64,7 +64,7 @@
         tools:layout="@layout/logs_fragment_abc" />
     <fragment
         android:id="@+id/TJLogEditFragment"
-        android:name="com.loopbreakr.cogstruct.TJLogEditFragment"
+        android:name="com.loopbreakr.cogstruct.logs.TJLogsEditFragment"
         android:label="fragment_t_j_log_edit"
         tools:layout="@layout/logs_fragment_tj_edit" />
 </navigation>

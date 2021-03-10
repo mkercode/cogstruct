@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -34,7 +35,6 @@ import java.util.List;
 
 public class TjLogsFragment extends Fragment {
     LogsViewModel logsViewModel;
-    private Menu topMenu;
     private ThoughtJournalObject thoughtJournalData;
     private TextView  dateLog, placeLog, timeLog, peopleLog, situationLog, behaviorLog, emotionLog, emotionRatingLog, emotionDetailsLog, thoughtsLog;
 
@@ -68,6 +68,9 @@ public class TjLogsFragment extends Fragment {
 
     private void setToolbar(View view) {
         Toolbar toolbar = view.findViewById(R.id.logsToolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        toolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
+        toolbar.setOverflowIcon(ContextCompat.getDrawable(requireActivity(),R.drawable.ic_white_dots));
         toolbar.setOnMenuItemClickListener(item -> {
             NavController controller = Navigation.findNavController(requireView());
             switch (item.getItemId()) {
@@ -102,8 +105,6 @@ public class TjLogsFragment extends Fragment {
                 textFields.get(i).setText(inputs.get(i));
                 textFields.get(i).setTypeface(Typeface.DEFAULT);
             }
-
-
         }
 
         StringBuilder thoughts = new StringBuilder();
