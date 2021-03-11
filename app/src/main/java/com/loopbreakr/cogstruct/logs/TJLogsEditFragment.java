@@ -31,11 +31,11 @@ import java.util.List;
 
 
 public class TJLogsEditFragment extends Fragment {
-    LogsViewModel logsViewModel;
+    private LogsViewModel logsViewModel;
     private ThoughtJournalObject thoughtJournalData;
     private RatingBar emotionRatingLog;
-    TextView dateEditLog;
-    EditText placeEditLog, peopleEditLog, situationEditLog, behaviorEditLog, emotionDetailsEditLog, thoughtsEditLog;
+    private TextView dateEditLog;
+    private EditText placeEditLog, peopleEditLog, situationEditLog, behaviorEditLog, emotionDetailsEditLog, thoughtsEditLog;
     private RadioGroup timeLogRadioGroup , peopleLogRadioGroup, emotionLogRadioGroup;
 
     public TJLogsEditFragment() { }
@@ -98,6 +98,56 @@ public class TJLogsEditFragment extends Fragment {
         for(int i = 0; i < textFields.size(); i++){
             textFields.get(i).setText(inputs.get(i));
         }
+
+        emotionRatingLog.setRating(thoughtJournalData.getEmotionRating());
+
+        switch (thoughtJournalData.getTime()){
+            case "Morning":
+                timeLogRadioGroup.check(R.id.morning_log);
+                break;
+            case "Noonish":
+                timeLogRadioGroup.check(R.id.noonish_log);
+                break;
+            case "Afternoon":
+                timeLogRadioGroup.check(R.id.afternoon_log);
+                break;
+            case "Evening":
+                timeLogRadioGroup.check(R.id.evening_log);
+                break;
+            case "At night":
+                timeLogRadioGroup.check(R.id.night_log);
+                break;
+            default:
+                timeLogRadioGroup.check(R.id.morning_log);
+                break;
+        }
+
+        if(thoughtJournalData.getPeople().equals("Alone")){
+            peopleLogRadioGroup.check(R.id.alone_log);
+        }
+        else{
+            peopleLogRadioGroup.check(R.id.with_othersLog);
+            peopleEditLog.setText(thoughtJournalData.getPeople());
+        }
+
+        switch (thoughtJournalData.getEmotion()){
+            case "Sadness":
+                emotionLogRadioGroup.check(R.id.sadness_log);
+                break;
+            case "Anger":
+                emotionLogRadioGroup.check(R.id.anger_log);
+                break;
+            case "Fear":
+                emotionLogRadioGroup.check(R.id.fear_log);
+                break;
+            case "Happiness":
+                emotionLogRadioGroup.check(R.id.happiness_log);
+                break;
+            default:
+                emotionLogRadioGroup.check(R.id.sadness_log);
+                break;
+        }
+
 
 
     }

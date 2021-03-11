@@ -84,4 +84,8 @@
     <string name="logs_empty_field">Field not completed.</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
+    <string name="sadness">Sadness</string>
+    <string name="anger">Anger</string>
+    <string name="fear">Fear</string>
+    <string name="happiness">Happiness</string>
 </resources>

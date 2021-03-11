@@ -260,7 +260,7 @@
                 android:id="@+id/sadness_log"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sadness"
+                android:text="@string/sadness"
                 android:textColor="@color/lightGrey"
                 android:textSize="16sp" />
 
@@ -268,7 +268,7 @@
                 android:id="@+id/anger_log"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Anger"
+                android:text="@string/anger"
                 android:textColor="@color/lightGrey"
                 android:textSize="16sp" />
 
@@ -276,7 +276,7 @@
                 android:id="@+id/fear_log"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fear"
+                android:text="@string/fear"
                 android:textColor="@color/lightGrey"
                 android:textSize="16sp" />
 
@@ -284,7 +284,7 @@
                 android:id="@+id/happiness_log"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Happiness"
+                android:text="@string/happiness"
                 android:textColor="@color/lightGrey"
                 android:textSize="16sp" />
 
@@ -300,7 +300,7 @@
             android:textSize="18sp" />
 
         <RatingBar
-            android:id="@+id/emotion_rating_bar"
+            android:id="@+id/emotion_rating_log"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"

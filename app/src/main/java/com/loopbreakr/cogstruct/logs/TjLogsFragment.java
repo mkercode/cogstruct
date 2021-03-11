@@ -34,7 +34,7 @@ import java.util.List;
 
 
 public class TjLogsFragment extends Fragment {
-    LogsViewModel logsViewModel;
+    private LogsViewModel logsViewModel;
     private ThoughtJournalObject thoughtJournalData;
     private TextView  dateLog, placeLog, timeLog, peopleLog, situationLog, behaviorLog, emotionLog, emotionRatingLog, emotionDetailsLog, thoughtsLog;
 
