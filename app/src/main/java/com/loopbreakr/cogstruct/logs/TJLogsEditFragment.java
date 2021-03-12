@@ -1,12 +1,10 @@
 package com.loopbreakr.cogstruct.logs;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -17,14 +15,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -60,15 +61,21 @@ public class TJLogsEditFragment extends Fragment {
         setToolbar(view);
         findViews(view);
         getViewModelData();
+        setRadioGroups(view);
+        setRatingBar();
     }
 
     private void setToolbar(View view) {
+        NavController controller = Navigation.findNavController(requireView());
         Toolbar toolbar = view.findViewById(R.id.edit_logs_toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         toolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_done_edit_log) {
-                //code to submit viewmodel data to firebase
+                setViewModelText();
+                updateFirestoreDocument();
+                controller.popBackStack(R.id.tjLogFragment, true);
+                controller.navigate(R.id.tjLogFragment);
                 return true;
             }
             return super.onOptionsItemSelected(item);
@@ -96,7 +103,9 @@ public class TJLogsEditFragment extends Fragment {
         List<EditText> textFields =  new ArrayList<>(Arrays. asList(placeEditLog, peopleEditLog, situationEditLog, behaviorEditLog, emotionDetailsEditLog, thoughtsEditLog));
         List<String> inputs =  new ArrayList<>(Arrays. asList(thoughtJournalData.getLocation(), thoughtJournalData.getPeople(), thoughtJournalData.getSituation(), thoughtJournalData.getBehavior(), thoughtJournalData.getEmotionDetail(), thoughtJournalData.getThoughts()));
         for(int i = 0; i < textFields.size(); i++){
-            textFields.get(i).setText(inputs.get(i));
+            if (!(textFields.get(i) == peopleEditLog && inputs.get(i).equals("Alone"))){
+                textFields.get(i).setText(inputs.get(i));
+            }
         }
 
         emotionRatingLog.setRating(thoughtJournalData.getEmotionRating());
@@ -147,9 +156,55 @@ public class TJLogsEditFragment extends Fragment {
                 emotionLogRadioGroup.check(R.id.sadness_log);
                 break;
         }
+    }
 
+    private void setViewModelText() {
+        thoughtJournalData.setLocation(placeEditLog.getText().toString());
+        if(!thoughtJournalData.getPeople().equals("Alone")){
+            thoughtJournalData.setPeople(peopleEditLog.getText().toString());
+        }
 
+        thoughtJournalData.setSituation(situationEditLog.getText().toString());
+        thoughtJournalData.setBehavior(behaviorEditLog.getText().toString());
+        thoughtJournalData.setEmotionDetail(emotionDetailsEditLog.getText().toString());
+        thoughtJournalData.setThoughts(thoughtsEditLog.getText().toString());
 
+        if(thoughtJournalData.getPeople().equals("") || thoughtJournalData.getPeople().equals(null) || thoughtJournalData.getPeople().isEmpty()){
+            thoughtJournalData.setPeople("With others");
+        }
+    }
+
+    private void setRadioGroups(View view) {
+        timeLogRadioGroup.setOnCheckedChangeListener((group, checkedId) ->{
+            RadioButton timeRadioButton = view.findViewById(checkedId);
+            thoughtJournalData.setTime((timeRadioButton.getText()).toString());
+        });
+        peopleLogRadioGroup.setOnCheckedChangeListener((group, checkedId) ->{
+            RadioButton peopleRadioButton = view.findViewById(checkedId);
+            thoughtJournalData.setPeople((peopleRadioButton.getText()).toString());
+        });
+        emotionLogRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            RadioButton emotionRadioButton =  view.findViewById(checkedId);
+            thoughtJournalData.setEmotion((emotionRadioButton.getText()).toString());
+        });
+    }
+
+    private void setRatingBar() {
+        emotionRatingLog.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> thoughtJournalData.setEmotionRating(rating));
+    }
+
+    private void updateFirestoreDocument() {
+        DocumentSnapshot logSnapshot = logsViewModel.getSnapshot();
+        logSnapshot.getReference().update(
+                "time", thoughtJournalData.getTime(),
+                "location", thoughtJournalData.getLocation(),
+                "people", thoughtJournalData.getPeople(),
+                "situation", thoughtJournalData.getSituation(),
+                "behavior", thoughtJournalData.getBehavior(),
+                "emotion", thoughtJournalData.getEmotion(),
+                "emotionRating", thoughtJournalData.getEmotionRating(),
+                "emotionDetail", thoughtJournalData.getEmotionDetail(),
+                "thoughts", thoughtJournalData.getThoughts()).addOnFailureListener(e -> Log.e("UPDATING THOUGHTJOURNAL", "FAILED. ALL FIELDS OF " + logSnapshot.getData() , e)).addOnSuccessListener(aVoid -> Log.d("UPDATING THOUGHTJOURNAL", "SUCCESS. ALL FIELDS OF " + logSnapshot.getData()));
     }
 
 }
