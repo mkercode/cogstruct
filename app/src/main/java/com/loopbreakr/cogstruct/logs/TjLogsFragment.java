@@ -100,7 +100,7 @@ public class TjLogsFragment extends Fragment {
         List<String> inputs =  new ArrayList<>(Arrays. asList("Created: " + thoughtJournalData.getDateCreated(), thoughtJournalData.getLocation(), thoughtJournalData.getTime(), thoughtJournalData.getPeople(), thoughtJournalData.getSituation(), thoughtJournalData.getBehavior(), thoughtJournalData.getEmotion(), String.valueOf(thoughtJournalData.getEmotionRating()), thoughtJournalData.getEmotionDetail()));
 
         for(int i = 0; i < textFields.size(); i++){
-            if(inputs.get(i).equals("") || inputs.get(i).isEmpty()){
+            if(inputs.get(i).equals("") || inputs.get(i).isEmpty() || inputs.get(i).equals(null)){
                 textFields.get(i).setText(R.string.logs_empty_field);
             }
             else{

@@ -122,6 +122,4 @@ public class TJPageFive extends Fragment {
     private void getTextInput(){
         tjViewModel.setThoughtList(thoughtList);
     }
-
-
 }

@@ -1,7 +1,6 @@
 package com.loopbreakr.cogstruct.logs;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -9,7 +8,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,13 +18,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -67,6 +63,7 @@ public class TJLogsEditFragment extends Fragment {
         getViewModelData();
         setRadioGroups(view);
         setRatingBar();
+        setButtons();
     }
 
     private void setToolbar(View view) {
@@ -159,9 +156,6 @@ public class TJLogsEditFragment extends Fragment {
             case "Happiness":
                 emotionLogRadioGroup.check(R.id.happiness_log);
                 break;
-            default:
-                emotionLogRadioGroup.check(R.id.sadness_log);
-                break;
         }
     }
 
@@ -184,17 +178,7 @@ public class TJLogsEditFragment extends Fragment {
     private void setThoughtChips() {
         thoughtList = Arrays.asList(thoughtJournalData.getThoughts().split(",", -1));
         for(String thought: thoughtList){
-            Chip chip = new Chip(requireActivity());
-            chip.setText(thought);
-            chip.setChipBackgroundColorResource(R.color.colorPrimary);
-            chip.setTextColor(getResources().getColor(R.color.colorWhite));
-            chip.setCloseIconVisible(true);
-            chip.setCloseIconTintResource(R.color.colorWhite);
-            thoughtChipGroup.addView(chip);
-            chip.setOnCloseIconClickListener(view -> {
-                thoughtChipGroup.removeView(chip);
-                thoughtList.remove(thought);
-            });
+            createThoughtChip(thought);
         }
     }
 
@@ -217,7 +201,35 @@ public class TJLogsEditFragment extends Fragment {
         emotionRatingLog.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> thoughtJournalData.setEmotionRating(rating));
     }
 
+    private void setButtons() {
+        addThoughtButton.setOnClickListener(v ->{
+            String thought = thoughtsEditLog.getText().toString().trim();
+            if (!thought.equals("") && !thought.isEmpty()){
+                createThoughtChip(thought);
+                thoughtList.add(thought);
+                thoughtsEditLog.setText("");
+            }
+        });
+    }
+
+    private void createThoughtChip(String thought) {
+        Chip chip = new Chip(requireActivity());
+        chip.setText(thought);
+        chip.setChipBackgroundColorResource(R.color.colorPrimary);
+        chip.setTextColor(getResources().getColor(R.color.colorWhite));
+        chip.setCloseIconVisible(true);
+        chip.setCloseIconTintResource(R.color.colorWhite);
+        thoughtChipGroup.addView(chip);
+        chip.setOnCloseIconClickListener(view -> {
+            thoughtChipGroup.removeView(chip);
+            thoughtList.remove(thought);
+        });
+    }
+
     private void updateFirestoreDocument() {
+
+        thoughtJournalData.setThoughtList(thoughtList);
+
         DocumentSnapshot logSnapshot = logsViewModel.getSnapshot();
         logSnapshot.getReference().update(
                 "time", thoughtJournalData.getTime(),
@@ -228,7 +240,7 @@ public class TJLogsEditFragment extends Fragment {
                 "emotion", thoughtJournalData.getEmotion(),
                 "emotionRating", thoughtJournalData.getEmotionRating(),
                 "emotionDetail", thoughtJournalData.getEmotionDetail(),
-                "thoughts", thoughtJournalData.getThoughts()).addOnFailureListener(e -> Log.e("UPDATING THOUGHTJOURNAL", "FAILED. ALL FIELDS OF " + logSnapshot.getData() , e)).addOnSuccessListener(aVoid -> Log.d("UPDATING THOUGHTJOURNAL", "SUCCESS. ALL FIELDS OF " + logSnapshot.getData()));
+                "thoughts", thoughtJournalData.getThoughtList()).addOnFailureListener(e -> Log.e("UPDATING THOUGHTJOURNAL", "FAILED. ALL FIELDS OF " + logSnapshot.getData() , e)).addOnSuccessListener(aVoid -> Log.d("UPDATING THOUGHTJOURNAL", "SUCCESS. ALL FIELDS OF " + logSnapshot.getData()));
     }
 
 }
