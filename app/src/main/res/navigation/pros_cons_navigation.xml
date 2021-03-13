@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pros_cons_navigation"
+    app:startDestination="@id/PCPageOne">
+
+    <fragment
+        android:id="@+id/PCPageOne"
+        android:name="com.loopbreakr.cogstruct.PCPageOne"
+        android:label="pc_fragment_page_one"
+        tools:layout="@layout/pc_fragment_page_one" >
+        <action
+            android:id="@+id/action_PCPageOne_to_PCPageTwo"
+            app:destination="@id/PCPageTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/PCPageTwo"
+        android:name="com.loopbreakr.cogstruct.PCPageTwo"
+        android:label="pc_fragment_page_two"
+        tools:layout="@layout/pc_fragment_page_two" >
+        <action
+            android:id="@+id/action_PCPageTwo_to_PCPageThree"
+            app:destination="@id/PCPageThree" />
+    </fragment>
+    <fragment
+        android:id="@+id/PCPageThree"
+        android:name="com.loopbreakr.cogstruct.PCPageThree"
+        android:label="pc_fragment_page_three"
+        tools:layout="@layout/pc_fragment_page_three" >
+        <action
+            android:id="@+id/action_PCPageThree_to_PCPageFour"
+            app:destination="@id/PCPageFour" />
+    </fragment>
+    <fragment
+        android:id="@+id/PCPageFour"
+        android:name="com.loopbreakr.cogstruct.PCPageFour"
+        android:label="pc_fragment_page_four"
+        tools:layout="@layout/pc_fragment_page_four" />
+</navigation>

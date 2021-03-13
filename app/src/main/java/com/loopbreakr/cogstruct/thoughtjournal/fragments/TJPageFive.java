@@ -15,24 +15,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.HorizontalScrollView;
-import android.widget.ScrollView;
-
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class TJPageFive extends Fragment {
     private TJViewModel tjViewModel;
     private EditText thoughtInput;
     private Button addThoughtButton, backButton, reviewButton;
     private ChipGroup thoughtChipGroup;
-    private HorizontalScrollView thoughtScrollView;
     private List<String> thoughtList = new ArrayList<>();
 
 
@@ -72,7 +66,6 @@ public class TJPageFive extends Fragment {
     private void getViewModelData() {
        if(tjViewModel.getThoughtList() != null && !tjViewModel.getThoughtList().isEmpty()){
            thoughtList = tjViewModel.getThoughtList();
-           thoughtInput.setText(thoughtList.toString());
 
            //create chips from past input
            for(String thought: thoughtList){

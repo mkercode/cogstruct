@@ -89,4 +89,11 @@
     <string name="fear">Fear</string>
     <string name="happiness">Happiness</string>
     <string name="plus">+</string>
+    <string name="pc_page_one_title">Behavior</string>
+    <string name="pc_page_two_title">If I Change</string>
+    <string name="pc_behavior_description">What is the behavior you want to change?</string>
+    <string name="add_con">Add Con</string>
+    <string name="add_pro">Add pro</string>
+    <string name="cons">Cons</string>
+    <string name="pros">Pros</string>
 </resources>

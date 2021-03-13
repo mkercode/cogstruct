@@ -103,7 +103,7 @@ public class TJPageSix extends Fragment{
         });
 
         submitButton.setOnClickListener(v ->{
-            if(!requiredInputs.contains("") || tjViewModel.getThoughtList().isEmpty()){
+            if(!requiredInputs.contains("") && !tjViewModel.getThoughtList().isEmpty()){
                 submitData();
                 Toast.makeText(requireActivity().getApplicationContext(), "Saved in logs", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this.requireActivity(), MainActivity.class);
@@ -115,7 +115,6 @@ public class TJPageSix extends Fragment{
             }
         });
     }
-
 
     private void submitData() {
        ((TJActivity)requireActivity()).sendToFirestore(tjViewModel.getLocationText(),tjViewModel.getTimeText(),tjViewModel.getPeopleText(),tjViewModel.getSituationText(),tjViewModel.getBehaviorText(),tjViewModel.getEmotionText(),tjViewModel.getEmotionRating(),tjViewModel.getEmotionDetailText(), tjViewModel.getThoughtText());

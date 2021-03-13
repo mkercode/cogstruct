@@ -10,8 +10,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BrainStruct">
-        <activity android:name=".logs.LogsActivity"></activity>
+        android:theme="@style/Theme.CogStruct">
+        <activity android:name=".proscons.PCActivity"></activity>
+        <activity android:name=".logs.LogsActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".thoughtjournal.activities.TJActivity" />
         <activity android:name=".MainActivity">
