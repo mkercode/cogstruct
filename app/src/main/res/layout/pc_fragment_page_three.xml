@@ -1,14 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PCPageThree">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <View
+        android:id="@+id/page_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="false"
+        app:layout_constraintBottom_toTopOf="@id/pc_review"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <Space
+        android:id="@+id/space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/page_content" />
+
+
+    <TextView
+        android:id="@+id/page_three_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:text="If I Don't Change"
+        android:textColor="@color/colorGreenText"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/pc_dont_change_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center"
+        android:text="How will continuing the behavior impact my life?"
+        android:textColor="@color/colorGreenText"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/page_three_title" />
+
+
+    <TextView
+        android:id="@+id/pc_dont_change_pros_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/pros"
+        android:textColor="@color/colorGreenText"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/add_dont_change_pro"
+        app:layout_constraintEnd_toStartOf="@+id/add_dont_change_pro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/add_dont_change_pro" />
+
+    <TextView
+        android:id="@+id/pc_dont_change_cons_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/cons"
+        android:textColor="@color/colorGreenText"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/add_dont_change_con"
+        app:layout_constraintEnd_toStartOf="@+id/add_dont_change_con"
+        app:layout_constraintStart_toStartOf="@+id/dont_change_cons_recyclerview"
+        app:layout_constraintTop_toTopOf="@+id/add_dont_change_con" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_dont_change_pro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/add_pro"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="#f15a29"
+        app:layout_constraintEnd_toEndOf="@+id/dont_change_pros_recyclerview"
+        app:layout_constraintTop_toBottomOf="@+id/pc_dont_change_question" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_dont_change_con"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/add_con"
+        android:src="@drawable/ic_minus"
+        app:backgroundTint="#00aeef"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pc_dont_change_question" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dont_change_cons_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/space"
+        app:layout_constraintTop_toBottomOf="@+id/pc_dont_change_cons_question" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dont_change_pros_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pc_dont_change_pros_question" />
+
+
+    <Button
+        android:id="@+id/pc_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_button_background"
+        android:text="@string/review_button_text"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/progress_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:text="3/3"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/pc_page_three_back"
+        app:layout_constraintEnd_toStartOf="@+id/pc_review"
+        app:layout_constraintStart_toEndOf="@+id/pc_page_three_back" />
+
+    <Button
+        android:id="@+id/pc_page_three_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_button_background"
+        android:text="@string/back_button_text"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bottom_bar_background"
+        android:paddingTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/page_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -99,7 +99,6 @@ public class TJPageSix extends Fragment{
             NavController controller = Navigation.findNavController(requireView());
             controller.popBackStack(R.id.tjPageFive, true);
             controller.navigate(R.id.tjPageFive);
-
         });
 
         submitButton.setOnClickListener(v ->{
