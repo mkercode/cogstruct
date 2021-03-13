@@ -108,12 +108,12 @@ public class ThoughtJournalObject {
         return emotionRating;
     }
     public void setEmotionRating(float emotionRating) { this.emotionRating = emotionRating; }
-    public String getThoughtStringList() { return thoughtString; }
 
+    public String getThoughtStringList() { return thoughtString; }
     public List<String> getThoughtLogList() {
         thoughtLogList = new ArrayList<>(Arrays.asList(thoughts.split(",")));
         return thoughtLogList; }
-
+        //methods to change the thought logs
     public void addToThoughtLogs(String thought){ thoughtLogList.add(thought); }
     public void removeFromThoughtLogs(String thought){ thoughtLogList.remove(thought); }
     public void updateThoughtString() { this.thoughtString = android.text.TextUtils.join(",", thoughtLogList); }
