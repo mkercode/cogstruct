@@ -114,6 +114,7 @@ public class ThoughtJournalObject {
         thoughtLogList = new ArrayList<>(Arrays.asList(thoughts.split(",")));
         return thoughtLogList; }
 
-    public void addToThoughtLogList(String thought){ thoughtLogList.add(thought); }
+    public void addToThoughtLogs(String thought){ thoughtLogList.add(thought); }
+    public void removeFromThoughtLogs(String thought){ thoughtLogList.remove(thought); }
     public void updateThoughtString() { this.thoughtString = android.text.TextUtils.join(",", thoughtLogList); }
 }

@@ -205,7 +205,7 @@ public class TJLogsEditFragment extends Fragment {
             String thought = thoughtsEditLog.getText().toString().trim();
             if (!thought.equals("") && !thought.isEmpty()){
                 createThoughtChip(thought);
-                thoughtJournalData.addToThoughtLogList(thought);
+                thoughtJournalData.addToThoughtLogs(thought);
                 thoughtsEditLog.setText("");
             }
         });
@@ -221,7 +221,7 @@ public class TJLogsEditFragment extends Fragment {
         thoughtChipGroup.addView(chip);
         chip.setOnCloseIconClickListener(view -> {
             thoughtChipGroup.removeView(chip);
-            thoughtList.remove(thought);
+            thoughtJournalData.removeFromThoughtLogs(thought);
         });
     }
 
