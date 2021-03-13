@@ -2,6 +2,9 @@ package com.loopbreakr.cogstruct.thoughtjournal.models;
 
 import androidx.lifecycle.ViewModel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class TJViewModel extends ViewModel {
     private String locationText = "";
@@ -17,6 +20,7 @@ public class TJViewModel extends ViewModel {
     private int emotionRadioId = -1;
     private float emotionRating = 0;
     private String emotionRatingString = "";
+    private List<String> thoughtList = new ArrayList<>();
 
     public void setLocationText(CharSequence input) {
         locationText = input.toString();
@@ -35,10 +39,10 @@ public class TJViewModel extends ViewModel {
         emotionText = input.toString();
     }
     public void setEmotionDetailText(CharSequence input){ emotionDetailText = input.toString(); }
-    public void setThoughtText(CharSequence input){ thoughtText = input.toString(); }
     public void setTimeRadioId(int input) { timeRadioId = input; }
     public void setPeopleRadioId(int input) { peopleRadioId = input; }
     public void setEmotionRadioId(int input) { emotionRadioId = input; }
+    public void setThoughtList(List<String> input){ thoughtList = input; }
 
     public void setEmotionRating(float input) {
         emotionRating = input;
@@ -53,11 +57,13 @@ public class TJViewModel extends ViewModel {
     public String getBehaviorText(){ return behaviorText; }
     public String getEmotionText(){ return emotionText; }
     public String getEmotionDetailText(){ return emotionDetailText; }
-    public String getThoughtText(){ return thoughtText; }
+    public List<String> getThoughtList() { return thoughtList; }
+    public String getThoughtText(){ return android.text.TextUtils.join(",", thoughtList); }
     public int getTimeRadioId() { return timeRadioId; }
     public int getPeopleRadioId() { return peopleRadioId; }
     public int getEmotionRadioId() { return emotionRadioId; }
     public float getEmotionRating() { return emotionRating; }
+
 
     public String getEmotionRatingString(){
         return emotionRatingString;

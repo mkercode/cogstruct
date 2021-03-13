@@ -341,17 +341,62 @@
             android:textColor="@color/colorGreenText"
             android:textSize="18sp" />
 
-        <EditText
-            android:id="@+id/thoughts_edit_log"
-            android:textColor="@color/lightGrey"
+        <HorizontalScrollView
+            android:id="@+id/tj_chip_log_scrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:textSize="15sp"
-            android:inputType="textAutoCorrect|textMultiLine"
-            android:ems="15"
-            android:minLines="2"
-            android:maxLines="2" />
+            android:nestedScrollingEnabled="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginEnd="8dp"
+            android:minHeight="50dp">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/tj_thoughts_log_chipgroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </HorizontalScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/thought_log_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_toStartOf="@+id/add_thought_log_button"
+                android:autofillHints=""
+                android:gravity="top"
+                android:hint="@string/tj_thoughts_hint"
+                android:inputType="textAutoCorrect|textMultiLine"
+                android:maxLines="3"
+                android:minLines="3" />
+
+            <Button
+                android:id="@+id/add_thought_log_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="11dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:text="@string/plus" />
+
+        </RelativeLayout>
+
+
+
+
+
     </LinearLayout>
     </ScrollView>
 

@@ -31,6 +31,8 @@ import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 public class TjLogsFragment extends Fragment {
@@ -98,7 +100,7 @@ public class TjLogsFragment extends Fragment {
         List<String> inputs =  new ArrayList<>(Arrays. asList("Created: " + thoughtJournalData.getDateCreated(), thoughtJournalData.getLocation(), thoughtJournalData.getTime(), thoughtJournalData.getPeople(), thoughtJournalData.getSituation(), thoughtJournalData.getBehavior(), thoughtJournalData.getEmotion(), String.valueOf(thoughtJournalData.getEmotionRating()), thoughtJournalData.getEmotionDetail()));
 
         for(int i = 0; i < textFields.size(); i++){
-            if(inputs.get(i).equals("") || inputs.get(i).isEmpty() || inputs.get(i).equals(null)){
+            if(inputs.get(i).equals("") || inputs.get(i).isEmpty()){
                 textFields.get(i).setText(R.string.logs_empty_field);
             }
             else{

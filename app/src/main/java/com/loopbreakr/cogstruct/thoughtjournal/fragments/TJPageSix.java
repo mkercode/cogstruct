@@ -28,10 +28,9 @@ import java.util.List;
 public class TJPageSix extends Fragment{
     private TJViewModel tjViewModel;
     private List<String> requiredInputs;
-    TextView placeReview, timeReview, peopleReview, situationReview, behaviorReview, mainEmotionReview, emotionIntensityReview, emotionDetailsReview, thoughtsReview;
-    List<TextView> requiredFields;
-    Button editButton, submitButton;
-    String thoughts = "";
+    private TextView placeReview, timeReview, peopleReview, situationReview, behaviorReview, mainEmotionReview, emotionIntensityReview, emotionDetailsReview, thoughtsReview;
+    private Button editButton, submitButton;
+
     public TJPageSix() {
         // Required empty public constructor
     }
@@ -53,7 +52,7 @@ public class TJPageSix extends Fragment{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getViews(view);
-        fillTextViews();
+        getViewModelData();
         setButtons();
     }
 
@@ -71,7 +70,7 @@ public class TJPageSix extends Fragment{
         submitButton = view.findViewById(R.id.tj_submit);
     }
 
-    private void fillTextViews() {
+    private void getViewModelData() {
         List<TextView> textFields =  new ArrayList<>(Arrays. asList(placeReview, timeReview, peopleReview, situationReview, behaviorReview, mainEmotionReview, emotionIntensityReview, emotionDetailsReview));
         List<String> inputs =  new ArrayList<>(Arrays. asList(tjViewModel.getLocationText(), tjViewModel.getTimeText(), tjViewModel.getPeopleText(),tjViewModel.getSituationText(), tjViewModel.getBehaviorText(),tjViewModel.getEmotionText(), tjViewModel.getEmotionRatingString(), tjViewModel.getEmotionDetailText()));
         requiredInputs =  new ArrayList<>(Arrays. asList(tjViewModel.getLocationText(), tjViewModel.getTimeText(), tjViewModel.getPeopleText(), tjViewModel.getBehaviorText(),tjViewModel.getEmotionText(), tjViewModel.getEmotionRatingString(), tjViewModel.getThoughtText()));
@@ -83,12 +82,13 @@ public class TJPageSix extends Fragment{
             }
         }
 
-        if(!tjViewModel.getThoughtText().equals("")){
-            String[] thoughtList = tjViewModel.getThoughtText().split("\\s*,\\s*");
+        if(tjViewModel.getThoughtList() != null && !tjViewModel.getThoughtList().isEmpty()){
+            List<String> thoughtList = tjViewModel.getThoughtList();
+            StringBuilder displayThoughts = new StringBuilder();
             for(String thought: thoughtList){
-                thoughts += "-" + thought + "\n";
+                displayThoughts.append("-").append(thought).append("\n");
             }
-            thoughtsReview.setText(thoughts);
+            thoughtsReview.setText(displayThoughts.toString());
             thoughtsReview.setTextColor(getResources().getColor(R.color.lightGrey));
         }
     }
@@ -103,7 +103,7 @@ public class TJPageSix extends Fragment{
         });
 
         submitButton.setOnClickListener(v ->{
-            if(!requiredInputs.contains("")){
+            if(!requiredInputs.contains("") || tjViewModel.getThoughtList().isEmpty()){
                 submitData();
                 Toast.makeText(requireActivity().getApplicationContext(), "Saved in logs", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this.requireActivity(), MainActivity.class);

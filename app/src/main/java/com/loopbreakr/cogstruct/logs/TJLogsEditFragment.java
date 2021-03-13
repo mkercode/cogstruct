@@ -14,18 +14,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -38,6 +39,9 @@ public class TJLogsEditFragment extends Fragment {
     private TextView dateEditLog;
     private EditText placeEditLog, peopleEditLog, situationEditLog, behaviorEditLog, emotionDetailsEditLog, thoughtsEditLog;
     private RadioGroup timeLogRadioGroup , peopleLogRadioGroup, emotionLogRadioGroup;
+    private ChipGroup thoughtChipGroup;
+    private Button addThoughtButton;
+    List<String> thoughtList;
 
     public TJLogsEditFragment() { }
 
@@ -93,7 +97,10 @@ public class TJLogsEditFragment extends Fragment {
         emotionLogRadioGroup = view.findViewById(R.id.emotion_log_radiogroup);
         emotionRatingLog = view.findViewById(R.id.emotion_rating_log);
         emotionDetailsEditLog = view.findViewById(R.id.emotion_details_edit_log);
-        thoughtsEditLog = view.findViewById(R.id.thoughts_edit_log);
+        thoughtsEditLog = view.findViewById(R.id.thought_log_input);
+        thoughtChipGroup = view.findViewById(R.id.tj_thoughts_log_chipgroup);
+        addThoughtButton = view.findViewById(R.id.add_thought_log_button);
+
     }
 
     private void getViewModelData() {
@@ -167,10 +174,27 @@ public class TJLogsEditFragment extends Fragment {
         thoughtJournalData.setSituation(situationEditLog.getText().toString());
         thoughtJournalData.setBehavior(behaviorEditLog.getText().toString());
         thoughtJournalData.setEmotionDetail(emotionDetailsEditLog.getText().toString());
-        thoughtJournalData.setThoughts(thoughtsEditLog.getText().toString());
+        setThoughtChips();
 
-        if(thoughtJournalData.getPeople().equals("") || thoughtJournalData.getPeople().equals(null) || thoughtJournalData.getPeople().isEmpty()){
+        if(thoughtJournalData.getPeople().equals("") || thoughtJournalData.getPeople().isEmpty()){
             thoughtJournalData.setPeople("With others");
+        }
+    }
+
+    private void setThoughtChips() {
+        thoughtList = Arrays.asList(thoughtJournalData.getThoughts().split(",", -1));
+        for(String thought: thoughtList){
+            Chip chip = new Chip(requireActivity());
+            chip.setText(thought);
+            chip.setChipBackgroundColorResource(R.color.colorPrimary);
+            chip.setTextColor(getResources().getColor(R.color.colorWhite));
+            chip.setCloseIconVisible(true);
+            chip.setCloseIconTintResource(R.color.colorWhite);
+            thoughtChipGroup.addView(chip);
+            chip.setOnCloseIconClickListener(view -> {
+                thoughtChipGroup.removeView(chip);
+                thoughtList.remove(thought);
+            });
         }
     }
 

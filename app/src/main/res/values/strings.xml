@@ -50,8 +50,8 @@
     <string name="tj_page_one_people_hint">If you weren\'t alone, enter who you were with.</string>
     <string name="with_others">With others</string>
     <string name="alone">Alone</string>
-    <string name="tj_thoughts_description">What was going through your mind at the moment? Enter the thoughts you had at the time, sparated by commas.</string>
-    <string name="tj_thoughts_hint">Enter list here!</string>
+    <string name="tj_thoughts_description">What was going through your mind at the moment? </string>
+    <string name="tj_thoughts_hint">Enter thoughts here!</string>
     <string name="submit_button_text">Submit</string>
     <string name="tj_thoughts_title">Thoughts</string>
     <string name="tj_thoughts_image_description">Thought Bubble Image</string>
@@ -88,4 +88,5 @@
     <string name="anger">Anger</string>
     <string name="fear">Fear</string>
     <string name="happiness">Happiness</string>
+    <string name="plus">+</string>
 </resources>
