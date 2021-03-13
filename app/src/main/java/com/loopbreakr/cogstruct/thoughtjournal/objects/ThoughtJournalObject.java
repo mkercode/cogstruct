@@ -1,6 +1,7 @@
 package com.loopbreakr.cogstruct.thoughtjournal.objects;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ThoughtJournalObject {
@@ -15,8 +16,9 @@ public class ThoughtJournalObject {
     private String emotionDetail;
     private String thoughts;
     private String formName;
-    private String thoughtList;
+    private String thoughtString;
     private float emotionRating;
+    private List<String> thoughtLogList = new ArrayList<>();
 
     public ThoughtJournalObject(String dateCreated, String userId, String location, String time, String people, String situation, String behavior, String emotion, float emotionRating, String emotionDetail, String thoughts) {
         this.formName = "Thought Journal";
@@ -101,15 +103,17 @@ public class ThoughtJournalObject {
     public String getThoughts() {
         return thoughts;
     }
-    public void setThoughts(String thoughts) { this.thoughts = thoughts; }
+    public void setThoughtString(String thoughts) { this.thoughts = thoughts; }
     public float getEmotionRating() {
         return emotionRating;
     }
-    public void setEmotionRating(float emotionRating) {
-        this.emotionRating = emotionRating;
-    }
-    public String getThoughtList() { return thoughtList; }
-    public void setThoughtList(List<String> thoughtList) {
-        this.thoughtList = android.text.TextUtils.join(",", thoughtList);
-    }
+    public void setEmotionRating(float emotionRating) { this.emotionRating = emotionRating; }
+    public String getThoughtStringList() { return thoughtString; }
+
+    public List<String> getThoughtLogList() {
+        thoughtLogList = new ArrayList<>(Arrays.asList(thoughts.split(",")));
+        return thoughtLogList; }
+
+    public void addToThoughtLogList(String thought){ thoughtLogList.add(thought); }
+    public void updateThoughtString() { this.thoughtString = android.text.TextUtils.join(",", thoughtLogList); }
 }

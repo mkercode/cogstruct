@@ -37,7 +37,7 @@ public class TJLogsEditFragment extends Fragment {
     private RadioGroup timeLogRadioGroup , peopleLogRadioGroup, emotionLogRadioGroup;
     private ChipGroup thoughtChipGroup;
     private Button addThoughtButton;
-    List<String> thoughtList;
+    private List<String> thoughtList = new ArrayList<>();
 
     public TJLogsEditFragment() { }
 
@@ -61,6 +61,7 @@ public class TJLogsEditFragment extends Fragment {
         setToolbar(view);
         findViews(view);
         getViewModelData();
+        setThoughtChips();
         setRadioGroups(view);
         setRatingBar();
         setButtons();
@@ -102,10 +103,11 @@ public class TJLogsEditFragment extends Fragment {
 
     private void getViewModelData() {
         thoughtJournalData = logsViewModel.getThoughtJournalLog();
+        thoughtList = thoughtJournalData.getThoughtLogList();
 
         dateEditLog.setText(String.format("Created: %s", thoughtJournalData.getDateCreated()));
-        List<EditText> textFields =  new ArrayList<>(Arrays. asList(placeEditLog, peopleEditLog, situationEditLog, behaviorEditLog, emotionDetailsEditLog, thoughtsEditLog));
-        List<String> inputs =  new ArrayList<>(Arrays. asList(thoughtJournalData.getLocation(), thoughtJournalData.getPeople(), thoughtJournalData.getSituation(), thoughtJournalData.getBehavior(), thoughtJournalData.getEmotionDetail(), thoughtJournalData.getThoughts()));
+        List<EditText> textFields =  new ArrayList<>(Arrays. asList(placeEditLog, peopleEditLog, situationEditLog, behaviorEditLog, emotionDetailsEditLog));
+        List<String> inputs =  new ArrayList<>(Arrays. asList(thoughtJournalData.getLocation(), thoughtJournalData.getPeople(), thoughtJournalData.getSituation(), thoughtJournalData.getBehavior(), thoughtJournalData.getEmotionDetail()));
         for(int i = 0; i < textFields.size(); i++){
             if (!(textFields.get(i) == peopleEditLog && inputs.get(i).equals("Alone"))){
                 textFields.get(i).setText(inputs.get(i));
@@ -164,11 +166,9 @@ public class TJLogsEditFragment extends Fragment {
         if(!thoughtJournalData.getPeople().equals("Alone")){
             thoughtJournalData.setPeople(peopleEditLog.getText().toString());
         }
-
         thoughtJournalData.setSituation(situationEditLog.getText().toString());
         thoughtJournalData.setBehavior(behaviorEditLog.getText().toString());
         thoughtJournalData.setEmotionDetail(emotionDetailsEditLog.getText().toString());
-        setThoughtChips();
 
         if(thoughtJournalData.getPeople().equals("") || thoughtJournalData.getPeople().isEmpty()){
             thoughtJournalData.setPeople("With others");
@@ -176,7 +176,6 @@ public class TJLogsEditFragment extends Fragment {
     }
 
     private void setThoughtChips() {
-        thoughtList = Arrays.asList(thoughtJournalData.getThoughts().split(",", -1));
         for(String thought: thoughtList){
             createThoughtChip(thought);
         }
@@ -206,7 +205,7 @@ public class TJLogsEditFragment extends Fragment {
             String thought = thoughtsEditLog.getText().toString().trim();
             if (!thought.equals("") && !thought.isEmpty()){
                 createThoughtChip(thought);
-                thoughtList.add(thought);
+                thoughtJournalData.addToThoughtLogList(thought);
                 thoughtsEditLog.setText("");
             }
         });
@@ -227,8 +226,7 @@ public class TJLogsEditFragment extends Fragment {
     }
 
     private void updateFirestoreDocument() {
-
-        thoughtJournalData.setThoughtList(thoughtList);
+        thoughtJournalData.updateThoughtString();
 
         DocumentSnapshot logSnapshot = logsViewModel.getSnapshot();
         logSnapshot.getReference().update(
@@ -240,7 +238,7 @@ public class TJLogsEditFragment extends Fragment {
                 "emotion", thoughtJournalData.getEmotion(),
                 "emotionRating", thoughtJournalData.getEmotionRating(),
                 "emotionDetail", thoughtJournalData.getEmotionDetail(),
-                "thoughts", thoughtJournalData.getThoughtList()).addOnFailureListener(e -> Log.e("UPDATING THOUGHTJOURNAL", "FAILED. ALL FIELDS OF " + logSnapshot.getData() , e)).addOnSuccessListener(aVoid -> Log.d("UPDATING THOUGHTJOURNAL", "SUCCESS. ALL FIELDS OF " + logSnapshot.getData()));
+                "thoughts", thoughtJournalData.getThoughtStringList()).addOnFailureListener(e -> Log.e("UPDATING THOUGHTJOURNAL", "FAILED. ALL FIELDS OF " + logSnapshot.getData() , e)).addOnSuccessListener(aVoid -> Log.d("UPDATING THOUGHTJOURNAL", "SUCCESS. ALL FIELDS OF " + logSnapshot.getData()));
     }
 
 }
