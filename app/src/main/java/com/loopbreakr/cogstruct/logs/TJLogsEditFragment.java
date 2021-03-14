@@ -37,7 +37,7 @@ public class TJLogsEditFragment extends Fragment {
     private RadioGroup timeLogRadioGroup , peopleLogRadioGroup, emotionLogRadioGroup;
     private ChipGroup thoughtChipGroup;
     private Button addThoughtButton;
-    private List<String> thoughtList = new ArrayList<>();
+    private List<String> thoughtList;
 
     public TJLogsEditFragment() { }
 
@@ -102,8 +102,9 @@ public class TJLogsEditFragment extends Fragment {
     }
 
     private void getViewModelData() {
-        thoughtJournalData = logsViewModel.getThoughtJournalLog();
+        thoughtList = new ArrayList<>();
         thoughtList = thoughtJournalData.getThoughtLogList();
+        thoughtJournalData = logsViewModel.getThoughtJournalLog();
 
         dateEditLog.setText(String.format("Created: %s", thoughtJournalData.getDateCreated()));
         List<EditText> textFields =  new ArrayList<>(Arrays. asList(placeEditLog, peopleEditLog, situationEditLog, behaviorEditLog, emotionDetailsEditLog));

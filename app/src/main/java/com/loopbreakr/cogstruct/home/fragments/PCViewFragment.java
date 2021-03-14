@@ -1,5 +1,6 @@
 package com.loopbreakr.cogstruct.home.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,14 +12,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.proscons.PCActivity;
+import com.loopbreakr.cogstruct.thoughtjournal.activities.TJActivity;
 
 import java.util.Objects;
 
 
 public class PCViewFragment extends Fragment {
-
 
     public PCViewFragment() {
         // Required empty public constructor
@@ -40,6 +43,7 @@ public class PCViewFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setBackToolBar(view);
+        setBeginButton(view);
     }
 
     private void setBackToolBar(View view) {
@@ -47,8 +51,17 @@ public class PCViewFragment extends Fragment {
 
         ((AppCompatActivity) requireActivity()).setSupportActionBar(backToolbar);
         Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
-
         backToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         backToolbar.setNavigationOnClickListener(v -> requireActivity().onBackPressed());
+    }
+
+    private void setBeginButton(View view) {
+        Button beginButton = view.findViewById(R.id.pc_begin_button);
+        beginButton.setOnClickListener(v -> openActivity());
+    }
+
+    private void openActivity(){
+        Intent intent = new Intent(this.requireActivity(), PCActivity.class);
+        startActivity(intent);
     }
 }

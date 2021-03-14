@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PCPageTwo">
+    tools:context=".proscons.PCPageTwo">
 
     <View
         android:id="@+id/page_content"
@@ -61,10 +61,10 @@
         android:text="@string/pros"
         android:textColor="@color/colorGreenText"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/floatingActionButton"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
+        app:layout_constraintBottom_toBottomOf="@+id/add_change_pro"
+        app:layout_constraintEnd_toStartOf="@+id/add_change_pro"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/floatingActionButton" />
+        app:layout_constraintTop_toTopOf="@+id/add_change_pro" />
 
     <TextView
         android:id="@+id/pc_change_cons_question"
@@ -73,13 +73,13 @@
         android:text="@string/cons"
         android:textColor="@color/colorGreenText"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/floatingActionButton2"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton2"
+        app:layout_constraintBottom_toBottomOf="@+id/add_change_con"
+        app:layout_constraintEnd_toStartOf="@+id/add_change_con"
         app:layout_constraintStart_toStartOf="@+id/change_cons_recyclerview"
-        app:layout_constraintTop_toTopOf="@+id/floatingActionButton2" />
+        app:layout_constraintTop_toTopOf="@+id/add_change_con" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/add_change_pro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -91,7 +91,7 @@
         android:contentDescription="@string/add_pro" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
+        android:id="@+id/add_change_con"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -102,18 +102,6 @@
         app:layout_constraintEnd_toEndOf="@+id/change_cons_recyclerview"
         app:layout_constraintTop_toBottomOf="@+id/pc_change_question" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/change_cons_recyclerview"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/space"
-        app:layout_constraintTop_toBottomOf="@+id/pc_change_cons_question" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/change_pros_recyclerview"
@@ -127,6 +115,20 @@
         app:layout_constraintEnd_toStartOf="@+id/space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pc_change_pros_question" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/change_cons_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/space"
+        app:layout_constraintTop_toBottomOf="@+id/pc_change_cons_question" />
 
 
     <Button

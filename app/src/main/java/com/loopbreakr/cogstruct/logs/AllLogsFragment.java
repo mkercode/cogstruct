@@ -66,7 +66,6 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
 
         //bind to adapter
         logsRecyclerAdapter = new LogsRecyclerAdapter(options, this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         recyclerView.setAdapter(logsRecyclerAdapter);
         logsRecyclerAdapter.startListening();
     }
