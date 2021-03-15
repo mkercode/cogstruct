@@ -46,12 +46,14 @@
 
 
         <GridLayout
+            android:layout_margin="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:rowCount="3"
+            android:rowCount="4"
             android:columnCount="3"
             android:columnOrderPreserved="true"
-            android:alignmentMode="alignMargins">
+            android:alignmentMode="alignMargins"
+            android:background="#A8E3C0">
 
 
             <TextView
@@ -59,7 +61,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
-                android:layout_columnWeight="0.3"/>
+                android:layout_columnWeight="0.3"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/colorWhite" />
 
             <TextView
                 android:id="@+id/change_title"
@@ -67,8 +74,14 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:text="If I Change" />
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/colorWhite"
+                android:padding="4dp"
+                android:text="If I Change"
+                android:textColor="@color/colorGreenText" />
 
             <TextView
                 android:id="@+id/dont_change_title"
@@ -76,9 +89,14 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:text="If I Don't Change" />
-
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/colorWhite"
+                android:padding="4dp"
+                android:text="If I Don't Change"
+                android:textColor="@color/colorGreenText" />
 
             <TextView
                 android:id="@+id/review_pros_title"
@@ -86,8 +104,14 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="0.3"
-                android:layout_margin="4dp"
-                android:text="Pros (+)"/>
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/colorWhite"
+                android:padding="4dp"
+                android:text="Pros (+)"
+                android:textColor="@color/colorGreenText" />
 
             <TextView
                 android:id="@+id/review_change_pros"
@@ -95,8 +119,13 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:text="change_pros_list"/>
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/colorWhite"
+                android:padding="4dp"
+                android:text="change_pros_list" />
 
             <TextView
                 android:id="@+id/review_dont_change_pros"
@@ -104,8 +133,13 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:text="dont_change_pros_list"/>
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/colorWhite"
+                android:padding="4dp"
+                android:text="dont_change_pros_list" />
 
 
             <TextView
@@ -114,8 +148,14 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="0.3"
-                android:layout_margin="4dp"
-                android:text="Cons (-)"/>
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/colorWhite"
+                android:padding="4dp"
+                android:text="Cons (-)"
+                android:textColor="@color/colorGreenText" />
 
             <TextView
                 android:id="@+id/review_change_cons"
@@ -123,8 +163,13 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:text="change_cons_list"/>
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/colorWhite"
+                android:padding="4dp"
+                android:text="change_cons_list" />
 
             <TextView
                 android:id="@+id/review_dont_change_cons"
@@ -132,8 +177,13 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:text="dont_change_cons_list"/>
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/colorWhite"
+                android:padding="4dp"
+                android:text="dont_change_cons_list" />
 
 
 
