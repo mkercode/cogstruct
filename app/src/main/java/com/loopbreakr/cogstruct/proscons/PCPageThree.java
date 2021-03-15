@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,9 +25,10 @@ import java.util.List;
 
 
 public class PCPageThree extends Fragment {
+    private PCViewModel pcViewModel;
     private RecyclerView prosRecyclerView, consRecyclerView;
     private Button backButton, reviewButton;
-    private List<String> prosList, consList;
+    private List<String> prosList, consList = new ArrayList<>();
     private FloatingActionButton addPro, addCon;
 
     public PCPageThree() {
@@ -36,6 +38,8 @@ public class PCPageThree extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        pcViewModel = new ViewModelProvider(requireActivity()).get(PCViewModel.class);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -63,8 +67,8 @@ public class PCPageThree extends Fragment {
     }
 
     private void initializeRecyclerViews() {
-        prosList = new ArrayList<>();
-        consList = new ArrayList<>();
+        prosList = pcViewModel.getDontChangePros();
+        consList = pcViewModel.getDontChangeCons();
 
         PCRecyclerAdapter prosRecyclerAdapter = new PCRecyclerAdapter(prosList);
         PCRecyclerAdapter consRecyclerAdapter = new PCRecyclerAdapter(consList);
@@ -82,18 +86,22 @@ public class PCPageThree extends Fragment {
         });
     }
 
-
     private void setButtons() {
 
-        addPro.setOnClickListener(v -> addToList(prosList));
-        addCon.setOnClickListener(v -> addToList(consList));
+        addPro.setOnClickListener(v -> {
+            addToList(prosList);
+            pcViewModel.setDontChangePros(prosList);
+        });
+        addCon.setOnClickListener(v -> {
+            addToList(consList);
+            pcViewModel.setDontChangeCons(consList);
+        });
 
         NavController controller = Navigation.findNavController(requireView());
         backButton.setOnClickListener(v ->{
             controller.popBackStack(R.id.PCPageTwo, true);
             controller.navigate(R.id.PCPageTwo);
         });
-
         reviewButton.setOnClickListener(v -> controller.navigate(R.id.action_PCPageThree_to_PCPageFour));
     }
 
@@ -104,6 +112,4 @@ public class PCPageThree extends Fragment {
                 .setPositiveButton("Add", (dialog, which) ->
                         list.add(addEntryText.getText().toString())).setNegativeButton("Cancel", null).show();
     }
-
-
 }

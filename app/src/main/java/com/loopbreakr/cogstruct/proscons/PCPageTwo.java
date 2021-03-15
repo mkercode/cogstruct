@@ -6,9 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -16,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.loopbreakr.cogstruct.R;
@@ -26,9 +25,10 @@ import java.util.List;
 
 
 public class PCPageTwo extends Fragment {
+    private PCViewModel pcViewModel;
     private RecyclerView prosRecyclerView, consRecyclerView;
     private Button backButton, nextButton;
-    private List<String> prosList, consList;
+    private List<String> prosList, consList = new ArrayList<>();
     private FloatingActionButton addPro, addCon;
 
     public PCPageTwo() {
@@ -38,6 +38,8 @@ public class PCPageTwo extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        pcViewModel = new ViewModelProvider(requireActivity()).get(PCViewModel.class);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -65,8 +67,8 @@ public class PCPageTwo extends Fragment {
     }
 
     private void initializeRecyclerViews() {
-        prosList = new ArrayList<>();
-        consList = new ArrayList<>();
+        prosList = pcViewModel.getChangePros();
+        consList = pcViewModel.getChangeCons();
 
         PCRecyclerAdapter prosRecyclerAdapter = new PCRecyclerAdapter(prosList);
         PCRecyclerAdapter consRecyclerAdapter = new PCRecyclerAdapter(consList);
@@ -82,21 +84,35 @@ public class PCPageTwo extends Fragment {
             consList.remove(position);
             consRecyclerAdapter.notifyDataSetChanged();
         });
-
     }
 
     private void setButtons() {
 
-        addPro.setOnClickListener(v -> addToList(prosList));
-        addCon.setOnClickListener(v -> addToList(consList));
+        addPro.setOnClickListener(v -> {
+            addToList(prosList);
+            pcViewModel.setChangePros(prosList);
+        });
+        addCon.setOnClickListener(v -> {
+            addToList(consList);
+            pcViewModel.setChangeCons(consList);
+        });
 
         NavController controller = Navigation.findNavController(requireView());
         backButton.setOnClickListener(v ->{
+            getListData();
             controller.popBackStack(R.id.PCPageOne, true);
             controller.navigate(R.id.PCPageOne);
         });
 
-        nextButton.setOnClickListener(v -> controller.navigate(R.id.action_PCPageTwo_to_PCPageThree));
+        nextButton.setOnClickListener(v -> {
+            getListData();
+            controller.navigate(R.id.action_PCPageTwo_to_PCPageThree);
+    });
+    }
+
+    private void getListData() {
+
+
     }
 
     private void addToList(List<String> list) {
@@ -106,6 +122,4 @@ public class PCPageTwo extends Fragment {
                 .setPositiveButton("Add", (dialog, which) ->
                         list.add(addEntryText.getText().toString())).setNegativeButton("Cancel", null).show();
     }
-
-
 }

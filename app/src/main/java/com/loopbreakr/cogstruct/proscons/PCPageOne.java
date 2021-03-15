@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -20,6 +21,7 @@ import com.loopbreakr.cogstruct.R;
 
 
 public class PCPageOne extends Fragment {
+    private PCViewModel pcViewModel;
     private Button returnButton, nextButton;
     private EditText behaviorInput;
 
@@ -30,7 +32,8 @@ public class PCPageOne extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        pcViewModel = new ViewModelProvider(requireActivity()).get(PCViewModel.class);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -45,6 +48,11 @@ public class PCPageOne extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
         setButtons();
+        getViewModelData();
+    }
+
+    private void getViewModelData() {
+        pcViewModel.getPCBehavior().observe(getViewLifecycleOwner(), charSequence -> behaviorInput.setText(charSequence));
     }
 
     private void findViews(View view) {
@@ -62,6 +70,7 @@ public class PCPageOne extends Fragment {
         });
 
         nextButton.setOnClickListener(v ->{
+            pcViewModel.setPCBehavior(behaviorInput.getText());
             NavController controller = Navigation.findNavController(requireView());
             controller.navigate(R.id.action_PCPageOne_to_PCPageTwo);
         });
