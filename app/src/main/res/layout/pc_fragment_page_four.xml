@@ -6,10 +6,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".proscons.PCPageFour">
 
-
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/page_six_title"
+        android:id="@+id/pc_review_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -22,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/review_text"
+        android:id="@+id/pc_review_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -32,28 +38,62 @@
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/page_six_title" />
+        app:layout_constraintTop_toBottomOf="@+id/pc_review_title" />
+
+    <TextView
+        android:id="@+id/pc_behavior_review_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:padding="4dp"
+        android:text="Target behavior:"
+        android:textColor="@color/colorGreenText"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/pc_behavior_review_container"
+        app:layout_constraintEnd_toStartOf="@+id/space2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pc_behavior_review_container" />
+
+    <LinearLayout
+        android:id="@+id/pc_behavior_review_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/space2"
+        app:layout_constraintTop_toBottomOf="@+id/pc_review_text">
+
+        <TextView
+            android:id="@+id/pc_behavior_review"
+            style="@style/requiredText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:text="@string/field_required" />
+    </LinearLayout>
 
     <ScrollView
         android:id="@+id/review_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/pc_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tj_submit"
-        app:layout_constraintTop_toBottomOf="@+id/review_text">
+        app:layout_constraintTop_toBottomOf="@+id/pc_behavior_review_container">
 
 
         <GridLayout
-            android:layout_margin="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:rowCount="4"
+            android:layout_margin="8dp"
+            android:alignmentMode="alignMargins"
+            android:background="#A8E3C0"
             android:columnCount="3"
             android:columnOrderPreserved="true"
-            android:alignmentMode="alignMargins"
-            android:background="#A8E3C0">
+            android:rowCount="4">
 
 
             <TextView
@@ -124,8 +164,7 @@
                 android:layout_marginEnd="2dp"
                 android:layout_marginBottom="2dp"
                 android:background="@color/colorWhite"
-                android:padding="4dp"
-                android:text="change_pros_list" />
+                android:padding="4dp" />
 
             <TextView
                 android:id="@+id/review_dont_change_pros"
@@ -138,8 +177,7 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="2dp"
                 android:background="@color/colorWhite"
-                android:padding="4dp"
-                android:text="dont_change_pros_list" />
+                android:padding="4dp" />
 
 
             <TextView
@@ -168,8 +206,7 @@
                 android:layout_marginEnd="2dp"
                 android:layout_marginBottom="4dp"
                 android:background="@color/colorWhite"
-                android:padding="4dp"
-                android:text="change_cons_list" />
+                android:padding="4dp" />
 
             <TextView
                 android:id="@+id/review_dont_change_cons"
@@ -182,9 +219,7 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="4dp"
                 android:background="@color/colorWhite"
-                android:padding="4dp"
-                android:text="dont_change_cons_list" />
-
+                android:padding="4dp" />
 
 
         </GridLayout>
@@ -192,7 +227,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/tj_submit"
+        android:id="@+id/pc_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -208,7 +243,7 @@
 
 
     <Button
-        android:id="@+id/tj_edit"
+        android:id="@+id/pc_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -232,5 +267,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/review_content" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

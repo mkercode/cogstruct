@@ -52,7 +52,7 @@ public class PCPageOne extends Fragment {
     }
 
     private void getViewModelData() {
-        pcViewModel.getPCBehavior().observe(getViewLifecycleOwner(), charSequence -> behaviorInput.setText(charSequence));
+       behaviorInput.setText(pcViewModel.getPCBehavior());
     }
 
     private void findViews(View view) {
@@ -70,7 +70,7 @@ public class PCPageOne extends Fragment {
         });
 
         nextButton.setOnClickListener(v ->{
-            pcViewModel.setPCBehavior(behaviorInput.getText());
+            pcViewModel.setPCBehavior(behaviorInput.getText().toString());
             NavController controller = Navigation.findNavController(requireView());
             controller.navigate(R.id.action_PCPageOne_to_PCPageTwo);
         });

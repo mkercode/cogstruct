@@ -8,19 +8,22 @@ import java.util.List;
 
 public class PCViewModel extends ViewModel {
 
-    private MutableLiveData<CharSequence> behaviorText = new MutableLiveData<>();
+    private String behaviorText;
+
+
     private List<String> changePros = new ArrayList<>();
     private List<String> changeCons = new ArrayList<>();
     private List<String> dontChangePros = new ArrayList<>();
     private List<String> dontChangeCons = new ArrayList<>();
 
-    public void setPCBehavior(CharSequence behavior) { behaviorText.setValue(behavior); }
+
+    public void setPCBehavior(String behavior) { behaviorText = behavior; }
     public void setChangePros(List<String> input){ changePros = input; }
     public void setChangeCons(List<String> input){ changeCons = input; }
     public void setDontChangePros(List<String> input){ dontChangePros = input; }
     public void setDontChangeCons(List<String> input){ dontChangeCons = input; }
 
-    public LiveData<CharSequence> getPCBehavior() { return behaviorText; }
+    public String getPCBehavior() { return behaviorText; }
     public List<String> getChangePros() { return changePros; }
     public List<String> getChangeCons() { return changeCons; }
     public List<String> getDontChangePros() { return dontChangePros; }
