@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -24,7 +25,6 @@ import java.util.List;
 
 public class TJPageFive extends Fragment {
     private TJViewModel tjViewModel;
-    private EditText thoughtInput;
     private Button addThoughtButton, backButton, reviewButton;
     private ChipGroup thoughtChipGroup;
     private List<String> thoughtList = new ArrayList<>();
@@ -56,7 +56,6 @@ public class TJPageFive extends Fragment {
     }
 
     private void findViews(View view) {
-        thoughtInput = view.findViewById(R.id.thought_input);
         addThoughtButton = view.findViewById(R.id.add_thought_button);
         thoughtChipGroup = view.findViewById(R.id.tj_thought_chipgroup);
         backButton = view.findViewById(R.id.page_five_back);
@@ -77,13 +76,7 @@ public class TJPageFive extends Fragment {
     private void setButtons() {
 
         addThoughtButton.setOnClickListener(v -> {
-            String thought = thoughtInput.getText().toString().trim();
-            if (!thought.equals("") && !thoughtInput.getText().toString().isEmpty()){
-                createThoughtChip(thought);
-                thoughtList.add(thought);
-                thoughtInput.setText("");
-            }
-            Log.d( "setButtons: ", thoughtList.toString());
+            addToList();
         });
 
         NavController controller = Navigation.findNavController(requireView());
@@ -114,5 +107,15 @@ public class TJPageFive extends Fragment {
 
     private void getTextInput(){
         tjViewModel.setThoughtList(thoughtList);
+    }
+
+    private void addToList() {
+        EditText addEntryText = new EditText(getActivity());
+        new AlertDialog.Builder(getActivity()).setTitle("Add Thought")
+                .setView(addEntryText)
+                .setPositiveButton("Add", (dialog, which) ->{
+                    thoughtList.add(addEntryText.getText().toString());
+                    createThoughtChip(addEntryText.getText().toString());
+                }).setNegativeButton("Cancel", null).show();
     }
 }

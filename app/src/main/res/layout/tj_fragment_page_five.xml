@@ -143,36 +143,19 @@
                 android:layout_height="wrap_content" />
         </HorizontalScrollView>
 
-        <EditText
-            android:id="@+id/thought_input"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:autofillHints=""
-            android:gravity="top"
-            android:hint="@string/tj_thoughts_hint"
-            android:inputType="textAutoCorrect|textMultiLine"
-            android:maxLines="3"
-            android:minLines="3"
-            app:layout_constraintEnd_toStartOf="@+id/add_thought_button"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tj_chip_scrollView" />
-
         <Button
             android:id="@+id/add_thought_button"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:minWidth="0dp"
             android:minHeight="0dp"
-            android:text="@string/plus"
-            app:layout_constraintBottom_toBottomOf="@+id/thought_input"
+            android:text="Add New Thought"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/thought_input"
-            app:layout_constraintTop_toTopOf="@+id/thought_input" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tj_chip_scrollView" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
