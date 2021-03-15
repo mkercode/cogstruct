@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -14,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -26,7 +28,6 @@ import java.util.List;
 public class PCPageTwo extends Fragment {
     private RecyclerView prosRecyclerView, consRecyclerView;
     private Button backButton, nextButton;
-    private PCRecyclerAdapter prosRecyclerAdapter, consRecyclerAdapter;
     private List<String> prosList, consList;
     private FloatingActionButton addPro, addCon;
 
@@ -67,20 +68,28 @@ public class PCPageTwo extends Fragment {
         prosList = new ArrayList<>();
         consList = new ArrayList<>();
 
-        prosRecyclerAdapter = new PCRecyclerAdapter(prosList);
-        consRecyclerAdapter = new PCRecyclerAdapter(consList);
-        prosRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        consRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        PCRecyclerAdapter prosRecyclerAdapter = new PCRecyclerAdapter(prosList);
+        PCRecyclerAdapter consRecyclerAdapter = new PCRecyclerAdapter(consList);
+
         prosRecyclerView.setAdapter(prosRecyclerAdapter);
         consRecyclerView.setAdapter(consRecyclerAdapter);
 
-        prosList.add("hello");
-        prosList.add("hi");
-        prosList.add("howdy");
-        prosList.add("yo");
+        prosRecyclerAdapter.setOnItemClickListener(position -> {
+            prosList.remove(position);
+            prosRecyclerAdapter.notifyDataSetChanged();
+        });
+        consRecyclerAdapter.setOnItemClickListener(position -> {
+            consList.remove(position);
+            consRecyclerAdapter.notifyDataSetChanged();
+        });
+
     }
 
     private void setButtons() {
+
+        addPro.setOnClickListener(v -> addToList(prosList));
+        addCon.setOnClickListener(v -> addToList(consList));
+
         NavController controller = Navigation.findNavController(requireView());
         backButton.setOnClickListener(v ->{
             controller.popBackStack(R.id.PCPageOne, true);
@@ -89,4 +98,14 @@ public class PCPageTwo extends Fragment {
 
         nextButton.setOnClickListener(v -> controller.navigate(R.id.action_PCPageTwo_to_PCPageThree));
     }
+
+    private void addToList(List<String> list) {
+        EditText addEntryText = new EditText(getActivity());
+        new AlertDialog.Builder(getActivity()).setTitle("Add Entry")
+                .setView(addEntryText)
+                .setPositiveButton("Add", (dialog, which) ->
+                        list.add(addEntryText.getText().toString())).setNegativeButton("Cancel", null).show();
+    }
+
+
 }

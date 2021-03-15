@@ -14,8 +14,10 @@
         android:clickable="false"
         app:layout_constraintBottom_toTopOf="@id/pc_page_two_next"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Space
         android:id="@+id/space"
@@ -111,10 +113,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toStartOf="@+id/space"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pc_change_pros_question" />
+        app:layout_constraintTop_toBottomOf="@+id/add_change_pro" />
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -125,10 +128,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/space"
-        app:layout_constraintTop_toBottomOf="@+id/pc_change_cons_question" />
+        app:layout_constraintTop_toBottomOf="@+id/add_change_con" />
 
 
     <Button

@@ -114,10 +114,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/space"
-        app:layout_constraintTop_toBottomOf="@+id/pc_dont_change_cons_question" />
+        app:layout_constraintTop_toBottomOf="@+id/add_dont_change_con" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dont_change_pros_recyclerview"
@@ -127,10 +128,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toStartOf="@+id/space"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pc_dont_change_pros_question" />
+        app:layout_constraintTop_toBottomOf="@+id/add_dont_change_pro" />
 
 
     <Button
