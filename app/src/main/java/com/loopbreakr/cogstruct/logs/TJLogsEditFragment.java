@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
 public class TJLogsEditFragment extends Fragment {
     private LogsViewModel logsViewModel;
     private ThoughtJournalObject thoughtJournalData;
@@ -98,7 +97,6 @@ public class TJLogsEditFragment extends Fragment {
         thoughtsEditLog = view.findViewById(R.id.thought_log_input);
         thoughtChipGroup = view.findViewById(R.id.tj_thoughts_log_chipgroup);
         addThoughtButton = view.findViewById(R.id.add_thought_log_button);
-
     }
 
     private void getViewModelData() {

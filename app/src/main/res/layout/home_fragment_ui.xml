@@ -53,13 +53,12 @@
             android:id="@+id/activityContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/appTitleContainer"
-            app:layout_constraintStart_toStartOf="parent"
-            android:alignmentMode="alignMargins"
-
             android:columnCount="2"
+            android:rowCount="5"
             android:columnOrderPreserved="true"
-            android:rowCount="5">
+            android:alignmentMode="alignMargins"
+            app:layout_constraintTop_toBottomOf="@id/appTitleContainer"
+            app:layout_constraintStart_toStartOf="parent">
 
 
 
