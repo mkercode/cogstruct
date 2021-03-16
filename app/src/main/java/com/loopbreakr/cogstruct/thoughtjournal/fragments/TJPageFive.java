@@ -75,9 +75,7 @@ public class TJPageFive extends Fragment {
 
     private void setButtons() {
 
-        addThoughtButton.setOnClickListener(v -> {
-            addToList();
-        });
+        addThoughtButton.setOnClickListener(v -> addToList());
 
         NavController controller = Navigation.findNavController(requireView());
         backButton.setOnClickListener(v ->{
@@ -99,11 +97,14 @@ public class TJPageFive extends Fragment {
         chip.setCloseIconVisible(true);
         chip.setCloseIconTintResource(R.color.colorWhite);
         thoughtChipGroup.addView(chip);
+        chip.setOnClickListener(v -> editInList(thought, chip));
         chip.setOnCloseIconClickListener(view -> {
             thoughtChipGroup.removeView(chip);
             thoughtList.remove(thought);
         });
     }
+
+
 
     private void getTextInput(){
         tjViewModel.setThoughtList(thoughtList);
@@ -116,6 +117,17 @@ public class TJPageFive extends Fragment {
                 .setPositiveButton("Add", (dialog, which) ->{
                     thoughtList.add(addEntryText.getText().toString());
                     createThoughtChip(addEntryText.getText().toString());
+                }).setNegativeButton("Cancel", null).show();
+    }
+
+    private void editInList(String thought, Chip chip) {
+        EditText addEntryText = new EditText(getActivity());
+        addEntryText.setText(thought);
+        new AlertDialog.Builder(getActivity()).setTitle("Edit Thought")
+                .setView(addEntryText)
+                .setPositiveButton("Add", (dialog, which) ->{
+                    thoughtList.set(thoughtList.indexOf(thought), addEntryText.getText().toString());
+                    chip.setText(addEntryText.getText().toString());
                 }).setNegativeButton("Cancel", null).show();
     }
 }
