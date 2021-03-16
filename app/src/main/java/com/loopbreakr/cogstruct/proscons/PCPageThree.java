@@ -28,7 +28,7 @@ public class PCPageThree extends Fragment {
     private PCViewModel pcViewModel;
     private RecyclerView prosRecyclerView, consRecyclerView;
     private Button backButton, reviewButton;
-    private List<String> prosList, consList = new ArrayList<>();
+    private List<String> prosList, consList;
     private FloatingActionButton addPro, addCon;
 
     public PCPageThree() {
@@ -87,7 +87,6 @@ public class PCPageThree extends Fragment {
     }
 
     private void setButtons() {
-
         addPro.setOnClickListener(v -> {
             addToList(prosList);
             pcViewModel.setDontChangePros(prosList);
@@ -112,4 +111,6 @@ public class PCPageThree extends Fragment {
                 .setPositiveButton("Add", (dialog, which) ->
                         list.add(addEntryText.getText().toString())).setNegativeButton("Cancel", null).show();
     }
+
+
 }

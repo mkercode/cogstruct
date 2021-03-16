@@ -75,11 +75,8 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
     public void clickLog(DocumentSnapshot snapshot) {
 
         if (snapshot != null) {
-            //clear all prior data in viewmodel
-            logsViewModel.clearAll();
             NavController controller = Navigation.findNavController(requireView());
             controller.navigate(getSnapshotData(snapshot));
-            Log.i("LOGGER"," "+ logsViewModel.getThoughtJournalLog().getDateCreated());
         }
     }
 
@@ -95,6 +92,7 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
                 break;
 
             case "Pros and Cons":
+                logsViewModel.setSnapshot(snapshot);
                 navId = R.id.action_allLogsFragment_to_prosConsLogFragment;
                 break;
 

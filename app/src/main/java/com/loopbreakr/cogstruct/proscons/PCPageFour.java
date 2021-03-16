@@ -70,8 +70,8 @@ public class PCPageFour extends Fragment {
     private void setButtons() {
         editButton.setOnClickListener(v ->{
             NavController controller = Navigation.findNavController(requireView());
-            controller.popBackStack(R.id.tjPageThree, true);
-            controller.navigate(R.id.tjPageThree);
+            controller.popBackStack(R.id.PCPageThree, true);
+            controller.navigate(R.id.PCPageThree);
         });
         submitButton.setOnClickListener(v ->{
             submitData();

@@ -33,4 +33,17 @@ public class PCViewModel extends ViewModel {
     public String getChangeConsString() { return android.text.TextUtils.join(",", changeCons); }
     public String getDontChangeProsString() { return android.text.TextUtils.join(",", dontChangePros); }
     public String getDontChangeConsString() { return android.text.TextUtils.join(",", dontChangeCons); }
+
+    public ArrayList<String> getDummyChangePros(){
+        return new ArrayList<>(changePros);
+    }
+    public ArrayList<String> getDummyDontChangePros(){
+        return new ArrayList<>(dontChangePros);
+    }
+    public ArrayList<String> getDummyChangeCons(){
+        return new ArrayList<>(changeCons);
+    }
+    public ArrayList<String> getDummyDontChangeCons(){
+        return new ArrayList<>(dontChangeCons);
+    }
 }

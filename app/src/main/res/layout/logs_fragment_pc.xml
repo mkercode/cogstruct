@@ -1,0 +1,225 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context=".logs.PCLogsFragment">
+
+<Space
+    android:id="@+id/space2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/logsToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/header_logs_background"
+        android:theme="@style/Theme.MaterialComponents.NoActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/logs_view_menu"
+        app:popupTheme="@style/PopupMenuStyle" />
+
+
+    <TextView
+        android:id="@+id/pc_logs_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:text="@string/pros_and_cons_title"
+        android:textColor="@color/colorGreenText"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logsToolbar" />
+
+
+<TextView
+    android:id="@+id/pc_behavior_log_question"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:padding="4dp"
+    android:text="Target behavior:"
+    android:textColor="@color/colorGreenText"
+    android:textSize="15sp"
+    app:layout_constraintBottom_toBottomOf="@+id/pc_behavior_log_container"
+    app:layout_constraintEnd_toStartOf="@+id/space2"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/pc_behavior_log_container" />
+
+    <LinearLayout
+        android:id="@+id/pc_behavior_log_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/space2"
+        app:layout_constraintTop_toBottomOf="@+id/pc_logs_title">
+
+        <TextView
+            android:id="@+id/pc_behavior_log_text"
+            style="@style/requiredText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:text="@string/field_required" />
+    </LinearLayout>
+
+<ScrollView
+    android:id="@+id/review_content"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_marginBottom="8dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/pc_behavior_log_container">
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:alignmentMode="alignMargins"
+        android:background="#A8E3C0"
+        android:columnCount="3"
+        android:columnOrderPreserved="true"
+        android:rowCount="4">
+
+
+        <TextView
+            android:id="@+id/blank_top_corner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0.3"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/log_change_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/colorWhite"
+            android:padding="4dp"
+            android:text="If I Change"
+            android:textColor="@color/colorGreenText" />
+
+        <TextView
+            android:id="@+id/log_dont_change_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/colorWhite"
+            android:padding="4dp"
+            android:text="If I Don't Change"
+            android:textColor="@color/colorGreenText" />
+
+        <TextView
+            android:id="@+id/log_pros_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0.3"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/colorWhite"
+            android:padding="4dp"
+            android:text="Pros (+)"
+            android:textColor="@color/colorGreenText" />
+
+        <TextView
+            android:id="@+id/log_change_pros_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/colorWhite"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/log_dont_change_pros_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/colorWhite"
+            android:padding="4dp" />
+
+
+        <TextView
+            android:id="@+id/log_cons_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0.3"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/colorWhite"
+            android:padding="4dp"
+            android:text="Cons (-)"
+            android:textColor="@color/colorGreenText" />
+
+        <TextView
+            android:id="@+id/log_change_cons_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/colorWhite"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/log_dont_change_cons_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/colorWhite"
+            android:padding="4dp" />
+    </GridLayout>
+</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,7 +28,7 @@ public class PCPageTwo extends Fragment {
     private PCViewModel pcViewModel;
     private RecyclerView prosRecyclerView, consRecyclerView;
     private Button backButton, nextButton;
-    private List<String> prosList, consList = new ArrayList<>();
+    private List<String> prosList, consList;
     private FloatingActionButton addPro, addCon;
 
     public PCPageTwo() {
@@ -99,20 +99,11 @@ public class PCPageTwo extends Fragment {
 
         NavController controller = Navigation.findNavController(requireView());
         backButton.setOnClickListener(v ->{
-            getListData();
             controller.popBackStack(R.id.PCPageOne, true);
             controller.navigate(R.id.PCPageOne);
         });
 
-        nextButton.setOnClickListener(v -> {
-            getListData();
-            controller.navigate(R.id.action_PCPageTwo_to_PCPageThree);
-    });
-    }
-
-    private void getListData() {
-
-
+        nextButton.setOnClickListener(v -> controller.navigate(R.id.action_PCPageTwo_to_PCPageThree));
     }
 
     private void addToList(List<String> list) {

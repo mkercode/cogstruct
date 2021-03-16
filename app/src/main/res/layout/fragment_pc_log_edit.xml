@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".logs.PCLogEditFragment">
+
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/edit_logs_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/header_logs_background"
+        android:theme="@style/Theme.MaterialComponents.NoActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/logs_edit_menu"
+        app:popupTheme="@style/PopupMenuStyle" />
+
+    <TextView
+        android:id="@+id/pc_log_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/pros_and_cons_title"
+        android:textColor="@color/colorGreenText"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_logs_toolbar" />
+
+    <TextView
+        android:id="@+id/pc_edit_log_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/colorGreenText"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pc_log_title" />
+
+
+    <TextView
+        android:id="@+id/pc_change_question2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="How will changing it impact my life?"
+        android:textColor="@color/colorGreenText"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pc_behavior_edit_log" />
+
+    <TextView
+        android:id="@+id/pc_log_behavior_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Behavior to change:"
+        android:textColor="@color/colorGreenText"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pc_behavior_edit_log" />
+
+    <EditText
+        android:id="@+id/pc_behavior_edit_log"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine|textAutoCorrect"
+        android:minLines="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/space"
+        app:layout_constraintTop_toBottomOf="@+id/pc_edit_log_date" />
+
+    <TextView
+        android:id="@+id/pc_change_question3"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/pc_not_chamging_question"
+        android:textColor="@color/colorGreenText"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/space3" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_log_change_pro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/add_pro"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="#f15a29"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toStartOf="@+id/space"
+        app:layout_constraintTop_toBottomOf="@+id/pc_change_question2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_log_dont_change_pro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/add_pro"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="#f15a29"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="@+id/change_pros_log"
+        app:layout_constraintTop_toBottomOf="@+id/pc_change_question3" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_log_change_con"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/add_con"
+        android:src="@drawable/ic_minus"
+        app:backgroundTint="#00aeef"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="@+id/add_log_change_pro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/add_log_change_pro" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_log_dont_change_con"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/add_con"
+        android:src="@drawable/ic_minus"
+        app:backgroundTint="#00aeef"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="@+id/add_log_dont_change_pro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/add_log_dont_change_pro" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/change_pros_log"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/pc_change_question3"
+        app:layout_constraintEnd_toEndOf="@+id/add_log_change_pro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_log_change_pro" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/change_cons_log"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/pc_change_question3"
+        app:layout_constraintEnd_toEndOf="@+id/add_log_change_con"
+        app:layout_constraintStart_toEndOf="@+id/space"
+        app:layout_constraintTop_toBottomOf="@+id/add_log_change_con" />
+
+    <Space
+        android:id="@+id/space3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pc_behavior_edit_log" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dont_change_cons_log"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/change_cons_log"
+        app:layout_constraintTop_toTopOf="@+id/dont_change_pros_log" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dont_change_pros_log"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/add_log_dont_change_pro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_log_dont_change_pro" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

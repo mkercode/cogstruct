@@ -14,7 +14,7 @@
             app:destination="@id/tjLogFragment" />
         <action
             android:id="@+id/action_allLogsFragment_to_prosConsLogFragment"
-            app:destination="@id/prosConsLogFragment" />
+            app:destination="@id/PCLogFragment" />
         <action
             android:id="@+id/action_allLogsFragment_to_HIGHLogFragment"
             app:destination="@id/HIGHLogFragment" />
@@ -38,10 +38,14 @@
             app:destination="@id/TJLogEditFragment" />
     </fragment>
     <fragment
-        android:id="@+id/prosConsLogFragment"
-        android:name="com.loopbreakr.cogstruct.logs.ProsConsLogsFragment"
+        android:id="@+id/PCLogFragment"
+        android:name="com.loopbreakr.cogstruct.logs.PCLogsFragment"
         android:label="fragment_pros_cons_log"
-        tools:layout="@layout/logs_fragment_pros_cons" />
+        tools:layout="@layout/logs_fragment_pc" >
+        <action
+            android:id="@+id/action_PCLogFragment_to_PCLogEditFragment"
+            app:destination="@id/PCLogEditFragment" />
+    </fragment>
     <fragment
         android:id="@+id/HIGHLogFragment"
         android:name="com.loopbreakr.cogstruct.logs.HIGHLogsFragment"
@@ -67,4 +71,9 @@
         android:name="com.loopbreakr.cogstruct.logs.TJLogsEditFragment"
         android:label="fragment_t_j_log_edit"
         tools:layout="@layout/logs_fragment_tj_edit" />
+    <fragment
+        android:id="@+id/PCLogEditFragment"
+        android:name="com.loopbreakr.cogstruct.logs.PCLogEditFragment"
+        android:label="fragment_pc_log_edit"
+        tools:layout="@layout/fragment_pc_log_edit" />
 </navigation>
