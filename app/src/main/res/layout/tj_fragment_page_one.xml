@@ -191,7 +191,8 @@
                 android:hint="@string/tj_page_one_people_hint"
                 android:inputType="textAutoCorrect|textMultiLine"
                 android:maxLines="2"
-                android:minLines="2" />
+                android:minLines="2"
+                android:enabled="@={viewModel.tjIsEnabled}"/>
         </LinearLayout>
 
     </ScrollView>

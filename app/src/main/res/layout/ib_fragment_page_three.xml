@@ -1,37 +1,36 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
     <data>
         <variable
             name="viewModel"
             type="com.loopbreakr.cogstruct.identifybarriers.IBViewModel" />
     </data>
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".identifybarriers.IBPageFour">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".identifybarriers.IBPageThree">
+
 
     <View
         android:id="@+id/page_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/ib_page_one_next"
+        app:layout_constraintBottom_toTopOf="@+id/ib_page_three_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:clickable="false"/>
 
-
     <TextView
-        android:id="@+id/ib_page_four_title"
+        android:id="@+id/ib_page_three_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
-        android:text="Final Barriers"
+        android:text="@string/ib_thought_title"
         android:textColor="@color/colorGreenText"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,55 +39,86 @@
 
 
     <TextView
-        android:id="@+id/ib_doing_barrier_question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:text="You got this far!"
-        android:textColor="@color/colorGreenText"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_page_four_title" />
-
-
-    <TextView
-        android:id="@+id/ib_doing_barrier_question2"
+        android:id="@+id/ib_thought_question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:gravity="center"
-        android:text="You were both willing to do the preventative behavior or action and aware of it at the time. \n\nWhat stopped you from doing it?"
+        android:layout_marginEnd="16dp"
+        android:text="Did the thought of doing the preventative measure or action come to mind?"
         android:textColor="@color/colorGreenText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_doing_barrier_question" />
+        app:layout_constraintTop_toBottomOf="@+id/ib_page_three_title" />
+
+
+    <RadioGroup
+        android:id="@+id/ib_thinking_radiogroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:checkedButton="@={viewModel.ibThinkingRadioId}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ib_thought_question">
+
+        <RadioButton
+            android:id="@+id/ib_thinking_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton_yes"
+            android:textColor="@color/lightGrey"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/ib_thinking_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton_no"
+            android:textColor="@color/lightGrey"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/ib_thinking_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="If no... \nWhat got in the way?"
+        android:textColor="@color/colorGreenText"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ib_thinking_radiogroup" />
 
     <EditText
-        android:id="@+id/ib_doing_barrier_input"
-        android:layout_width="wrap_content"
+        android:id="@+id/ib_thinking_input"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:autofillHints=""
         android:ems="15"
+        android:enabled="@={viewModel.ibThinkingIsEnabled}"
         android:gravity="top"
-        android:hint="Enter what got in the way"
+        android:hint="Enter what got int the way of thinking of doing the preventative behavior or action at the time"
         android:inputType="textAutoCorrect|textMultiLine"
         android:maxLines="4"
         android:minLines="4"
-        android:text="@={viewModel.ibDoingBarrier}"
+        android:text="@={viewModel.ibThinkingBarrier}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_doing_barrier_question2" />
-
+        app:layout_constraintTop_toBottomOf="@+id/ib_thinking_question" />
 
     <Button
-        android:id="@+id/ib_page_one_next"
+        android:id="@+id/ib_page_three_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -107,19 +137,19 @@
         android:text=""
         android:textSize="18sp"
         android:textColor="@color/colorWhite"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ib_return"
-        app:layout_constraintEnd_toStartOf="@+id/ib_page_one_next"
-        app:layout_constraintStart_toEndOf="@+id/ib_return"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ib_page_three_back"
+        app:layout_constraintEnd_toStartOf="@+id/ib_page_three_next"
+        app:layout_constraintStart_toEndOf="@+id/ib_page_three_back"
         android:elevation="2dp" />
 
     <Button
-        android:id="@+id/ib_return"
+        android:id="@+id/ib_page_three_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_button_background"
-        android:text="@string/return_button_text"
+        android:text="@string/back_button_text"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -134,6 +164,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/page_content" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
 
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

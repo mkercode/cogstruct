@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.loopbreakr.cogstruct.identifybarriers.IBViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".identifybarriers.IBProblemSolving">
+
+    <View
+        android:id="@+id/page_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/ib_page_one_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="false"/>
+
+
+    <TextView
+        android:id="@+id/ib_problem_solving_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:text="Problem Solve"
+        android:textColor="@color/colorGreenText"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/ib_review_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="Review Answers and Problem Solve!"
+        android:textColor="@color/colorGreenText"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ib_problem_solving_title" />
+
+
+    <GridLayout
+        android:id="@+id/review_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alignmentMode="alignBounds"
+        android:columnCount="2"
+        android:columnOrderPreserved="true"
+        android:rowCount="9"
+        app:layout_constraintTop_toBottomOf="@+id/ib_review_text">
+
+
+        <TextView
+            android:id="@+id/ib_behavior_review_question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:layout_marginStart="6dp"
+            android:padding="4dp"
+            android:text="Unhelpful action or behavior"
+            android:textColor="@color/colorGreenText"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/ib_behavior_review"
+            style="@style/optionalText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            android:gravity="top"
+            android:text="@={viewModel.ibBehavior}" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_columnSpan="2"
+            android:background="?android:attr/listDivider"
+            android:paddingTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/review_content" />
+
+
+        <TextView
+            android:id="@+id/ib_action_review_question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:layout_marginStart="6dp"
+            android:padding="4dp"
+            android:text="What could have I done to prevent it?"
+            android:textColor="@color/colorGreenText"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/ib_action_review"
+            style="@style/optionalText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            android:gravity="top"
+            android:text="@={viewModel.ibNescessaryAction}" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_columnSpan="2"
+            android:background="?android:attr/listDivider"
+            android:paddingTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/review_content" />
+
+
+        <TextView
+            android:id="@+id/ib_barrier_type_review_question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:layout_marginStart="6dp"
+            android:padding="4dp"
+            android:text="Barrier type"
+            android:textColor="@color/colorGreenText"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/ib_barrier_type_review"
+            style="@style/optionalText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            android:gravity="top"
+            android:text="@={viewModel.ibBarrierType}" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_columnSpan="2"
+            android:background="?android:attr/listDivider"
+            android:paddingTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/review_content" />
+
+
+        <TextView
+            android:id="@+id/ib_barrier_review_question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            android:padding="4dp"
+            android:text="Barrier"
+            android:textColor="@color/colorGreenText"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/ib_barrier_review"
+            style="@style/optionalText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            android:gravity="top"
+            android:text="@={viewModel.ibBarrier}" />
+
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/ib_page_one_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_button_background"
+        android:text="@string/next_button_string"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/progress_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ib_return"
+        app:layout_constraintEnd_toStartOf="@+id/ib_page_one_next"
+        app:layout_constraintStart_toEndOf="@+id/ib_return"
+        android:elevation="2dp" />
+
+    <Button
+        android:id="@+id/ib_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_button_background"
+        android:text="@string/return_button_text"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bottom_bar_background"
+        android:paddingTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/page_content" />
+
+    <Space
+        android:id="@+id/space4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Space
+        android:id="@+id/space5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ib_review_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

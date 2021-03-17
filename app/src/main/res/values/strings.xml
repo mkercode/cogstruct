@@ -45,7 +45,7 @@
     <string name="tj_details_question"> Optional: What happened before you engaged in the behavior?</string>
     <string name="back_button_text">Back</string>
     <string name="tj_page_three_title">Behavior</string>
-    <string name="what_is_the_unhelpful_behavior_that_you_engaged_in">What is the unhelpful behavior that you engaged in?</string>
+    <string name="tj_behavior_description">What is the unhelpful behavior or action that you engaged in?</string>
     <string name="tj_page_one_who_question">Who were you with?</string>
     <string name="tj_page_one_people_hint">If you weren\'t alone, enter who you were with.</string>
     <string name="with_others">With others</string>
@@ -102,4 +102,12 @@
     <string name="tj_emotion_details_hint">I.e multiple emotions, bodily sensations, emotional actions, ect</string>
     <string name="tj_emotion_intensity_description">Rate the intensity of the emotion on a scale of 1–5</string>
     <string name="emotions">Emotions</string>
+    <string name="behavior_hint">Enter behavior or action here</string>
+    <string name="prevention_action_description">What could I have done to prevent this? from happening?</string>
+    <string name="ib_page_one_title">What Happened?</string>
+    <string name="radiobutton_yes">Yes</string>
+    <string name="radiobutton_no">No</string>
+    <string name="ib_page_two_title">Willingness</string>
+    <string name="ib_willingness_description">Was I willing to do the preventative measure or action on the previous page?</string>
+    <string name="ib_thought_title">Thought</string>
 </resources>

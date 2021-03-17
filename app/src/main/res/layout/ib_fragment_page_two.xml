@@ -1,14 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".identifybarriers.IBPageTwo">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+        <variable
+            name="viewModel"
+            type="com.loopbreakr.cogstruct.identifybarriers.IBViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".identifybarriers.IBPageTwo">
 
-</FrameLayout>
+        <View
+            android:id="@+id/page_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/ib_page_two_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:clickable="false"/>
+
+        <TextView
+            android:id="@+id/ib_page_two_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:text="@string/ib_page_two_title"
+            android:textColor="@color/colorGreenText"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/ib_willingness_question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/ib_willingness_description"
+            android:textColor="@color/colorGreenText"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_page_two_title" />
+
+
+        <RadioGroup
+            android:id="@+id/ib_willing_radiogroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:checkedButton="@={viewModel.ibWillingRadioId}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_willingness_question">
+
+            <RadioButton
+                android:id="@+id/ib_willing_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radiobutton_yes"
+                android:textColor="@color/lightGrey"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/ib_willing_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radiobutton_no"
+                android:textColor="@color/lightGrey"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/ib_willing_barrier_question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:text="If no... \nWhat got in the way?"
+            android:textColor="@color/colorGreenText"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_willing_radiogroup" />
+
+        <EditText
+            android:id="@+id/ib_willing_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:autofillHints=""
+            android:ems="15"
+            android:enabled="@={viewModel.ibWillingIsEnabled}"
+            android:gravity="top"
+            android:hint="Enter what got in the way of being willing to do said action"
+            android:inputType="textAutoCorrect|textMultiLine"
+            android:maxLines="4"
+            android:minLines="4"
+            android:text="@={viewModel.ibWillingBarrier}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_willing_barrier_question" />
+
+        <Button
+            android:id="@+id/ib_page_two_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/rounded_button_background"
+            android:text="@string/next_button_string"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/progress_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBaseline_toBaselineOf="@+id/ib_page_two_back"
+            app:layout_constraintEnd_toStartOf="@+id/ib_page_two_next"
+            app:layout_constraintStart_toEndOf="@+id/ib_page_two_back"
+            android:elevation="2dp" />
+
+        <Button
+            android:id="@+id/ib_page_two_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/rounded_button_background"
+            android:text="@string/back_button_text"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bottom_bar_background"
+            android:paddingTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/page_content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

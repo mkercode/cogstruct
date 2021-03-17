@@ -22,6 +22,9 @@ public class TJViewModel extends ViewModel {
     private String emotionRatingString;
     private List<String> thoughtList = new ArrayList<>();
 
+    //enable/disable people edittext based on radiobutton option
+    private boolean tjIsEnabled = true;
+
 //dummy value for review display
     private String displayThoughts;
 
@@ -51,7 +54,12 @@ public class TJViewModel extends ViewModel {
         else if(input == R.id.night){setTimeText("At night");}
     }
     public void setPeopleRadioId(int input) {
-        if(input == R.id.alone) {setPeopleText("Alone");}
+        if(input == R.id.alone) {
+            setPeopleText("Alone");
+            setTjIsEnabled(false);}
+        else{
+            setTjIsEnabled(true);
+        }
         peopleRadioId = input;
     }
     public void setEmotionRadioId(int input) {
@@ -65,7 +73,9 @@ public class TJViewModel extends ViewModel {
         emotionRating = input;
         setEmotionRatingString(Float.toString(input));
     }
-
+    public void setTjIsEnabled(boolean input){
+        tjIsEnabled = input;
+    }
 
     public void setEmotionRatingString(String input){ emotionRatingString = input; }
     public String getLocationText() { return locationText; }
@@ -82,6 +92,8 @@ public class TJViewModel extends ViewModel {
     public float getEmotionRating() { return emotionRating; }
     public String getEmotionRatingString(){ return emotionRatingString;}
     public String getThoughtText(){ return android.text.TextUtils.join(",", thoughtList); }
+
+    public boolean isTjIsEnabled() { return tjIsEnabled; }
 
 
     //dummy display getter/setters

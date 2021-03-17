@@ -44,45 +44,41 @@
         android:id="@+id/pc_behavior_review_question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:padding="4dp"
         android:text="Target behavior:"
         android:textColor="@color/colorGreenText"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/pc_behavior_review_container"
         app:layout_constraintEnd_toStartOf="@+id/space2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/pc_behavior_review_container" />
+        app:layout_constraintTop_toBottomOf="@+id/pc_review_text" />
 
-    <LinearLayout
-        android:id="@+id/pc_behavior_review_container"
+
+    <TextView
+        android:id="@+id/pc_behavior_review"
+        style="@style/optionalText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
         android:layout_marginTop="8dp"
-        android:orientation="horizontal"
+        android:gravity="top"
+        android:text="@string/field_required"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/space2"
-        app:layout_constraintTop_toBottomOf="@+id/pc_review_text">
+        app:layout_constraintTop_toBottomOf="@+id/pc_review_text" />
 
-        <TextView
-            android:id="@+id/pc_behavior_review"
-            style="@style/requiredText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="top"
-            android:text="@string/field_required" />
-    </LinearLayout>
 
     <ScrollView
         android:id="@+id/review_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@id/pc_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pc_behavior_review_container">
+        app:layout_constraintTop_toBottomOf="@+id/pc_behavior_review">
 
 
         <GridLayout
