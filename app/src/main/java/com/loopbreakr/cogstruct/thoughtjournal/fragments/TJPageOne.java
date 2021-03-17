@@ -26,7 +26,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class TJPageOne extends Fragment {
     private TJViewModel tjViewModel;
-    private RadioGroup timeRadioGroup , peopleRadioGroup;
     private Button returnButton, nextButton;
     private TjFragmentPageOneBinding binding;
 
@@ -51,27 +50,12 @@ public class TJPageOne extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
-        setViewModelData();
-        getRadioGroupInput(view);
         setButtons();
     }
 
     private void findViews(View view) {
         returnButton = view.findViewById(R.id.tj_return);
         nextButton = view.findViewById(R.id.page_one_next);
-        timeRadioGroup = view.findViewById(R.id.time_radiogroup);
-        peopleRadioGroup = view.findViewById(R.id.people_radiogroup);
-    }
-
-    private void setViewModelData() {
-
-        timeRadioGroup.check(tjViewModel.getTimeRadioId());
-        peopleRadioGroup.check(tjViewModel.getPeopleRadioId());
-    }
-
-    private void getRadioGroupInput(View view) {
-        timeRadioGroup.setOnCheckedChangeListener((group, checkedId) -> tjViewModel.setTimeRadioId(checkedId));
-        peopleRadioGroup.setOnCheckedChangeListener(((group, checkedId) -> tjViewModel.setPeopleRadioId(checkedId)));
     }
 
     private void setButtons() {

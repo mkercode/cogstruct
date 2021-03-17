@@ -74,7 +74,6 @@ public class TJPageFive extends Fragment {
     }
 
     private void setButtons() {
-
         addThoughtButton.setOnClickListener(v -> addToList());
 
         NavController controller = Navigation.findNavController(requireView());
@@ -103,8 +102,6 @@ public class TJPageFive extends Fragment {
             thoughtList.remove(thought);
         });
     }
-
-
 
     private void getTextInput(){
         tjViewModel.setThoughtList(thoughtList);

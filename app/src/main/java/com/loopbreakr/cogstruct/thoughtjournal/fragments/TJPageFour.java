@@ -25,8 +25,6 @@ import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
 
 public class TJPageFour extends Fragment {
     private TJViewModel tjViewModel;
-    private RadioGroup emotionRadioGroup;
-    private RatingBar emotionRatingBar;
     private Button backButton, nextButton;
     private TjFragmentPageFourBinding binding;
 
@@ -53,26 +51,12 @@ public class TJPageFour extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
-        getViewModelData();
-        getInputData(view);
         setButtons();
     }
 
     private void findViews(View view) {
-        emotionRadioGroup = view.findViewById(R.id.main_emotion_radiogroup);
-        emotionRatingBar = view.findViewById(R.id.emotion_rating_bar);
         backButton = view.findViewById(R.id.page_four_back);
         nextButton = view.findViewById(R.id.page_four_next);
-    }
-
-    private void getViewModelData() {
-        emotionRadioGroup.check(tjViewModel.getEmotionRadioId());
-        emotionRatingBar.setRating(tjViewModel.getEmotionRating());
-    }
-
-    private void getInputData(View view){
-        emotionRadioGroup.setOnCheckedChangeListener((group, checkedId) -> tjViewModel.setEmotionRadioId(checkedId));
-        emotionRatingBar.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> tjViewModel.setEmotionRating(rating));
     }
 
     private void setButtons() {
@@ -83,5 +67,4 @@ public class TJPageFour extends Fragment {
         });
         nextButton.setOnClickListener(v -> controller.navigate(R.id.action_tjPageFour_to_tjPageFive));
     }
-
 }

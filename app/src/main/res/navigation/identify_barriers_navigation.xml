@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/identify_barriers_navigation"
+    app:startDestination="@id/IBPageOne">
+
+    <fragment
+        android:id="@+id/IBPageOne"
+        android:name="com.loopbreakr.cogstruct.identifybarriers.IBPageOne"
+        android:label="ib_fragment_page_one"
+        tools:layout="@layout/ib_fragment_page_one" >
+        <action
+            android:id="@+id/action_IBPageOne_to_IBPageTwo"
+            app:destination="@id/IBPageTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/IBPageTwo"
+        android:name="com.loopbreakr.cogstruct.identifybarriers.IBPageTwo"
+        android:label="ib_fragment_page_two"
+        tools:layout="@layout/ib_fragment_page_two" >
+        <action
+            android:id="@+id/action_IBPageTwo_to_IBPageThree_B1"
+            app:destination="@id/IBPageThree_B1" />
+        <action
+            android:id="@+id/action_IBPageTwo_to_IBPageThree_B2"
+            app:destination="@id/IBPageThree_B2" />
+    </fragment>
+    <fragment
+        android:id="@+id/IBPageThree_B1"
+        android:name="com.loopbreakr.cogstruct.identifybarriers.IBPageThree_B1"
+        android:label="ib_fragment_page_three__b1"
+        tools:layout="@layout/ib_fragment_page_three__b1" >
+        <action
+            android:id="@+id/action_IBPageThree_B1_to_IBPageFour"
+            app:destination="@id/IBPageFour" />
+    </fragment>
+    <fragment
+        android:id="@+id/IBPageThree_B2"
+        android:name="com.loopbreakr.cogstruct.identifybarriers.IBPageThree_B2"
+        android:label="ib_fragment_page_three_b2"
+        tools:layout="@layout/ib_fragment_page_three_b2" >
+        <action
+            android:id="@+id/action_IBPageThree_B2_to_IBPageFour"
+            app:destination="@id/IBPageFour" />
+    </fragment>
+    <fragment
+        android:id="@+id/IBPageFour"
+        android:name="com.loopbreakr.cogstruct.identifybarriers.IBPageFour"
+        android:label="ib_fragment_page_four"
+        tools:layout="@layout/ib_fragment_page_four" />
+</navigation>

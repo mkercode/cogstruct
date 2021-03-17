@@ -60,7 +60,6 @@ public class TJPageSix extends Fragment{
         getViews(view);
         getViewModelData();
         setButtons();
-        Toast.makeText(getActivity().getApplicationContext(), tjViewModel.getLocationText(), Toast.LENGTH_SHORT).show();
     }
 
     private void getViews(View view) {

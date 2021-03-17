@@ -92,7 +92,8 @@
                 android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/timeQuestion">
+                app:layout_constraintTop_toBottomOf="@+id/timeQuestion"
+                android:checkedButton="@={viewModel.timeRadioId}">
 
                 <RadioButton
                     android:id="@+id/morning"
@@ -158,7 +159,8 @@
                 android:layout_marginBottom="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/timeQuestion">
+                app:layout_constraintTop_toBottomOf="@+id/timeQuestion"
+                android:checkedButton="@={viewModel.peopleRadioId}">
 
                 <RadioButton
                     android:id="@+id/alone"
