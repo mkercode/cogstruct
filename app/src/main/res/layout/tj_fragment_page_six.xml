@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="viewModel"
             type="com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".thoughtjournal.fragments.TJPageSix">
@@ -31,7 +30,7 @@
         android:id="@+id/review_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="@string/tj_review_description"
         android:textColor="@color/colorGreenText"
@@ -60,92 +59,147 @@
             android:columnOrderPreserved="true"
             android:rowCount="9">
 
-            <TextView
-                android:id="@+id/place_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                android:padding="4dp"
-                android:text="@string/place_review_question"
-                android:textColor="@color/colorGreenText"
-                android:textSize="15sp" />
-
             <LinearLayout
-                android:id="@+id/place_review_container"
-                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_margin="6dp"
                 android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                android:orientation="horizontal">
-
+                android:layout_columnWeight="1">
                 <TextView
-                    android:id="@+id/place_review"
-                    style="@style/requiredText"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/place_text"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:text="@={viewModel.locationText}"/>
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/time_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                android:padding="4dp"
-                android:text="@string/time_review_question"
-                android:textColor="@color/colorGreenText"
-                android:textSize="15sp" />
-            <LinearLayout
-                android:id="@+id/time_review_container"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                android:orientation="horizontal">
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/place_review_question"
+                    android:textColor="@color/colorGreenText"
+                    android:textSize="15sp" />
                 <TextView
-                    android:id="@+id/time_review"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/required_text"
                     style="@style/optionalText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:text="@={viewModel.timeText}"/>
+                    android:textSize="15sp" />
             </LinearLayout>
-
 
             <TextView
-                android:id="@+id/people_text"
+                android:id="@+id/place_review"
+                style="@style/requiredText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                android:padding="4dp"
-                android:text="@string/people_review_question"
-                android:textColor="@color/colorGreenText"
-                android:textSize="15sp" />
+                android:gravity="top"
+                android:text="@={viewModel.locationText}"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_columnSpan="2"
+                android:background="?android:attr/listDivider"
+                android:paddingTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/review_content" />
+
+
             <LinearLayout
-                android:id="@+id/people_review_container"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_margin="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1">
+                <TextView
+                    android:id="@+id/time_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/time_review_question"
+                    android:textColor="@color/colorGreenText"
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/required_text"
+                    style="@style/optionalText"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/time_review"
+                style="@style/optionalText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                android:orientation="horizontal">
+                android:gravity="top"
+                android:text="@={viewModel.timeText}"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_columnSpan="2"
+                android:background="?android:attr/listDivider"
+                android:paddingTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/review_content" />
+
+
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_margin="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1">
                 <TextView
-                    android:id="@+id/people_review"
-                    style="@style/optionalText"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/people_text"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:text="@={viewModel.peopleText}"/>
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/people_review_question"
+                    android:textColor="@color/colorGreenText"
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/required_text"
+                    style="@style/optionalText"
+                    android:textSize="15sp" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/people_review"
+                style="@style/optionalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                android:gravity="top"
+                android:text="@={viewModel.peopleText}"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_columnSpan="2"
+                android:background="?android:attr/listDivider"
+                android:paddingTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/review_content" />
+
 
 
             <TextView
@@ -159,66 +213,105 @@
                 android:text="@string/tj_page_two_title"
                 android:textColor="@color/colorGreenText"
                 android:textSize="15sp" />
-            <LinearLayout
-                android:id="@+id/situation_review_container"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/situation_review"
-                    style="@style/optionalText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:text="@={viewModel.situationText}"/>
-            </LinearLayout>
-
 
             <TextView
-                android:id="@+id/behavior_text"
+                android:id="@+id/situation_review"
+                style="@style/optionalText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                android:padding="4dp"
-                android:text="@string/behavior_review_question"
-                android:textColor="@color/colorGreenText"
-                android:textSize="15sp" />
+                android:gravity="top"
+                android:text="@={viewModel.situationText}"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_columnSpan="2"
+                android:background="?android:attr/listDivider"
+                android:paddingTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/review_content" />
+
+
+
 
             <LinearLayout
-                android:id="@+id/behavior_review_container"
-                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_margin="6dp"
                 android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                android:orientation="horizontal">
-
+                android:layout_columnWeight="1">
                 <TextView
-                    android:id="@+id/behavior_review"
-                    style="@style/optionalText"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/behavior_text"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="top"
-                    android:text="@={viewModel.behaviorText}"/>
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/behavior_review_question"
+                    android:textColor="@color/colorGreenText"
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/required_text"
+                    style="@style/optionalText"
+                    android:textSize="15sp" />
             </LinearLayout>
 
-
             <TextView
-                android:id="@+id/emotion_text"
+                android:id="@+id/behavior_review"
+                style="@style/optionalText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                android:padding="4dp"
-                android:text="@string/emotion_review_question"
-                android:textColor="@color/colorGreenText"
-                android:textSize="15sp" />
+                android:gravity="top"
+                android:text="@={viewModel.behaviorText}"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_columnSpan="2"
+                android:background="?android:attr/listDivider"
+                android:paddingTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/review_content" />
+
+
+
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_margin="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1">
+                <TextView
+                    android:id="@+id/emotion_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/emotion_review_question"
+                    android:textColor="@color/colorGreenText"
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/required_text"
+                    style="@style/optionalText"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/emotion_review_container"
                 android:layout_width="0dp"
@@ -273,36 +366,54 @@
                     android:gravity="top"
                     android:text="@={viewModel.emotionDetailText}"/>
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_columnSpan="2"
+                android:background="?android:attr/listDivider"
+                android:paddingTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/review_content" />
 
 
-            <TextView
-                android:id="@+id/thoughts_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                android:padding="4dp"
-                android:text="@string/thoughts_review_question"
-                android:textColor="@color/colorGreenText"
-                android:textSize="15sp" />
 
             <LinearLayout
-                android:id="@+id/thoughts_review_container"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_margin="6dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1">
+                <TextView
+                    android:id="@+id/thoughts_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/thoughts_review_question"
+                    android:textColor="@color/colorGreenText"
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/required_text"
+                    style="@style/optionalText"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/thoughts_review"
+                style="@style/optionalText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
-                android:orientation="horizontal">
+                android:text="@={viewModel.displayThoughts}" />
 
-                <TextView
-                    android:id="@+id/thoughts_review"
-                    style="@style/optionalText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@={viewModel.displayThoughts}" />
-            </LinearLayout>
 
         </GridLayout>
     </ScrollView>
@@ -349,6 +460,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/review_content" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
 
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+
