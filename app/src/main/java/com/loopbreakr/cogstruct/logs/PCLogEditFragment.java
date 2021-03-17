@@ -21,11 +21,10 @@ import android.widget.EditText;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.proscons.PCRecyclerAdapter;
+import com.loopbreakr.cogstruct.SimpleRecyclerAdapter;
 import com.loopbreakr.cogstruct.proscons.PCViewModel;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -108,10 +107,10 @@ public class PCLogEditFragment extends Fragment {
 
     private void initializeRecyclerViews() {
 
-        PCRecyclerAdapter changeProsRecyclerAdapter = new PCRecyclerAdapter(changeProsList);
-        PCRecyclerAdapter dontChangeProsRecyclerAdapter = new PCRecyclerAdapter(dontChangeProsList);
-        PCRecyclerAdapter changeConsRecyclerAdapter = new PCRecyclerAdapter(changeConsList);
-        PCRecyclerAdapter dontChangeConsRecyclerAdapter = new PCRecyclerAdapter(dontChangeConsList);
+        SimpleRecyclerAdapter changeProsRecyclerAdapter = new SimpleRecyclerAdapter(changeProsList);
+        SimpleRecyclerAdapter dontChangeProsRecyclerAdapter = new SimpleRecyclerAdapter(dontChangeProsList);
+        SimpleRecyclerAdapter changeConsRecyclerAdapter = new SimpleRecyclerAdapter(changeConsList);
+        SimpleRecyclerAdapter dontChangeConsRecyclerAdapter = new SimpleRecyclerAdapter(dontChangeConsList);
 
         changeProsRecyclerView.setAdapter(changeProsRecyclerAdapter);
         dontChangeProsRecyclerView.setAdapter(dontChangeProsRecyclerAdapter);
