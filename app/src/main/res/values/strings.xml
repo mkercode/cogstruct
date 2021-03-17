@@ -98,4 +98,12 @@
     <string name="pros">Pros</string>
     <string name="pc_not_chamging_question">How will not changing it impact my life?</string>
     <string name="required_text">(Required)</string>
+    <string name="tj_emotion_details_description">Optional: go into details about how you felt.</string>
+    <string name="tj_emotion_details_hint">I.e multiple emotions, bodily sensations, emotional actions, ect</string>
+    <string name="tj_emotion_intensity_description">Rate the intensity of the emotion on a scale of 1-5</string>
+    <string name="happiness">Happiness</string>
+    <string name="fear">Fear</string>
+    <string name="anger">Anger</string>
+    <string name="sadness">Sadness</string>
+    <string name="emotions">Emotions</string>
 </resources>

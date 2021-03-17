@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="24dp"
-                    android:text="Emotions"
+                    android:text="@string/emotions"
                     android:textColor="@color/colorGreenText"
                     android:textSize="36sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -74,7 +74,7 @@
                         android:id="@+id/sadness"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sadness"
+                        android:text="@string/sadness"
                         android:textColor="@color/lightGrey"
                         android:textSize="16sp" />
 
@@ -82,7 +82,7 @@
                         android:id="@+id/anger"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Anger"
+                        android:text="@string/anger"
                         android:textColor="@color/lightGrey"
                         android:textSize="16sp" />
 
@@ -90,7 +90,7 @@
                         android:id="@+id/fear"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fear"
+                        android:text="@string/fear"
                         android:textColor="@color/lightGrey"
                         android:textSize="16sp" />
 
@@ -98,7 +98,7 @@
                         android:id="@+id/happiness"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Happiness"
+                        android:text="@string/happiness"
                         android:textColor="@color/lightGrey"
                         android:textSize="16sp" />
 
@@ -110,7 +110,7 @@
                     android:layout_height="56dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="24dp"
-                    android:text="Rate the intensity of the emotion on a scale of 1-5"
+                    android:text="@string/tj_emotion_intensity_description"
                     android:textColor="@color/colorGreenText"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +132,7 @@
                     android:layout_height="56dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="24dp"
-                    android:text="Optional: go into details about how you felt. "
+                    android:text="@string/tj_emotion_details_description"
                     android:textColor="@color/colorGreenText"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -146,7 +146,7 @@
                     android:autofillHints=""
                     android:ems="15"
                     android:gravity="top"
-                    android:hint="I.e multiple emotions, bodily sensations, emotional actions, ect"
+                    android:hint="@string/tj_emotion_details_hint"
                     android:text="@={viewModel.emotionDetailText}"
                     android:inputType="textAutoCorrect|textMultiLine"
                     android:maxLines="5"
