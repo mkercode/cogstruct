@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -18,13 +19,16 @@ import android.widget.RadioGroup;
 
 import com.loopbreakr.cogstruct.MainActivity;
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.databinding.TjFragmentPageOneBinding;
 import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
+
+import org.jetbrains.annotations.NotNull;
 
 public class TJPageOne extends Fragment {
     private TJViewModel tjViewModel;
-    private EditText placeInput, peopleInput;
     private RadioGroup timeRadioGroup , peopleRadioGroup;
     private Button returnButton, nextButton;
+    private TjFragmentPageOneBinding binding;
 
     public TJPageOne() { }
 
@@ -35,10 +39,12 @@ public class TJPageOne extends Fragment {
       }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.tj_fragment_page_one, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.tj_fragment_page_one, container, false);
+        binding.setViewModel(tjViewModel);
+        return binding.getRoot();
     }
 
     @Override
@@ -51,8 +57,6 @@ public class TJPageOne extends Fragment {
     }
 
     private void findViews(View view) {
-        placeInput = view.findViewById(R.id.place_input);
-        peopleInput = view.findViewById(R.id.people_input);
         returnButton = view.findViewById(R.id.tj_return);
         nextButton = view.findViewById(R.id.page_one_next);
         timeRadioGroup = view.findViewById(R.id.time_radiogroup);
@@ -60,25 +64,14 @@ public class TJPageOne extends Fragment {
     }
 
     private void setViewModelData() {
-        placeInput.setText(tjViewModel.getLocationText());
+
         timeRadioGroup.check(tjViewModel.getTimeRadioId());
         peopleRadioGroup.check(tjViewModel.getPeopleRadioId());
-        if(tjViewModel.getPeopleRadioId() != R.id.alone){
-            peopleInput.setText(tjViewModel.getPeopleText());
-        }
     }
 
     private void getRadioGroupInput(View view) {
-        timeRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-            RadioButton timeRadioButton =  view.findViewById(checkedId);
-            tjViewModel.setTimeText(timeRadioButton.getText());
-            tjViewModel.setTimeRadioId(checkedId);
-        });
-        peopleRadioGroup.setOnCheckedChangeListener(((group, checkedId) -> {
-            RadioButton peopleRadioButton =  view.findViewById(checkedId);
-            tjViewModel.setPeopleText(peopleRadioButton.getText());
-            tjViewModel.setPeopleRadioId(checkedId);
-        }));
+        timeRadioGroup.setOnCheckedChangeListener((group, checkedId) -> tjViewModel.setTimeRadioId(checkedId));
+        peopleRadioGroup.setOnCheckedChangeListener(((group, checkedId) -> tjViewModel.setPeopleRadioId(checkedId)));
     }
 
     private void setButtons() {
@@ -89,16 +82,9 @@ public class TJPageOne extends Fragment {
         });
 
         nextButton.setOnClickListener(v ->{
-            setTextInput();
             NavController controller = Navigation.findNavController(requireView());
             controller.navigate(R.id.action_tjPageOne_to_tjPageTwo);
         });
     }
 
-    private void setTextInput() {
-        tjViewModel.setLocationText(placeInput.getText());
-        if(tjViewModel.getPeopleRadioId() != R.id.alone){
-            tjViewModel.setPeopleText(peopleInput.getText());
-        }
-    }
 }

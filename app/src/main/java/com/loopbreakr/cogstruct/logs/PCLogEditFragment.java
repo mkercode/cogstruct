@@ -76,8 +76,8 @@ public class PCLogEditFragment extends Fragment {
             if (item.getItemId() == R.id.action_done_edit_log) {
                 setViewModelText();
                 updateFirestoreDocument();
-                controller.popBackStack(R.id.PCLogFragment, true);
-                controller.navigate(R.id.PCLogFragment);
+                controller.popBackStack(R.id.allLogsFragment, true);
+                controller.navigate(R.id.allLogsFragment);
                 return true;
             }
             return super.onOptionsItemSelected(item);

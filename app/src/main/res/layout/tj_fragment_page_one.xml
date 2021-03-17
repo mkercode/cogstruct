@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel" />
+    </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -56,6 +64,7 @@
                 android:autofillHints=""
                 android:ems="15"
                 android:gravity="top"
+                android:text="@={viewModel.locationText}"
                 android:hint="@string/place_hint"
                 android:inputType="textAutoCorrect|textMultiLine"
                 android:maxLines="4"
@@ -173,7 +182,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-
+                android:text="@={viewModel.peopleText}"
                 android:autofillHints=""
                 android:ems="15"
                 android:gravity="top"
@@ -235,3 +244,4 @@
         app:layout_constraintTop_toBottomOf="@id/review_content" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

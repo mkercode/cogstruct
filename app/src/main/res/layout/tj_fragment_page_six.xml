@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".thoughtjournal.fragments.TJPageSix">
@@ -26,10 +32,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/tj_review_description"
         android:textColor="@color/colorGreenText"
         android:textSize="20sp"
-        android:text="@string/tj_review_description"
-        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/page_six_title" />
@@ -40,9 +46,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/tj_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tj_submit"
         app:layout_constraintTop_toBottomOf="@+id/review_text">
 
         <GridLayout
@@ -77,11 +83,11 @@
 
                 <TextView
                     android:id="@+id/place_review"
+                    style="@style/requiredText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/field_required"
                     android:gravity="top"
-                    style="@style/requiredText"/>
+                    android:text="@={viewModel.locationText}"/>
             </LinearLayout>
 
             <TextView
@@ -105,11 +111,11 @@
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/time_review"
+                    style="@style/optionalText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/field_required"
                     android:gravity="top"
-                    style="@style/requiredText"/>
+                    android:text="@={viewModel.timeText}"/>
             </LinearLayout>
 
 
@@ -134,11 +140,11 @@
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/people_review"
+                    style="@style/optionalText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/field_required"
                     android:gravity="top"
-                    style="@style/requiredText"/>
+                    android:text="@={viewModel.peopleText}"/>
             </LinearLayout>
 
 
@@ -163,11 +169,11 @@
                 android:orientation="horizontal">
                 <TextView
                     android:id="@+id/situation_review"
+                    style="@style/optionalText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/field_optional"
                     android:gravity="top"
-                    style="@style/optionalText"/>
+                    android:text="@={viewModel.situationText}"/>
             </LinearLayout>
 
 
@@ -194,11 +200,11 @@
 
                 <TextView
                     android:id="@+id/behavior_review"
+                    style="@style/optionalText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/field_required"
                     android:gravity="top"
-                    style="@style/requiredText"/>
+                    android:text="@={viewModel.behaviorText}"/>
             </LinearLayout>
 
 
@@ -231,11 +237,11 @@
                     android:textSize="13sp" />
                 <TextView
                     android:id="@+id/main_emotion_review"
+                    style="@style/optionalText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/field_required"
                     android:gravity="top"
-                    style="@style/requiredText"/>
+                    android:text="@={viewModel.emotionText}"/>
                 <TextView
                     android:id="@+id/emotional_intensity_question_review"
                     android:layout_width="wrap_content"
@@ -246,11 +252,11 @@
                     android:textSize="13sp" />
                 <TextView
                     android:id="@+id/emotion_intensity_review"
+                    style="@style/optionalText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/field_required"
                     android:gravity="top"
-                    style="@style/requiredText"/>
+                    android:text="@={viewModel.emotionRatingString}"/>
                 <TextView
                     android:id="@+id/emotional_details_question_review"
                     android:layout_width="wrap_content"
@@ -261,11 +267,11 @@
                     android:textSize="13sp" />
                 <TextView
                     android:id="@+id/emotion_details_review"
+                    style="@style/optionalText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/field_optional"
                     android:gravity="top"
-                    style="@style/optionalText"/>
+                    android:text="@={viewModel.emotionDetailText}"/>
             </LinearLayout>
 
 
@@ -292,10 +298,10 @@
 
                 <TextView
                     android:id="@+id/thoughts_review"
+                    style="@style/optionalText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/field_required"
-                    style="@style/requiredText" />
+                    android:text="@={viewModel.displayThoughts}" />
             </LinearLayout>
 
         </GridLayout>
@@ -310,11 +316,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_button_background"
+        android:elevation="2dp"
         android:text="@string/submit_button"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:elevation="2dp"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
     <Button
@@ -326,12 +332,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_button_background"
+        android:elevation="2dp"
+        android:paddingTop="8dp"
         android:text="@string/edit_button"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:paddingTop="8dp"
-        android:elevation="2dp"/>
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <View
         android:id="@+id/view"
@@ -344,3 +350,5 @@
         app:layout_constraintTop_toBottomOf="@id/review_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

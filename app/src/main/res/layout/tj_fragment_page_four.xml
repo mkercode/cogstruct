@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="view_model"
+            name="viewModel"
             type="com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel" />
     </data>
 
@@ -147,6 +147,7 @@
                     android:ems="15"
                     android:gravity="top"
                     android:hint="I.e multiple emotions, bodily sensations, emotional actions, ect"
+                    android:text="@={viewModel.emotionDetailText}"
                     android:inputType="textAutoCorrect|textMultiLine"
                     android:maxLines="5"
                     android:minLines="5" />

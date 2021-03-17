@@ -5,8 +5,7 @@
         <data>
                 <variable
                     name="viewModel"
-                    type="com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel"/>
-
+                    type="com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel" />
         </data>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -79,6 +78,7 @@
                     android:autofillHints=""
                     android:gravity="top"
                     android:hint="@string/tj_details_hint"
+                    android:text="@={viewModel.situationText}"
                     android:inputType="textAutoCorrect|textMultiLine"
                     android:maxLines="3"
                     android:minLines="3"
