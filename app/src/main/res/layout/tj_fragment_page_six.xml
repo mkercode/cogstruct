@@ -87,14 +87,14 @@
 
             <TextView
                 android:id="@+id/place_review"
-                style="@style/requiredText"
+                style="@style/optionalText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 android:gravity="top"
-                android:text="@={viewModel.locationText}"/>
+                android:text="@={viewModel.locationText}" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
