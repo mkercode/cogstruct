@@ -19,8 +19,7 @@ public class IBViewModel extends ViewModel {
     private String ibBarrierType = "";
 
     private String ibBarrier;
-    private String ibProblemSolvingString;
-    private List<String> ibProblemSolvingList = new ArrayList<>();
+    private String ibSolution;
 
     //enable/disable people edittext based on radiobutton option
     private boolean ibWillingIsEnabled = true;
@@ -71,6 +70,9 @@ public class IBViewModel extends ViewModel {
         ibThinkingIsEnabled = input;
     }
 
+    public void setIbSolution(String input){ ibSolution = input;}
+    public String getIbSolution() { return ibSolution; }
+
     public String getIbNescessaryAction() { return ibNescessaryAction; }
     public String getIbBehavior() { return ibBehavior; }
     public String getIbWillingBarrier() { return ibWillingBarrier; }
@@ -86,8 +88,5 @@ public class IBViewModel extends ViewModel {
 
     public boolean isIbWillingIsEnabled() { return ibWillingIsEnabled; }
     public boolean isIbThinkingIsEnabled() { return ibThinkingIsEnabled; }
-
-
-
 
 }

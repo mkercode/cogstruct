@@ -19,12 +19,25 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/ib_page_one_next"
+        app:layout_constraintBottom_toTopOf="@+id/ib_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:clickable="false"/>
 
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_columnSpan="2"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="?android:attr/listDivider"
+        android:paddingTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review_container" />
 
     <TextView
         android:id="@+id/ib_problem_solving_title"
@@ -57,30 +70,30 @@
 
 
     <TextView
-        android:id="@+id/ib_review_text3"
+        android:id="@+id/ib_problem_solving_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:gravity="center"
-        android:text="@string/ib_problem_solving_question"
+        android:padding="4dp"
+        android:text="What can I do next time to overcome the barrier?"
         android:textColor="@color/colorGreenText"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/ib_problem_solving_FAB"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ib_problem_solving_FAB"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/ib_ps_halfway_point"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/review_container" />
 
     <GridLayout
         android:id="@+id/review_container"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:alignmentMode="alignBounds"
         android:columnCount="2"
         android:columnOrderPreserved="true"
         android:rowCount="9"
-        app:layout_constraintBottom_toTopOf="@+id/ib_ps_halfway_point"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ib_review_text">
 
 
@@ -213,18 +226,34 @@
             android:layout_margin="12dp"
             android:gravity="top"
             android:text="@={viewModel.ibBarrier}" />
-
-
     </GridLayout>
 
+
+    <EditText
+        android:id="@+id/ib_solution_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="top"
+        android:hint="Enter possible solution"
+        android:inputType="textMultiLine|textAutoCorrect"
+        android:maxLines="3"
+        android:minLines="3"
+        android:padding="4dp"
+        android:text="@={viewModel.ibSolution}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ib_ps_halfway_point"
+        app:layout_constraintTop_toTopOf="@+id/ib_problem_solving_description" />
+
     <Button
-        android:id="@+id/ib_page_one_next"
+        android:id="@+id/ib_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_button_background"
-        android:text="@string/next_button_string"
+        android:text="@string/submit_button"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -237,19 +266,19 @@
         android:text=""
         android:textSize="18sp"
         android:textColor="@color/colorWhite"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ib_return"
-        app:layout_constraintEnd_toStartOf="@+id/ib_page_one_next"
-        app:layout_constraintStart_toEndOf="@+id/ib_return"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ib_edit"
+        app:layout_constraintEnd_toStartOf="@+id/ib_submit"
+        app:layout_constraintStart_toEndOf="@+id/ib_edit"
         android:elevation="2dp" />
 
     <Button
-        android:id="@+id/ib_return"
+        android:id="@+id/ib_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_button_background"
-        android:text="@string/return_button_text"
+        android:text="@string/edit_button"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -275,31 +304,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ib_review_text" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/ib_problem_solving_FAB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:clickable="true"
-        app:backgroundTint="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/review_container"
-        app:srcCompat="@drawable/ic_add"
-        android:contentDescription="@string/ib_prioblem_solving_fab_description"
-        android:focusable="true" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ib_problem_solving_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_review_text3" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -10,7 +10,6 @@ public class PCViewModel extends ViewModel {
 
     private String behaviorText;
 
-
     private List<String> changePros = new ArrayList<>();
     private List<String> changeCons = new ArrayList<>();
     private List<String> dontChangePros = new ArrayList<>();
