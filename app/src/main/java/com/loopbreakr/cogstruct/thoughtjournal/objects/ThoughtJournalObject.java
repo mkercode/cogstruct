@@ -16,9 +16,7 @@ public class ThoughtJournalObject {
     private String emotionDetail;
     private String thoughts;
     private String formName;
-    private String thoughtString;
     private float emotionRating;
-    private List<String> thoughtLogList = new ArrayList<>();
 
     public ThoughtJournalObject(String dateCreated, String userId, String location, String time, String people, String situation, String behavior, String emotion, float emotionRating, String emotionDetail, String thoughts) {
         this.formName = "Thought Journal";
@@ -109,12 +107,4 @@ public class ThoughtJournalObject {
     }
     public void setEmotionRating(float emotionRating) { this.emotionRating = emotionRating; }
 
-    public String getThoughtStringList() { return thoughtString; }
-    public List<String> getThoughtLogList() {
-        thoughtLogList = new ArrayList<>(Arrays.asList(thoughts.split(",")));
-        return thoughtLogList; }
-        //methods to change the thought logs
-    public void addToThoughtLogs(String thought){ thoughtLogList.add(thought); }
-    public void removeFromThoughtLogs(String thought){ thoughtLogList.remove(thought); }
-    public void updateThoughtString() { this.thoughtString = android.text.TextUtils.join(",", thoughtLogList); }
 }

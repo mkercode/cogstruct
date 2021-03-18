@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel" />
+    </data>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -70,7 +78,8 @@
             android:inputType="textAutoCorrect|textMultiLine"
             android:ems="15"
             android:minLines="2"
-            android:maxLines="2" />
+            android:maxLines="2"
+            android:text="@={viewModel.locationText}"/>
 
 
         <TextView
@@ -88,6 +97,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+
             >
 
             <RadioButton
@@ -150,7 +160,8 @@
             android:layout_marginBottom="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/timeQuestion">
+            app:layout_constraintTop_toBottomOf="@+id/timeQuestion"
+            >
 
             <RadioButton
                 android:id="@+id/alone_log"
@@ -188,7 +199,8 @@
             android:inputType="textAutoCorrect|textMultiLine"
             android:ems="15"
             android:minLines="2"
-            android:maxLines="2" />
+            android:maxLines="2"
+            android:text="@={viewModel.peopleText}"/>
 
         <TextView
             android:id="@+id/situation_log_question"
@@ -209,7 +221,8 @@
             android:inputType="textAutoCorrect|textMultiLine"
             android:ems="15"
             android:minLines="2"
-            android:maxLines="2" />
+            android:maxLines="2"
+            android:text="@={viewModel.situationText}"/>
 
         <TextView
             android:id="@+id/behavior_log_question"
@@ -232,7 +245,8 @@
             android:inputType="textAutoCorrect|textMultiLine"
             android:ems="15"
             android:minLines="2"
-            android:maxLines="2" />
+            android:maxLines="2"
+            />
 
         <TextView
             android:id="@+id/emotion_log_question"
@@ -254,7 +268,9 @@
             android:layout_marginBottom="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_emotion_question">
+            app:layout_constraintTop_toBottomOf="@+id/main_emotion_question"
+            android:checkedButton="@={viewModel.emotionRadioId}"
+            >
 
             <RadioButton
                 android:id="@+id/sadness_log"
@@ -305,7 +321,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emotional_intensity_question" />
+            app:layout_constraintTop_toBottomOf="@+id/emotional_intensity_question"/>
 
         <TextView
             android:id="@+id/emotion_details_log_question"
@@ -328,7 +344,8 @@
             android:inputType="textAutoCorrect|textMultiLine"
             android:ems="15"
             android:minLines="2"
-            android:maxLines="2" />
+            android:maxLines="2"
+            />
 
 
 
@@ -390,14 +407,8 @@
                 android:minWidth="0dp"
                 android:minHeight="0dp"
                 android:text="@string/plus" />
-
         </RelativeLayout>
-
-
-
-
-
     </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
+</layout>

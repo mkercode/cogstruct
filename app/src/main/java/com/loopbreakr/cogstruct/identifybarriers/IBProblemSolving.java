@@ -16,12 +16,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.SimpleRecyclerAdapter;
 import com.loopbreakr.cogstruct.databinding.IbFragmentProblemSolvingBinding;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -43,7 +41,7 @@ public class IBProblemSolving extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.ib_fragment_problem_solving, container, false);
@@ -68,11 +66,10 @@ public class IBProblemSolving extends Fragment {
 
 
         NavController controller = Navigation.findNavController(requireView());
-        editButton.setOnClickListener(v ->{
-            controller.navigateUp();
-        });
+        editButton.setOnClickListener(v -> controller.navigateUp());
 //        submitButtonButton.setOnClickListener(v -> controller.navigate(R.id.action_PCPageThree_to_PCPageFour));
     }
+
 
 
 }

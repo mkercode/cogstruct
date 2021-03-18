@@ -56,9 +56,6 @@ public class TJViewModel extends ViewModel {
     public void setPeopleRadioId(int input) {
         if(input == R.id.alone) {
             setPeopleText("Alone");
-            setTjIsEnabled(false);}
-        else{
-            setTjIsEnabled(true);
         }
         peopleRadioId = input;
     }
@@ -73,9 +70,7 @@ public class TJViewModel extends ViewModel {
         emotionRating = input;
         setEmotionRatingString(Float.toString(input));
     }
-    public void setTjIsEnabled(boolean input){
-        tjIsEnabled = input;
-    }
+
 
     public void setEmotionRatingString(String input){ emotionRatingString = input; }
     public String getLocationText() { return locationText; }
@@ -93,7 +88,6 @@ public class TJViewModel extends ViewModel {
     public String getEmotionRatingString(){ return emotionRatingString;}
     public String getThoughtText(){ return android.text.TextUtils.join(",", thoughtList); }
 
-    public boolean isTjIsEnabled() { return tjIsEnabled; }
 
 
     //dummy display getter/setters

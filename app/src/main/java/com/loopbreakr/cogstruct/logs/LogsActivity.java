@@ -16,6 +16,9 @@ import com.loopbreakr.cogstruct.R;
 
 public class LogsActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener {
 
+    //listen for auth states changed
+
+
 
 
     @Override
@@ -32,6 +35,17 @@ public class LogsActivity extends AppCompatActivity implements FirebaseAuth.Auth
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         this.finish();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseAuth.getInstance().addAuthStateListener(this);
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        FirebaseAuth.getInstance().removeAuthStateListener(this);
     }
 
     @Override

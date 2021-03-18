@@ -7,7 +7,6 @@ import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 
 public class LogsViewModel extends ViewModel {
     private DocumentSnapshot snapshot;
-    private ThoughtJournalObject thoughtJournalLog;
 
 
     public void setSnapshot(DocumentSnapshot input) {
@@ -15,12 +14,9 @@ public class LogsViewModel extends ViewModel {
     }
     public DocumentSnapshot getSnapshot(){ return snapshot; }
 
-    public void setThoughtJournalLog(ThoughtJournalObject input){ thoughtJournalLog = input;}
-    public ThoughtJournalObject getThoughtJournalLog(){return thoughtJournalLog;}
 
     public void clearAll(){
         snapshot = null;
-        thoughtJournalLog = null;
     }
 
 

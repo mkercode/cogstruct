@@ -74,6 +74,8 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
     @Override
     public void clickLog(DocumentSnapshot snapshot) {
 
+        //clear data
+        logsViewModel.setSnapshot(null);
         if (snapshot != null) {
             NavController controller = Navigation.findNavController(requireView());
             controller.navigate(getSnapshotData(snapshot));
@@ -86,8 +88,8 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
         switch (snapshot.getString("formName")){
             case "Thought Journal":
                 thoughtJournalLog = snapshot.toObject(ThoughtJournalObject.class);
+
                 logsViewModel.setSnapshot(snapshot);
-                logsViewModel.setThoughtJournalLog(thoughtJournalLog);
                 navId = R.id.action_allLogsFragment_to_tjLogFragment;
                 break;
 

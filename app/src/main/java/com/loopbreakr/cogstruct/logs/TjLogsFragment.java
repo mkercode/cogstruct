@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -25,8 +26,12 @@ import android.widget.TextView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.MainActivity;
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.databinding.LogsFragmentTjBinding;
+import com.loopbreakr.cogstruct.logs.models.TJLogViewModel;
 import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
 import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,8 +42,9 @@ import java.util.stream.Stream;
 
 public class TjLogsFragment extends Fragment {
     private LogsViewModel logsViewModel;
-    private ThoughtJournalObject thoughtJournalData;
-    private TextView  dateLog, placeLog, timeLog, peopleLog, situationLog, behaviorLog, emotionLog, emotionRatingLog, emotionDetailsLog, thoughtsLog;
+    private TJLogViewModel tjViewModel;
+    private ThoughtJournalObject thoughtJournalLog;
+    private LogsFragmentTjBinding binding;
 
 
     public TjLogsFragment() {
@@ -49,15 +55,18 @@ public class TjLogsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         logsViewModel = new ViewModelProvider(requireActivity()).get(LogsViewModel.class);
+        tjViewModel = new ViewModelProvider(requireActivity()).get(TJLogViewModel.class);
         setHasOptionsMenu(true);
     }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.logs_fragment_tj, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_tj, container, false);
+        binding.setViewModel(tjViewModel);
+        return binding.getRoot();
     }
 
     @Override
@@ -65,7 +74,12 @@ public class TjLogsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setToolbar(view);
         findViews(view);
-        getViewModelData();
+        setViewModelData();
+    }
+
+    private void setViewModelData() {
+        thoughtJournalLog = logsViewModel.getSnapshot().toObject(ThoughtJournalObject.class);
+        tjViewModel.setThoughtJournal(thoughtJournalLog);
     }
 
     private void setToolbar(View view) {
@@ -93,42 +107,10 @@ public class TjLogsFragment extends Fragment {
         });
     }
 
-    private void getViewModelData() {
-        thoughtJournalData = logsViewModel.getThoughtJournalLog();
 
-        List<TextView> textFields =  new ArrayList<>(Arrays. asList(dateLog, placeLog, timeLog, peopleLog, situationLog, behaviorLog, emotionLog, emotionRatingLog, emotionDetailsLog));
-        List<String> inputs =  new ArrayList<>(Arrays. asList("Created: " + thoughtJournalData.getDateCreated(), thoughtJournalData.getLocation(), thoughtJournalData.getTime(), thoughtJournalData.getPeople(), thoughtJournalData.getSituation(), thoughtJournalData.getBehavior(), thoughtJournalData.getEmotion(), String.valueOf(thoughtJournalData.getEmotionRating()), thoughtJournalData.getEmotionDetail()));
-
-        for(int i = 0; i < textFields.size(); i++){
-            if(inputs.get(i).equals("") || inputs.get(i).isEmpty() || inputs.get(i).equals(null)){
-                textFields.get(i).setText(R.string.logs_empty_field);
-            }
-            else{
-                textFields.get(i).setText(inputs.get(i));
-                textFields.get(i).setTypeface(Typeface.DEFAULT);
-            }
-        }
-
-        StringBuilder thoughts = new StringBuilder();
-        String[] thoughtList = thoughtJournalData.getThoughts().split("\\s*,\\s*");
-        for(String thought: thoughtList){
-            thoughts.append("-").append(thought).append("\n\n");
-        }
-        thoughtsLog.setText(thoughts.toString());
-        thoughtsLog.setTypeface(Typeface.DEFAULT);
-    }
 
     private void findViews(View view) {
-        dateLog = view.findViewById(R.id.tj_log_date);
-        placeLog = view.findViewById(R.id.place_log);
-        timeLog = view.findViewById(R.id.time_log);
-        peopleLog = view.findViewById(R.id.people_log);
-        situationLog = view.findViewById(R.id.situation_log);
-        behaviorLog = view.findViewById(R.id.behavior_log);
-        emotionLog = view.findViewById(R.id.emotion_log);
-        emotionRatingLog = view.findViewById(R.id.emotion_rating_log);
-        emotionDetailsLog = view.findViewById(R.id.emotion_details_log);
-        thoughtsLog = view.findViewById(R.id.thoughts_log);
+
 
     }
 

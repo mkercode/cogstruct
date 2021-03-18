@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.loopbreakr.cogstruct.logs.models.TJLogViewModel" />
+    </data>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -76,7 +84,8 @@
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/place_log_question" />
+                app:layout_constraintTop_toBottomOf="@+id/place_log_question"
+                android:text="@={viewModel.tjLogLocation}"/>
 
 
             <TextView
@@ -88,7 +97,8 @@
                 android:textColor="@color/colorGreenText"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/place_log" />
+                app:layout_constraintTop_toBottomOf="@+id/place_log"
+                />
 
 
             <TextView
@@ -100,7 +110,8 @@
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/time_log_question" />
+                app:layout_constraintTop_toBottomOf="@+id/time_log_question"
+                android:text="@={viewModel.tjLogTime}"/>
 
             <TextView
                 android:id="@+id/people_log_question"
@@ -119,11 +130,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text=""
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/people_log_question" />
+                app:layout_constraintTop_toBottomOf="@+id/people_log_question"
+                android:text="@={viewModel.tjLogPeople}"/>
 
 
             <TextView
@@ -143,11 +154,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text=""
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/situation_log_question" />
+                app:layout_constraintTop_toBottomOf="@+id/situation_log_question"
+                android:text="@={viewModel.tjLogSituation}"/>
 
             <TextView
                 android:id="@+id/behavior_log_question"
@@ -166,11 +177,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text=""
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/behavior_log_question" />
+                app:layout_constraintTop_toBottomOf="@+id/behavior_log_question"
+                android:text="@={viewModel.tjLogBehavior}"/>
 
             <TextView
                 android:id="@+id/emotion_log_question"
@@ -189,11 +200,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text=""
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emotion_log_question" />
+                app:layout_constraintTop_toBottomOf="@+id/emotion_log_question"
+                android:text="@={viewModel.tjLogEmotion}"/>
 
             <TextView
                 android:id="@+id/emotion_rating_log_question"
@@ -212,11 +223,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text=""
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emotion_rating_log_question" />
+                app:layout_constraintTop_toBottomOf="@+id/emotion_rating_log_question"
+                android:text="@={viewModel.tjLogDisplayEmotionRating}"/>
 
             <TextView
                 android:id="@+id/emotion_details_log_question"
@@ -235,11 +246,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text=""
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/emotion_details_log_question" />
+                app:layout_constraintTop_toBottomOf="@+id/emotion_details_log_question"
+                android:text="@={viewModel.tjLogEmotionDetail}"/>
 
 
 
@@ -260,12 +271,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text=""
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/thoughts_log_question" />
+                app:layout_constraintTop_toBottomOf="@+id/thoughts_log_question"
+                android:text="@={viewModel.tjLogDisplayThoughts}"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 </LinearLayout>
+</layout>
