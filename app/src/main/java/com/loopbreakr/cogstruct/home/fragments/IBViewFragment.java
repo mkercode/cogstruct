@@ -1,5 +1,6 @@
 package com.loopbreakr.cogstruct.home.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,8 +12,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.identifybarriers.IBActivity;
+import com.loopbreakr.cogstruct.proscons.PCActivity;
 
 import java.util.Objects;
 
@@ -41,6 +45,7 @@ public class IBViewFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setBackToolBar(view);
+        setBeginButton(view);
     }
 
     private void setBackToolBar(View view) {
@@ -51,5 +56,15 @@ public class IBViewFragment extends Fragment {
 
         backToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         backToolbar.setNavigationOnClickListener(v -> requireActivity().onBackPressed());
+    }
+
+    private void setBeginButton(View view) {
+        Button beginButton = view.findViewById(R.id.ib_begin_button);
+        beginButton.setOnClickListener(v -> openActivity());
+    }
+
+    private void openActivity(){
+        Intent intent = new Intent(this.requireActivity(), IBActivity.class);
+        startActivity(intent);
     }
 }

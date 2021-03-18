@@ -104,7 +104,7 @@
             android:layout_marginTop="24dp"
             android:autofillHints=""
             android:ems="15"
-            android:enabled="@={viewModel.ibWillingIsEnabled}"
+
             android:gravity="top"
             android:hint="Enter what got in the way of being willing to do said action"
             android:inputType="textAutoCorrect|textMultiLine"

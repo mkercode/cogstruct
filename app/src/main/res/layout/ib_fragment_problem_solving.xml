@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
-        android:text="Problem Solve"
+        android:text="@string/ib_problem_solving_review_title"
         android:textColor="@color/colorGreenText"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,9 +44,11 @@
         android:id="@+id/ib_review_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:gravity="center"
-        android:text="Review Answers and Problem Solve!"
+        android:text="@string/ib_problem_solving_review_description"
         android:textColor="@color/colorGreenText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,14 +56,31 @@
         app:layout_constraintTop_toBottomOf="@+id/ib_problem_solving_title" />
 
 
+    <TextView
+        android:id="@+id/ib_review_text3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text="@string/ib_problem_solving_question"
+        android:textColor="@color/colorGreenText"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ib_problem_solving_FAB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ib_problem_solving_FAB"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <GridLayout
         android:id="@+id/review_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp"
         android:alignmentMode="alignBounds"
         android:columnCount="2"
         android:columnOrderPreserved="true"
         android:rowCount="9"
+        app:layout_constraintBottom_toTopOf="@+id/ib_ps_halfway_point"
         app:layout_constraintTop_toBottomOf="@+id/ib_review_text">
 
 
@@ -74,7 +93,7 @@
             android:layout_margin="6dp"
             android:layout_marginStart="6dp"
             android:padding="4dp"
-            android:text="Unhelpful action or behavior"
+            android:text="@string/ib_behavior_review_question"
             android:textColor="@color/colorGreenText"
             android:textSize="15sp" />
 
@@ -109,7 +128,7 @@
             android:layout_margin="6dp"
             android:layout_marginStart="6dp"
             android:padding="4dp"
-            android:text="What could have I done to prevent it?"
+            android:text="@string/ib_problem_solvie_question"
             android:textColor="@color/colorGreenText"
             android:textSize="15sp" />
 
@@ -145,7 +164,7 @@
             android:layout_margin="6dp"
             android:layout_marginStart="6dp"
             android:padding="4dp"
-            android:text="Barrier type"
+            android:text="@string/ib_barrier_type_review_question"
             android:textColor="@color/colorGreenText"
             android:textSize="15sp" />
 
@@ -180,7 +199,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="12dp"
             android:padding="4dp"
-            android:text="Barrier"
+            android:text="@string/ib_barrier_review_question"
             android:textColor="@color/colorGreenText"
             android:textSize="15sp" />
 
@@ -245,30 +264,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/page_content" />
 
-    <Space
-        android:id="@+id/space4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Space
-        android:id="@+id/space5"
+        android:id="@+id/ib_ps_halfway_point"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ib_review_text" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/ib_problem_solving_FAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review_container"
+        app:srcCompat="@drawable/ic_add"
+        android:contentDescription="@string/ib_prioblem_solving_fab_description"
+        android:focusable="true" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ib_problem_solving_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ib_review_text3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

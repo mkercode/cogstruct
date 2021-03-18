@@ -20,10 +20,10 @@
         android:label="ib_fragment_page_two"
         tools:layout="@layout/ib_fragment_page_two" >
         <action
-            android:id="@+id/action_IBPageTwo_to_IBPageThree_B1"
+            android:id="@+id/action_IBPageTwo_to_IBPageThree"
             app:destination="@id/IBPageThree" />
         <action
-            android:id="@+id/action_IBPageTwo_to_IBProblemSolving2"
+            android:id="@+id/action_IBPageTwo_to_IBProblemSolving"
             app:destination="@id/IBProblemSolving2" />
     </fragment>
     <fragment
@@ -32,10 +32,10 @@
         android:label="ib_fragment_page_three"
         tools:layout="@layout/ib_fragment_page_three">
         <action
-            android:id="@+id/action_IBPageThree_B1_to_IBPageFour"
+            android:id="@+id/action_IBPageThree_to_IBPageFour"
             app:destination="@id/IBPageFour" />
         <action
-            android:id="@+id/action_IBPageThree_to_IBProblemSolving2"
+            android:id="@+id/action_IBPageThree_to_IBProblemSolving"
             app:destination="@id/IBProblemSolving2" />
     </fragment>
     <fragment
@@ -44,21 +44,12 @@
         android:label="ib_fragment_page_four"
         tools:layout="@layout/ib_fragment_page_four" >
         <action
-            android:id="@+id/action_IBPageFour_to_IBProblemSolving22"
+            android:id="@+id/action_IBPageFour_to_IBProblemSolving"
             app:destination="@id/IBProblemSolving2" />
     </fragment>
     <fragment
         android:id="@+id/IBProblemSolving2"
         android:name="com.loopbreakr.cogstruct.identifybarriers.IBProblemSolving"
         android:label="ib_fragment_problem_solving"
-        tools:layout="@layout/ib_fragment_problem_solving" >
-        <action
-            android:id="@+id/action_IBProblemSolving2_to_IBReview"
-            app:destination="@id/IBReview" />
-    </fragment>
-    <fragment
-        android:id="@+id/IBReview"
-        android:name="com.loopbreakr.cogstruct.identifybarriers.IBReview"
-        android:label="ib_fragment_review"
-        tools:layout="@layout/ib_fragment_review" />
+        tools:layout="@layout/ib_fragment_problem_solving" />
 </navigation>

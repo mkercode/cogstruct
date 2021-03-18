@@ -16,7 +16,7 @@ public class IBViewModel extends ViewModel {
     private int ibWillingRadioId;
     private int ibThinkingRadioId;
 
-    private String ibBarrierType;
+    private String ibBarrierType = "";
 
     private String ibBarrier;
     private String ibProblemSolvingString;
@@ -27,12 +27,14 @@ public class IBViewModel extends ViewModel {
     private boolean ibThinkingIsEnabled = true;
 
 
-
     public void setIbBehavior(String input) { ibBehavior = input; }
     public void setIbNescessaryAction(String input) { ibNescessaryAction = input; }
-    public void setIbWillingBarrier(String input) { ibWillingBarrier = input; }
-    public void setIbThinkingBarrier(String input) { ibThinkingBarrier = input; }
-    public void setIbDoingBarrier(String input) { ibDoingBarrier = input; }
+    public void setIbWillingBarrier(String input) { ibWillingBarrier = input;
+    setIbBarrier(input);}
+    public void setIbThinkingBarrier(String input) { ibThinkingBarrier = input;
+    setIbBarrier(input);}
+    public void setIbDoingBarrier(String input) { ibDoingBarrier = input;
+    setIbBarrier(input);}
     public void setIbBarrier(String input) { ibBarrier = input; }
     public void setIbBarrierType(String input){
         ibBarrierType = input;
@@ -41,24 +43,24 @@ public class IBViewModel extends ViewModel {
 
     public void setIbWillingRadioId(int input) {
         if(input == R.id.ib_willing_yes) {
-            setIbWillingIsEnabled(false);}
+            setIbWillingIsEnabled(false);
+            setIbBarrierType("Action");}
         else if(input == R.id.ib_willing_no){
             setIbWillingIsEnabled(true);
             if(!ibBarrierType.equals("Willingness")){
-                setIbBarrierType("Willingness");
-                setIbBarrier("");}
+                setIbBarrierType("Willingness"); }
             }
         ibWillingRadioId = input; }
 
     public void setIbThinkingRadioId(int input) {
         if(input == R.id.ib_thinking_yes) {
+            setIbBarrierType("Action");
             setIbThinkingIsEnabled(false);
         }
         else if(input == R.id.ib_thinking_no){
             setIbThinkingIsEnabled(true);
             if(!ibBarrierType.equals("Thought")){
-                setIbBarrierType("Thought");
-                setIbBarrier("");}
+                setIbBarrierType("Thought"); }
             }
         ibThinkingRadioId = input; }
 
@@ -77,22 +79,15 @@ public class IBViewModel extends ViewModel {
 
     public String getIbBarrierType() { return ibBarrierType; }
 
-    public String getIbBarrier() {
-    if (ibBarrierType.equals("Willingness")) {
-        return ibWillingBarrier;
-        }
-    else if(ibBarrierType.equals("Thought")){
-            return ibThinkingBarrier;
-        }
-    else{
-    return ibDoingBarrier;}
-    }
+    public String getIbBarrier() { return ibBarrier;}
 
     public int getIbWillingRadioId() { return ibWillingRadioId; }
     public int getIbThinkingRadioId() { return ibThinkingRadioId; }
 
     public boolean isIbWillingIsEnabled() { return ibWillingIsEnabled; }
     public boolean isIbThinkingIsEnabled() { return ibThinkingIsEnabled; }
+
+
 
 
 }

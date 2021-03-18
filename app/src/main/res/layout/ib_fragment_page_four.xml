@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -7,7 +8,6 @@
             name="viewModel"
             type="com.loopbreakr.cogstruct.identifybarriers.IBViewModel" />
     </data>
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/ib_page_one_next"
+        app:layout_constraintBottom_toTopOf="@+id/ib_review_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
-        android:text="Final Barriers"
+        android:text="@string/ib_page_four_title"
         android:textColor="@color/colorGreenText"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,13 +88,13 @@
 
 
     <Button
-        android:id="@+id/ib_page_one_next"
+        android:id="@+id/ib_review_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_button_background"
-        android:text="@string/next_button_string"
+        android:text="@string/review_button_text"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -107,19 +107,19 @@
         android:text=""
         android:textSize="18sp"
         android:textColor="@color/colorWhite"
-        app:layout_constraintBaseline_toBaselineOf="@+id/ib_return"
-        app:layout_constraintEnd_toStartOf="@+id/ib_page_one_next"
-        app:layout_constraintStart_toEndOf="@+id/ib_return"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ib_page_four_back"
+        app:layout_constraintEnd_toStartOf="@+id/ib_review_button"
+        app:layout_constraintStart_toEndOf="@+id/ib_page_four_back"
         android:elevation="2dp" />
 
     <Button
-        android:id="@+id/ib_return"
+        android:id="@+id/ib_page_four_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_button_background"
-        android:text="@string/return_button_text"
+        android:text="@string/back_button_text"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -110,4 +110,13 @@
     <string name="ib_page_two_title">Willingness</string>
     <string name="ib_willingness_description">Was I willing to do the preventative measure or action on the previous page?</string>
     <string name="ib_thought_title">Thought</string>
+    <string name="ib_problem_solving_question">What can you do next time to overcome this barrier?</string>
+    <string name="ib_behavior_review_question">Unhelpful action or behavior</string>
+    <string name="ib_problem_solvie_question">What could have I done to prevent it?</string>
+    <string name="ib_barrier_type_review_question">Barrier type</string>
+    <string name="ib_barrier_review_question">Barrier</string>
+    <string name="ib_prioblem_solving_fab_description">Add possible Solution</string>
+    <string name="ib_problem_solving_review_description">Review Answers and Problem Solve!</string>
+    <string name="ib_problem_solving_review_title">Problem Solve</string>
+    <string name="ib_page_four_title">Final Barriers</string>
 </resources>
