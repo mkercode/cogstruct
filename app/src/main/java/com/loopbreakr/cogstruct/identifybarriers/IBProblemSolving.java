@@ -30,7 +30,6 @@ public class IBProblemSolving extends Fragment {
     private IbFragmentProblemSolvingBinding binding;
     private IBViewModel ibViewModel;
     private Button editButton, submitButton;
-    private FloatingActionButton addSolution;
 
 
     public IBProblemSolving() {
