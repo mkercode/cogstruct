@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel" />
+            type="com.loopbreakr.cogstruct.logs.models.TJLogViewModel" />
     </data>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -79,7 +79,7 @@
             android:ems="15"
             android:minLines="2"
             android:maxLines="2"
-            android:text="@={viewModel.locationText}"/>
+            android:text="@={viewModel.tjLogLocation}"/>
 
 
         <TextView
@@ -97,8 +97,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-
-            >
+            android:checkedButton="@={viewModel.tjLogTimeRadioId}">
 
             <RadioButton
                 android:id="@+id/morning_log"
@@ -161,6 +160,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/timeQuestion"
+            android:checkedButton="@={viewModel.tjLogPeopleRadioId}"
             >
 
             <RadioButton
@@ -200,7 +200,7 @@
             android:ems="15"
             android:minLines="2"
             android:maxLines="2"
-            android:text="@={viewModel.peopleText}"/>
+            android:text="@={viewModel.tjLogPeopleDisplay}"/>
 
         <TextView
             android:id="@+id/situation_log_question"
@@ -222,7 +222,7 @@
             android:ems="15"
             android:minLines="2"
             android:maxLines="2"
-            android:text="@={viewModel.situationText}"/>
+            android:text="@={viewModel.tjLogSituation}"/>
 
         <TextView
             android:id="@+id/behavior_log_question"
@@ -246,6 +246,7 @@
             android:ems="15"
             android:minLines="2"
             android:maxLines="2"
+            android:text="@={viewModel.tjLogBehavior}"
             />
 
         <TextView
@@ -269,7 +270,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_emotion_question"
-            android:checkedButton="@={viewModel.emotionRadioId}"
+            android:checkedButton="@={viewModel.tjLogEmotionRadioId}"
             >
 
             <RadioButton
@@ -321,7 +322,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emotional_intensity_question"/>
+            app:layout_constraintTop_toBottomOf="@+id/emotional_intensity_question"
+            android:rating="@={viewModel.tjLogEmotionRating}"/>
 
         <TextView
             android:id="@+id/emotion_details_log_question"
@@ -345,7 +347,7 @@
             android:ems="15"
             android:minLines="2"
             android:maxLines="2"
-            />
+            android:text="@={viewModel.tjLogEmotionDetail}"/>
 
 
 

@@ -24,6 +24,7 @@ import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.LogsFragmentTjEditBinding;
+import com.loopbreakr.cogstruct.logs.models.TJLogViewModel;
 import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
 import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 
@@ -35,7 +36,7 @@ import java.util.List;
 
 public class TJLogsEditFragment extends Fragment {
     private LogsViewModel logsViewModel;
-    private TJViewModel tjViewModel;
+    private TJLogViewModel tjViewModel;
     private EditText thoughtsEditLog;
     private ChipGroup thoughtChipGroup;
     private Button addThoughtButton;
@@ -50,6 +51,7 @@ public class TJLogsEditFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         logsViewModel = new ViewModelProvider(requireActivity()).get(LogsViewModel.class);
+        tjViewModel = new ViewModelProvider(requireActivity()).get(TJLogViewModel.class);
         setHasOptionsMenu(true);
     }
 
