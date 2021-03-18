@@ -92,7 +92,8 @@ public class TJLogViewModel extends ViewModel {
             setTjLogPeopleDisplay(tjLogPeople);
         }
     }
-    public void setTjLogPeopleDisplay(String input){ tjLogPeopleDisplay = input; }
+    public void setTjLogPeopleDisplay(String input){ tjLogPeopleDisplay = input;
+    if(tjLogPeopleRadioId == R.id.with_othersLog){ setTjLogPeople(input);}}
 
     public void setTjLogLocation(String input) { tjLogLocation = input; }
     public void setTjLogTime(String input) { tjLogTime = input; }
@@ -114,6 +115,7 @@ public class TJLogViewModel extends ViewModel {
         if(input == R.id.alone_log) {
             setTjLogPeople("Alone");
         }
+
         tjLogPeopleRadioId = input;
     }
     public void  setTjLogEmotionRadioId(int input) {
