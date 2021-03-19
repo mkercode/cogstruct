@@ -24,6 +24,19 @@ public class IBViewModel extends ViewModel {
     //enable/disable people edittext based on radiobutton option
     private boolean ibWillingIsEnabled = true;
     private boolean ibThinkingIsEnabled = true;
+    
+    public void setIBLog(IBObject ibObject){
+        setIbBehavior(ibObject.getBehavior());
+        setIbNescessaryAction(ibObject.getNescessaryAction());
+        setIbBarrierType(ibObject.getBarrierType());
+        setIbBarrier(ibObject.getBarrier());
+        setIbSolution(ibObject.getSolution());
+        
+        initalizeLogRadioButtons();
+    }
+
+    private void initalizeLogRadioButtons() {
+    }
 
 
     public void setIbBehavior(String input) { ibBehavior = input; }
