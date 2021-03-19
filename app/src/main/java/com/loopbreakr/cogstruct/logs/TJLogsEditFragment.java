@@ -3,6 +3,7 @@ package com.loopbreakr.cogstruct.logs;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
@@ -15,21 +16,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.RatingBar;
-import android.widget.TextView;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.LogsFragmentTjEditBinding;
 import com.loopbreakr.cogstruct.logs.models.TJLogViewModel;
-import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
-import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,11 +33,10 @@ import java.util.List;
 public class TJLogsEditFragment extends Fragment {
     private LogsViewModel logsViewModel;
     private TJLogViewModel tjViewModel;
-    private EditText thoughtsEditLog;
     private ChipGroup thoughtChipGroup;
     private Button addThoughtButton;
-    private List<String> thoughtList;
     private LogsFragmentTjEditBinding binding;
+    private List<String> thoughtList;
 
     public TJLogsEditFragment() {
     }
@@ -69,6 +64,7 @@ public class TJLogsEditFragment extends Fragment {
         setToolbar(view);
         findViews(view);
         getViewModelData();
+        setButtons();
     }
 
     private void setToolbar(View view) {
@@ -78,7 +74,6 @@ public class TJLogsEditFragment extends Fragment {
         toolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_done_edit_log) {
-                setViewModelText();
                 updateFirestoreDocument();
                 controller.popBackStack(R.id.tjLogFragment, true);
                 controller.navigate(R.id.tjLogFragment);
@@ -89,40 +84,26 @@ public class TJLogsEditFragment extends Fragment {
     }
 
     private void findViews(View view) {
-
-        thoughtsEditLog = view.findViewById(R.id.thought_log_input);
         thoughtChipGroup = view.findViewById(R.id.tj_thoughts_log_chipgroup);
         addThoughtButton = view.findViewById(R.id.add_thought_log_button);
     }
 
     private void getViewModelData() {
         thoughtList = new ArrayList<>();
-    }
-
-    private void setViewModelText() {
-
-    }
-
-    private void setThoughtChips() {
-        for(String thought: thoughtList){
-            createThoughtChip(thought);
+        if(tjViewModel.getTjLogThoughtList() != null && !tjViewModel.getTjLogThoughtList().isEmpty()){
+            thoughtList.addAll(tjViewModel.getTjLogThoughtList());
+            //create chips from past input
+            for(String thought: thoughtList){
+                createThoughtChip(thought);
+            }
         }
     }
 
 
-
-
-
     private void setButtons() {
-        addThoughtButton.setOnClickListener(v ->{
-            String thought = thoughtsEditLog.getText().toString().trim();
-            if (!thought.equals("") && !thought.isEmpty()){
-                createThoughtChip(thought);
-//                thoughtJournalData.addToThoughtLogs(thought);
-                thoughtsEditLog.setText("");
-            }
-        });
+        addThoughtButton.setOnClickListener(v -> addToList());
     }
+
 
     private void createThoughtChip(String thought) {
         Chip chip = new Chip(requireActivity());
@@ -132,25 +113,51 @@ public class TJLogsEditFragment extends Fragment {
         chip.setCloseIconVisible(true);
         chip.setCloseIconTintResource(R.color.colorWhite);
         thoughtChipGroup.addView(chip);
+        chip.setOnClickListener(v -> editInList(thought, chip));
         chip.setOnCloseIconClickListener(view -> {
             thoughtChipGroup.removeView(chip);
-//            thoughtJournalData.removeFromThoughtLogs(thought);
+            thoughtList.remove(thought);
         });
     }
 
+    private void updateThoughtList(){
+        tjViewModel.setTjLogThoughtList(thoughtList);
+    }
+
+    private void addToList() {
+        EditText addEntryText = new EditText(getActivity());
+        new AlertDialog.Builder(getActivity()).setTitle("Add Thought")
+                .setView(addEntryText)
+                .setPositiveButton("Add", (dialog, which) ->{
+                    thoughtList.add(addEntryText.getText().toString());
+                    createThoughtChip(addEntryText.getText().toString());
+                }).setNegativeButton("Cancel", null).show();
+    }
+
+    private void editInList(String thought, Chip chip) {
+        EditText addEntryText = new EditText(getActivity());
+        addEntryText.setText(thought);
+        new AlertDialog.Builder(getActivity()).setTitle("Edit Thought")
+                .setView(addEntryText)
+                .setPositiveButton("Add", (dialog, which) ->{
+                    thoughtList.set(thoughtList.indexOf(thought), addEntryText.getText().toString());
+                    chip.setText(addEntryText.getText().toString());
+                }).setNegativeButton("Cancel", null).show();
+    }
+
     private void updateFirestoreDocument() {
-//        thoughtJournalData.updateThoughtString();
-//
-//        DocumentSnapshot logSnapshot = logsViewModel.getSnapshot();
-//        logSnapshot.getReference().update(
-//                "time", thoughtJournalData.getTime(),
-//                "location", thoughtJournalData.getLocation(),
-//                "people", thoughtJournalData.getPeople(),
-//                "situation", thoughtJournalData.getSituation(),
-//                "behavior", thoughtJournalData.getBehavior(),
-//                "emotion", thoughtJournalData.getEmotion(),
-//                "emotionRating", thoughtJournalData.getEmotionRating(),
-//                "emotionDetail", thoughtJournalData.getEmotionDetail(),
-//                "thoughts", thoughtJournalData.getThoughtStringList()).addOnFailureListener(e -> Log.e("UPDATING THOUGHTJOURNAL", "FAILED. ALL FIELDS OF " + logSnapshot.getData() , e)).addOnSuccessListener(aVoid -> Log.d("UPDATING THOUGHTJOURNAL", "SUCCESS. ALL FIELDS OF " + logSnapshot.getData()));
-//    }
-    }}
+        updateThoughtList();
+
+        DocumentSnapshot logSnapshot = logsViewModel.getSnapshot();
+        logSnapshot.getReference().update(
+                "time", tjViewModel.getTjLogTime(),
+                "location", tjViewModel.getTjLogLocation(),
+                "people", tjViewModel.getTjLogPeople(),
+                "situation", tjViewModel.getTjLogSituation(),
+                "behavior", tjViewModel.getTjLogBehavior(),
+                "emotion", tjViewModel.getTjLogEmotion(),
+                "emotionRating", tjViewModel.getTjLogEmotionRating(),
+                "emotionDetail", tjViewModel.getTjLogEmotionDetail(),
+                "thoughts", tjViewModel.getTjLogThoughtText()).addOnFailureListener(e -> Log.e("UPDATING THOUGHTJOURNAL", "FAILED. ALL FIELDS OF " + logSnapshot.getData() , e)).addOnSuccessListener(aVoid -> Log.d("UPDATING THOUGHTJOURNAL", "SUCCESS. ALL FIELDS OF " + logSnapshot.getData()));
+    }
+    }

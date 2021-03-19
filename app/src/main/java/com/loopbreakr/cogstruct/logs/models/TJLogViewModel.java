@@ -120,10 +120,10 @@ public class TJLogViewModel extends ViewModel {
     }
     public void  setTjLogEmotionRadioId(int input) {
         tjLogEmotionRadioId= input;
-        if(input == R.id.happiness) {setTjLogEmotion("Happiness");}
-        else if(input == R.id.sadness){ setTjLogEmotion("Sadness");}
-        else if(input == R.id.anger){ setTjLogEmotion("Anger");}
-        else if(input == R.id.fear){setTjLogEmotion("Fear");}
+        if(input == R.id.happiness_log) {setTjLogEmotion("Happiness");}
+        else if(input == R.id.sadness_log){ setTjLogEmotion("Sadness");}
+        else if(input == R.id.anger_log){ setTjLogEmotion("Anger");}
+        else if(input == R.id.fear_log){setTjLogEmotion("Fear");}
     }
     public void setTjLogEmotionRating(float input) {
         tjLogEmotionRating = input;
@@ -152,8 +152,12 @@ public class TJLogViewModel extends ViewModel {
     public int getTjLogPeopleRadioId() { return tjLogPeopleRadioId; }
     public int getTjLogEmotionRadioId() { return tjLogEmotionRadioId; }
     public String getTjLogDisplayEmotionRating() { return tjLogDisplayEmotionRating; }
+    public List<String> getTjLogThoughtList() { return tjLogThoughtList; }
 
     //dummy display getter/setters
     public void setTjLogDisplayThoughts(String input) { tjLogDisplayThoughts = input; }
     public String getTjLogDisplayThoughts() { return tjLogDisplayThoughts; }
+
+    //get convert to thought string for firebase
+    public String getTjLogThoughtText(){ return android.text.TextUtils.join(",", tjLogThoughtList); }
 }

@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,12 +77,12 @@ public class TJPageFive extends Fragment {
 
         NavController controller = Navigation.findNavController(requireView());
         backButton.setOnClickListener(v ->{
-            getTextInput();
+            updateThoughtList();
             controller.popBackStack(R.id.tjPageFour, true);
             controller.navigate(R.id.tjPageFour);
         });
         reviewButton.setOnClickListener(v ->{
-            getTextInput();
+            updateThoughtList();
             controller.navigate(R.id.action_tjPageFive_to_tjPageSix);
         });
     }
@@ -103,7 +102,7 @@ public class TJPageFive extends Fragment {
         });
     }
 
-    private void getTextInput(){
+    private void updateThoughtList(){
         tjViewModel.setThoughtList(thoughtList);
     }
 

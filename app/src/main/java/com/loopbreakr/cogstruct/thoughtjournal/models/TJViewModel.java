@@ -57,6 +57,7 @@ public class TJViewModel extends ViewModel {
         if(input == R.id.alone) {
             setPeopleText("Alone");
         }
+
         peopleRadioId = input;
     }
     public void setEmotionRadioId(int input) {
