@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.loopbreakr.cogstruct.proscons.PCViewModel" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -63,10 +70,10 @@
         android:layout_margin="12dp"
         android:layout_marginTop="8dp"
         android:gravity="top"
-        android:text="@string/field_required"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/space2"
-        app:layout_constraintTop_toBottomOf="@+id/pc_review_text" />
+        app:layout_constraintTop_toBottomOf="@+id/pc_review_text"
+        android:text="@={viewModel.PCBehavior}"/>
 
 
     <ScrollView
@@ -160,7 +167,8 @@
                 android:layout_marginEnd="2dp"
                 android:layout_marginBottom="2dp"
                 android:background="@color/colorWhite"
-                android:padding="4dp" />
+                android:padding="4dp"
+                android:text="@={viewModel.displayChangePros}"/>
 
             <TextView
                 android:id="@+id/review_dont_change_pros"
@@ -173,7 +181,8 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="2dp"
                 android:background="@color/colorWhite"
-                android:padding="4dp" />
+                android:padding="4dp"
+                android:text="@={viewModel.displayDontChangePros}"/>
 
 
             <TextView
@@ -202,7 +211,8 @@
                 android:layout_marginEnd="2dp"
                 android:layout_marginBottom="4dp"
                 android:background="@color/colorWhite"
-                android:padding="4dp" />
+                android:padding="4dp"
+                android:text="@={viewModel.displayChangeCons}"/>
 
             <TextView
                 android:id="@+id/review_dont_change_cons"
@@ -215,8 +225,8 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="4dp"
                 android:background="@color/colorWhite"
-                android:padding="4dp" />
-
+                android:padding="4dp"
+                android:text="@={viewModel.displayDontChangeCons}"/>
 
         </GridLayout>
 
@@ -263,7 +273,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/review_content" />
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

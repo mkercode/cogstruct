@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -19,7 +20,10 @@ import android.widget.Toast;
 
 import com.loopbreakr.cogstruct.MainActivity;
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.databinding.PcFragmentPageFourBinding;
 import com.loopbreakr.cogstruct.thoughtjournal.activities.TJActivity;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -27,8 +31,7 @@ import java.util.List;
 public class PCPageFour extends Fragment {
     private PCViewModel pcViewModel;
     private Button editButton, submitButton;
-    private TextView behaviorText, changeProsText, dontChangeProsText, changeConsText, dontChangeConsText;
-    private String behavior;
+    private PcFragmentPageFourBinding binding;
 
     public PCPageFour() {
         // Required empty public constructor
@@ -42,10 +45,12 @@ public class PCPageFour extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.pc_fragment_page_four, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.pc_fragment_page_four, container, false);
+        binding.setViewModel(pcViewModel);
+        return binding.getRoot();
     }
 
     @Override
@@ -53,18 +58,11 @@ public class PCPageFour extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
         setButtons();
-        getViewModelData();
     }
 
     private void findViews(View view) {
         editButton = view.findViewById(R.id.pc_edit);
         submitButton = view.findViewById(R.id.pc_submit);
-
-        behaviorText = view.findViewById(R.id.pc_behavior_review);
-        changeProsText = view.findViewById(R.id.review_change_pros);
-        dontChangeProsText = view.findViewById(R.id.review_dont_change_pros);
-        changeConsText = view.findViewById(R.id.review_change_cons);
-        dontChangeConsText = view.findViewById(R.id.review_dont_change_cons);
     }
 
     private void setButtons() {
@@ -80,28 +78,6 @@ public class PCPageFour extends Fragment {
             startActivity(intent);
             requireActivity().finish();
         });
-    }
-
-    private void getViewModelData() {
-        if(!pcViewModel.getPCBehavior().isEmpty() && !pcViewModel.getPCBehavior().equals("")){
-            behaviorText.setText(pcViewModel.getPCBehavior());
-            behaviorText.setTextColor(getResources().getColor(R.color.lightGrey));
-        }
-
-        fillTextView(pcViewModel.getChangePros(), changeProsText);
-        fillTextView(pcViewModel.getDontChangePros(), dontChangeProsText);
-        fillTextView(pcViewModel.getChangeCons(), changeConsText);
-        fillTextView(pcViewModel.getDontChangeCons(), dontChangeConsText);
-    }
-
-    private void fillTextView(List<String> list, TextView textView) {
-        if (list != null && !list.isEmpty()) {
-            StringBuilder displayThoughts = new StringBuilder();
-            for (String pc : list) {
-                displayThoughts.append("-").append(pc).append("\n");
-            }
-            textView.setText(displayThoughts.toString());
-        }
     }
 
     private void submitData() {

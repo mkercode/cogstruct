@@ -75,5 +75,5 @@
         android:id="@+id/PCLogEditFragment"
         android:name="com.loopbreakr.cogstruct.logs.PCLogEditFragment"
         android:label="fragment_pc_log_edit"
-        tools:layout="@layout/fragment_pc_log_edit" />
+        tools:layout="@layout/logs_fragment_pc_edit" />
 </navigation>

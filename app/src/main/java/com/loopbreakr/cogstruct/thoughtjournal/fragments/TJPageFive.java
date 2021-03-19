@@ -87,6 +87,7 @@ public class TJPageFive extends Fragment {
         });
     }
 
+    //add chip views to represent thoughts
     private void createThoughtChip(String thought) {
         Chip chip = new Chip(requireActivity());
         chip.setText(thought);

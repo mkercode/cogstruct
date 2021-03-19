@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -16,7 +17,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.databinding.LogsFragmentPcBinding;
 import com.loopbreakr.cogstruct.proscons.PCViewModel;
+import com.loopbreakr.cogstruct.proscons.ProsConsObject;
+import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,7 +30,8 @@ import java.util.List;
 public class PCLogsFragment extends Fragment {
     LogsViewModel logsViewModel;
     PCViewModel pcViewModel;
-    private TextView behaviorText, changeProsText, dontChangeProsText, changeConsText, dontChangeConsText;
+    ProsConsObject prosAndConsLog;
+    LogsFragmentPcBinding binding;
 
     public PCLogsFragment() {
         // Required empty public constructor
@@ -39,18 +46,18 @@ public class PCLogsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.logs_fragment_pc, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_pc, container, false);
+        binding.setViewModel(pcViewModel);
+        return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setToolbar(view);
-        findViews(view);
         setViewModelData();
-        setTextViews();
     }
 
     private void setToolbar(View view) {
@@ -78,49 +85,9 @@ public class PCLogsFragment extends Fragment {
         });
     }
 
-    private void findViews(View view) {
-        behaviorText = view.findViewById(R.id.pc_behavior_log_text);
-        changeProsText = view.findViewById(R.id.log_change_pros_text);
-        dontChangeProsText = view.findViewById(R.id.log_dont_change_pros_text);
-        changeConsText = view.findViewById(R.id.log_change_cons_text);
-        dontChangeConsText = view.findViewById(R.id.log_dont_change_cons_text);
-    }
-
-
     private void setViewModelData() {
-        DocumentSnapshot snapshot = logsViewModel.getSnapshot();
-        pcViewModel.setPCBehavior(snapshot.getString("behavior"));
-        pcViewModel.setChangePros(Arrays.asList(snapshot.getString("changePros").split("\\s*,\\s*")));
-        pcViewModel.setDontChangePros(Arrays.asList(snapshot.getString("dontChangePros").split("\\s*,\\s*")));
-        pcViewModel.setChangeCons(Arrays.asList(snapshot.getString("changeCons").split("\\s*,\\s*")));
-        pcViewModel.setDontChangeCons(Arrays.asList(snapshot.getString("dontChangeCons").split("\\s*,\\s*")));
+        prosAndConsLog = logsViewModel.getSnapshot().toObject(ProsConsObject.class);
+        pcViewModel.setProsCons(prosAndConsLog);
     }
 
-    private void setTextViews() {
-    behaviorText.setText(pcViewModel.getPCBehavior());
-    behaviorText.setTextColor(getResources().getColor(R.color.lightGrey));
-
-    fillTextView(pcViewModel.getChangePros(), changeProsText);
-    fillTextView(pcViewModel.getDontChangePros(), dontChangeProsText);
-    fillTextView(pcViewModel.getChangeCons(), changeConsText);
-    fillTextView(pcViewModel.getDontChangeCons(), dontChangeConsText);
-    }
-
-    private void fillTextView(List<String> list, TextView textView) {
-        if (list != null && !list.isEmpty()) {
-            StringBuilder displayThoughts = new StringBuilder();
-            for (String pc : list) {
-                displayThoughts.append("-").append(pc).append("\n");
-            }
-            textView.setText(displayThoughts.toString());
-        }
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        behaviorText.setText(pcViewModel.getPCBehavior());
-        behaviorText.setTextColor(getResources().getColor(R.color.lightGrey));
-
-    }
 }

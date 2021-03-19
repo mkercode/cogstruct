@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -18,12 +19,15 @@ import android.widget.EditText;
 
 import com.loopbreakr.cogstruct.MainActivity;
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.databinding.PcFragmentPageOneBinding;
+
+import org.jetbrains.annotations.NotNull;
 
 
 public class PCPageOne extends Fragment {
     private PCViewModel pcViewModel;
     private Button returnButton, nextButton;
-    private EditText behaviorInput;
+    private PcFragmentPageOneBinding binding;
 
     public PCPageOne() {
         // Required empty public constructor
@@ -37,10 +41,12 @@ public class PCPageOne extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.pc_fragment_page_one, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.pc_fragment_page_one, container, false);
+        binding.setViewModel(pcViewModel);
+        return binding.getRoot();
     }
 
     @Override
@@ -48,17 +54,12 @@ public class PCPageOne extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         findViews(view);
         setButtons();
-        getViewModelData();
     }
 
-    private void getViewModelData() {
-       behaviorInput.setText(pcViewModel.getPCBehavior());
-    }
 
     private void findViews(View view) {
         returnButton = view.findViewById(R.id.pc_return);
         nextButton = view.findViewById(R.id.pc_page_one_next);
-        behaviorInput = view.findViewById(R.id.pc_behavior_input);
     }
 
     private void setButtons() {
@@ -70,7 +71,6 @@ public class PCPageOne extends Fragment {
         });
 
         nextButton.setOnClickListener(v ->{
-            pcViewModel.setPCBehavior(behaviorInput.getText().toString());
             NavController controller = Navigation.findNavController(requireView());
             controller.navigate(R.id.action_PCPageOne_to_PCPageTwo);
         });

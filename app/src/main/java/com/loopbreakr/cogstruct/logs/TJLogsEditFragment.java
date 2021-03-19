@@ -99,11 +99,9 @@ public class TJLogsEditFragment extends Fragment {
         }
     }
 
-
     private void setButtons() {
         addThoughtButton.setOnClickListener(v -> addToList());
     }
-
 
     private void createThoughtChip(String thought) {
         Chip chip = new Chip(requireActivity());

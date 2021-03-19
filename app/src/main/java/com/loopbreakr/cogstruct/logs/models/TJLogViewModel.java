@@ -11,8 +11,6 @@ import java.util.List;
 
 public class TJLogViewModel extends ViewModel {
 
-    private ThoughtJournalObject thoughtJournal;
-
     private String tjLogLocation;
     private String tjLogTime;
     private String tjLogPeople;
@@ -131,7 +129,8 @@ public class TJLogViewModel extends ViewModel {
     }
     public void setTjLogDisplayEmotionRating(String input) { tjLogDisplayEmotionRating = input; }
 
-    public void setTjLogThoughtList(List<String> input){ tjLogThoughtList = input;
+    public void setTjLogThoughtList(List<String> input){
+        tjLogThoughtList = input;
         StringBuilder displayText = new StringBuilder();
         for(String thought: tjLogThoughtList){
             displayText.append("-").append(thought).append("\n");

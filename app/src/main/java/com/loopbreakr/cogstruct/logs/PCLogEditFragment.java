@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -22,7 +23,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.SimpleRecyclerAdapter;
+import com.loopbreakr.cogstruct.databinding.LogsFragmentPcEditBinding;
 import com.loopbreakr.cogstruct.proscons.PCViewModel;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +38,7 @@ public class PCLogEditFragment extends Fragment {
     private ArrayList<String> changeProsList, dontChangeProsList, changeConsList, dontChangeConsList;
     private FloatingActionButton addChangePro, addDontChangePro, addChangeCon, addDontChangeCon;
     private RecyclerView changeProsRecyclerView, changeConsRecyclerView, dontChangeProsRecyclerView, dontChangeConsRecyclerView;
-    private EditText behaviorInput;
-
+    private LogsFragmentPcEditBinding binding;
 
     public PCLogEditFragment() {
         // Required empty public constructor
@@ -50,10 +53,13 @@ public class PCLogEditFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pc_log_edit, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_pc_edit, container, false);
+        binding.setViewModel(pcViewModel);
+        return binding.getRoot();
+
     }
 
     @Override
@@ -73,7 +79,6 @@ public class PCLogEditFragment extends Fragment {
         toolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_done_edit_log) {
-                setViewModelText();
                 updateFirestoreDocument();
                 controller.popBackStack(R.id.allLogsFragment, true);
                 controller.navigate(R.id.allLogsFragment);
@@ -89,7 +94,6 @@ public class PCLogEditFragment extends Fragment {
         addChangeCon = view.findViewById(R.id.add_log_change_con);
         addDontChangeCon = view.findViewById(R.id.add_log_dont_change_con);
 
-        behaviorInput = view.findViewById(R.id.pc_behavior_edit_log);
         changeProsRecyclerView = view.findViewById(R.id.change_pros_log);
         dontChangeProsRecyclerView = view.findViewById(R.id.dont_change_pros_log);
         changeConsRecyclerView = view.findViewById(R.id.change_cons_log);
@@ -98,11 +102,11 @@ public class PCLogEditFragment extends Fragment {
 
     private void getViewModelData() {
 
-        behaviorInput.setText(pcViewModel.getPCBehavior());
-        changeProsList =  pcViewModel.getDummyChangePros();
-        dontChangeProsList = pcViewModel.getDummyDontChangePros();
-        changeConsList = pcViewModel.getDummyChangeCons();
-        dontChangeConsList = pcViewModel.getDummyDontChangeCons();
+
+        changeProsList = new ArrayList<>(pcViewModel.getChangePros());
+        dontChangeProsList = new ArrayList<>(pcViewModel.getDontChangePros());
+        changeConsList = new ArrayList<>(pcViewModel.getChangeCons());
+        dontChangeConsList = new ArrayList<>(pcViewModel.getDontChangeCons());
     }
 
     private void initializeRecyclerViews() {
@@ -161,12 +165,6 @@ public class PCLogEditFragment extends Fragment {
                 .setView(addEntryText)
                 .setPositiveButton("Add", (dialog, which) ->
                         list.add(addEntryText.getText().toString())).setNegativeButton("Cancel", null).show();
-    }
-
-    private void setViewModelText() {
-        pcViewModel.setPCBehavior(behaviorInput.getText().toString());
-        pcViewModel.setDontChangeCons(dontChangeConsList);
-        pcViewModel.setDontChangeCons(dontChangeConsList);
     }
 
     private void updateFirestoreDocument() {

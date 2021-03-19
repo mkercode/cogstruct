@@ -10,6 +10,9 @@ public class ProsConsObject {
     private String changeCons;
     private String dontChangeCons;
 
+    public ProsConsObject() {
+    }
+
     public ProsConsObject(String dateCreated, String userId, String behavior, String changePros, String dontChangePros, String changeCons, String dontChangeCons) {
         this.formName = "Pros and Cons";
         this.dateCreated = dateCreated;

@@ -21,6 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.SimpleRecyclerAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -67,8 +68,9 @@ public class PCPageThree extends Fragment {
     }
 
     private void initializeRecyclerViews() {
-        prosList = pcViewModel.getDontChangePros();
-        consList = pcViewModel.getDontChangeCons();
+        prosList = new ArrayList<>();
+        prosList.addAll(pcViewModel.getDontChangePros());
+        consList = new ArrayList<>(pcViewModel.getDontChangePros());
 
         SimpleRecyclerAdapter prosRecyclerAdapter = new SimpleRecyclerAdapter(prosList);
         SimpleRecyclerAdapter consRecyclerAdapter = new SimpleRecyclerAdapter(consList);
