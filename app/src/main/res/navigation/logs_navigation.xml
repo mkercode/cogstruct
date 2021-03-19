@@ -60,7 +60,11 @@
         android:id="@+id/IBLogFragment"
         android:name="com.loopbreakr.cogstruct.logs.IBLogsFragment"
         android:label="fragment_ib_log"
-        tools:layout="@layout/logs_fragment_ib" />
+        tools:layout="@layout/logs_fragment_ib" >
+        <action
+            android:id="@+id/action_IBLogFragment_to_IBLogEditFragment"
+            app:destination="@id/IBLogEditFragment" />
+    </fragment>
     <fragment
         android:id="@+id/ABCLogFragment"
         android:name="com.loopbreakr.cogstruct.logs.ABCLogsFragment"
@@ -76,4 +80,9 @@
         android:name="com.loopbreakr.cogstruct.logs.PCLogEditFragment"
         android:label="fragment_pc_log_edit"
         tools:layout="@layout/logs_fragment_pc_edit" />
+    <fragment
+        android:id="@+id/IBLogEditFragment"
+        android:name="com.loopbreakr.cogstruct.logs.IBLogEditFragment"
+        android:label="logs_fragment_ib_edit"
+        tools:layout="@layout/logs_fragment_ib_edit" />
 </navigation>

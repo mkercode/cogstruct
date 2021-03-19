@@ -16,8 +16,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
+
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.IbFragmentProblemSolvingBinding;
+import com.loopbreakr.cogstruct.thoughtjournal.activities.TJActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -67,9 +70,20 @@ public class IBProblemSolving extends Fragment {
 
         NavController controller = Navigation.findNavController(requireView());
         editButton.setOnClickListener(v -> controller.navigateUp());
-//        submitButtonButton.setOnClickListener(v -> controller.navigate(R.id.action_PCPageThree_to_PCPageFour));
+        submitButton.setOnClickListener(v -> {
+          if(ibViewModel.getIbBehavior() != null && ibViewModel.getIbBarrier() != null && ibViewModel.getIbNescessaryAction() != null && ibViewModel.getIbSolution() != null){
+              submitData();
+          }
+          else{
+              Toast.makeText(requireActivity().getApplicationContext(), "Please fill in all the fields!", Toast.LENGTH_SHORT).show();
+          }
+        });
+
     }
 
+    private void submitData() {
+        ((IBActivity)requireActivity()).sendToFirestore(ibViewModel.getIbBehavior(),ibViewModel.getIbNescessaryAction(),ibViewModel.getIbBarrierType(),ibViewModel.getIbBarrier(),ibViewModel.getIbSolution());
+    }
 
 
 }

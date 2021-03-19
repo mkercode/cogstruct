@@ -71,18 +71,10 @@ public class PCPageFour extends Fragment {
             controller.popBackStack(R.id.PCPageThree, true);
             controller.navigate(R.id.PCPageThree);
         });
-        submitButton.setOnClickListener(v ->{
-            submitData();
-            Toast.makeText(requireActivity().getApplicationContext(), "Saved in logs", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this.requireActivity(), MainActivity.class);
-            startActivity(intent);
-            requireActivity().finish();
-        });
+        submitButton.setOnClickListener(v -> submitData());
     }
 
     private void submitData() {
         ((PCActivity)requireActivity()).sendToFirestore(pcViewModel.getPCBehavior(),pcViewModel.getChangeProsString(), pcViewModel.getDontChangeProsString(), pcViewModel.getChangeConsString(), pcViewModel.getDontChangeConsString());
     }
-
-
 }

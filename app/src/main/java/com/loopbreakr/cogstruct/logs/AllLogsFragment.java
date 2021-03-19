@@ -107,6 +107,7 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
                 break;
 
             case "Identify Barriers":
+                logsViewModel.setSnapshot(snapshot);
                 navId = R.id.action_allLogsFragment_to_IBLogFragment;
                 break;
 

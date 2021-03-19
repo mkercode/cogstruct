@@ -82,10 +82,6 @@ public class TJPageSix extends Fragment{
         submitButton.setOnClickListener(v ->{
             if(!requiredInputs.contains("") &&!requiredInputs.contains(null) && !tjViewModel.getThoughtList().isEmpty()){
                 submitData();
-                Toast.makeText(requireActivity().getApplicationContext(), "Saved in logs", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this.requireActivity(), MainActivity.class);
-                startActivity(intent);
-                requireActivity().finish();
             }
             else{
                 Toast.makeText(requireActivity().getApplicationContext(), "Please fill in all required fields!", Toast.LENGTH_SHORT).show();

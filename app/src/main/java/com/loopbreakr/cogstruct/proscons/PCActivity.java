@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.loopbreakr.cogstruct.LoginActivity;
+import com.loopbreakr.cogstruct.MainActivity;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 
@@ -36,10 +37,19 @@ public class PCActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
         FirebaseFirestore.getInstance().collection("forms").add(prosConsEntry).addOnSuccessListener(documentReference ->
                 Log.d("ADDING ENTRY...", "SUCCESS ADDING THOUGHT JOURNAL ENTRY: " + prosConsEntry.toString()))
                 .addOnFailureListener(e -> Log.e("ADDING ENTRY...", "FAILURE ADDING THOUGHT JOURNAL ENTRY: " + prosConsEntry.toString() + "... ERROR: ", e));
+
+        closeActivity();
     }
 
     private String getTimeDate() {
         return DateFormat.getDateTimeInstance().format(new Date());
+    }
+
+    private void closeActivity() {
+        Toast.makeText(this, "Saved in logs", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        this.finish();
     }
 
     @Override

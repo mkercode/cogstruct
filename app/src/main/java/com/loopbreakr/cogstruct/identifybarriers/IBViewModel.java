@@ -4,9 +4,6 @@ import androidx.lifecycle.ViewModel;
 
 import com.loopbreakr.cogstruct.R;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class IBViewModel extends ViewModel {
     private String ibBehavior;
     private String ibNescessaryAction;
@@ -21,22 +18,51 @@ public class IBViewModel extends ViewModel {
     private String ibBarrier;
     private String ibSolution;
 
+    private int ibBarrierTypeRadioId;
+
     //enable/disable people edittext based on radiobutton option
     private boolean ibWillingIsEnabled = true;
     private boolean ibThinkingIsEnabled = true;
     
     public void setIBLog(IBObject ibObject){
-        setIbBehavior(ibObject.getBehavior());
-        setIbNescessaryAction(ibObject.getNescessaryAction());
-        setIbBarrierType(ibObject.getBarrierType());
-        setIbBarrier(ibObject.getBarrier());
-        setIbSolution(ibObject.getSolution());
-        
-        initalizeLogRadioButtons();
+        ibBehavior = ibObject.getBehavior();
+        ibNescessaryAction = ibObject.getNecessaryAction();
+        ibBarrierType = ibObject.getBarrierType();
+        ibBarrier = ibObject.getBarrier();
+        ibSolution = ibObject.getSolution();
+
+        initalizeLogRadioButtons(ibBarrierType);
     }
 
-    private void initalizeLogRadioButtons() {
+    private void initalizeLogRadioButtons(String barrierType) {
+        setIbBarrierTypeRadioId(-1);
+        switch (barrierType){
+            case "Willingness":
+                ibBarrierTypeRadioId = R.id.ib_will_type_log;
+                break;
+            case "Thought":
+                ibBarrierTypeRadioId = R.id.ib_thought_type_log;
+                break;
+            case "Action":
+                ibBarrierTypeRadioId = R.id.ib_action_type_log;
+                break;
+        }
     }
+    public void setIbBarrierTypeRadioId(int input) {ibBarrierTypeRadioId = input;
+        //set the radio id in IB log edit fragment
+        switch (input){
+            case R.id.ib_will_type_log:
+                setIbBarrierType("Willingness");
+                break;
+            case R.id.ib_thought_type_log:
+                setIbBarrierType("Thought");
+                break;
+            case R.id.ib_action_type_log:
+                setIbBarrierType("Action");
+                break;
+        }
+    }
+    public int getIbBarrierTypeRadioId() { return ibBarrierTypeRadioId; }
 
 
     public void setIbBehavior(String input) { ibBehavior = input; }
@@ -85,19 +111,16 @@ public class IBViewModel extends ViewModel {
 
     public void setIbSolution(String input){ ibSolution = input;}
     public String getIbSolution() { return ibSolution; }
-
     public String getIbNescessaryAction() { return ibNescessaryAction; }
     public String getIbBehavior() { return ibBehavior; }
     public String getIbWillingBarrier() { return ibWillingBarrier; }
     public String getIbThinkingBarrier() { return ibThinkingBarrier; }
     public String getIbDoingBarrier() { return ibDoingBarrier; }
-
     public String getIbBarrierType() { return ibBarrierType; }
-
     public String getIbBarrier() { return ibBarrier;}
-
     public int getIbWillingRadioId() { return ibWillingRadioId; }
     public int getIbThinkingRadioId() { return ibThinkingRadioId; }
+
 
     public boolean isIbWillingIsEnabled() { return ibWillingIsEnabled; }
     public boolean isIbThinkingIsEnabled() { return ibThinkingIsEnabled; }

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -19,25 +18,22 @@ import android.view.ViewGroup;
 
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.LogsFragmentIbBinding;
-import com.loopbreakr.cogstruct.identifybarriers.IBObject;
+import com.loopbreakr.cogstruct.databinding.LogsFragmentIbEditBinding;
+import com.loopbreakr.cogstruct.databinding.LogsFragmentTjEditBinding;
 import com.loopbreakr.cogstruct.identifybarriers.IBViewModel;
-import com.loopbreakr.cogstruct.logs.models.TJLogViewModel;
-import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 
 import org.jetbrains.annotations.NotNull;
 
 
-public class IBLogsFragment extends Fragment {
-    private LogsFragmentIbBinding binding;
+public class IBLogEditFragment extends Fragment {
+    private LogsFragmentIbEditBinding binding;
     private LogsViewModel logsViewModel;
     private IBViewModel ibViewModel;
-    private IBObject ibLog;
 
-    public IBLogsFragment() {
+
+    public IBLogEditFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +47,7 @@ public class IBLogsFragment extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_ib, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_ib_edit, container, false);
         binding.setViewModel(ibViewModel);
         return binding.getRoot();
     }
@@ -60,36 +56,36 @@ public class IBLogsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setToolbar(view);
-        setViewModelData();
+
     }
 
+
+
     private void setToolbar(View view) {
-        Toolbar toolbar = view.findViewById(R.id.logsToolbar);
+        NavController controller = Navigation.findNavController(requireView());
+        Toolbar toolbar = view.findViewById(R.id.edit_logs_toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         toolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
-        toolbar.setOverflowIcon(ContextCompat.getDrawable(requireActivity(),R.drawable.ic_white_dots));
         toolbar.setOnMenuItemClickListener(item -> {
-            NavController controller = Navigation.findNavController(requireView());
-            switch (item.getItemId()) {
-                case R.id.action_editLog :
-                    controller.navigate(R.id.action_IBLogFragment_to_IBLogEditFragment);
-                    return true;
-                case R.id.action_deleteLog:
-                    DocumentSnapshot snapshot = logsViewModel.getSnapshot();
-                    snapshot.getReference().delete().addOnFailureListener(e ->
-                            Log.e("DELETING...", "deleteSnapshot: " + snapshot.getData(), e)).addOnSuccessListener(aVoid ->
-                            Log.d("DELETING...", "deleteSnapshot: " + snapshot.getData()));
-                    controller.popBackStack(R.id.allLogsFragment, true);
-                    controller.navigate(R.id.allLogsFragment);
-                    return true;
-                default:
-                    return super.onOptionsItemSelected(item);
+            if (item.getItemId() == R.id.action_done_edit_log) {
+                updateFirestoreDocument();
+                controller.popBackStack(R.id.allLogsFragment, true);
+                controller.navigate(R.id.allLogsFragment);
+                return true;
             }
+            return super.onOptionsItemSelected(item);
         });
     }
 
-    private void setViewModelData() {
-        ibLog = logsViewModel.getSnapshot().toObject(IBObject.class);
-        ibViewModel.setIBLog(ibLog);
+    private void updateFirestoreDocument() {
+        DocumentSnapshot logSnapshot = logsViewModel.getSnapshot();
+        logSnapshot.getReference().update(
+                "behavior", ibViewModel.getIbBehavior(),
+                "necessaryAction", ibViewModel.getIbNescessaryAction(),
+                "barrierType", ibViewModel.getIbBarrierType(),
+                "barrier", ibViewModel.getIbBarrier(),
+                "solution",ibViewModel.getIbSolution())
+                .addOnFailureListener(e -> Log.e("UPDATING IB LOG", "FAILED. ALL FIELDS OF " + logSnapshot.getData() , e)).addOnSuccessListener(aVoid -> Log.d("UPDATING IB LOG", "SUCCESS. ALL FIELDS OF " + logSnapshot.getData()));
+
     }
 }

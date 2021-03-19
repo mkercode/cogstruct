@@ -73,7 +73,6 @@ public class TjLogsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setToolbar(view);
-        findViews(view);
         setViewModelData();
     }
 
@@ -105,13 +104,6 @@ public class TjLogsFragment extends Fragment {
                     return super.onOptionsItemSelected(item);
             }
         });
-    }
-
-
-
-    private void findViews(View view) {
-
-
     }
 
 }
