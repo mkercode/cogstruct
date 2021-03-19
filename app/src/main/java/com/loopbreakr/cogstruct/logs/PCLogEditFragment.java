@@ -101,12 +101,15 @@ public class PCLogEditFragment extends Fragment {
     }
 
     private void getViewModelData() {
+        changeProsList = new ArrayList<>();
+        dontChangeProsList = new ArrayList<>();
+        changeConsList = new ArrayList<>();
+        dontChangeConsList = new ArrayList<>();
 
-
-        changeProsList = new ArrayList<>(pcViewModel.getChangePros());
-        dontChangeProsList = new ArrayList<>(pcViewModel.getDontChangePros());
-        changeConsList = new ArrayList<>(pcViewModel.getChangeCons());
-        dontChangeConsList = new ArrayList<>(pcViewModel.getDontChangeCons());
+        changeProsList.addAll(pcViewModel.getChangePros());
+        dontChangeProsList.addAll(pcViewModel.getDontChangePros());
+        changeConsList.addAll(pcViewModel.getChangeCons());
+         dontChangeConsList.addAll(pcViewModel.getDontChangeCons());
     }
 
     private void initializeRecyclerViews() {
