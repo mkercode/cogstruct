@@ -111,7 +111,7 @@
                     android:layout_height="56dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="24dp"
-                    android:text="@string/tj_emotion_intensity_description"
+                    android:text="@string/emotion_intensity_description_general"
                     android:textColor="@color/colorGreenText"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"

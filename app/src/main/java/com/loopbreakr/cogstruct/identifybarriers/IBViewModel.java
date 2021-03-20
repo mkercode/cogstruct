@@ -31,10 +31,10 @@ public class IBViewModel extends ViewModel {
         ibBarrier = ibObject.getBarrier();
         ibSolution = ibObject.getSolution();
 
-        initalizeLogRadioButtons(ibBarrierType);
+        initializeLogRadioButtons(ibBarrierType);
     }
 
-    private void initalizeLogRadioButtons(String barrierType) {
+    private void initializeLogRadioButtons(String barrierType) {
         setIbBarrierTypeRadioId(-1);
         switch (barrierType){
             case "Willingness":

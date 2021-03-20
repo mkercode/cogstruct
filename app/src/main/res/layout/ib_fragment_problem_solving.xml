@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
-        android:text="@string/ib_problem_solving_review_title"
+        android:text="@string/problem_solving_title_general"
         android:textColor="@color/colorGreenText"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"

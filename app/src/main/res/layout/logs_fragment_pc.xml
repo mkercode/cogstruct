@@ -74,7 +74,7 @@ tools:context=".logs.PCLogsFragment">
 
         <TextView
             android:id="@+id/pc_behavior_log_text"
-            style="@style/requiredText"
+            style="@style/optionalText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="top"
