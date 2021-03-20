@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/howd_i_get_here_navigation"
+    app:startDestination="@id/HIGHPageOne">
+
+    <fragment
+        android:id="@+id/HIGHPageOne"
+        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHPageOne"
+        android:label="high_fragment_page_one"
+        tools:layout="@layout/high_fragment_page_one" >
+        <action
+            android:id="@+id/action_HIGHPageOne_to_HIGHPageTwo"
+            app:destination="@id/HIGHPageTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/HIGHPageTwo"
+        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHPageTwo"
+        android:label="high_fragment_page_two"
+        tools:layout="@layout/high_fragment_page_two" >
+        <action
+            android:id="@+id/action_HIGHPageTwo_to_HIGHPageThree"
+            app:destination="@id/HIGHPageThree" />
+    </fragment>
+    <fragment
+        android:id="@+id/HIGHPageThree"
+        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHPageThree"
+        android:label="high_fragment_page_three"
+        tools:layout="@layout/high_fragment_page_three" >
+        <action
+            android:id="@+id/action_HIGHPageThree_to_HIGHPageFour"
+            app:destination="@id/HIGHPageFour" />
+    </fragment>
+    <fragment
+        android:id="@+id/HIGHPageFour"
+        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHPageFour"
+        android:label="high_fragment_page_four"
+        tools:layout="@layout/high_fragment_page_four" >
+        <action
+            android:id="@+id/action_HIGHPageFour_to_HIGHPageFive"
+            app:destination="@id/HIGHPageFive" />
+    </fragment>
+    <fragment
+        android:id="@+id/HIGHPageFive"
+        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHPageFive"
+        android:label="high_fragment_page_five"
+        tools:layout="@layout/high_fragment_page_five" >
+        <action
+            android:id="@+id/action_HIGHPageFive_to_HIGHPageSix"
+            app:destination="@id/HIGHPageSix" />
+    </fragment>
+    <fragment
+        android:id="@+id/HIGHPageSix"
+        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHPageSix"
+        android:label="high_fragment_page_six"
+        tools:layout="@layout/high_fragment_page_six" />
+</navigation>
