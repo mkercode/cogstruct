@@ -53,7 +53,7 @@
     <string name="tj_thoughts_description">What was going through your mind at the moment? </string>
     <string name="tj_thoughts_hint">Enter thoughts here!</string>
     <string name="submit_button_text">Submit</string>
-    <string name="tj_thoughts_title">Thoughts</string>
+    <string name="thoughts_title">Thoughts</string>
     <string name="tj_thoughts_image_description">Thought Bubble Image</string>
     <string name="tj_movie_image_description">Movie Image</string>
     <string name="tj_emotion_description">What is the main emotion you experienced at the time?</string>
@@ -99,7 +99,7 @@
     <string name="pc_not_chamging_question">How will not changing it impact my life?</string>
     <string name="required_text">(Required)</string>
     <string name="tj_emotion_details_description">Optional: go into details about how you felt.</string>
-    <string name="tj_emotion_details_hint">I.e multiple emotions, bodily sensations, emotional actions, ect</string>
+    <string name="tj_emotion_details_hint">I.e multiple emotions, bodily sensations, emotional actions, etc</string>
     <string name="tj_emotion_intensity_description">Rate the intensity of the emotion on a scale of 1–5</string>
     <string name="emotions">Emotions</string>
     <string name="behavior_hint">Enter behavior or action here</string>
@@ -119,4 +119,12 @@
     <string name="ib_problem_solving_review_description">Review Answers and Problem Solve!</string>
     <string name="ib_problem_solving_review_title">Problem Solve</string>
     <string name="ib_page_four_title">Final Barriers</string>
+    <string name="add_thought_description">Add thought</string>
+    <string name="add_thought_prompt">What were you thinking at the time? Add thought!</string>
+    <string name="thoughts_experienced_title">Thoughts Experienced</string>
+    <string name="high_page_one_title">What Happened?</string>
+    <string name="behavior_hint_general">Enter the unhelpful behavior or action you engaged in here</string>
+    <string name="prompting_event_hint_general">Enter what happened or what was going on</string>
+    <string name="behavior_question_general">What was the behavior?</string>
+    <string name="high_prompting_event_question">What was the prompting event that led you to engage in it?</string>
 </resources>

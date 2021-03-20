@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"
-            android:text="@string/tj_thoughts_title"
+            android:text="@string/thoughts_title"
             android:textColor="@color/colorGreenText"
             android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
