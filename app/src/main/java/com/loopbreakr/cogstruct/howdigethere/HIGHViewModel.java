@@ -11,6 +11,7 @@ public class HIGHViewModel {
     private String highPromptingEvent;
     private String highEmotion;
     private float highEmotionIntensity;
+    private String highEmotionIntensityString;
     private int highEmotionRadioId;
 
     private List<String> highThoughts = new ArrayList<>();
@@ -27,13 +28,16 @@ public class HIGHViewModel {
     private String displayHighSolutions;
     private String displayHighRepairs;
 
+
     public void setHIGHLog(HIGHObject highLog){
     }
 
     public void setHighBehavior(String input){ highBehavior = input; }
     public void setHighPromptingEvent(String input){ highPromptingEvent = input; }
-    public void setHighEmotionIntensity(float input){highEmotionIntensity = input;}
     public void setHighEmotion(String input){highEmotion = input;}
+    public void setHighEmotionIntensity(float input){highEmotionIntensity = input;
+        setHighEmotionIntensityString(Float.toString(input));}
+    public void setHighEmotionIntensityString(String input){highEmotionIntensityString = input;}
 
     public void setHighEmotionRadioId(int input){highEmotionRadioId = input;
     if(input == R.id.high_sadness){
@@ -50,11 +54,19 @@ public class HIGHViewModel {
     }
     }
 
-    public void setHighThoughts(List<String> input) { highThoughts = input; }
-    public void setHighVulnerabilities(List<String> input) { highVulnerabilities = input; }
-    public void setHighReliefs(List<String> input) { highReliefs = input; }
-    public void setHighConsequences(List<String> input) { highConsequences = input; }
-    public void setHighSolutions(List<String> input) { highSolutions = input; }
+    public void setHighThoughts(List<String> input) { highThoughts = input;
+    setDisplayHighThoughts(createDisplayList(input));}
+    public void setHighVulnerabilities(List<String> input) { highVulnerabilities = input;
+    setDisplayHighVulnerabilities(createDisplayList(input));}
+    public void setHighReliefs(List<String> input) { highReliefs = input;
+    setDisplayHighReliefs(createDisplayList(input));}
+    public void setHighConsequences(List<String> input) { highConsequences = input;
+    setDisplayHighConsequences(createDisplayList(input));}
+    public void setHighSolutions(List<String> input) { highSolutions = input;
+    setDisplayHighSolutions(createDisplayList(input));}
+    public void setHighRepairs(List<String> input) { highRepairs = input;
+        setDisplayHighRepairs(createDisplayList(input));}
+
     public void setDisplayHighThoughts(String input) { displayHighThoughts = input; }
     public void setDisplayHighVulnerabilities(String input) { displayHighVulnerabilities = input; }
     public void setDisplayHighReliefs(String input) { displayHighReliefs = input; }
@@ -67,6 +79,7 @@ public class HIGHViewModel {
     public String getHighPromptingEvent(){return highPromptingEvent;}
     public float getHighEmotionIntensity() { return highEmotionIntensity; }
     public String getHighEmotion(){return highEmotion;}
+    public String getHighEmotionIntensityString(){return highEmotionIntensityString;}
     public int getHighEmotionRadioId(){return highEmotionRadioId;}
 
 
@@ -90,6 +103,12 @@ public class HIGHViewModel {
     public String getHighSolutionsString() { return android.text.TextUtils.join(",", highSolutions); }
     public String getHighRepairsString() { return android.text.TextUtils.join(",", highRepairs); }
 
-
+    private String createDisplayList(List<String> items){
+        StringBuilder displayText = new StringBuilder();
+        for(String item: items){
+            displayText.append("-").append(item).append("\n");
+        }
+        return displayText.toString();
+    }
 
 }

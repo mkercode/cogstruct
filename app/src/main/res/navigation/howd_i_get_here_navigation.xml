@@ -54,5 +54,14 @@
         android:id="@+id/HIGHPageSix"
         android:name="com.loopbreakr.cogstruct.howdigethere.HIGHPageSix"
         android:label="high_fragment_page_six"
-        tools:layout="@layout/high_fragment_page_six" />
+        tools:layout="@layout/high_fragment_page_six" >
+        <action
+            android:id="@+id/action_HIGHPageSix_to_HIGHReview"
+            app:destination="@id/HIGHReview" />
+    </fragment>
+    <fragment
+        android:id="@+id/HIGHReview"
+        android:name="com.loopbreakr.cogstruct.HIGHReview"
+        android:label="high_fragment_review"
+        tools:layout="@layout/high_fragment_review" />
 </navigation>
