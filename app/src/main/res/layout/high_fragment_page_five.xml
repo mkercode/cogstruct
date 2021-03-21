@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/high_vulnerabilities_question"
+        android:id="@+id/high_relief_question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -45,23 +45,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/page_five_title" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/high_add_vulnerability"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/high_vulnerabilities_question"
-        android:layout_marginTop="8dp"
-        android:clickable="true"
-        android:contentDescription="@string/add_vulnerability_factors_description"
-        android:focusable="true"
-        app:backgroundTint="@color/colorPrimary"
-        app:fabSize="mini"
-        app:layout_constraintEnd_toEndOf="@+id/high_vulnerabilities_question"
-        app:layout_constraintTop_toBottomOf="@+id/high_vulnerabilities_question"
-        app:srcCompat="@drawable/ic_add" />
-
     <TextView
-        android:id="@+id/high_vulnerability_prompt"
+        android:id="@+id/high_relief_prompt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -69,25 +54,39 @@
         android:text="@string/relief_prompt_general"
         android:textColor="@color/colorGreenText"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/high_add_vulnerability"
-        app:layout_constraintEnd_toStartOf="@+id/high_add_vulnerability"
-        app:layout_constraintStart_toStartOf="@+id/high_vulnerabilities_question" />
-
+        app:layout_constraintBottom_toBottomOf="@+id/high_add_relief"
+        app:layout_constraintEnd_toStartOf="@+id/high_add_relief"
+        app:layout_constraintStart_toStartOf="@+id/high_relief_question" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/high_add_consequence"
+        android:id="@+id/high_add_relief"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/high_vulnerabilities_question"
+        android:layout_below="@+id/high_relief_question"
         android:layout_marginTop="8dp"
         android:clickable="true"
         android:contentDescription="@string/add_vulnerability_factors_description"
         android:focusable="true"
         app:backgroundTint="@color/colorPrimary"
         app:fabSize="mini"
-        app:layout_constraintEnd_toEndOf="@+id/high_consequences_question"
-        app:layout_constraintTop_toBottomOf="@+id/high_consequences_question"
+        app:layout_constraintEnd_toEndOf="@+id/high_relief_question"
+        app:layout_constraintTop_toBottomOf="@+id/high_relief_question"
         app:srcCompat="@drawable/ic_add" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/high_relief_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/page_midpoint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/high_relief_prompt"
+        app:layout_constraintVertical_bias="0.0" />
+
 
     <TextView
         android:id="@+id/high_consequences_question"
@@ -116,6 +115,22 @@
         app:layout_constraintBottom_toBottomOf="@+id/high_add_consequence"
         app:layout_constraintEnd_toStartOf="@+id/high_add_consequence"
         app:layout_constraintStart_toStartOf="@+id/high_consequences_question" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/high_add_consequence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/high_relief_question"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/add_vulnerability_factors_description"
+        android:focusable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="@+id/high_consequences_question"
+        app:layout_constraintTop_toBottomOf="@+id/high_consequences_question"
+        app:srcCompat="@drawable/ic_add" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/high_consequences_recyclerview"
@@ -189,19 +204,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_midpoint" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/high_vulnerability_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/page_midpoint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/high_vulnerability_prompt"
-        app:layout_constraintVertical_bias="0.0" />
+
 
 
 

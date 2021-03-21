@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/HIGHReview"
-        android:name="com.loopbreakr.cogstruct.HIGHReview"
+        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHReview"
         android:label="high_fragment_review"
         tools:layout="@layout/high_fragment_review" />
 </navigation>

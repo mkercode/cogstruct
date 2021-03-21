@@ -1,14 +1,16 @@
 package com.loopbreakr.cogstruct.howdigethere;
 
+import androidx.lifecycle.ViewModel;
+
 import com.loopbreakr.cogstruct.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HIGHViewModel {
+public class HIGHViewModel extends ViewModel {
 
     private String highBehavior;
-    private String highPromptingEvent;
+    private String highTriggerEvent;
     private String highEmotion;
     private float highEmotionIntensity;
     private String highEmotionIntensityString;
@@ -33,7 +35,7 @@ public class HIGHViewModel {
     }
 
     public void setHighBehavior(String input){ highBehavior = input; }
-    public void setHighPromptingEvent(String input){ highPromptingEvent = input; }
+    public void setHighTriggerEvent(String input){ highTriggerEvent = input; }
     public void setHighEmotion(String input){highEmotion = input;}
     public void setHighEmotionIntensity(float input){highEmotionIntensity = input;
         setHighEmotionIntensityString(Float.toString(input));}
@@ -76,7 +78,7 @@ public class HIGHViewModel {
 
 
     public String getHighBehavior(){return highBehavior;}
-    public String getHighPromptingEvent(){return highPromptingEvent;}
+    public String getHighTriggerEvent(){return highTriggerEvent;}
     public float getHighEmotionIntensity() { return highEmotionIntensity; }
     public String getHighEmotion(){return highEmotion;}
     public String getHighEmotionIntensityString(){return highEmotionIntensityString;}

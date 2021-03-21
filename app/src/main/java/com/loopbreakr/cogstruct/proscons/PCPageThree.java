@@ -70,7 +70,8 @@ public class PCPageThree extends Fragment {
     private void initializeRecyclerViews() {
         prosList = new ArrayList<>();
         prosList.addAll(pcViewModel.getDontChangePros());
-        consList = new ArrayList<>(pcViewModel.getDontChangePros());
+        consList = new ArrayList<>();
+        consList.addAll(pcViewModel.getDontChangePros());
 
         SimpleRecyclerAdapter prosRecyclerAdapter = new SimpleRecyclerAdapter(prosList);
         SimpleRecyclerAdapter consRecyclerAdapter = new SimpleRecyclerAdapter(consList);
@@ -113,6 +114,4 @@ public class PCPageThree extends Fragment {
                 .setPositiveButton("Add", (dialog, which) ->
                         list.add(addEntryText.getText().toString())).setNegativeButton("Cancel", null).show();
     }
-
-
 }

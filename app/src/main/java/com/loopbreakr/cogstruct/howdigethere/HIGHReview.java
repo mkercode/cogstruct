@@ -16,34 +16,32 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.HighFragmentPageTwoBinding;
+import com.loopbreakr.cogstruct.databinding.HighFragmentReviewBinding;
+import com.loopbreakr.cogstruct.thoughtjournal.activities.TJActivity;
 
 import org.jetbrains.annotations.NotNull;
 
 
-public class HIGHPageTwo extends Fragment {
+public class HIGHReview extends Fragment {
     private HIGHViewModel highViewModel;
-    private Button backButton, nextButton;
-    private HighFragmentPageTwoBinding binding;
+    private Button editButton, submitButton;
+    private HighFragmentReviewBinding binding;
 
-
-    public HIGHPageTwo() {
+    public HIGHReview() {
         // Required empty public constructor
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         highViewModel = new ViewModelProvider(requireActivity()).get(HIGHViewModel.class);
-
     }
 
     @Override
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.high_fragment_page_two, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.high_fragment_review, container, false);
         binding.setViewModel(highViewModel);
         return binding.getRoot();
     }
@@ -56,16 +54,22 @@ public class HIGHPageTwo extends Fragment {
     }
 
     private void findViews(View view) {
-        backButton = view.findViewById(R.id.high_page_two_back);
-        nextButton = view.findViewById(R.id.high_page_two_next);
+        editButton = view.findViewById(R.id.high_edit);
+        submitButton = view.findViewById(R.id.high_submit);
     }
 
     private void setButtons() {
         NavController controller = Navigation.findNavController(requireView());
-        backButton.setOnClickListener(v ->{
-            controller.popBackStack(R.id.HIGHPageOne, true);
-            controller.navigate(R.id.HIGHPageOne);
+        editButton.setOnClickListener(v ->{
+            controller.popBackStack(R.id.HIGHPageSix, true);
+            controller.navigate(R.id.HIGHPageSix);
         });
-        nextButton.setOnClickListener(v -> controller.navigate(R.id.action_HIGHPageTwo_to_HIGHPageThree));
+        submitButton.setOnClickListener(v ->{
+            submitData();
+        });
+    }
+
+    private void submitData() {
+        ((HIGHActivity)requireActivity()).sendToFirestore(highViewModel.getHighBehavior(),highViewModel.getHighTriggerEvent(), highViewModel.getHighEmotion(),highViewModel.getHighEmotionIntensity(), highViewModel.getHighThoughtsString(), highViewModel.getHighVulnerabilitiesString(), highViewModel.getHighReliefsString(), highViewModel.getHighConsequencesString(), highViewModel.getHighSolutionsString(), highViewModel.getHighRepairsString());
     }
 }

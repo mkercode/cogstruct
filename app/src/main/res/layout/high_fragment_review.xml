@@ -11,7 +11,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HIGHReview">
+    tools:context=".howdigethere.HIGHReview">
 
     <TextView
         android:id="@+id/high_review_title"
@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@id/tj_submit"
+        app:layout_constraintBottom_toTopOf="@id/high_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/review_text">
@@ -120,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:padding="4dp"
-                    android:text="Prompting events"
+                    android:text="Trigger event:"
                     android:textColor="@color/colorGreenText"
                     android:textSize="15sp" />
                 <TextView
@@ -142,7 +142,7 @@
                 android:layout_columnWeight="1"
                 android:layout_margin="12dp"
                 android:gravity="top"
-                android:text="@={viewModel.highPromptingEvent}"/>
+                android:text="@={viewModel.highTriggerEvent}"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -493,7 +493,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/tj_submit"
+        android:id="@+id/high_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -509,7 +509,7 @@
 
 
     <Button
-        android:id="@+id/tj_edit"
+        android:id="@+id/high_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"

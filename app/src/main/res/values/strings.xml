@@ -126,7 +126,7 @@
     <string name="behavior_hint_general">Enter the unhelpful behavior or action you engaged in here</string>
     <string name="prompting_event_hint_general">Enter what happened or what was going on</string>
     <string name="behavior_question_general">What was the behavior?</string>
-    <string name="high_prompting_event_question">What was the prompting event that led you to engage in it?</string>
+    <string name="high_trigger_event_question">What was the trigger event that led you to engage in it?</string>
     <string name="high_page_two_title">Thoughts and Feelings</string>
     <string name="high_emotion_question">What is the main emotion you felt before engaging?</string>
     <string name="thoughts_prior_question_general">What was going through your mind prior to engaging in the behavior or action?</string>

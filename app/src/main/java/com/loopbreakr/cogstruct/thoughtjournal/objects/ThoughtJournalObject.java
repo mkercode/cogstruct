@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ThoughtJournalObject {
+    private String formName;
     private String dateCreated;
     private String userId;
     private String location;
@@ -13,10 +14,10 @@ public class ThoughtJournalObject {
     private String situation;
     private String behavior;
     private String emotion;
+    private float emotionRating;
     private String emotionDetail;
     private String thoughts;
-    private String formName;
-    private float emotionRating;
+
 
     public ThoughtJournalObject(String dateCreated, String userId, String location, String time, String people, String situation, String behavior, String emotion, float emotionRating, String emotionDetail, String thoughts) {
         this.formName = "Thought Journal";
@@ -39,11 +40,9 @@ public class ThoughtJournalObject {
     public String getFormName() {
         return formName;
     }
-
     public void setFormName(String formName){
         this.formName = formName;
     }
-
     public String getDateCreated() {
         return dateCreated;
     }

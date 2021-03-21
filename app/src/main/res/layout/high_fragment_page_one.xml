@@ -79,7 +79,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:text="@string/high_prompting_event_question"
+        android:text="@string/high_trigger_event_question"
         android:textColor="@color/colorGreenText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +100,7 @@
         android:inputType="textAutoCorrect|textMultiLine"
         android:maxLines="4"
         android:minLines="4"
-        android:text="@={viewModel.highPromptingEvent}"
+        android:text="@={viewModel.highTriggerEvent}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/high_event_question" />
