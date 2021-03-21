@@ -140,7 +140,7 @@
     <string name="high_consequences_question">What long term consequences will I face due to engaging?</string>
     <string name="high_relief_question">What short term relief or benefits did I get from engaging?</string>
     <string name="high_prevention_question">What are some things I can do to prevent myself from engaging next time?</string>
-    <string name="add_preventive_measure">Add preventative measures</string>
+    <string name="add_preventive_measure">Add preventive measures</string>
     <string name="repair_question_general">What can I do to repair the situation in the short term?</string>
     <string name="repair_prompt_general">Add repair ideas</string>
 </resources>

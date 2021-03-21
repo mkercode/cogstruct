@@ -90,7 +90,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/page_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/high_thoughts_prompt" />
+        app:layout_constraintTop_toBottomOf="@+id/high_thoughts_prompt"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
     <Button
         android:id="@+id/high_page_three_next"

@@ -201,19 +201,32 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/review_content" />
 
-
-
-            <TextView
-                android:id="@+id/high_emotion_intensity_review_question"
-                android:layout_width="0dp"
+            <LinearLayout
                 android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_margin="6dp"
                 android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                android:padding="4dp"
-                android:text="@string/ilog_emotion_intensity_question"
-                android:textColor="@color/colorGreenText"
-                android:textSize="15sp" />
+                android:layout_columnWeight="1">
+                <TextView
+                    android:id="@+id/high_emotion_intensity_review_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/ilog_emotion_intensity_question"
+                    android:textColor="@color/colorGreenText"
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:padding="4dp"
+                    android:text="@string/required_text"
+                    style="@style/optionalText"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/high_emotion_intensity_review"

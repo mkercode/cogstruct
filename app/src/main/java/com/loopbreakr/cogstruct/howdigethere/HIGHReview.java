@@ -35,6 +35,7 @@ public class HIGHReview extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         highViewModel = new ViewModelProvider(requireActivity()).get(HIGHViewModel.class);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -64,9 +65,7 @@ public class HIGHReview extends Fragment {
             controller.popBackStack(R.id.HIGHPageSix, true);
             controller.navigate(R.id.HIGHPageSix);
         });
-        submitButton.setOnClickListener(v ->{
-            submitData();
-        });
+        submitButton.setOnClickListener(v -> submitData());
     }
 
     private void submitData() {

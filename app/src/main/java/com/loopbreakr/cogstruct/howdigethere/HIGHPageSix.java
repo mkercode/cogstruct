@@ -43,6 +43,7 @@ public class HIGHPageSix extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         highViewModel = new ViewModelProvider(requireActivity()).get(HIGHViewModel.class);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -79,7 +80,6 @@ public class HIGHPageSix extends Fragment {
         solutionRecyclerAdapter.setOnItemClickListener(position -> {
             soluitionsList.remove(position);
             solutionRecyclerAdapter.notifyDataSetChanged();
-            highViewModel.setHighSolutions(soluitionsList);
         });
 
         repairsList = new ArrayList<>();
@@ -91,18 +91,17 @@ public class HIGHPageSix extends Fragment {
         repairRecyclerAdapter.setOnItemClickListener(position -> {
             repairsList.remove(position);
             repairRecyclerAdapter.notifyDataSetChanged();
-            highViewModel.setHighRepairs(repairsList);
         });
     }
 
     private void setButtons() {
         addSolution.setOnClickListener(v ->{
             addToList(soluitionsList);
-            highViewModel.setHighReliefs(soluitionsList);
+            highViewModel.setHighSolutions(soluitionsList);
         });
         addRepair.setOnClickListener(v ->{
             addToList(repairsList);
-            highViewModel.setHighConsequences(repairsList);
+            highViewModel.setHighRepairs(repairsList);
         });
 
         NavController controller = Navigation.findNavController(requireView());

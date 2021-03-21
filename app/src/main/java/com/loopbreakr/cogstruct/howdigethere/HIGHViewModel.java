@@ -56,18 +56,12 @@ public class HIGHViewModel extends ViewModel {
     }
     }
 
-    public void setHighThoughts(List<String> input) { highThoughts = input;
-    setDisplayHighThoughts(createDisplayList(input));}
-    public void setHighVulnerabilities(List<String> input) { highVulnerabilities = input;
-    setDisplayHighVulnerabilities(createDisplayList(input));}
-    public void setHighReliefs(List<String> input) { highReliefs = input;
-    setDisplayHighReliefs(createDisplayList(input));}
-    public void setHighConsequences(List<String> input) { highConsequences = input;
-    setDisplayHighConsequences(createDisplayList(input));}
-    public void setHighSolutions(List<String> input) { highSolutions = input;
-    setDisplayHighSolutions(createDisplayList(input));}
-    public void setHighRepairs(List<String> input) { highRepairs = input;
-        setDisplayHighRepairs(createDisplayList(input));}
+    public void setHighThoughts(List<String> input) { highThoughts = input;}
+    public void setHighVulnerabilities(List<String> input) { highVulnerabilities = input;}
+    public void setHighReliefs(List<String> input) { highReliefs = input;}
+    public void setHighConsequences(List<String> input) { highConsequences = input;}
+    public void setHighSolutions(List<String> input) { highSolutions = input;}
+    public void setHighRepairs(List<String> input) { highRepairs = input; }
 
     public void setDisplayHighThoughts(String input) { displayHighThoughts = input; }
     public void setDisplayHighVulnerabilities(String input) { displayHighVulnerabilities = input; }
@@ -91,12 +85,12 @@ public class HIGHViewModel extends ViewModel {
     public List<String> getHighConsequences() { return highConsequences; }
     public List<String> getHighSolutions() { return highSolutions; }
     public List<String> getHighRepairs() { return highRepairs; }
-    public String getDisplayHighThoughts() { return displayHighThoughts; }
-    public String getDisplayHighVulnerabilities() { return displayHighVulnerabilities; }
-    public String getDisplayHighReliefs() { return displayHighReliefs; }
-    public String getDisplayHighConsequences() { return displayHighConsequences; }
-    public String getDisplayHighSolutions() { return displayHighSolutions; }
-    public String getDisplayHighRepairs() { return displayHighRepairs; }
+    public String getDisplayHighThoughts() { return createDisplayList(highThoughts); }
+    public String getDisplayHighVulnerabilities() { return createDisplayList(highVulnerabilities); }
+    public String getDisplayHighReliefs() { return createDisplayList(highReliefs); }
+    public String getDisplayHighConsequences() { return createDisplayList(highConsequences); }
+    public String getDisplayHighSolutions() { return createDisplayList(highSolutions); }
+    public String getDisplayHighRepairs() { return createDisplayList(highRepairs); }
 
     public String getHighThoughtsString() { return android.text.TextUtils.join(",", highThoughts); }
     public String getHighVulnerabilitiesString() { return android.text.TextUtils.join(",", highVulnerabilities); }
@@ -105,9 +99,9 @@ public class HIGHViewModel extends ViewModel {
     public String getHighSolutionsString() { return android.text.TextUtils.join(",", highSolutions); }
     public String getHighRepairsString() { return android.text.TextUtils.join(",", highRepairs); }
 
-    private String createDisplayList(List<String> items){
+    public String createDisplayList(List<String> list){
         StringBuilder displayText = new StringBuilder();
-        for(String item: items){
+        for(String item: list){
             displayText.append("-").append(item).append("\n");
         }
         return displayText.toString();

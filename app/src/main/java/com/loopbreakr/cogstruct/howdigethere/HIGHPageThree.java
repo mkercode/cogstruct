@@ -41,6 +41,7 @@ public class HIGHPageThree extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         highViewModel = new ViewModelProvider(requireActivity()).get(HIGHViewModel.class);
+        setHasOptionsMenu(true);
     }
 
     @Override
