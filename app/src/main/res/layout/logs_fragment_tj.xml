@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -7,12 +9,10 @@
             type="com.loopbreakr.cogstruct.logs.models.TJLogViewModel" />
     </data>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".logs.TjLogsFragment">
 
     <androidx.appcompat.widget.Toolbar
@@ -253,13 +253,12 @@
                 android:text="@={viewModel.tjLogEmotionDetail}"/>
 
 
-
             <TextView
                 android:id="@+id/thoughts_log_question"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="@string/log_thougths_question"
+                android:text="@string/thoughts_experienced_log_question_general"
                 android:textColor="@color/colorGreenText"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"

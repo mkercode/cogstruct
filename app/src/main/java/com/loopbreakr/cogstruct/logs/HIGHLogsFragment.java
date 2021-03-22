@@ -2,65 +2,92 @@ package com.loopbreakr.cogstruct.logs;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.databinding.LogsFragmentHighBinding;
+import com.loopbreakr.cogstruct.howdigethere.HIGHObject;
+import com.loopbreakr.cogstruct.howdigethere.HIGHViewModel;
+import com.loopbreakr.cogstruct.identifybarriers.IBObject;
+import com.loopbreakr.cogstruct.identifybarriers.IBViewModel;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HIGHLogsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class HIGHLogsFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private LogsFragmentHighBinding binding;
+    private LogsViewModel logsViewModel;
+    private HIGHViewModel highViewModel;
+    private HIGHObject highObject;
 
     public HIGHLogsFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HIGHLogFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static HIGHLogsFragment newInstance(String param1, String param2) {
-        HIGHLogsFragment fragment = new HIGHLogsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        logsViewModel = new ViewModelProvider(requireActivity()).get(LogsViewModel.class);
+        highViewModel = new ViewModelProvider(requireActivity()).get(HIGHViewModel.class);
+        setHasOptionsMenu(true);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.logs_fragment_high, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_high, container, false);
+        binding.setViewModel(highViewModel);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        setToolbar(view);
+        setViewModelData();
+    }
+
+    private void setToolbar(View view) {
+        Toolbar toolbar = view.findViewById(R.id.logsToolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        toolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
+        toolbar.setOverflowIcon(ContextCompat.getDrawable(requireActivity(),R.drawable.ic_white_dots));
+        toolbar.setOnMenuItemClickListener(item -> {
+            NavController controller = Navigation.findNavController(requireView());
+            switch (item.getItemId()) {
+                case R.id.action_editLog :
+                    //controller.navigate(R.id.action_IBLogFragment_to_IBLogEditFragment);
+                    return true;
+                case R.id.action_deleteLog:
+                    DocumentSnapshot snapshot = logsViewModel.getSnapshot();
+                    snapshot.getReference().delete().addOnFailureListener(e ->
+                            Log.e("DELETING...", "deleteSnapshot: " + snapshot.getData(), e)).addOnSuccessListener(aVoid ->
+                            Log.d("DELETING...", "deleteSnapshot: " + snapshot.getData()));
+                    controller.popBackStack(R.id.allLogsFragment, true);
+                    controller.navigate(R.id.allLogsFragment);
+                    return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+            }
+        });
+    }
+
+    private void setViewModelData() {
+        highObject = logsViewModel.getSnapshot().toObject(HIGHObject.class);
+        highViewModel.setHIGHLog(highObject);
     }
 }

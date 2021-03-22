@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel;
 import com.loopbreakr.cogstruct.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class HIGHViewModel extends ViewModel {
@@ -32,6 +33,21 @@ public class HIGHViewModel extends ViewModel {
 
 
     public void setHIGHLog(HIGHObject highLog){
+        setHighBehavior(highLog.getBehavior());
+        setHighTriggerEvent(highLog.getTriggerEvent());
+        setHighEmotion(highLog.getEmotion());
+        setHighEmotionIntensity(highLog.getEmotionRating());
+        setHighThoughts(Arrays.asList(highLog.getThoughts().split("\\s*,\\s*")));
+        setHighVulnerabilities(Arrays.asList(highLog.getVulnerabilities().split("\\s*,\\s*")));
+        setHighReliefs(Arrays.asList(highLog.getReliefs().split("\\s*,\\s*")));
+        setHighConsequences(Arrays.asList(highLog.getConsequences().split("\\s*,\\s*")));
+        setHighSolutions(Arrays.asList(highLog.getSolutions().split("\\s*,\\s*")));
+        setHighRepairs(Arrays.asList(highLog.getRepairs().split("\\s*,\\s*")));
+
+        initializeRadioId(highLog.getEmotion());
+    }
+
+    private void initializeRadioId(String emotion) {
     }
 
     public void setHighBehavior(String input){ highBehavior = input; }

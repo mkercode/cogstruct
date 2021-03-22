@@ -98,7 +98,8 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
                 navId = R.id.action_allLogsFragment_to_prosConsLogFragment;
                 break;
 
-            case "How'd I get here?":
+            case "How'd I Get Here?":
+                logsViewModel.setSnapshot(snapshot);
                 navId = R.id.action_allLogsFragment_to_HIGHLogFragment;
                 break;
 

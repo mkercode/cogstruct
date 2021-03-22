@@ -143,4 +143,5 @@
     <string name="add_preventive_measure">Add preventive measures</string>
     <string name="repair_question_general">What can I do to repair the situation in the short term?</string>
     <string name="repair_prompt_general">Add repair ideas</string>
+    <string name="thoughts_experienced_log_question_general">What thoughts did you experience?</string>
 </resources>
