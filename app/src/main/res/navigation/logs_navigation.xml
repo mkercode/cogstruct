@@ -91,7 +91,7 @@
         tools:layout="@layout/logs_fragment_ib_edit" />
     <fragment
         android:id="@+id/HIGHLogEditOneFragment"
-        android:name="com.loopbreakr.cogstruct.HIGHLogEditOneFragment"
+        android:name="com.loopbreakr.cogstruct.logs.fragments.HIGHLogEditOneFragment"
         android:label="logs_fragment_high_edit_one"
         tools:layout="@layout/logs_fragment_high_edit_one" >
         <action
@@ -100,7 +100,7 @@
     </fragment>
     <fragment
         android:id="@+id/HIGHLogEditTwoFragment"
-        android:name="com.loopbreakr.cogstruct.HIGHLogEditTwoFragment"
+        android:name="com.loopbreakr.cogstruct.logs.fragments.HIGHLogEditTwoFragment"
         android:label="logs_fragment_high_edit_two"
         tools:layout="@layout/logs_fragment_high_edit_two" >
         <action
@@ -109,7 +109,7 @@
     </fragment>
     <fragment
         android:id="@+id/HIGHLogEditThreeFragment"
-        android:name="com.loopbreakr.cogstruct.HIGHLogEditThreeFragment"
+        android:name="com.loopbreakr.cogstruct.logs.fragments.HIGHLogEditThreeFragment"
         android:label="logs_fragment_high_edit_three"
         tools:layout="@layout/logs_fragment_high_edit_three">
         <action
@@ -118,7 +118,7 @@
     </fragment>
     <fragment
         android:id="@+id/highLogEditFourFragment"
-        android:name="com.loopbreakr.cogstruct.HighLogEditFourFragment"
+        android:name="com.loopbreakr.cogstruct.logs.fragments.HighLogEditFourFragment"
         android:label="logs_high_edit_four"
         tools:layout="@layout/logs_fragment_high_edit_four" />
 </navigation>
