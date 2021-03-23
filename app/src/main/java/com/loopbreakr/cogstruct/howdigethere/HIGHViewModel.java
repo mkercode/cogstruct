@@ -49,6 +49,18 @@ public class HIGHViewModel extends ViewModel {
     }
 
     private void initializeRadioId(String emotion) {
+        if (emotion.equals("Sadness")) {
+            highEmotionRadioId = R.id.high_sadness_log;
+        }
+        else if(emotion.equals("Anger")){
+            highEmotionRadioId = R.id.high_anger_log;
+        }
+        else if(emotion.equals("Happiness")){
+            highEmotionRadioId = R.id.high_happiness_log;
+        }
+        else if(emotion.equals("Fear")){
+            highEmotionRadioId = R.id.high_fear_log;
+        }
     }
 
     public void setHighBehavior(String input){ highBehavior = input; }
@@ -59,16 +71,16 @@ public class HIGHViewModel extends ViewModel {
     public void setHighEmotionIntensityString(String input){highEmotionIntensityString = input;}
 
     public void setHighEmotionRadioId(int input){highEmotionRadioId = input;
-    if(input == R.id.high_sadness){
+    if(input == R.id.high_sadness || input == R.id.high_sadness_log){
         setHighEmotion("Sadness");
     }
-    else if(input == R.id.high_anger){
+    else if(input == R.id.high_anger || input == R.id.high_anger_log){
         setHighEmotion("Anger");
     }
-    else if(input == R.id.high_happiness){
+    else if(input == R.id.high_happiness || input == R.id.high_happiness_log){
         setHighEmotion("Happiness");
     }
-    else if(input == R.id.high_fear){
+    else if(input == R.id.high_fear || input == R.id.high_fear_log){
         setHighEmotion("Fear");
     }
     }

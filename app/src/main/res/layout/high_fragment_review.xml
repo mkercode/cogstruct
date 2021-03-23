@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:padding="4dp"
-                    android:text="Unhelpful behavior/action:"
+                    android:text="@string/unhelpful_behavior_action_general"
                     android:textColor="@color/colorGreenText"
                     android:textSize="15sp" />
                 <TextView
@@ -120,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:padding="4dp"
-                    android:text="Trigger event:"
+                    android:text="@string/trigger_event_general"
                     android:textColor="@color/colorGreenText"
                     android:textSize="15sp" />
                 <TextView
@@ -168,7 +168,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:padding="4dp"
-                    android:text="Main emotion experienced:"
+                    android:text="@string/main_emotion_experienced_general"
                     android:textColor="@color/colorGreenText"
                     android:textSize="15sp" />
                 <TextView

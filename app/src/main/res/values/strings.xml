@@ -131,7 +131,7 @@
     <string name="high_emotion_question">What is the main emotion you felt before engaging?</string>
     <string name="thoughts_prior_question_general">What was going through your mind prior to engaging in the behavior or action?</string>
     <string name="vulnerability_title">Vulnerabilities</string>
-    <string name="add_vulnerability_factors_description">Add vulnerability factor</string>
+    <string name="add_vulnerability_factors_description">Add vulnerability factors</string>
     <string name="high_vulnerability_question">What are some things going on (in yoruself, others, or your environment) that made you vulnerable to engaging?</string>
     <string name="high_vulnerability_prompt">Add vulnerability factors</string>
     <string name="aftermath_title">Aftermath</string>
@@ -144,4 +144,7 @@
     <string name="repair_question_general">What can I do to repair the situation in the short term?</string>
     <string name="repair_prompt_general">Add repair ideas</string>
     <string name="thoughts_experienced_log_question_general">What thoughts did you experience?</string>
+    <string name="unhelpful_behavior_action_general">Unhelpful behavior/action:</string>
+    <string name="trigger_event_general">Trigger event:</string>
+    <string name="main_emotion_experienced_general">Main emotion experienced:</string>
 </resources>

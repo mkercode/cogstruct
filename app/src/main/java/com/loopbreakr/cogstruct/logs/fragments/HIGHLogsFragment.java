@@ -69,7 +69,7 @@ public class HIGHLogsFragment extends Fragment {
             NavController controller = Navigation.findNavController(requireView());
             switch (item.getItemId()) {
                 case R.id.action_editLog :
-                    //controller.navigate(R.id.action_IBLogFragment_to_IBLogEditFragment);
+                    controller.navigate(R.id.action_HIGHLogFragment_to_HIGHLogEditOneFragment);
                     return true;
                 case R.id.action_deleteLog:
                     DocumentSnapshot snapshot = logsViewModel.getSnapshot();

@@ -1,14 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.loopbreakr.cogstruct.howdigethere.HIGHViewModel" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".logs.fragments.HIGHLogEditOneFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/edit_high_log_toolbar_one"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="65dp"
+        android:background="@drawable/header_logs_background"
+        app:menu="@menu/logs_high_edit_menu"
+        android:theme="@style/Theme.MaterialComponents.NoActionBar"
+        app:popupTheme="@style/PopupMenuStyle" />
 
-</FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review_text">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/high_log_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:text="@string/how_d_i_get_here_title"
+                android:textColor="@color/colorGreenText"
+                android:textSize="36sp" />
+
+
+            <TextView
+                android:id="@+id/tj_edit_log_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:textColor="@color/colorGreenText"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+
+            <TextView
+                android:id="@+id/high_behavior_edit_log_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/unhelpful_behavior_action_general"
+                android:textColor="@color/colorGreenText"
+                android:textSize="18sp" />
+
+
+            <EditText
+                android:id="@+id/high_behavior_edit_log"
+                android:textColor="@color/lightGrey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:textSize="15sp"
+                android:inputType="textAutoCorrect|textMultiLine"
+                android:ems="15"
+                android:minLines="2"
+                android:maxLines="2"
+                android:text="@={viewModel.highBehavior}"/>
+
+
+            <TextView
+                android:id="@+id/high_trigger_edit_log_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/trigger_event_general"
+                android:textColor="@color/colorGreenText"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/high_trigger_edit_log"
+                android:textColor="@color/lightGrey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:textSize="15sp"
+                android:inputType="textAutoCorrect|textMultiLine"
+                android:ems="15"
+                android:minLines="2"
+                android:maxLines="2"
+                android:text="@={viewModel.highTriggerEvent}"/>
+
+            <TextView
+                android:id="@+id/high_emotion_edit_log_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/main_emotion_experienced_general"
+                android:textColor="@color/colorGreenText"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/high_emotion_log_radiogroup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:checkedButton="@={viewModel.highEmotionRadioId}">
+
+                    <RadioButton
+                        android:id="@+id/high_sadness_log"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sadness"
+                        android:textColor="@color/lightGrey"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/high_anger_log"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/anger"
+                        android:textColor="@color/lightGrey"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/high_fear_log"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fear"
+                        android:textColor="@color/lightGrey"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/high_happiness_log"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/happiness"
+                        android:textColor="@color/lightGrey"
+                        android:textSize="16sp" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/high_emotion_rating_log_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/ilog_emotion_intensity_question"
+                android:textColor="@color/colorGreenText"
+                android:textSize="18sp" />
+
+            <RatingBar
+                android:id="@+id/high_emotion_rating_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emotional_intensity_question"
+                android:rating="@={viewModel.highEmotionIntensity}"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+</layout>
