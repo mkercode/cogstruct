@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/HIGHPageOne"
-        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHPageOne"
+        android:name="com.loopbreakr.cogstruct.howdigethere.fragments.HIGHPageOne"
         android:label="high_fragment_page_one"
         tools:layout="@layout/high_fragment_page_one" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/HIGHPageTwo"
-        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHPageTwo"
+        android:name="com.loopbreakr.cogstruct.howdigethere.fragments.HIGHPageTwo"
         android:label="high_fragment_page_two"
         tools:layout="@layout/high_fragment_page_two" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/HIGHPageThree"
-        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHPageThree"
+        android:name="com.loopbreakr.cogstruct.howdigethere.fragments.HIGHPageThree"
         android:label="high_fragment_page_three"
         tools:layout="@layout/high_fragment_page_three" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/HIGHPageFour"
-        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHPageFour"
+        android:name="com.loopbreakr.cogstruct.howdigethere.fragments.HIGHPageFour"
         android:label="high_fragment_page_four"
         tools:layout="@layout/high_fragment_page_four" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/HIGHPageFive"
-        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHPageFive"
+        android:name="com.loopbreakr.cogstruct.howdigethere.fragments.HIGHPageFive"
         android:label="high_fragment_page_five"
         tools:layout="@layout/high_fragment_page_five" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/HIGHPageSix"
-        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHPageSix"
+        android:name="com.loopbreakr.cogstruct.howdigethere.fragments.HIGHPageSix"
         android:label="high_fragment_page_six"
         tools:layout="@layout/high_fragment_page_six" >
         <action
@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/HIGHReview"
-        android:name="com.loopbreakr.cogstruct.howdigethere.HIGHReview"
+        android:name="com.loopbreakr.cogstruct.howdigethere.fragments.HIGHReview"
         android:label="high_fragment_review"
         tools:layout="@layout/high_fragment_review" />
 </navigation>

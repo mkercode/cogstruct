@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:scrollbars="vertical"
-    tools:context=".logs.AllLogsFragment">
+    tools:context=".logs.fragments.AllLogsFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorWhite"
                         android:text="By Activity:"
-                        android:textSize="15dp"
+                        android:textSize="15sp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"/>
 

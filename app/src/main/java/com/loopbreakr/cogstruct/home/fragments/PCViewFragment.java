@@ -15,8 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.proscons.PCActivity;
-import com.loopbreakr.cogstruct.thoughtjournal.activities.TJActivity;
+import com.loopbreakr.cogstruct.proscons.activities.PCActivity;
 
 import java.util.Objects;
 

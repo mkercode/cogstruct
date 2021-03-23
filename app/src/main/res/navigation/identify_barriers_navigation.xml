@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/IBPageOne"
-        android:name="com.loopbreakr.cogstruct.identifybarriers.IBPageOne"
+        android:name="com.loopbreakr.cogstruct.identifybarriers.fragments.IBPageOne"
         android:label="ib_fragment_page_one"
         tools:layout="@layout/ib_fragment_page_one" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/IBPageTwo"
-        android:name="com.loopbreakr.cogstruct.identifybarriers.IBPageTwo"
+        android:name="com.loopbreakr.cogstruct.identifybarriers.fragments.IBPageTwo"
         android:label="ib_fragment_page_two"
         tools:layout="@layout/ib_fragment_page_two" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/IBPageThree"
-        android:name="com.loopbreakr.cogstruct.identifybarriers.IBPageThree"
+        android:name="com.loopbreakr.cogstruct.identifybarriers.fragments.IBPageThree"
         android:label="ib_fragment_page_three"
         tools:layout="@layout/ib_fragment_page_three">
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/IBPageFour"
-        android:name="com.loopbreakr.cogstruct.identifybarriers.IBPageFour"
+        android:name="com.loopbreakr.cogstruct.identifybarriers.fragments.IBPageFour"
         android:label="ib_fragment_page_four"
         tools:layout="@layout/ib_fragment_page_four" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/IBProblemSolving2"
-        android:name="com.loopbreakr.cogstruct.identifybarriers.IBProblemSolving"
+        android:name="com.loopbreakr.cogstruct.identifybarriers.fragments.IBProblemSolving"
         android:label="ib_fragment_problem_solving"
         tools:layout="@layout/ib_fragment_problem_solving" />
 </navigation>

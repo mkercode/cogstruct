@@ -15,8 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.howdigethere.HIGHActivity;
-import com.loopbreakr.cogstruct.identifybarriers.IBActivity;
+import com.loopbreakr.cogstruct.howdigethere.activities.HIGHActivity;
 
 import java.util.Objects;
 

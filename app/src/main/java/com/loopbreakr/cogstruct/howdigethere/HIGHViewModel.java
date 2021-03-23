@@ -3,6 +3,7 @@ package com.loopbreakr.cogstruct.howdigethere;
 import androidx.lifecycle.ViewModel;
 
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.howdigethere.objects.HIGHObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;

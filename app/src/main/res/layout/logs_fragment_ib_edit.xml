@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.loopbreakr.cogstruct.identifybarriers.IBViewModel" />
+            type="com.loopbreakr.cogstruct.identifybarriers.models.IBViewModel" />
     </data>
 
     <LinearLayout
@@ -31,7 +31,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".logs.IBLogEditFragment">
+    tools:context=".logs.fragments.IBLogEditFragment">
 
     <TextView
         android:id="@+id/ib_edit_log_title"

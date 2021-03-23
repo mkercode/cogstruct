@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CogStruct">
-        <activity android:name=".howdigethere.HIGHActivity"></activity>
-        <activity android:name=".identifybarriers.IBActivity" />
-        <activity android:name=".proscons.PCActivity" />
+        <activity android:name=".howdigethere.activities.HIGHActivity"></activity>
+        <activity android:name=".identifybarriers.activities.IBActivity" />
+        <activity android:name=".proscons.activities.PCActivity" />
         <activity android:name=".logs.LogsActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".thoughtjournal.activities.TJActivity" />

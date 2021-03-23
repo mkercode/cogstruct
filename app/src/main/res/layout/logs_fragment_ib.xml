@@ -6,14 +6,14 @@
     <data>
         <variable
             name="viewModel"
-            type="com.loopbreakr.cogstruct.identifybarriers.IBViewModel" />
+            type="com.loopbreakr.cogstruct.identifybarriers.models.IBViewModel" />
     </data>
 
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".logs.IBLogsFragment">
+    tools:context=".logs.fragments.IBLogsFragment">
 
 
     <androidx.appcompat.widget.Toolbar
