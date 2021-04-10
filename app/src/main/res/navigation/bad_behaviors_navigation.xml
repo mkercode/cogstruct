@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bad_behaviors_navigation"
+    app:startDestination="@id/BBPageOne">
+
+    <fragment
+        android:id="@+id/BBPageOne"
+        android:name="com.loopbreakr.cogstruct.badbehaviors.BBPageOne"
+        android:label="bb_fragment_page_one"
+        tools:layout="@layout/bb_fragment_page_one" >
+        <action
+            android:id="@+id/action_BBPageOne_to_BBPageTwo"
+            app:destination="@id/BBPageTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/BBPageTwo"
+        android:name="com.loopbreakr.cogstruct.badbehaviors.BBPageTwo"
+        android:label="bb_fragment_page_two"
+        tools:layout="@layout/bb_fragment_page_two" >
+        <action
+            android:id="@+id/action_BBPageTwo_to_BBPageThree"
+            app:destination="@id/BBPageThree" />
+    </fragment>
+    <fragment
+        android:id="@+id/BBPageThree"
+        android:name="com.loopbreakr.cogstruct.badbehaviors.BBPageThree"
+        android:label="bb_fragment_page_three"
+        tools:layout="@layout/bb_fragment_page_three" >
+        <action
+            android:id="@+id/action_BBPageThree_to_BBPageFour"
+            app:destination="@id/BBPageFour" />
+    </fragment>
+    <fragment
+        android:id="@+id/BBPageFour"
+        android:name="com.loopbreakr.cogstruct.badbehaviors.BBPageFour"
+        android:label="bb_fragment_page_four"
+        tools:layout="@layout/bb_fragment_page_four" >
+        <action
+            android:id="@+id/action_BBPageFour_to_BBPageFive"
+            app:destination="@id/BBPageFive" />
+    </fragment>
+    <fragment
+        android:id="@+id/BBReview"
+        android:name="com.loopbreakr.cogstruct.badbehaviors.BBReview"
+        android:label="bb_fragment_review"
+        tools:layout="@layout/bb_fragment_review" />
+    <fragment
+        android:id="@+id/BBPageFive"
+        android:name="com.loopbreakr.cogstruct.BBPageFive"
+        android:label="bb_fragment_page_five"
+        tools:layout="@layout/bb_fragment_page_five" >
+        <action
+            android:id="@+id/action_BBPageFive_to_BBReview"
+            app:destination="@id/BBReview" />
+    </fragment>
+</navigation>
