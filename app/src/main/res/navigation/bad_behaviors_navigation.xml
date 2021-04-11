@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/BBPageOne"
-        android:name="com.loopbreakr.cogstruct.badbehaviors.BBPageOne"
+        android:name="com.loopbreakr.cogstruct.badbehaviors.fragments.BBPageOne"
         android:label="bb_fragment_page_one"
         tools:layout="@layout/bb_fragment_page_one" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/BBPageTwo"
-        android:name="com.loopbreakr.cogstruct.badbehaviors.BBPageTwo"
+        android:name="com.loopbreakr.cogstruct.badbehaviors.fragments.BBPageTwo"
         android:label="bb_fragment_page_two"
         tools:layout="@layout/bb_fragment_page_two" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/BBPageThree"
-        android:name="com.loopbreakr.cogstruct.badbehaviors.BBPageThree"
+        android:name="com.loopbreakr.cogstruct.badbehaviors.fragments.BBPageThree"
         android:label="bb_fragment_page_three"
         tools:layout="@layout/bb_fragment_page_three" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/BBPageFour"
-        android:name="com.loopbreakr.cogstruct.badbehaviors.BBPageFour"
+        android:name="com.loopbreakr.cogstruct.badbehaviors.fragments.BBPageFour"
         android:label="bb_fragment_page_four"
         tools:layout="@layout/bb_fragment_page_four" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/BBReview"
-        android:name="com.loopbreakr.cogstruct.badbehaviors.BBReview"
+        android:name="com.loopbreakr.cogstruct.badbehaviors.fragments.BBReview"
         android:label="bb_fragment_review"
         tools:layout="@layout/bb_fragment_review" />
 </navigation>

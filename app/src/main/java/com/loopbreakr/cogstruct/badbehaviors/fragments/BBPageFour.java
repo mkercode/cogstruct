@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct.badbehaviors;
+package com.loopbreakr.cogstruct.badbehaviors.fragments;
 
 import android.os.Bundle;
 
@@ -20,6 +20,7 @@ import android.widget.EditText;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.SimpleRecyclerAdapter;
+import com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

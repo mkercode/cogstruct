@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct.badbehaviors;
+package com.loopbreakr.cogstruct.badbehaviors.objects;
 
 public class BBObject {
 

@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct.badbehaviors;
+package com.loopbreakr.cogstruct.badbehaviors.fragments;
 
 import android.os.Bundle;
 
@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.badbehaviors.activities.BBActivity;
+import com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel;
 import com.loopbreakr.cogstruct.databinding.BbFragmentReviewBinding;
 
 import org.jetbrains.annotations.NotNull;

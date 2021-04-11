@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct.badbehaviors;
+package com.loopbreakr.cogstruct.badbehaviors.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,8 +18,8 @@ import android.widget.Button;
 
 import com.loopbreakr.cogstruct.MainActivity;
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel;
 import com.loopbreakr.cogstruct.databinding.BbFragmentPageOneBinding;
-import com.loopbreakr.cogstruct.identifybarriers.models.IBViewModel;
 
 import org.jetbrains.annotations.NotNull;
 

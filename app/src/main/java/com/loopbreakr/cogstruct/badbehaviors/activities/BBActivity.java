@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct.badbehaviors;
+package com.loopbreakr.cogstruct.badbehaviors.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.loopbreakr.cogstruct.MainActivity;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.howdigethere.objects.HIGHObject;
+import com.loopbreakr.cogstruct.badbehaviors.objects.BBObject;
 
 import java.text.DateFormat;
 import java.util.Date;

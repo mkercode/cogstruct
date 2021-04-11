@@ -6,13 +6,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.loopbreakr.cogstruct.badbehaviors.BBViewModel" />
+            type="com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".badbehaviors.BBPageOne">
+    tools:context=".badbehaviors.fragments.BBPageOne">
 
     <View
         android:id="@+id/page_content"

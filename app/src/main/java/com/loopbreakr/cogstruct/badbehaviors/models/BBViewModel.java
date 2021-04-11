@@ -1,8 +1,8 @@
-package com.loopbreakr.cogstruct.badbehaviors;
+package com.loopbreakr.cogstruct.badbehaviors.models;
 
 import androidx.lifecycle.ViewModel;
 
-import com.loopbreakr.cogstruct.howdigethere.objects.HIGHObject;
+import com.loopbreakr.cogstruct.badbehaviors.objects.BBObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +24,6 @@ public class BBViewModel extends ViewModel {
 
     public void setBBLog(BBObject bbLog){
         setBbBehavior(bbLog.getBehavior());
-        setBbVulnerabilities(Arrays.asList(bbLog.getVulnerabilities().split("\\s*,\\s*")));
         setBbEnvironmentals(Arrays.asList(bbLog.getEnvironmentals().split("\\s*,\\s*")));
         setBbDistractions(Arrays.asList(bbLog.getDistractions().split("\\s*,\\s*")));
         setBbSolutions(Arrays.asList(bbLog.getSolutions().split("\\s*,\\s*")));

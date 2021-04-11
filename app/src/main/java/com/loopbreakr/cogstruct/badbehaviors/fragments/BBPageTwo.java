@@ -1,6 +1,7 @@
-package com.loopbreakr.cogstruct.badbehaviors;
+package com.loopbreakr.cogstruct.badbehaviors.fragments;
 
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -9,44 +10,45 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.SimpleRecyclerAdapter;
+import com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class BBPageThree extends Fragment {
+public class BBPageTwo extends Fragment {
     private BBViewModel bbViewModel;
     private Button backButton, nextButton;
-    private FloatingActionButton addDistraction;
-    private RecyclerView distractionsRecyclerView;
-    private List<String> distractionsList;
+    private FloatingActionButton addEnvironmental;
+    private RecyclerView environmentalsRecyclerView;
+    private List<String> environmentalsList;
 
-
-    public BBPageThree() {
+    public BBPageTwo() {
+        // Required empty public constructor
     }
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bbViewModel = new ViewModelProvider(requireActivity()).get(BBViewModel.class);
         setHasOptionsMenu(true);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.bb_fragment_page_three, container, false);
+        return inflater.inflate(R.layout.bb_fragment_page_two, container, false);
     }
 
     @Override
@@ -58,39 +60,39 @@ public class BBPageThree extends Fragment {
     }
 
     private void findViews(View view) {
-        addDistraction = view.findViewById(R.id.bb_add_distraction);
-        distractionsRecyclerView = view.findViewById(R.id.bb_distractions_recyclerview);
-        backButton = view.findViewById(R.id.bb_page_three_back);
-        nextButton = view.findViewById(R.id.bb_page_three_next);
+        addEnvironmental = view.findViewById(R.id.bb_add_environmental);
+        environmentalsRecyclerView = view.findViewById(R.id.bb_environmentals_recyclerview);
+        backButton = view.findViewById(R.id.bb_page_two_back);
+        nextButton = view.findViewById(R.id.bb_page_two_next);
     }
 
     private void setRecyclerView() {
-        distractionsList = new ArrayList<>();
-        distractionsList.addAll(bbViewModel.getBbDistractions());
+        environmentalsList = new ArrayList<>();
+        environmentalsList.addAll(bbViewModel.getBbEnvironmentals());
 
-        SimpleRecyclerAdapter distractionsRecyclerAdapter = new SimpleRecyclerAdapter(distractionsList);
-        distractionsRecyclerView.setAdapter(distractionsRecyclerAdapter);
+        SimpleRecyclerAdapter environmentalsRecyclerAdapter = new SimpleRecyclerAdapter(environmentalsList);
+        environmentalsRecyclerView.setAdapter(environmentalsRecyclerAdapter);
 
-        distractionsRecyclerAdapter.setOnItemClickListener(position -> {
-            distractionsList.remove(position);
-            distractionsRecyclerAdapter.notifyDataSetChanged();
-            bbViewModel.setBbDistractions(distractionsList);
+        environmentalsRecyclerAdapter.setOnItemClickListener(position -> {
+            environmentalsList.remove(position);
+            environmentalsRecyclerAdapter.notifyDataSetChanged();
+            bbViewModel.setBbEnvironmentals(environmentalsList);
         });
     }
 
     private void setButtons() {
-        addDistraction.setOnClickListener(v ->{
-            addToList(distractionsList);
-            bbViewModel.setBbDistractions(distractionsList);
+        addEnvironmental.setOnClickListener(v ->{
+            addToList(environmentalsList);
+            bbViewModel.setBbEnvironmentals(environmentalsList);
         });
 
         NavController controller = Navigation.findNavController(requireView());
 
         backButton.setOnClickListener(v ->{
-            controller.popBackStack(R.id.BBPageTwo, true);
-            controller.navigate(R.id.BBPageTwo);
+            controller.popBackStack(R.id.BBPageOne, true);
+            controller.navigate(R.id.BBPageOne);
         });
-        nextButton.setOnClickListener(v -> controller.navigate(R.id.action_BBPageThree_to_BBPageFour));
+        nextButton.setOnClickListener(v -> controller.navigate(R.id.action_BBPageTwo_to_BBPageThree));
     }
 
     private void addToList(List<String> list) {
