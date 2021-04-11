@@ -161,4 +161,7 @@
     <string name="bb_soluitions_title">Changing the Future</string>
     <string name="bb_add_solution_description">Add solution</string>
     <string name="bb_solutions_question">What can you do that will prevent you from engaging in the future? I.e practicing a helpful skill, learning a certain coping menchanism, getting professional help, etc.</string>
+    <string name="bb_environmentals_review_question">Helpful space changes:</string>
+    <string name="bb_distractions_review_question">Helpful distractions:</string>
+    <string name="bb_solutions_review_questio">Things you can do to change:</string>
 </resources>
