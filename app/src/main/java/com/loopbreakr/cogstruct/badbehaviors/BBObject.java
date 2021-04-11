@@ -6,7 +6,6 @@ public class BBObject {
     private String dateCreated;
     private String userId;
     private String behavior;
-    private String vulnerabilities;
     private String environmentals;
     private String distractions;
     private String solutions;
@@ -14,11 +13,14 @@ public class BBObject {
     public BBObject() {
     }
 
-    public BBObject(String dateCreated, String userId, String behavior, String vulnerabilities, String environmentals, String distractions, String solutions){
+    public BBObject(String dateCreated, String userId, String behavior, String environmentals, String distractions, String solutions){
         this.formName = "Bad Behaviors";
         this.dateCreated = dateCreated;
         this.userId = userId;
         this.behavior = behavior;
+        this.environmentals = environmentals;
+        this.distractions = distractions;
+        this.solutions = solutions;
     }
 
     public String getFormName() { return formName; }
@@ -29,8 +31,6 @@ public class BBObject {
     public void setUserId(String userId) { this.userId = userId; }
     public String getBehavior() { return behavior; }
     public void setBehavior(String behavior) { this.behavior = behavior; }
-    public String getVulnerabilities() { return vulnerabilities; }
-    public void setVulnerabilities(String vulnerabilities) { this.vulnerabilities = vulnerabilities; }
     public String getEnvironmentals() { return environmentals; }
     public void setEnvironmentals(String environmentals) { this.environmentals = environmentals; }
     public String getDistractions() { return distractions; }
