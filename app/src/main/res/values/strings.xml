@@ -147,4 +147,18 @@
     <string name="unhelpful_behavior_action_general">Unhelpful behavior/action:</string>
     <string name="trigger_event_general">Trigger event:</string>
     <string name="main_emotion_experienced_general">Main emotion experienced:</string>
+    <string name="bb_behavior_question">What is the behavior that you would like to stop engaging in?</string>
+    <string name="bb_behavior_hint">Enter the behavior here</string>
+    <string name="general_behavior_title">Behavior</string>
+    <string name="bb_environmental_factor_description">Add environmental factor</string>
+    <string name="bb_add_change_prompt">Add change</string>
+    <string name="bb_environmentals_question">What can you do about your space that can help prevent you from engaging? I.e moving triggering or dangerous material, going to another room, etc</string>
+    <string name="bb_environmentals_title">Changing Places</string>
+    <string name="bb_distractions_title">Changing Plans</string>
+    <string name="bb_distractions_question">What can you do in the moment to distract you from engaging? I.e call a friend, participate in a hobby, etc</string>
+    <string name="bb_add_distraction_description">Add distraction</string>
+    <string name="bb_distraction_prompt">Add distraction</string>
+    <string name="bb_soluitions_title">Changing the Future</string>
+    <string name="bb_add_solution_description">Add solution</string>
+    <string name="bb_solutions_question">What can you do that will prevent you from engaging in the future? I.e practicing a helpful skill, learning a certain coping menchanism, getting professional help, etc.</string>
 </resources>

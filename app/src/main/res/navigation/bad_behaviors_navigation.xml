@@ -38,21 +38,12 @@
         android:label="bb_fragment_page_four"
         tools:layout="@layout/bb_fragment_page_four" >
         <action
-            android:id="@+id/action_BBPageFour_to_BBPageFive"
-            app:destination="@id/BBPageFive" />
+            android:id="@+id/action_BBPageFour_to_BBReview"
+            app:destination="@id/BBReview" />
     </fragment>
     <fragment
         android:id="@+id/BBReview"
         android:name="com.loopbreakr.cogstruct.badbehaviors.BBReview"
         android:label="bb_fragment_review"
         tools:layout="@layout/bb_fragment_review" />
-    <fragment
-        android:id="@+id/BBPageFive"
-        android:name="com.loopbreakr.cogstruct.BBPageFive"
-        android:label="bb_fragment_page_five"
-        tools:layout="@layout/bb_fragment_page_five" >
-        <action
-            android:id="@+id/action_BBPageFive_to_BBReview"
-            app:destination="@id/BBReview" />
-    </fragment>
 </navigation>

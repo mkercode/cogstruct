@@ -17,7 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.loopbreakr.cogstruct.logs.LogsActivity;
+import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 
 
 public class UiFragment extends Fragment {

@@ -15,7 +15,7 @@
         <activity android:name=".howdigethere.activities.HIGHActivity" />
         <activity android:name=".identifybarriers.activities.IBActivity" />
         <activity android:name=".proscons.activities.PCActivity" />
-        <activity android:name=".logs.LogsActivity" />
+        <activity android:name=".logs.activities.LogsActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".thoughtjournal.activities.TJActivity" />
         <activity android:name=".MainActivity">

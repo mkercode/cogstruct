@@ -19,7 +19,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.logs.LogsActivity;
+import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
 import com.loopbreakr.cogstruct.logs.adapters.LogsRecyclerAdapter;
 import com.loopbreakr.cogstruct.logs.objects.LogsPreview;
