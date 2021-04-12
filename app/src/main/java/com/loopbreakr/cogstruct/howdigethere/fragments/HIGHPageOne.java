@@ -19,8 +19,7 @@ import android.widget.Button;
 import com.loopbreakr.cogstruct.MainActivity;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.HighFragmentPageOneBinding;
-import com.loopbreakr.cogstruct.howdigethere.HIGHViewModel;
-import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
+import com.loopbreakr.cogstruct.howdigethere.models.HIGHViewModel;
 
 import org.jetbrains.annotations.NotNull;
 

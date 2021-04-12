@@ -59,7 +59,11 @@
         android:id="@+id/BBLogFragment"
         android:name="com.loopbreakr.cogstruct.logs.fragments.BBLogsFragment"
         android:label="fragment_bb_log"
-        tools:layout="@layout/logs_fragment_bb" />
+        tools:layout="@layout/logs_fragment_bb" >
+        <action
+            android:id="@+id/action_BBLogFragment_to_BBLogEditOne"
+            app:destination="@id/BBLogEditOne" />
+    </fragment>
     <fragment
         android:id="@+id/IBLogFragment"
         android:name="com.loopbreakr.cogstruct.logs.fragments.IBLogsFragment"
@@ -121,4 +125,18 @@
         android:name="com.loopbreakr.cogstruct.logs.fragments.HighLogEditFourFragment"
         android:label="logs_high_edit_four"
         tools:layout="@layout/logs_fragment_high_edit_four" />
+    <fragment
+        android:id="@+id/BBLogEditOne"
+        android:name="com.loopbreakr.cogstruct.logs.fragments.BBLogEditOne"
+        android:label="logs_fragment_bb_edit_one"
+        tools:layout="@layout/logs_fragment_bb_edit_one" >
+        <action
+            android:id="@+id/action_BBLogEditOne_to_BBLogEditTwo"
+            app:destination="@id/BBLogEditTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/BBLogEditTwo"
+        android:name="com.loopbreakr.cogstruct.logs.fragments.BBLogEditTwo"
+        android:label="logs_fragment_bb_edit_two"
+        tools:layout="@layout/logs_fragment_bb_edit_two" />
 </navigation>

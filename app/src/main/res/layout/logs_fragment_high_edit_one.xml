@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
         <variable
             name="viewModel"
-            type="com.loopbreakr.cogstruct.howdigethere.HIGHViewModel" />
+            type="com.loopbreakr.cogstruct.howdigethere.models.HIGHViewModel" />
     </data>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -79,7 +79,8 @@
                 android:ems="15"
                 android:minLines="2"
                 android:maxLines="2"
-                android:text="@={viewModel.highBehavior}"/>
+                android:text="@={viewModel.highBehavior}"
+                android:autofillHints="" />
 
 
             <TextView
@@ -102,7 +103,8 @@
                 android:ems="15"
                 android:minLines="2"
                 android:maxLines="2"
-                android:text="@={viewModel.highTriggerEvent}"/>
+                android:text="@={viewModel.highTriggerEvent}"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/high_emotion_edit_log_question"

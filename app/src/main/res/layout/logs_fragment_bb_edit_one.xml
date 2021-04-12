@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".logs.fragments.BBLogEditOne">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/edit_bb_logs_toolbar_one"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/header_logs_background"
+        android:theme="@style/Theme.MaterialComponents.NoActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/logs_high_edit_menu"
+        app:popupTheme="@style/PopupMenuStyle" />
+
+
+    <TextView
+        android:id="@+id/bb_log_edit_behavior_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/bb_behavior_question"
+        android:textColor="@color/colorGreenText"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_bb_logs_toolbar_one" />
+
+    <EditText
+        android:id="@+id/bb_log_edit_behavior"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:maxLines="3"
+        android:minLines="3"
+        app:layout_constraintEnd_toEndOf="@+id/bb_log_edit_behavior_question"
+        app:layout_constraintStart_toStartOf="@+id/bb_log_edit_behavior_question"
+        app:layout_constraintTop_toBottomOf="@+id/bb_log_edit_behavior_question"
+        android:autofillHints=""
+        android:text="@={viewModel.bbBehavior}"
+        android:inputType="textMultiLine|textAutoCorrect" />
+
+
+    <TextView
+        android:id="@+id/bb_log_edit_environmentals_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/bb_logs_environmentals_question"
+        android:textColor="@color/colorGreenText"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bb_log_edit_behavior" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/bb_log_add_environmental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:contentDescription="@string/add_thought_description"
+        android:focusable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bb_log_edit_environmentals_question"
+        app:srcCompat="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/bb_log_environmental_prompt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:gravity="end"
+        android:text="@string/bb_environmental_factor_description"
+        android:textColor="@color/colorGreenText"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bb_log_add_environmental"
+        app:layout_constraintEnd_toStartOf="@+id/bb_log_add_environmental" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bb_log_environmentals_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bb_log_environmental_prompt"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

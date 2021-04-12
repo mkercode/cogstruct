@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct.howdigethere;
+package com.loopbreakr.cogstruct.howdigethere.models;
 
 import androidx.lifecycle.ViewModel;
 
@@ -49,17 +49,19 @@ public class HIGHViewModel extends ViewModel {
     }
 
     private void initializeRadioId(String emotion) {
-        if (emotion.equals("Sadness")) {
-            highEmotionRadioId = R.id.high_sadness_log;
-        }
-        else if(emotion.equals("Anger")){
-            highEmotionRadioId = R.id.high_anger_log;
-        }
-        else if(emotion.equals("Happiness")){
-            highEmotionRadioId = R.id.high_happiness_log;
-        }
-        else if(emotion.equals("Fear")){
-            highEmotionRadioId = R.id.high_fear_log;
+        switch (emotion) {
+            case "Sadness":
+                highEmotionRadioId = R.id.high_sadness_log;
+                break;
+            case "Anger":
+                highEmotionRadioId = R.id.high_anger_log;
+                break;
+            case "Happiness":
+                highEmotionRadioId = R.id.high_happiness_log;
+                break;
+            case "Fear":
+                highEmotionRadioId = R.id.high_fear_log;
+                break;
         }
     }
 

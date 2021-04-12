@@ -20,7 +20,7 @@ import android.widget.EditText;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.SimpleRecyclerAdapter;
-import com.loopbreakr.cogstruct.howdigethere.HIGHViewModel;
+import com.loopbreakr.cogstruct.howdigethere.models.HIGHViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -163,5 +163,9 @@
     <string name="bb_solutions_question">What can you do that will prevent you from engaging in the future? I.e practicing a helpful skill, learning a certain coping mechanism, getting professional help, etc.</string>
     <string name="bb_environmentals_review_question">Helpful space changes:</string>
     <string name="bb_distractions_review_question">Helpful distractions:</string>
-    <string name="bb_solutions_review_questio">Things you can do to change:</string>
+    <string name="bb_solutions_review_question">Things you can do to change:</string>
+    <string name="bb_logs_environmentals_question">What can you do about your space that can help prevent you from engaging?</string>
+    <string name="bb_logs_distractions_question">What can you do in the moment to distract you from engaging?</string>
+    <string name="bb_logs_solutions_question">What can you do that will prevent you from engaging in the future?</string>
+    <string name="bb_logs_behavior_question_short">Behavior you want to stop engaging in:</string>
 </resources>

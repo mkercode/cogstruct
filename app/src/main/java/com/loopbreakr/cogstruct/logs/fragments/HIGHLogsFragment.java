@@ -21,8 +21,10 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.LogsFragmentHighBinding;
 import com.loopbreakr.cogstruct.howdigethere.objects.HIGHObject;
-import com.loopbreakr.cogstruct.howdigethere.HIGHViewModel;
+import com.loopbreakr.cogstruct.howdigethere.models.HIGHViewModel;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
+
+import org.jetbrains.annotations.NotNull;
 
 
 public class HIGHLogsFragment extends Fragment {
@@ -45,7 +47,7 @@ public class HIGHLogsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_high, container, false);
