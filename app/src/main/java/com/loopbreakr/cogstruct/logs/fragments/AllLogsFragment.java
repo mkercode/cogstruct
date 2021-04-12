@@ -89,7 +89,6 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
         switch (snapshot.getString("formName")){
             case "Thought Journal":
                 thoughtJournalLog = snapshot.toObject(ThoughtJournalObject.class);
-
                 logsViewModel.setSnapshot(snapshot);
                 navId = R.id.action_allLogsFragment_to_tjLogFragment;
                 break;
@@ -105,6 +104,7 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
                 break;
 
             case "Bad Behaviors":
+                logsViewModel.setSnapshot(snapshot);
                 navId = R.id.action_allLogsFragment_to_BBLogFragment;
                 break;
 

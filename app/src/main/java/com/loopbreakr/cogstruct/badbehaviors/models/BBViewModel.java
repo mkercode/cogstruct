@@ -12,12 +12,10 @@ public class BBViewModel extends ViewModel {
 
     private String bbBehavior;
 
-    private List<String> bbVulnerabilities = new ArrayList<>();
     private List<String> bbEnvironmentals = new ArrayList<>();
     private List<String> bbDistractions = new ArrayList<>();
     private List<String> bbSolutions = new ArrayList<>();
 
-    private String displayBbVulnerabilities;
     private String displayBbEnvironmentals;
     private String displayBbDistractions;
     private String displayBbSolutions;
@@ -31,28 +29,23 @@ public class BBViewModel extends ViewModel {
 
     public void setBbBehavior(String input){ bbBehavior = input; }
 
-    public void setBbVulnerabilities(List<String> input) { bbVulnerabilities = input; }
     public void setBbEnvironmentals(List<String> input) { bbEnvironmentals = input; }
     public void setBbDistractions(List<String> input) { bbDistractions = input; }
     public void setBbSolutions(List<String> input) { bbSolutions = input; }
 
-    public void setDisplayBbVulnerabilities(String input) { displayBbVulnerabilities = input; }
     public void setDisplayBbEnvironmentals(String input) { displayBbEnvironmentals = input; }
     public void setDisplayBbDistractions(String input) { displayBbDistractions = input; }
     public void setDisplayBbSolutions(String input) { displayBbSolutions = input; }
 
     public String getBbBehavior() { return bbBehavior; }
-    public List<String> getBbVulnerabilities() { return bbVulnerabilities; }
     public List<String> getBbEnvironmentals() { return bbEnvironmentals; }
     public List<String> getBbDistractions() { return bbDistractions; }
     public List<String> getBbSolutions() { return bbSolutions; }
-    public String getDisplayBbVulnerabilities() { return createDisplayList(bbVulnerabilities); }
     public String getDisplayBbEnvironmentals() { return createDisplayList(bbEnvironmentals); }
     public String getDisplayBbDistractions() { return createDisplayList(bbDistractions); }
     public String getDisplayBbSolutions() { return createDisplayList(bbSolutions); }
 
 
-    public String getBbVulnerabilitiesString() { return android.text.TextUtils.join(",", bbVulnerabilities); }
     public String getBbEnvironmentalsString() { return android.text.TextUtils.join(",", bbEnvironmentals); }
     public String getBbDistractionsString() { return android.text.TextUtils.join(",", bbDistractions); }
     public String getBbSolutionsString() { return android.text.TextUtils.join(",", bbSolutions); }
