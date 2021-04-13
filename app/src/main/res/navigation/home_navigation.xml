@@ -31,7 +31,7 @@
             app:destination="@id/ABCViewFragment" />
         <action
             android:id="@+id/action_fragmentCbtActivities_to_insightsFragment"
-            app:destination="@id/insightsFragment" />
+            app:destination="@id/insightsViewFragment" />
         <action
             android:id="@+id/action_fragmentCbtActivities_to_learnMoreFragment"
             app:destination="@id/learnMoreFragment" />
@@ -70,10 +70,10 @@
         android:label="fragment_a_b_c_view"
         tools:layout="@layout/home_fragment_a_b_c_view" />
     <fragment
-        android:id="@+id/insightsFragment"
-        android:name="com.loopbreakr.cogstruct.home.fragments.InsightsFragment"
-        android:label="fragment_insights"
-        tools:layout="@layout/home_fragment_insights" />
+        android:id="@+id/insightsViewFragment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.InsightsViewFragment"
+        android:label="fragment_insights_view"
+        tools:layout="@layout/home_fragment_insights_view" />
     <fragment
         android:id="@+id/learnMoreFragment"
         android:name="com.loopbreakr.cogstruct.home.fragments.LearnMoreFragment"

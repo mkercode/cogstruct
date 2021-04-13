@@ -168,4 +168,5 @@
     <string name="bb_logs_distractions_question">What can you do in the moment to distract you from engaging?</string>
     <string name="bb_logs_solutions_question">What can you do that will prevent you from engaging in the future?</string>
     <string name="bb_logs_behavior_question_short">Behavior you want to stop engaging in:</string>
+    <string name="insights_title">Insights</string>
 </resources>
