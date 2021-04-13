@@ -169,4 +169,8 @@
     <string name="bb_logs_solutions_question">What can you do that will prevent you from engaging in the future?</string>
     <string name="bb_logs_behavior_question_short">Behavior you want to stop engaging in:</string>
     <string name="insights_title">Insights</string>
+    <string name="behavioral_inspection_description">Behavioral Inspection</string>
+    <string name="behavioral_inspection_title">Behavioral Inspection</string>
+    <string name="game_plan_title">Game Plan</string>
+    <string name="find_thinking_errors_title">Find Thinking Errors</string>
 </resources>
