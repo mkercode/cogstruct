@@ -73,7 +73,17 @@
         android:id="@+id/insightsViewFragment"
         android:name="com.loopbreakr.cogstruct.home.fragments.InsightsViewFragment"
         android:label="fragment_insights_view"
-        tools:layout="@layout/home_fragment_insights_view" />
+        tools:layout="@layout/home_fragment_insights_view" >
+        <action
+            android:id="@+id/action_insightsViewFragment_to_BIViewFragment"
+            app:destination="@id/BIViewFragment" />
+        <action
+            android:id="@+id/action_insightsViewFragment_to_GPViewFragment"
+            app:destination="@id/GPViewFragment" />
+        <action
+            android:id="@+id/action_insightsViewFragment_to_FTEViewFragment"
+            app:destination="@id/FTEViewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/learnMoreFragment"
         android:name="com.loopbreakr.cogstruct.home.fragments.LearnMoreFragment"
@@ -84,4 +94,19 @@
         android:name="com.loopbreakr.cogstruct.home.fragments.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/home_fragment_about" />
+    <fragment
+        android:id="@+id/BIViewFragment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.BIViewFragment"
+        android:label="home_fragment_bi_view"
+        tools:layout="@layout/home_fragment_bi_view" />
+    <fragment
+        android:id="@+id/GPViewFragment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.GPViewFragment"
+        android:label="home_fragment_gp_view"
+        tools:layout="@layout/home_fragment_gp_view" />
+    <fragment
+        android:id="@+id/FTEViewFragment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.FTEViewFragment"
+        android:label="home_fragment_fte_view"
+        tools:layout="@layout/home_fragment_fte_view" />
 </navigation>

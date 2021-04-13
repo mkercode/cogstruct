@@ -169,8 +169,10 @@
     <string name="bb_logs_solutions_question">What can you do that will prevent you from engaging in the future?</string>
     <string name="bb_logs_behavior_question_short">Behavior you want to stop engaging in:</string>
     <string name="insights_title">Insights</string>
-    <string name="behavioral_inspection_description">Behavioral Inspection</string>
+    <string name="behavioral_inspection_description">Gain insights on your unhelpful behaviors, and say goodbye to doing all the detective work yourself! This section connects all the dots for you using your past entries</string>
     <string name="behavioral_inspection_title">Behavioral Inspection</string>
     <string name="game_plan_title">Game Plan</string>
     <string name="find_thinking_errors_title">Find Thinking Errors</string>
+    <string name="find_thinking_errors_description">Take a look at those thoughts and find out what might have gone wrong. The activity in this section helps you analyze thoughts from previous entries.</string>
+    <string name="game_plan_description">Some activities had you fill out ways to deal with your unhelpful behaviors. This section puts them all together for you, so you can figure out your next move!</string>
 </resources>
