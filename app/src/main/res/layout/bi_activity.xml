@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".behavioralinspection.BIActivity">
+    tools:context=".behavioralinspection.activities.BIActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/bi_container"

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/BIPageOne"
-        android:name="com.loopbreakr.cogstruct.BIPageOne"
+        android:name="com.loopbreakr.cogstruct.behavioralinspection.fragments.BIPageOne"
         android:label="bi_fragment_page_one"
         tools:layout="@layout/bi_fragment_page_one" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/BIPageTwo"
-        android:name="com.loopbreakr.cogstruct.BIPageTwo"
+        android:name="com.loopbreakr.cogstruct.behavioralinspection.fragments.BIPageTwo"
         android:label="bi_fragment_page_two"
         tools:layout="@layout/bi_fragment_page_two" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/BIPageThree"
-        android:name="com.loopbreakr.cogstruct.BIPageThree"
+        android:name="com.loopbreakr.cogstruct.behavioralinspection.fragments.BIPageThree"
         android:label="bi_fragment_page_three"
         tools:layout="@layout/bi_fragment_page_three" />
 </navigation>
