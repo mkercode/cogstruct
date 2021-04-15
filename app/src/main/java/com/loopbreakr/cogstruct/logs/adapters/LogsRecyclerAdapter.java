@@ -39,7 +39,6 @@ public class LogsRecyclerAdapter extends FirestoreRecyclerAdapter<LogsPreview, L
 
     class LogsViewHolder extends RecyclerView.ViewHolder{
         TextView formNameText, dateText;
-        Button plus, minus;
         public LogsViewHolder(@NonNull View itemView) {
             super(itemView);
             formNameText = itemView.findViewById(R.id.formNameTextView);

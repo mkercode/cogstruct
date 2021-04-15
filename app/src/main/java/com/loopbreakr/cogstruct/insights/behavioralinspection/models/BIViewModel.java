@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct.behavioralinspection.models;
+package com.loopbreakr.cogstruct.insights.behavioralinspection.models;
 
 import androidx.lifecycle.ViewModel;
 

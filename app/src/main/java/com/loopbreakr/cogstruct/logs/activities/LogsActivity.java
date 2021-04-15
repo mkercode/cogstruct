@@ -16,10 +16,6 @@ import com.loopbreakr.cogstruct.R;
 
 public class LogsActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener {
 
-    //listen for auth states changed
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +25,6 @@ public class LogsActivity extends AppCompatActivity implements FirebaseAuth.Auth
         NavController navController = navHostFragment.getNavController();
     }
 
-
     public void logOut(){
         Toast.makeText(this,"Network Error!",Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, LoginActivity.class);
@@ -37,6 +32,8 @@ public class LogsActivity extends AppCompatActivity implements FirebaseAuth.Auth
         this.finish();
     }
 
+
+    //listen for auth states changed
     @Override
     public void onStart() {
         super.onStart();

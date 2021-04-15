@@ -1,11 +1,13 @@
-package com.loopbreakr.cogstruct.behavioralinspection.fragments;
+package com.loopbreakr.cogstruct.insights.behavioralinspection.fragments;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.SystemClock;
 import android.util.Log;
@@ -13,17 +15,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
+
 import com.loopbreakr.cogstruct.R;
+
 import com.loopbreakr.cogstruct.SimpleRecyclerAdapter;
-import com.loopbreakr.cogstruct.behavioralinspection.activities.BIActivity;
-import com.loopbreakr.cogstruct.behavioralinspection.models.BIViewModel;
-import com.loopbreakr.cogstruct.identifybarriers.activities.IBActivity;
-import com.loopbreakr.cogstruct.identifybarriers.models.IBViewModel;
+import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
+import com.loopbreakr.cogstruct.insights.behavioralinspection.adapters.InsightsRecyclerAdapter;
+import com.loopbreakr.cogstruct.insights.behavioralinspection.models.BIViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +33,8 @@ import java.util.List;
 
 public class BIPageOne extends Fragment {
     private BIViewModel biViewModel;
+    private Toolbar backToolbar;
+    private RecyclerView behaviorRecyclerView;
 
     public BIPageOne() {
         // Required empty public constructor
@@ -54,6 +58,8 @@ public class BIPageOne extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getViewModelData();
+        findViews(view);
+        setBackToolBar();
     }
 
     //get data from firebase
@@ -73,6 +79,28 @@ public class BIPageOne extends Fragment {
     //set the viewmodel data
     private void setViewModel(List<DocumentSnapshot> snapshots){
         biViewModel.setBiSnapshotList(snapshots);
+        setRecyclerview(biViewModel.getBiBehaviorList());
     }
+
+    private void setRecyclerview(List<String> behaviorsList) {
+
+        InsightsRecyclerAdapter behaviorRecyclerAdapter = new InsightsRecyclerAdapter(behaviorsList);
+        behaviorRecyclerView.setAdapter(behaviorRecyclerAdapter);
+
+        behaviorRecyclerAdapter.setOnItemClickListener(position -> {
+
+        });
+    }
+
+
+    private void findViews(View view) {
+        behaviorRecyclerView = view.findViewById(R.id.bi_behavior_recyclerview);
+        backToolbar = view.findViewById(R.id.back_toolbar);
+    }
+
+    private void setBackToolBar() {
+        ((BIActivity)requireActivity()).biSetToolbar(backToolbar);
+    }
+
 
 }

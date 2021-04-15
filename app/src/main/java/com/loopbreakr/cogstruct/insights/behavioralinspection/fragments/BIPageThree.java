@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct.behavioralinspection.fragments;
+package com.loopbreakr.cogstruct.insights.behavioralinspection.fragments;
 
 import android.os.Bundle;
 

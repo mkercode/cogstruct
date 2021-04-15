@@ -1,7 +1,8 @@
-package com.loopbreakr.cogstruct.behavioralinspection.activities;
+package com.loopbreakr.cogstruct.insights.behavioralinspection.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -21,6 +22,7 @@ import com.loopbreakr.cogstruct.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class BIActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener{
     FirebaseAuth auth;
@@ -54,7 +56,12 @@ public class BIActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
         }
     }
 
-
+    public void biSetToolbar(Toolbar backToolbar){
+        this.setSupportActionBar(backToolbar);
+        Objects.requireNonNull(this.getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        backToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        backToolbar.setNavigationOnClickListener(v -> this.onBackPressed());
+    }
 
 
     public void logOut(){
