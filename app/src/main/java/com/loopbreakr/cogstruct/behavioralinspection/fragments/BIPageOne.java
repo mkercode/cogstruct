@@ -58,8 +58,8 @@ public class BIPageOne extends Fragment {
         getViewModelData();
     }
 
+    //get data from firebase
     private void getViewModelData() {
-
             FirebaseAuth auth = FirebaseAuth.getInstance();
             FirebaseFirestore.getInstance()
                     .collection("forms")
@@ -72,9 +72,9 @@ public class BIPageOne extends Fragment {
                     });
     }
 
+    //set the viewmodel data
     private void setViewModel(List<DocumentSnapshot> snapshots){
         biViewModel.setBiSnapshotList(snapshots);
-        Log.d("STRANG", "setViewModel: " + biViewModel.getBiSnapShotList());
     }
 
 }
