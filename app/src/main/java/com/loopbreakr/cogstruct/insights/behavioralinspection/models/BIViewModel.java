@@ -12,6 +12,15 @@ import java.util.Set;
 public class BIViewModel extends ViewModel {
     private List<DocumentSnapshot> biSnapShotList = new ArrayList<>();
     private List<String> biBehaviorList;
+    private List<String> biInspectionList;
+    private String biBehavior;
+    private String biInspection;
+
+
+    public void setBiBehavior(String input){ biBehavior = input; }
+    public void setBiInspection(String input){ biInspection = input;}
+
+    public void setBiInspectionList(List<String> biInspectionList) { this.biInspectionList = biInspectionList; }
 
     public void setBiSnapshotList(List<DocumentSnapshot> input) {
         biSnapShotList = input;
@@ -28,6 +37,8 @@ public class BIViewModel extends ViewModel {
         filterList(biBehaviorList);
     }
 
+    public String getBiBehavior(){return biBehavior;}
+    public String getBiInspection(){return biInspection;}
     public List<DocumentSnapshot> getBiSnapShotList() { return biSnapShotList; }
     public List<String> getBiBehaviorList(){ return biBehaviorList; }
 
@@ -37,5 +48,8 @@ public class BIViewModel extends ViewModel {
         biBehaviorList.clear();
         biBehaviorList.addAll(tempSet);
     }
+
+    public List<String> getBiInspectionList(){ return biInspectionList; }
+
 }
 

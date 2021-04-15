@@ -176,4 +176,5 @@
     <string name="find_thinking_errors_description">Take a look at those thoughts and find out what might have gone wrong. The activity in this section helps you analyze thoughts from previous entries.</string>
     <string name="game_plan_description">Some activities had you fill out ways to deal with your unhelpful behaviors. This section puts them all together for you, so you can figure out your next move!</string>
     <string name="general_delete_description">Delete item</string>
+    <string name="general_next_icon_description">Next icon</string>
 </resources>

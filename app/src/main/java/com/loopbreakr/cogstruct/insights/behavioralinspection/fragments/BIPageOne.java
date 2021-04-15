@@ -1,33 +1,28 @@
 package com.loopbreakr.cogstruct.insights.behavioralinspection.fragments;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.SystemClock;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import com.loopbreakr.cogstruct.R;
-
-import com.loopbreakr.cogstruct.SimpleRecyclerAdapter;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.adapters.InsightsRecyclerAdapter;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.models.BIViewModel;
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -35,6 +30,8 @@ public class BIPageOne extends Fragment {
     private BIViewModel biViewModel;
     private Toolbar backToolbar;
     private RecyclerView behaviorRecyclerView;
+    private ProgressBar loadingBar;
+    List<String> behaviorList;
 
     public BIPageOne() {
         // Required empty public constructor
@@ -44,13 +41,11 @@ public class BIPageOne extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         biViewModel = new ViewModelProvider(requireActivity()).get(BIViewModel.class);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.bi_fragment_page_one, container, false);
     }
 
@@ -60,6 +55,16 @@ public class BIPageOne extends Fragment {
         getViewModelData();
         findViews(view);
         setBackToolBar();
+    }
+
+    private void findViews(View view) {
+        behaviorRecyclerView = view.findViewById(R.id.bi_behavior_recyclerview);
+        backToolbar = view.findViewById(R.id.back_toolbar);
+        loadingBar = view.findViewById(R.id.loading_bar);
+    }
+
+    private void setBackToolBar() {
+        ((BIActivity)requireActivity()).biSetToolbar(backToolbar);
     }
 
     //get data from firebase
@@ -82,25 +87,22 @@ public class BIPageOne extends Fragment {
         setRecyclerview(biViewModel.getBiBehaviorList());
     }
 
+    //create recyclerview from viewmodel data
     private void setRecyclerview(List<String> behaviorsList) {
-
-        InsightsRecyclerAdapter behaviorRecyclerAdapter = new InsightsRecyclerAdapter(behaviorsList);
+        loadingBar.setVisibility(View.GONE);
+        behaviorList = behaviorsList;
+        InsightsRecyclerAdapter behaviorRecyclerAdapter = new InsightsRecyclerAdapter(behaviorList);
         behaviorRecyclerView.setAdapter(behaviorRecyclerAdapter);
 
         behaviorRecyclerAdapter.setOnItemClickListener(position -> {
-
+            biViewModel.setBiBehavior(behaviorList.get(position));
+            navigateNext().navigate(R.id.action_BIPageOne_to_BIPageTwo);
         });
     }
 
-
-    private void findViews(View view) {
-        behaviorRecyclerView = view.findViewById(R.id.bi_behavior_recyclerview);
-        backToolbar = view.findViewById(R.id.back_toolbar);
+    private NavController navigateNext() {
+        NavController controller = Navigation.findNavController(requireView());
+        return controller;
     }
-
-    private void setBackToolBar() {
-        ((BIActivity)requireActivity()).biSetToolbar(backToolbar);
-    }
-
 
 }
