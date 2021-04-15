@@ -32,8 +32,6 @@ import java.util.List;
 public class BIPageOne extends Fragment {
     private BIViewModel biViewModel;
 
-
-
     public BIPageOne() {
         // Required empty public constructor
     }

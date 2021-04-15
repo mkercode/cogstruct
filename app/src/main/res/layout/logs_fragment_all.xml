@@ -1,50 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:scrollbars="vertical"
-    tools:context=".logs.fragments.AllLogsFragment">
+    tools:context=".logs.fragments.AllLogsFragment"
+    android:orientation="vertical">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/app_bar_head"
-        android:fitsSystemWindows="true"
-        android:background="@drawable/toolbar_header">
+        android:background="@drawable/toolbar_header"
+        android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp"/>
-
-        <com.google.android.material.appbar.CollapsingToolbarLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|enterAlways"
-            android:id="@+id/collapse_toolbar">
+            android:textColor="@color/colorWhite"
+            android:text="By Activity:"
+            android:textSize="15sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"/>
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorWhite"
-                        android:text="By Activity:"
-                        android:textSize="15sp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"/>
-
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_marginBottom="16dp">
@@ -91,16 +76,13 @@
                             android:text="@string/abcs_title"
                             style="@style/logsButton" />
                     </LinearLayout>
-                </LinearLayout>
             </HorizontalScrollView>
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-    </com.google.android.material.appbar.AppBarLayout>
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/dashboard_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/all_logs_recyclerview"
@@ -109,4 +91,4 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
     </FrameLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
