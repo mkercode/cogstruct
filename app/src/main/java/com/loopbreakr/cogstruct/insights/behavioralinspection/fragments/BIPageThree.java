@@ -17,6 +17,10 @@ import android.view.ViewGroup;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.models.BIViewModel;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class BIPageThree extends Fragment {
     private BIViewModel biViewModel;
 
@@ -44,6 +48,9 @@ public class BIPageThree extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         Log.d("STRANG", "onViewCreated: " + biViewModel.getBiFactorList(biViewModel.getBiSnapShotList(), biViewModel.getBiBehavior(), biViewModel.getBiInspection()));
     }
+
+
 }

@@ -10,6 +10,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.insights.objects.Factor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
@@ -17,13 +18,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import kotlin.collections.builders.MapBuilder;
 
 public class BIViewModel extends ViewModel {
     private List<DocumentSnapshot> biSnapShotList = new ArrayList<>();
@@ -107,15 +101,24 @@ public class BIViewModel extends ViewModel {
     public void setBiInspectionDisplay(String input){ biInspectionDisplay = input; }
 
 
-
-
     public Map<String, Integer> getBiFactorList(List<DocumentSnapshot> snapshotList, String behavior, String biInspection) {
         Map<String, Integer> factorMap = new HashMap<>();
         for (DocumentSnapshot snapshot : snapshotList) {
+            //check if snapshot matches user option and contains the field
             if (snapshot.getString("behavior").equals(behavior) && snapshot.contains(biInspection)) {
-                String tempString = snapshot.getString(biInspection).trim().toLowerCase();
+                String tempString = snapshot.getString(biInspection);
                 Integer tempInt = factorMap.get(tempString);
-                factorMap.put(tempString, (tempInt== null) ? 1 : tempInt + 1);
+                //check if the data contains a CSV string.
+                if (biInspection.equals("thoughts") || biInspection.equals("vulnerabilities")) {
+                    String[] tempList = tempString.split("\\s*,\\s*");
+                    for(String string: tempList){
+                        factorMap.put(string.trim().toLowerCase(), (tempInt== null) ? 1 : tempInt + 1);
+                    }
+                }
+                else{
+                    //add k/v to hashmap
+                    factorMap.put(tempString.trim().toLowerCase(), (tempInt== null) ? 1 : tempInt + 1);
+                }
             }
         }
         return factorMap;
@@ -132,11 +135,6 @@ public class BIViewModel extends ViewModel {
         Set<String> tempSet = new LinkedHashSet<>(tempList);
         biBehaviorList.clear();
         biBehaviorList.addAll(tempSet);
-    }
-
-    private void countFrequencies(ArrayList<String> list){
-
-
     }
 
 }
