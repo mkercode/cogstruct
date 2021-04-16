@@ -7,7 +7,7 @@
     tools:context=".insights.behavioralinspection.fragments.BIPageThree">
 
     <LinearLayout
-        android:id="@+id/app_bar_head"
+        android:id="@+id/toolbar_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/toolbar_header"
@@ -34,14 +34,39 @@
             android:textSize="20sp" />
     </LinearLayout>
 
-    <com.google.android.material.appbar.CollapsingToolbarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_scrollFlags="scroll|enterAlways"
-        android:id="@+id/collapse_toolbar">
+        android:background="@color/colorWhite"
+        android:id="@+id/app_bar_head">
 
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:id="@+id/collapse_toolbar">
 
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"/>
 
-    </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:id="@+id/dashboard_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/factor_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </FrameLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
