@@ -1,19 +1,10 @@
 package com.loopbreakr.cogstruct.insights.behavioralinspection.models;
 
-import android.os.Build;
 
-import androidx.annotation.RequiresApi;
 import androidx.lifecycle.ViewModel;
-
-import com.google.common.collect.HashMultimap;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.loopbreakr.cogstruct.insights.objects.Factor;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Hashtable;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -108,13 +99,17 @@ public class BIViewModel extends ViewModel {
             if (snapshot.getString("behavior").equals(behavior) && snapshot.contains(biInspection)) {
                 String tempString = snapshot.getString(biInspection);
                 Integer tempInt = factorMap.get(tempString);
-                //check if the data contains a CSV string.
+
+                //check if the data contains field in the firestore DB which stores comma separated strings exclusively
                 if (biInspection.equals("thoughts") || biInspection.equals("vulnerabilities")) {
+                    //split the comma separated values
                     String[] tempList = tempString.split("\\s*,\\s*");
                     for(String string: tempList){
+                        //add k/v to hashmap
                         factorMap.put(string.trim().toLowerCase(), (tempInt== null) ? 1 : tempInt + 1);
                     }
                 }
+                //if not a field which contains comma separated strings, just add values to map
                 else{
                     //add k/v to hashmap
                     factorMap.put(tempString.trim().toLowerCase(), (tempInt== null) ? 1 : tempInt + 1);

@@ -1,40 +1,38 @@
 package com.loopbreakr.cogstruct.insights.behavioralinspection.fragments;
 
-import android.os.Build;
-import android.os.Bundle;
 
+import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.models.BIViewModel;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BIPageThree extends Fragment {
     private BIViewModel biViewModel;
+    private Toolbar backToolbar;
+    private RecyclerView factorRecyclerview;
+    private Map<String, Integer> factorMap;
 
 
     public BIPageThree() {
         // Required empty public constructor
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         biViewModel = new ViewModelProvider(requireActivity()).get(BIViewModel.class);
-
     }
 
     @Override
@@ -48,9 +46,27 @@ public class BIPageThree extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        Log.d("STRANG", "onViewCreated: " + biViewModel.getBiFactorList(biViewModel.getBiSnapShotList(), biViewModel.getBiBehavior(), biViewModel.getBiInspection()));
+        getViewmodelData();
+        findViews(view);
+        setBackToolbar();
+        setRecyclerView();
     }
 
+    private void getViewmodelData() {
+        factorMap = new HashMap<>();
+        factorMap = biViewModel.getBiFactorList(biViewModel.getBiSnapShotList(), biViewModel.getBiBehavior(), biViewModel.getBiInspection());
+    }
+
+    private void findViews(View view) {
+        backToolbar = view.findViewById(R.id.iback_toolbar);
+    }
+
+    private void setBackToolbar() {
+        ((BIActivity)requireActivity()).biSetToolbar(backToolbar);
+    }
+
+    private void setRecyclerView() {
+        Log.d("STRANG", "setRecyclerView: " + factorMap);
+    }
 
 }
