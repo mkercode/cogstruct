@@ -13,22 +13,29 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.models.BIViewModel;
+import com.loopbreakr.cogstruct.insights.objects.Factor;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class BIPageThree extends Fragment {
@@ -37,6 +44,10 @@ public class BIPageThree extends Fragment {
     private RecyclerView factorRecyclerview;
     private PieChart pieChart;
     private Map<String, Integer> factorMap;
+    ArrayList<Integer> colors;
+    ArrayList<Factor> factors;
+    PieData data;
+
 
 
     public BIPageThree() {
@@ -64,19 +75,22 @@ public class BIPageThree extends Fragment {
         findViews(view);
         setBackToolbar();
         setupPieChart();
+        setupPieChartColors();
         populatePieChart();
         animatePieChart();
+        createFactorList();
         setRecyclerView();
     }
 
     private void getViewmodelData() {
-        factorMap = new HashMap<>();
+        factorMap = new LinkedHashMap<>();
         factorMap = biViewModel.getBiFactorList(biViewModel.getBiSnapShotList(), biViewModel.getBiBehavior(), biViewModel.getBiInspection());
     }
 
     private void findViews(View view) {
         backToolbar = view.findViewById(R.id.iback_toolbar);
         pieChart = view.findViewById(R.id.factor_piechart);
+        factorRecyclerview = view.findViewById(R.id.factor_recyclerview);
     }
 
     private void setBackToolbar() {
@@ -86,16 +100,25 @@ public class BIPageThree extends Fragment {
     private void setupPieChart() {
         pieChart.setDrawHoleEnabled(true);
         pieChart.setCenterTextColor(Color.DKGRAY);
-        pieChart.setDrawRoundedSlices(true);
         pieChart.setUsePercentValues(true);
-        pieChart.setEntryLabelTextSize(14);
-        pieChart.setHoleRadius(40);
-        pieChart.setEntryLabelColor(Color.BLACK);
+        pieChart.setHoleRadius(35);
+        pieChart.setTransparentCircleRadius(50);
         pieChart.setCenterText(biViewModel.getBiInspectionDisplay());
         pieChart.setCenterTextSize(18);
-        pieChart.getDescription().setEnabled(false);
-        Legend legend = pieChart.getLegend();
-        legend.setEnabled(false);
+        pieChart.setDrawEntryLabels(false);
+        Description description = pieChart.getDescription();
+        description.setText("");
+        pieChart.setDescription(description);
+        pieChart.getLegend().setEnabled(false);
+    }
+
+    private void setupPieChartColors() {
+        colors = new ArrayList<>();
+        for(int color: ColorTemplate.VORDIPLOM_COLORS){ colors.add(color); }
+        for(int color: ColorTemplate.COLORFUL_COLORS){ colors.add(color); }
+        for(int color: ColorTemplate.PASTEL_COLORS){ colors.add(color); }
+        for(int color: ColorTemplate.LIBERTY_COLORS){ colors.add(color); }
+        for(int color: ColorTemplate.JOYFUL_COLORS){ colors.add(color); }
     }
 
     private void populatePieChart() {
@@ -105,27 +128,22 @@ public class BIPageThree extends Fragment {
             entries.add(new PieEntry(floatValue, entry.getKey()));
         }
 
-        ArrayList<Integer> colors = new ArrayList<>();
-
-        for(int color: ColorTemplate.VORDIPLOM_COLORS){ colors.add(color); }
-        for(int color: ColorTemplate.COLORFUL_COLORS){ colors.add(color); }
-        for(int color: ColorTemplate.PASTEL_COLORS){ colors.add(color); }
-        for(int color: ColorTemplate.LIBERTY_COLORS){ colors.add(color); }
-        for(int color: ColorTemplate.JOYFUL_COLORS){ colors.add(color); }
-
-
         //write arrays to piechart
-        PieDataSet dataSet = new PieDataSet(entries,"Triggers");
+        PieDataSet dataSet = new PieDataSet(entries,biViewModel.getBiInspectionDisplay());
         dataSet.setColors(colors);
 
-        PieData data = new PieData(dataSet);
+
+
+        data = new PieData(dataSet);
+
+
         data.setDrawValues(true);
         data.setValueFormatter(new PercentFormatter(pieChart));
         data.setValueTextSize(14f);
         data.setValueTextColor(Color.BLACK);
 
         pieChart.setData(data);
-        pieChart.invalidate();
+
     }
 
     private void animatePieChart() {
@@ -133,8 +151,27 @@ public class BIPageThree extends Fragment {
         pieChart.animateY(1400, Easing.EaseInOutQuad);
     }
 
+    private void createFactorList() {
+        factors = new ArrayList<>();
+
+        for(int i = 0; i< data.getDataSet().getEntryCount(); i++){
+
+            String factorString = data.getDataSet().getEntryForIndex(i).getLabel();
+
+            float numtimes = data.getDataSet().getEntryForIndex(i).getValue();
+            float percentage = (numtimes/data.getYValueSum())*100;
+            String percentString = percentage + " %";
+
+            int color = data.getDataSet().getColor(i);
+
+            Factor tempFactor = new Factor(color, factorString, (int) numtimes, percentString);
+            factors.add(tempFactor);
+        }
+
+    }
+
     private void setRecyclerView() {
-        Log.d("STRANG", "setRecyclerView: " + factorMap);
+
     }
 
 }
