@@ -92,7 +92,9 @@ public class BIPageOne extends Fragment {
         loadingBar.setVisibility(View.GONE);
         behaviorList = behaviorsList;
         InsightsRecyclerAdapter behaviorRecyclerAdapter = new InsightsRecyclerAdapter(behaviorList);
+
         behaviorRecyclerView.setAdapter(behaviorRecyclerAdapter);
+        behaviorRecyclerAdapter.notifyDataSetChanged();
 
         behaviorRecyclerAdapter.setOnItemClickListener(position -> {
             biViewModel.setBiBehavior(behaviorList.get(position));

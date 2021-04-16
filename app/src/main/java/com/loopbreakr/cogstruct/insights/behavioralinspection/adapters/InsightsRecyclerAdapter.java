@@ -58,13 +58,6 @@ public class InsightsRecyclerAdapter extends RecyclerView.Adapter<InsightsRecycl
         }
     }
 
-
-
-
-
-
-
-
     public interface OnItemClickListener {
         void clickLog(int position);
     }
