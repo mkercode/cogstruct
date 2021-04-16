@@ -6,43 +6,40 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.formatter.PercentFormatter;
-import com.github.mikephil.charting.highlight.Highlight;
-import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.databinding.BiFragmentPageThreeBinding;
+import com.loopbreakr.cogstruct.insights.adapters.LegendRecyclerAdapter;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.models.BIViewModel;
 import com.loopbreakr.cogstruct.insights.objects.Factor;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class BIPageThree extends Fragment {
     private BIViewModel biViewModel;
+    private BiFragmentPageThreeBinding binding;
     private Toolbar backToolbar;
     private RecyclerView factorRecyclerview;
     private PieChart pieChart;
+    private String behavior;
     private Map<String, Integer> factorMap;
     ArrayList<Integer> colors;
     ArrayList<Factor> factors;
@@ -61,10 +58,12 @@ public class BIPageThree extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.bi_fragment_page_three, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.bi_fragment_page_three, container, false);
+        binding.setViewModel(biViewModel);
+        return binding.getRoot();
     }
 
 
@@ -83,8 +82,9 @@ public class BIPageThree extends Fragment {
     }
 
     private void getViewmodelData() {
+        behavior = biViewModel.getBiBehavior();
         factorMap = new LinkedHashMap<>();
-        factorMap = biViewModel.getBiFactorList(biViewModel.getBiSnapShotList(), biViewModel.getBiBehavior(), biViewModel.getBiInspection());
+        factorMap = biViewModel.getBiFactorList(biViewModel.getBiSnapShotList(), behavior, biViewModel.getBiInspection());
     }
 
     private void findViews(View view) {
@@ -100,11 +100,10 @@ public class BIPageThree extends Fragment {
     private void setupPieChart() {
         pieChart.setDrawHoleEnabled(true);
         pieChart.setCenterTextColor(Color.DKGRAY);
-        pieChart.setUsePercentValues(true);
         pieChart.setHoleRadius(35);
         pieChart.setTransparentCircleRadius(50);
         pieChart.setCenterText(biViewModel.getBiInspectionDisplay());
-        pieChart.setCenterTextSize(18);
+        pieChart.setCenterTextSize(16);
         pieChart.setDrawEntryLabels(false);
         Description description = pieChart.getDescription();
         description.setText("");
@@ -131,16 +130,9 @@ public class BIPageThree extends Fragment {
         //write arrays to piechart
         PieDataSet dataSet = new PieDataSet(entries,biViewModel.getBiInspectionDisplay());
         dataSet.setColors(colors);
-
-
-
         data = new PieData(dataSet);
 
-
-        data.setDrawValues(true);
-        data.setValueFormatter(new PercentFormatter(pieChart));
-        data.setValueTextSize(14f);
-        data.setValueTextColor(Color.BLACK);
+        data.setDrawValues(false);
 
         pieChart.setData(data);
 
@@ -164,14 +156,15 @@ public class BIPageThree extends Fragment {
 
             int color = data.getDataSet().getColor(i);
 
-            Factor tempFactor = new Factor(color, factorString, (int) numtimes, percentString);
+            Factor tempFactor = new Factor(color, factorString, (int) numtimes, percentString, behavior);
             factors.add(tempFactor);
         }
 
     }
 
     private void setRecyclerView() {
-
+        LegendRecyclerAdapter distractionsRecyclerAdapter = new LegendRecyclerAdapter(factors);
+        factorRecyclerview.setAdapter(distractionsRecyclerAdapter);
     }
 
 }

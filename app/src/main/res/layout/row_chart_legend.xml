@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+
+    <TextView
+        android:id="@+id/factor_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="12dp"
+        android:text="Factor_text"
+        android:textColor="@color/colorGreenText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/legend_count_question"
+        app:layout_constraintStart_toEndOf="@+id/legend_color"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/legend_color"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/colorWhite"
+        app:layout_constraintEnd_toStartOf="@+id/factor_textview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/legend_count_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Times occured:"
+        android:textColor="@color/colorGreenText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/legend_percent_question"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/legend_count"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Times"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/factor_textview"
+        app:layout_constraintStart_toStartOf="@+id/legend_count_question"
+        app:layout_constraintTop_toBottomOf="@+id/legend_count_question" />
+
+    <TextView
+        android:id="@+id/legend_percent_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Total percentage:"
+        android:textColor="@color/colorGreenText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/legend_count" />
+
+    <TextView
+        android:id="@+id/legend_percent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Percent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/factor_textview"
+        app:layout_constraintStart_toStartOf="@+id/legend_count_question"
+        app:layout_constraintTop_toBottomOf="@+id/legend_percent_question" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="109dp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

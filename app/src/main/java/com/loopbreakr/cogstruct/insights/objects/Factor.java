@@ -1,24 +1,26 @@
 package com.loopbreakr.cogstruct.insights.objects;
 
 public class Factor {
-    private int color;
+    private int factorColor;
     private String Factor;
     private int numTimes;
     private String percentage;
+    private String factorContext;
 
-    public Factor(int color, String factor, int numTimes, String percentage) {
-        this.color = color;
+    public Factor(int factorColor, String factor, int numTimes, String percentage, String factorContext) {
+        this.factorColor = factorColor;
         Factor = factor;
         this.numTimes = numTimes;
         this.percentage = percentage;
+        this.factorContext = factorContext;
     }
 
-    public int getColor() {
-        return color;
+    public int getFactorColor() {
+        return factorColor;
     }
 
-    public void setColor(int color) {
-        this.color = color;
+    public void setFactorColor(int factorColor) {
+        this.factorColor = factorColor;
     }
 
     public String getFactor() {
@@ -43,5 +45,13 @@ public class Factor {
 
     public void setPercentage(String percentage) {
         this.percentage = percentage;
+    }
+
+    public String getFactorContext() {
+        return factorContext;
+    }
+
+    public void setFactorContext(String factorContext) {
+        this.factorContext = factorContext;
     }
 }
