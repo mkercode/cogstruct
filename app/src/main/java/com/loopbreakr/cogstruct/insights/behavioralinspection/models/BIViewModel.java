@@ -20,7 +20,7 @@ public class BIViewModel extends ViewModel {
     public void setBiBehavior(String input){ biBehavior = input; }
     public void setBiInspection(String input){ biInspection = input;}
 
-    public List<String> setBiInspectionList(List<DocumentSnapshot> snapshotList, String behavior) {
+    public List<String> getBiInspectionList(List<DocumentSnapshot> snapshotList, String behavior) {
         biInspectionList = new ArrayList<>();
         for (DocumentSnapshot snapshot : snapshotList) {
             if (snapshot.getString("behavior").equals(behavior)) {
@@ -74,9 +74,6 @@ public class BIViewModel extends ViewModel {
         biBehaviorList.clear();
         biBehaviorList.addAll(tempSet);
     }
-
-
-    public List<String> getBiInspectionList(){ return biInspectionList; }
 
 }
 

@@ -62,7 +62,7 @@ public class BIPageTwo extends Fragment {
     }
 
     private void getViewmodelData() {
-        biInspectionList = biViewModel.setBiInspectionList(biViewModel.getBiSnapShotList(), biViewModel.getBiBehavior());
+        biInspectionList = biViewModel.getBiInspectionList(biViewModel.getBiSnapShotList(), biViewModel.getBiBehavior());
     }
 
 
