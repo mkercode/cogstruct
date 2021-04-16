@@ -98,13 +98,8 @@ public class BIPageOne extends Fragment {
 
         behaviorRecyclerAdapter.setOnItemClickListener(position -> {
             biViewModel.setBiBehavior(behaviorList.get(position));
-            navigateNext().navigate(R.id.action_BIPageOne_to_BIPageTwo);
+            (Navigation.findNavController(requireView())).navigate(R.id.action_BIPageOne_to_BIPageTwo);
         });
-    }
-
-    private NavController navigateNext() {
-        NavController controller = Navigation.findNavController(requireView());
-        return controller;
     }
 
 }

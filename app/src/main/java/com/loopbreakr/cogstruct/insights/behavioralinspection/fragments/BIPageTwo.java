@@ -79,18 +79,13 @@ public class BIPageTwo extends Fragment {
 
     private void setRecyclerView() {
         loadingBar.setVisibility(View.GONE);
-        InsightsRecyclerAdapter behaviorRecyclerAdapter = new InsightsRecyclerAdapter(biInspectionList);
-        inspectionRecyclerview.setAdapter(behaviorRecyclerAdapter);
+        InsightsRecyclerAdapter inspectionRecyclerAdapter = new InsightsRecyclerAdapter(biInspectionList);
+        inspectionRecyclerview.setAdapter(inspectionRecyclerAdapter);
 
-        behaviorRecyclerAdapter.setOnItemClickListener(position -> {
-            biViewModel.setBiBehavior(biInspectionList.get(position));
-            navigateNext().navigate(R.id.action_BIPageTwo_to_BIPageThree);
+        inspectionRecyclerAdapter.setOnItemClickListener(position -> {
+            biViewModel.setBiInspection(biInspectionList.get(position));
+            (Navigation.findNavController(requireView())).navigate(R.id.action_BIPageTwo_to_BIPageThree);
         });
-    }
-
-    private NavController navigateNext() {
-        NavController controller = Navigation.findNavController(requireView());
-        return controller;
     }
 
 }
