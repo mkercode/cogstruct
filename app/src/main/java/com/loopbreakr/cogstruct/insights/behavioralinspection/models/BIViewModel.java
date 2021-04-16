@@ -113,9 +113,9 @@ public class BIViewModel extends ViewModel {
         Map<String, Integer> factorMap = new HashMap<>();
         for (DocumentSnapshot snapshot : snapshotList) {
             if (snapshot.getString("behavior").equals(behavior) && snapshot.contains(biInspection)) {
-                String tempString = snapshot.getString(biInspection);
+                String tempString = snapshot.getString(biInspection).trim().toLowerCase();
                 Integer tempInt = factorMap.get(tempString);
-                factorMap.put(tempString.trim().toLowerCase(), (tempInt== null) ? 1 : tempInt + 1);
+                factorMap.put(tempString, (tempInt== null) ? 1 : tempInt + 1);
             }
         }
         return factorMap;
