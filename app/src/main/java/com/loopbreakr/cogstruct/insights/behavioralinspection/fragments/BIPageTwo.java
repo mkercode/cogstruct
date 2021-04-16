@@ -62,43 +62,9 @@ public class BIPageTwo extends Fragment {
     }
 
     private void getViewmodelData() {
-
-        if(biInspectionList == null || biInspectionList.isEmpty()){
-            biInspectionList = getInspectionList();
-        }
-        else{
-            biInspectionList = biViewModel.getBiInspectionList();
-        }
+        biInspectionList = biViewModel.setBiInspectionList(biViewModel.getBiSnapShotList(), biViewModel.getBiBehavior());
     }
 
-    private List<String> getInspectionList() {
-        List<String> tempInspectionList = new ArrayList<>();
-        for (DocumentSnapshot snapshot : biViewModel.getBiSnapShotList()) {
-            if (snapshot.getString("behavior").equals(biViewModel.getBiBehavior())) {
-                //check document snapshots that equal that behavior for relevant inspection variables, add them to the list
-                if (snapshot.contains("triggerEvent") && !tempInspectionList.contains("Triggers")) {
-                    tempInspectionList.add("Triggers");
-                }
-                if (snapshot.contains("vulnerabilities") && !tempInspectionList.contains("Vulnerabilities")) {
-                    tempInspectionList.add("Vulnerabilities");
-                }
-                if (snapshot.contains("thoughts") && !tempInspectionList.contains("Thoughts")) {
-                    tempInspectionList.add("Thoughts");
-                }
-                if (snapshot.contains("emotion") && !tempInspectionList.contains("Emotions")) {
-                    tempInspectionList.add("Emotions");
-                }
-                if (snapshot.contains("people") && !tempInspectionList.contains("People")) {
-                    tempInspectionList.add("People");
-                }
-                if (snapshot.contains("location") && !tempInspectionList.contains("Places")) {
-                    tempInspectionList.add("Places");
-                }
-            }
-        }
-        biViewModel.setBiInspectionList(tempInspectionList);
-        return tempInspectionList;
-    }
 
     private void findViews(View view) {
         backToolbar = view.findViewById(R.id.iback_toolbar);
