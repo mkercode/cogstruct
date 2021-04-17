@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,6 +33,7 @@ public class BIPageOne extends Fragment {
     private RecyclerView behaviorRecyclerView;
     private ProgressBar loadingBar;
     List<String> behaviorList;
+    TextView noDataText;
 
     public BIPageOne() {
         // Required empty public constructor
@@ -52,15 +54,16 @@ public class BIPageOne extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getViewModelData();
         findViews(view);
         setBackToolBar();
+        getViewModelData();
     }
 
     private void findViews(View view) {
         behaviorRecyclerView = view.findViewById(R.id.bi_behavior_recyclerview);
         backToolbar = view.findViewById(R.id.back_toolbar);
         loadingBar = view.findViewById(R.id.loading_bar);
+        noDataText = view.findViewById(R.id.no_data_text);
     }
 
     private void setBackToolBar() {
@@ -82,13 +85,19 @@ public class BIPageOne extends Fragment {
 
     //set the viewmodel data
     private void setViewModel(List<DocumentSnapshot> snapshots){
-        biViewModel.setBiSnapshotList(snapshots);
-        setRecyclerview(biViewModel.getBiBehaviorList());
+        loadingBar.setVisibility(View.GONE);
+        if(snapshots==null || snapshots.isEmpty()){
+            noDataText.setVisibility(View.VISIBLE);
+        }
+        else {
+            noDataText.setVisibility(View.GONE);
+            biViewModel.setBiSnapshotList(snapshots);
+            setRecyclerview(biViewModel.getBiBehaviorList());
+        }
     }
 
     //create recyclerview from viewmodel data
     private void setRecyclerview(List<String> behaviorsList) {
-        loadingBar.setVisibility(View.GONE);
         behaviorList = behaviorsList;
         InsightsRecyclerAdapter behaviorRecyclerAdapter = new InsightsRecyclerAdapter(behaviorList);
 

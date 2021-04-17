@@ -152,7 +152,7 @@ public class BIPageThree extends Fragment {
 
             float numtimes = data.getDataSet().getEntryForIndex(i).getValue();
             float percentage = (numtimes/data.getYValueSum())*100;
-            String percentString = percentage + " %";
+            String percentString = ((int) percentage) + " %";
 
             int color = data.getDataSet().getColor(i);
 

@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -34,6 +35,7 @@ public class BIPageTwo extends Fragment {
     private Toolbar backToolbar;
     private RecyclerView inspectionRecyclerview;
     private ProgressBar loadingBar;
+    private TextView noDataText;
 
     public BIPageTwo() {
         // Required empty public constructor
@@ -70,6 +72,7 @@ public class BIPageTwo extends Fragment {
         backToolbar = view.findViewById(R.id.iback_toolbar);
         inspectionRecyclerview = view.findViewById(R.id.bi_inspection_recyclerview);
         loadingBar = view.findViewById(R.id.loading_bar);
+        noDataText = view.findViewById(R.id.no_data_text);
     }
 
     private void setToolbar() {
@@ -79,13 +82,21 @@ public class BIPageTwo extends Fragment {
 
     private void setRecyclerView() {
         loadingBar.setVisibility(View.GONE);
-        InsightsRecyclerAdapter inspectionRecyclerAdapter = new InsightsRecyclerAdapter(biInspectionList);
-        inspectionRecyclerview.setAdapter(inspectionRecyclerAdapter);
 
-        inspectionRecyclerAdapter.setOnItemClickListener(position -> {
-            biViewModel.setBiInspection(biInspectionList.get(position));
-            (Navigation.findNavController(requireView())).navigate(R.id.action_BIPageTwo_to_BIPageThree);
-        });
+        if(biInspectionList == null || biInspectionList.isEmpty()){
+            noDataText.setVisibility(View.VISIBLE);
+        }
+        else{
+            noDataText.setVisibility(View.INVISIBLE);
+            InsightsRecyclerAdapter inspectionRecyclerAdapter = new InsightsRecyclerAdapter(biInspectionList);
+            inspectionRecyclerview.setAdapter(inspectionRecyclerAdapter);
+
+            inspectionRecyclerAdapter.setOnItemClickListener(position -> {
+                biViewModel.setBiInspection(biInspectionList.get(position));
+                (Navigation.findNavController(requireView())).navigate(R.id.action_BIPageTwo_to_BIPageThree);
+            });
+        }
+
     }
 
 }

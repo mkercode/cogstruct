@@ -177,4 +177,5 @@
     <string name="game_plan_description">Some activities had you fill out ways to deal with your unhelpful behaviors. This section puts them all together for you, so you can figure out your next move!</string>
     <string name="general_delete_description">Delete item</string>
     <string name="general_next_icon_description">Next icon</string>
+    <string name="insights_no_data_message">No data to display! Try filling out more forms for insights.</string>
 </resources>

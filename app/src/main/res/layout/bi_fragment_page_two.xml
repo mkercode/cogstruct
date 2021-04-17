@@ -32,8 +32,22 @@
         android:text="Inspect"
         android:textColor="@color/colorWhite"
         android:textSize="20sp" />
-
 </LinearLayout>
+
+    <TextView
+        android:id="@+id/no_data_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/insights_no_data_message"
+        android:visibility="gone"
+        android:textColor="@color/colorGreenText"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_head" />
 
 <FrameLayout
 android:id="@+id/bi_inspection_content"
