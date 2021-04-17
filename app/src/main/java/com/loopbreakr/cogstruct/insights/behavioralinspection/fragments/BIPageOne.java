@@ -73,7 +73,6 @@ public class BIPageOne extends Fragment {
             FirebaseFirestore.getInstance()
                     .collection("forms")
                     .whereEqualTo("userId", auth.getCurrentUser().getUid())
-                    .whereNotEqualTo("behavior", null)
                     .get().addOnFailureListener(e -> Log.e("ERROR QUERY", "setViewModelData: ",e ))
                     .addOnSuccessListener(queryDocumentSnapshots -> {
                         List<DocumentSnapshot> snapshotList = queryDocumentSnapshots.getDocuments();
