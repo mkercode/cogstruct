@@ -25,7 +25,7 @@ import com.loopbreakr.cogstruct.databinding.BiFragmentPageThreeBinding;
 import com.loopbreakr.cogstruct.insights.adapters.LegendRecyclerAdapter;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.models.BIViewModel;
-import com.loopbreakr.cogstruct.insights.objects.Factor;
+import com.loopbreakr.cogstruct.insights.behavioralinspection.objects.Factor;
 
 import org.jetbrains.annotations.NotNull;
 

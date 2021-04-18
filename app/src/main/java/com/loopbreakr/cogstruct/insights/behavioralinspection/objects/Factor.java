@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct.insights.objects;
+package com.loopbreakr.cogstruct.insights.behavioralinspection.objects;
 
 public class Factor {
     private int factorColor;

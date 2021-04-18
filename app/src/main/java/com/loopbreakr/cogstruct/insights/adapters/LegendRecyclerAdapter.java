@@ -5,10 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.appcompat.content.res.AppCompatResources;
 import androidx.recyclerview.widget.RecyclerView;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.insights.objects.Factor;
+import com.loopbreakr.cogstruct.insights.behavioralinspection.objects.Factor;
 
 import java.util.ArrayList;
 

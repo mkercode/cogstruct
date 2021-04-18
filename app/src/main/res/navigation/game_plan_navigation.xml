@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/game_plan_navigation">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_plan_navigation"
+    app:startDestination="@id/GPPageOne">
 
+    <fragment
+        android:id="@+id/GPPageOne"
+        android:name="com.loopbreakr.cogstruct.insights.gameplan.fragments.GPPageOne"
+        android:label="gp_fragment_page_one"
+        tools:layout="@layout/gp_fragment_page_one" >
+        <action
+            android:id="@+id/action_GPPageOne_to_GPPageTwo"
+            app:destination="@id/GPPageTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/GPPageTwo"
+        android:name="com.loopbreakr.cogstruct.insights.gameplan.fragments.GPPageTwo"
+        android:label="gp_fragment_page_two"
+        tools:layout="@layout/gp_fragment_page_two" >
+        <action
+            android:id="@+id/action_GPPageTwo_to_GPSimpleList"
+            app:destination="@id/GPSimpleList" />
+        <action
+            android:id="@+id/action_GPPageTwo_to_GPProConsSelect"
+            app:destination="@id/GPProConsSelect" />
+        <action
+            android:id="@+id/action_GPPageTwo_to_GPTypeList2"
+            app:destination="@id/GPTypeList2" />
+    </fragment>
+    <fragment
+        android:id="@+id/GPProConsSelect"
+        android:name="com.loopbreakr.cogstruct.insights.gameplan.fragments.GPProConsSelect"
+        android:label="gp_fragment_pc_select"
+        tools:layout="@layout/gp_fragment_pc_select" >
+        <action
+            android:id="@+id/action_GPProConsSelect_to_GPProsConsView"
+            app:destination="@id/GPProsConsView" />
+    </fragment>
+    <fragment
+        android:id="@+id/GPSimpleList"
+        android:name="com.loopbreakr.cogstruct.insights.gameplan.fragments.GPSimpleList"
+        android:label="fragment_g_p_simple_list"
+        tools:layout="@layout/gp_fragment_simple_list" />
+    <fragment
+        android:id="@+id/GPProsConsView"
+        android:name="com.loopbreakr.cogstruct.insights.gameplan.fragments.GPProsConsView"
+        android:label="gp_fragment_pc_view"
+        tools:layout="@layout/gp_fragment_pc_view" />
+    <fragment
+        android:id="@+id/GPTypeList2"
+        android:name="com.loopbreakr.cogstruct.insights.gameplan.fragments.GPTypeList"
+        android:label="gp_fragment_type_list"
+        tools:layout="@layout/gp_fragment_type_list" />
 </navigation>
