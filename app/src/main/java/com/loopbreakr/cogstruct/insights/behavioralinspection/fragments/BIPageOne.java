@@ -78,8 +78,7 @@ public class BIPageOne extends Fragment {
                     .whereEqualTo("userId", auth.getCurrentUser().getUid())
                     .get().addOnFailureListener(e -> Log.e("ERROR QUERY", "setViewModelData: ",e ))
                     .addOnSuccessListener(queryDocumentSnapshots -> {
-                        List<DocumentSnapshot> snapshotList = queryDocumentSnapshots.getDocuments();
-                        setViewModel(snapshotList);
+                        setViewModel(queryDocumentSnapshots.getDocuments());
                     });
     }
 
