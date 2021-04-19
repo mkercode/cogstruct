@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".insights.gameplan.fragments.GPProConsSelect">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/app_bar_head"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_header"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/back_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/pros_and_cons_title"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/gp_change_pros"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="40dp"
+        android:background="@drawable/rounded_button_background"
+        android:padding="15dp"
+        android:text="@string/gp_change_pros"
+        app:layout_constraintBottom_toTopOf="@+id/gp_pc_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_head" />
+
+    <Button
+        android:id="@+id/gp_change_cons"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/rounded_button_background"
+        android:padding="15dp"
+        android:text="@string/gp_change_cons"
+        app:layout_constraintBottom_toTopOf="@+id/gp_pc_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_head" />
+
+    <Button
+        android:id="@+id/gp_dont_change_pros"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_button_background"
+        android:padding="15dp"
+        android:text="@string/gp_dont_change_pros"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/gp_change_pros"
+        app:layout_constraintTop_toBottomOf="@+id/gp_pc_icon" />
+
+    <Button
+        android:id="@+id/gp_dont_change_cons"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_button_background"
+        android:padding="15dp"
+        android:text="@string/gp_dont_change_cons"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/gp_change_cons"
+        app:layout_constraintTop_toBottomOf="@+id/gp_pc_icon" />
+
+    <ImageView
+        android:id="@+id/gp_pc_icon"
+        android:layout_width="200dp"
+        android:layout_height="175dp"
+        android:contentDescription="@string/pros_and_cons_description"
+        android:src="@drawable/pros_and_cons_full"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_head" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

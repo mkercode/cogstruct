@@ -178,4 +178,8 @@
     <string name="general_delete_description">Delete item</string>
     <string name="general_next_icon_description">Next icon</string>
     <string name="insights_no_data_message">No data to display! Try filling out more forms for insights.</string>
+    <string name="gp_dont_change_cons">Don\'t Change Cons</string>
+    <string name="gp_dont_change_pros">Don\'t Change Pros</string>
+    <string name="gp_change_cons">Change Cons</string>
+    <string name="gp_change_pros">Change Pros</string>
 </resources>
