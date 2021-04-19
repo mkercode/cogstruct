@@ -18,9 +18,9 @@
         <activity android:name=".identifybarriers.activities.IBActivity" />
         <activity android:name=".proscons.activities.PCActivity" />
         <activity android:name=".logs.activities.LogsActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".home.activities.LoginActivity" />
         <activity android:name=".thoughtjournal.activities.TJActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".home.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

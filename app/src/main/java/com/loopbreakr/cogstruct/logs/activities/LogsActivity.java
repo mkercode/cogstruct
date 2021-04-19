@@ -2,7 +2,6 @@ package com.loopbreakr.cogstruct.logs.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import android.content.Intent;
@@ -10,7 +9,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.loopbreakr.cogstruct.LoginActivity;
+import com.loopbreakr.cogstruct.home.activities.LoginActivity;
 import com.loopbreakr.cogstruct.R;
 
 

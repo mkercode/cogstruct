@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/fragmentCbtActivities"
-        android:name="com.loopbreakr.cogstruct.UiFragment"
+        android:name="com.loopbreakr.cogstruct.home.fragments.UiFragment"
         android:label="fragment_cbt_activities"
         tools:layout="@layout/home_fragment_ui" >
         <action

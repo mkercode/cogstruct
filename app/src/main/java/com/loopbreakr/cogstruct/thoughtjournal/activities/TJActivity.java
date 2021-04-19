@@ -12,8 +12,8 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.loopbreakr.cogstruct.LoginActivity;
-import com.loopbreakr.cogstruct.MainActivity;
+import com.loopbreakr.cogstruct.home.activities.LoginActivity;
+import com.loopbreakr.cogstruct.home.activities.MainActivity;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 

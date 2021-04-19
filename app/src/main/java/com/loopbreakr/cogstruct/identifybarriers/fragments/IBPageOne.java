@@ -16,7 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.loopbreakr.cogstruct.MainActivity;
+import com.loopbreakr.cogstruct.home.activities.MainActivity;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.IbFragmentPageOneBinding;
 import com.loopbreakr.cogstruct.identifybarriers.models.IBViewModel;
