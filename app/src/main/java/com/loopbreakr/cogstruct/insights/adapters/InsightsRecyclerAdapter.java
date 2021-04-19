@@ -1,4 +1,4 @@
-package com.loopbreakr.cogstruct.insights.behavioralinspection.adapters;
+package com.loopbreakr.cogstruct.insights.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,7 +7,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.SimpleRecyclerAdapter;
 
 import java.util.List;
 

@@ -7,25 +7,20 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
-import com.loopbreakr.cogstruct.insights.behavioralinspection.adapters.InsightsRecyclerAdapter;
+import com.loopbreakr.cogstruct.insights.adapters.InsightsRecyclerAdapter;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.models.BIViewModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -87,7 +82,7 @@ public class BIPageTwo extends Fragment {
             noDataText.setVisibility(View.VISIBLE);
         }
         else{
-            noDataText.setVisibility(View.INVISIBLE);
+            noDataText.setVisibility(View.GONE);
             InsightsRecyclerAdapter inspectionRecyclerAdapter = new InsightsRecyclerAdapter(biInspectionList);
             inspectionRecyclerview.setAdapter(inspectionRecyclerAdapter);
 
@@ -98,5 +93,4 @@ public class BIPageTwo extends Fragment {
         }
 
     }
-
 }

@@ -23,6 +23,16 @@ public class BIViewModel extends ViewModel {
         biSnapShotList = input;
         setBiBehaviorList(biSnapShotList);}
 
+    public void setBiBehaviorList(List<DocumentSnapshot> snapshotList){
+        biBehaviorList = new ArrayList<>();
+        for(DocumentSnapshot snapshot: snapshotList){
+            String currBehavior = snapshot.getString("behavior");
+            if(currBehavior != null && !currBehavior.isEmpty() && !biBehaviorList.contains(currBehavior)){
+                biBehaviorList.add(currBehavior);
+            }
+        }
+    }
+
     public void setBiBehavior(String input){ biBehavior = input; }
 
     public List<String> getBiInspectionList(List<DocumentSnapshot> snapshotList, String behavior) {
@@ -51,19 +61,6 @@ public class BIViewModel extends ViewModel {
             }
         }
         return biInspectionList;
-    }
-
-
-
-    public void setBiBehaviorList(List<DocumentSnapshot> snapshotList){
-        biBehaviorList = new ArrayList<>();
-        for(DocumentSnapshot snapshot: snapshotList){
-            String currBehavior = snapshot.getString("behavior");
-            if(currBehavior != null && !currBehavior.isEmpty()){
-                biBehaviorList.add(currBehavior);
-            }
-        }
-        filterList(biBehaviorList);
     }
 
     public void setBiInspection(String input){
@@ -119,18 +116,10 @@ public class BIViewModel extends ViewModel {
         return factorMap;
     }
 
-    public String getBiBehavior(){return biBehavior;}
-    public String getBiInspection(){return biInspection;}
     public List<DocumentSnapshot> getBiSnapShotList() { return biSnapShotList; }
     public List<String> getBiBehaviorList(){ return biBehaviorList; }
+    public String getBiBehavior(){return biBehavior;}
+    public String getBiInspection(){return biInspection;}
     public String getBiInspectionDisplay(){return biInspectionDisplay;}
-
-    private void filterList(List<String> tempBehaviorList) {
-        List<String> tempList = new ArrayList<>(new LinkedHashSet<>(tempBehaviorList));
-        Set<String> tempSet = new LinkedHashSet<>(tempList);
-        biBehaviorList.clear();
-        biBehaviorList.addAll(tempSet);
-    }
-
 }
 

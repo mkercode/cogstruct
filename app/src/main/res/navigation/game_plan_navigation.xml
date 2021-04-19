@@ -26,8 +26,8 @@
             android:id="@+id/action_GPPageTwo_to_GPProConsSelect"
             app:destination="@id/GPProConsSelect" />
         <action
-            android:id="@+id/action_GPPageTwo_to_GPTypeList2"
-            app:destination="@id/GPTypeList2" />
+            android:id="@+id/action_GPPageTwo_to_GPTypeList"
+            app:destination="@id/GPTypeList" />
     </fragment>
     <fragment
         android:id="@+id/GPProConsSelect"
@@ -35,8 +35,8 @@
         android:label="gp_fragment_pc_select"
         tools:layout="@layout/gp_fragment_pc_select" >
         <action
-            android:id="@+id/action_GPProConsSelect_to_GPProsConsView"
-            app:destination="@id/GPProsConsView" />
+            android:id="@+id/action_GPProConsSelect_to_GPSimpleList"
+            app:destination="@id/GPSimpleList" />
     </fragment>
     <fragment
         android:id="@+id/GPSimpleList"
@@ -44,12 +44,7 @@
         android:label="fragment_g_p_simple_list"
         tools:layout="@layout/gp_fragment_simple_list" />
     <fragment
-        android:id="@+id/GPProsConsView"
-        android:name="com.loopbreakr.cogstruct.insights.gameplan.fragments.GPProsConsView"
-        android:label="gp_fragment_pc_view"
-        tools:layout="@layout/gp_fragment_pc_view" />
-    <fragment
-        android:id="@+id/GPTypeList2"
+        android:id="@+id/GPTypeList"
         android:name="com.loopbreakr.cogstruct.insights.gameplan.fragments.GPTypeList"
         android:label="gp_fragment_type_list"
         tools:layout="@layout/gp_fragment_type_list" />
