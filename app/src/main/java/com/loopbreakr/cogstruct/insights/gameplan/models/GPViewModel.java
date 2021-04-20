@@ -77,6 +77,20 @@ public class GPViewModel extends ViewModel {
             case "Solutions":
                 gpChange = "solutions";
                 break;
+
+                //statements for pros/cons
+            case "Change Pros":
+                gpChange = "changePros";
+                break;
+            case "Change Cons":
+                gpChange = "changeCons";
+                break;
+            case "Don't Change Pros":
+                gpChange = "dontChangePros";
+                break;
+            case "Don't Change Cons":
+                gpChange = "dontChangeCons";
+                break;
         }
         setGpChangeDisplay(input);
     }
