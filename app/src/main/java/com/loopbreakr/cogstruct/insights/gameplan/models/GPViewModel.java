@@ -43,7 +43,7 @@ public class GPViewModel extends ViewModel {
                 if (snapshot.contains("vulnerabilities") && !gpChangeList.contains("Vulnerabilities")) {
                     gpChangeList.add("Vulnerabilities");
                 }
-                if (snapshot.contains("barriers") && !gpChangeList.contains("Barriers")) {
+                if (snapshot.contains("barrier") && !gpChangeList.contains("Barriers")) {
                     gpChangeList.add("Barriers");
                 }
                 if (snapshot.contains("distractions") && !gpChangeList.contains("Helpful Distractions")) {
@@ -66,7 +66,7 @@ public class GPViewModel extends ViewModel {
                 gpChange = "vulnerabilities";
                 break;
             case "Barriers":
-                gpChange = "barriers";
+                gpChange = "barrier";
                 break;
             case "Helpful Distractions":
                 gpChange = "distractions";
@@ -118,20 +118,12 @@ public class GPViewModel extends ViewModel {
 
 
 
-    public Map<String, String> getGpBarrierList(List<DocumentSnapshot> snapshotList, String behavior) {
+    public Map<String, String> getGpBarrierMap(List<DocumentSnapshot> snapshotList, String behavior) {
         Map<String, String> barrierMap = new HashMap<>();
         for (DocumentSnapshot snapshot : snapshotList) {
             //check if snapshot matches user option and contains the field
-            if (snapshot.getString("behavior").equals(behavior) && snapshot.contains("barriers")) {
-                String tempBarrier = snapshot.getString("barriers");
-                String tempType = snapshot.getString("barrierType");
-                //split the barrier string into an arraylist
-                    String[] tempBarrierList = tempBarrier.split("\\s*,\\s*");
-
-                    for(String string: tempBarrierList){
-                        //add k/v to hashmap
-                        barrierMap.put(string.trim().toLowerCase(), tempType);
-                    }
+            if (snapshot.getString("behavior").equals(behavior) && snapshot.contains("barrier")) {
+                barrierMap.put(snapshot.getString("barrier"), snapshot.getString("barrierType"));
             }
         }
         return barrierMap;

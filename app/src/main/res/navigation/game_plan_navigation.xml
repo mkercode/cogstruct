@@ -45,7 +45,7 @@
         tools:layout="@layout/gp_fragment_simple_list" />
     <fragment
         android:id="@+id/GPTypeList"
-        android:name="com.loopbreakr.cogstruct.insights.gameplan.fragments.GPTypeList"
+        android:name="com.loopbreakr.cogstruct.insights.gameplan.fragments.GPBarrierList"
         android:label="gp_fragment_type_list"
-        tools:layout="@layout/gp_fragment_type_list" />
+        tools:layout="@layout/gp_fragment_barrier_list" />
 </navigation>

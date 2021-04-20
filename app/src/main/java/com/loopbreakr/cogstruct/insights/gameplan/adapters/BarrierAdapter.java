@@ -14,15 +14,13 @@ public class BarrierAdapter extends RecyclerView.Adapter<BarrierAdapter.BarrierV
 
     private ArrayList<Barrier> barrierList;
 
-    public BarrierAdapter(ArrayList<Barrier> barrierList){
-        this.barrierList = barrierList;
-    }
+    public BarrierAdapter(ArrayList<Barrier> barrierList){ this.barrierList = barrierList; }
 
     @NonNull
     @Override
     public BarrierViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_barrier, parent, false);
-        return new BarrierAdapter.BarrierViewHolder(v);
+        return new BarrierViewHolder(v);
     }
 
     public static class BarrierViewHolder extends RecyclerView.ViewHolder {
@@ -40,8 +38,8 @@ public class BarrierAdapter extends RecyclerView.Adapter<BarrierAdapter.BarrierV
 
     @Override
     public void onBindViewHolder(@NonNull BarrierAdapter.BarrierViewHolder holder, int position) {
-        String currentBarrier = barrierList.get(position).getBarrier();
-        String currentType = barrierList.get(position).getBarrierType();
+        String currentBarrier = "Barrier: " + barrierList.get(position).getBarrier();
+        String currentType = "Type: " + barrierList.get(position).getBarrierType();
 
         holder.barrier.setText(currentBarrier);
         holder.barrierType.setText(currentType);
