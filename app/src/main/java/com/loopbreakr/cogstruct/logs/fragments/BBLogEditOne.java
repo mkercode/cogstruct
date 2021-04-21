@@ -22,10 +22,9 @@ import android.widget.EditText;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.SimpleRecyclerAdapter;
+import com.loopbreakr.cogstruct.adapters.SimpleRecyclerAdapter;
 import com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel;
 import com.loopbreakr.cogstruct.databinding.LogsFragmentBbEditOneBinding;
-import com.loopbreakr.cogstruct.howdigethere.models.HIGHViewModel;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
 
 import org.jetbrains.annotations.NotNull;

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itecc_navigation"
+    app:startDestination="@id/ITECPageOne">
+
+    <fragment
+        android:id="@+id/ITECPageOne"
+        android:name="com.loopbreakr.cogstruct.insights.identifythinkingerrors.fragments.ITEPageOne"
+        android:label="itec_fragment_page_one"
+        tools:layout="@layout/itec_fragment_page_one" >
+        <action
+            android:id="@+id/action_ITECPageOne_to_ITECPageTwo"
+            app:destination="@id/ITECPageTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/ITECPageTwo"
+        android:name="com.loopbreakr.cogstruct.insights.identifythinkingerrors.fragments.ITEPageTwo"
+        android:label="itec_fragment_page_two"
+        tools:layout="@layout/itec_fragment_page_two" >
+        <action
+            android:id="@+id/action_ITECPageTwo_to_ITECPageThree"
+            app:destination="@id/ITECPageThree" />
+    </fragment>
+    <fragment
+        android:id="@+id/ITECPageThree"
+        android:name="com.loopbreakr.cogstruct.insights.identifythinkingerrors.fragments.ITEPageThree"
+        android:label="itec_fragment_page_three"
+        tools:layout="@layout/itec_fragment_page_three" />
+</navigation>

@@ -19,7 +19,7 @@ import android.widget.EditText;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.SimpleRecyclerAdapter;
+import com.loopbreakr.cogstruct.adapters.SimpleRecyclerAdapter;
 import com.loopbreakr.cogstruct.proscons.models.PCViewModel;
 
 import java.util.List;
