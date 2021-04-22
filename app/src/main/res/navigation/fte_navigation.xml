@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fte_navigation"
+    app:startDestination="@id/FTESelectView">
+
+    <fragment
+        android:id="@+id/FTESelectView"
+        android:name="com.loopbreakr.cogstruct.insights.findthinkingerrors.fragments.FTESelectView"
+        android:label="fte_select_view"
+        tools:layout="@layout/fte_fragment_select_view">
+        <action
+            android:id="@+id/action_FTESelectView_to_FTEView"
+            app:destination="@id/FTEView" />
+        <action
+            android:id="@+id/action_FTESelectView_to_FTESelectCreate"
+            app:destination="@id/FTESelectCreate" />
+    </fragment>
+    <fragment
+        android:id="@+id/FTECreate"
+        android:name="com.loopbreakr.cogstruct.insights.findthinkingerrors.fragments.FTECreate"
+        android:label="fte_create"
+        tools:layout="@layout/fte_fragment_create">
+        <action
+            android:id="@+id/action_FTECreate_to_FTEReview"
+            app:destination="@id/FTEReview" />
+    </fragment>
+    <fragment
+        android:id="@+id/FTEReview"
+        android:name="com.loopbreakr.cogstruct.insights.findthinkingerrors.fragments.FTEReview"
+        android:label="fte_review"
+        tools:layout="@layout/fte_fragment_review" />
+    <fragment
+        android:id="@+id/FTESelectCreate"
+        android:name="com.loopbreakr.cogstruct.insights.findthinkingerrors.fragments.FTESelectCreate"
+        android:label="fte_fragment_select_create"
+        tools:layout="@layout/fte_fragment_select_create">
+        <action
+            android:id="@+id/action_FTESelectCreate_to_FTECreate"
+            app:destination="@id/FTECreate" />
+    </fragment>
+    <fragment
+        android:id="@+id/FTEView"
+        android:name="com.loopbreakr.cogstruct.insights.findthinkingerrors.fragments.FTEView"
+        android:label="fte_fragment_view"
+        tools:layout="@layout/fte_fragment_view" />
+</navigation>

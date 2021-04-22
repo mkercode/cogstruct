@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".insights.identifythinkingerrors.fragments.ITEPageOne">
+    tools:context=".insights.findthinkingerrors.viewpager.fragments.FTE_BWT">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="black and white thinking" />
 
 </FrameLayout>

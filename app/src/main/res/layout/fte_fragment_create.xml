@@ -1,19 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="com.loopbreakr.cogstruct.insights.findthinkingerrors.models.FTEViewModel" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".insights.identifythinkingerrors.fragments.ITEPageTwo">
+    tools:context=".insights.findthinkingerrors.fragments.FTECreate">
+
+    <LinearLayout
+        android:id="@+id/app_bar_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_header"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/fte_c_thought"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@={viewModel.fteThought}"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </LinearLayout>
 
     <ImageView
-        android:id="@+id/itec_vp_back"
+        android:id="@+id/fte_vp_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_nav_back_pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/app_bar_head"
         android:contentDescription="@string/general_next_icon_description" />
 
     <androidx.viewpager2.widget.ViewPager2
@@ -23,13 +55,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/itec_review"
-        app:layout_constraintEnd_toStartOf="@+id/itec_vp_next"
-        app:layout_constraintStart_toEndOf="@+id/itec_vp_back"
+        app:layout_constraintBottom_toTopOf="@+id/fte_review"
+        app:layout_constraintEnd_toStartOf="@+id/fte_vp_next"
+        app:layout_constraintStart_toEndOf="@+id/fte_vp_back"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/itec_vp_next"
+        android:id="@+id/fte_vp_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_nav_next_pink"
@@ -50,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/viewPager2" />
 
     <Button
-        android:id="@+id/itec_review"
+        android:id="@+id/fte_review"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -63,7 +95,7 @@
         android:elevation="2dp"/>
 
     <Button
-        android:id="@+id/itec_back"
+        android:id="@+id/fte_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -76,3 +108,4 @@
         android:elevation="2dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -184,4 +184,6 @@
     <string name="gp_change_pros">Change Pros</string>
     <string name="barriers_title">Barriers</string>
     <string name="general_back_icon_description">Back icon</string>
+    <string name="general_add_entry">Add Entry</string>
+    <string name="fte_select_thought">Select Thought</string>
 </resources>

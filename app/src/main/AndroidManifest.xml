@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CogStruct">
-        <activity android:name=".insights.identifythinkingerrors.activities.ITEActivity" />
+        <activity android:name=".insights.findthinkingerrors.activities.FTEActivity" />
         <activity android:name=".insights.gameplan.activities.GPActivity" />
         <activity android:name=".insights.behavioralinspection.activities.BIActivity" />
         <activity android:name=".badbehaviors.activities.BBActivity" />
