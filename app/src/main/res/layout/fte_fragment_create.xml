@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="viewModel"
             type="com.loopbreakr.cogstruct.insights.findthinkingerrors.models.FTEViewModel" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".insights.findthinkingerrors.fragments.FTECreate">
@@ -48,8 +48,8 @@
         app:layout_constraintTop_toTopOf="@id/app_bar_head"
         android:contentDescription="@string/general_next_icon_description" />
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager2"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/fte_viewpager"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -58,7 +58,7 @@
         app:layout_constraintBottom_toTopOf="@+id/fte_review"
         app:layout_constraintEnd_toStartOf="@+id/fte_vp_next"
         app:layout_constraintStart_toEndOf="@+id/fte_vp_back"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_head" />
 
     <ImageView
         android:id="@+id/fte_vp_next"
@@ -79,7 +79,7 @@
         android:paddingTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewPager2" />
+        app:layout_constraintTop_toBottomOf="@+id/fte_viewpager" />
 
     <Button
         android:id="@+id/fte_review"
