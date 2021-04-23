@@ -10,12 +10,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".insights.findthinkingerrors.viewpager.fragments.FTE_FF">
+    tools:context=".insights.findthinkingerrors.viewpager.fragments.FTE_FOTP">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fallacy of Fairness"
+        android:text="Focusing on the past"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CheckBox"
-        android:checked="@={viewModel.ffIsChecked}"
+        android:checked="@={viewModel.fotpIsChecked}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
