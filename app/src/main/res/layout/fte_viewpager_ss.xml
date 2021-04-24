@@ -13,23 +13,62 @@
     tools:context=".insights.findthinkingerrors.viewpager.fragments.FTE_SS">
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/vp_ss_title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Should statements"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/should_statements_title"
+        android:textAlignment="center"
+        android:textColor="@color/colorGreenText"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/vp_ss_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:layout_marginBottom="32dp"
         android:checked="@={viewModel.ssIsChecked}"
+        android:text="@string/general_select_prompt"
+        android:textColor="@color/colorGreenText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/vp_ss_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="350dp"
+        android:contentDescription="@string/should_statements_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vp_ss_title"
+        app:srcCompat="@drawable/should_statements" />
+
+    <TextView
+        android:id="@+id/vp_ss_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/vp_ss_description"
+        android:textAlignment="center"
+        android:textColor="@color/colorGreenText"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vp_ss_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

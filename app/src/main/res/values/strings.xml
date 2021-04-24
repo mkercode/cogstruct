@@ -186,4 +186,21 @@
     <string name="general_back_icon_description">Back icon</string>
     <string name="general_add_entry">Add Entry</string>
     <string name="fte_select_thought">Select Thought</string>
+    <string name="mental_filter_title">Mental Filter</string>
+    <string name="general_select_prompt">Select</string>
+    <string name="vp_mf_description">A mental filter occurs when you only focus on evidence that supports your unhelpful thought. You may only see one part of the situation and filter the part out</string>
+    <string name="black_white_title">Black and White Thinking</string>
+    <string name="vp_bwt_description">Black and white thinking occurs when you start thinking in extremes. This error can cause someone to see something as all bad or all good, with no in-between</string>
+    <string name="fallacy_fairness_title">Fallacy of Fairness</string>
+    <string name="vp_ff_description">The fallacy of fairness is rooted in the idea that life is always fair. This thinking error can cause us to focus on how the events occurring or the ways in which we are treated are unfair, which can create resentment or anger</string>
+    <string name="focusing_past_title">Focusing on the Past</string>
+    <string name="vp_fotp_description">Focusing on the past can cause us to experience unhelpful thoughts or emotions due to something that happened to us. This can even cause us to feel as if we are in distress or danger</string>
+    <string name="should_statements_title">Should Statements</string>
+    <string name="vp_ss_description">"Critical words like \"should\" or \"must\" put a lot of pressure and demands on us or the people we are applying to. With this thinking error, once can fail to see that sometimes things get in the way of what we think \"should\" be done"</string>
+    <string name="disqualifying_positive_title">Disqualifying the Positive</string>
+    <string name="vp_dp_description">When we disqualify the positive, we minimize positive things about ourselves, our achievements, the situation, or others. We may say that the good things \"don\'t count\", and make up excuses for them not being significant</string>
+    <string name="generalization_title">Generalization</string>
+    <string name="vp_g_description">When we generalize, we make broad assumptions about something due to some experiences we had. This can take the form of assuming a bad outcome, or seeing patterns which do not exist.</string>
+    <string name="personalization_title">Personalization</string>
+    <string name="vp_p_description">When we engage in personalization, we can blame ourselves for things that we are logically not responsible for or are not in out control</string>
 </resources>

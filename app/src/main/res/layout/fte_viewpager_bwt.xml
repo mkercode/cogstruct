@@ -12,24 +12,63 @@
     android:layout_height="match_parent"
     tools:context=".insights.findthinkingerrors.viewpager.fragments.FTE_BWT">
 
-
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
+        android:id="@+id/vp_bwt_title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="black and white thinking"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox"
-        android:checked="@={viewModel.bwtIsChecked}"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/black_white_title"
+        android:textAlignment="center"
+        android:textColor="@color/colorGreenText"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <CheckBox
+        android:id="@+id/vp_bwt_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:checked="@={viewModel.bwtIsChecked}"
+        android:text="@string/general_select_prompt"
+        android:textColor="@color/colorGreenText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/vp_bwt_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="350dp"
+        android:contentDescription="@string/black_white_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vp_bwt_title"
+        app:srcCompat="@drawable/black_and_white_icon" />
+
+    <TextView
+        android:id="@+id/vp_bwt_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/vp_bwt_description"
+        android:textAlignment="center"
+        android:textColor="@color/colorGreenText"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vp_bwt_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

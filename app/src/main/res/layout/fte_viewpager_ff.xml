@@ -13,23 +13,62 @@
     tools:context=".insights.findthinkingerrors.viewpager.fragments.FTE_FF">
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/vp_ff_title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Fallacy of Fairness"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/fallacy_fairness_title"
+        android:textAlignment="center"
+        android:textColor="@color/colorGreenText"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/vp_ff_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:layout_marginBottom="32dp"
         android:checked="@={viewModel.ffIsChecked}"
+        android:text="@string/general_select_prompt"
+        android:textColor="@color/colorGreenText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/vp_ff_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="350dp"
+        android:contentDescription="@string/fallacy_fairness_title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/vp_ff_title"
+        app:srcCompat="@drawable/fallacy_of_fairness" />
+
+    <TextView
+        android:id="@+id/vp_ff_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/vp_ff_description"
+        android:textAlignment="center"
+        android:textColor="@color/colorGreenText"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vp_ff_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
