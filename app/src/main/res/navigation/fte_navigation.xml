@@ -30,7 +30,11 @@
         android:id="@+id/FTEReview"
         android:name="com.loopbreakr.cogstruct.insights.findthinkingerrors.fragments.FTEReview"
         android:label="fte_review"
-        tools:layout="@layout/fte_fragment_review" />
+        tools:layout="@layout/fte_fragment_review" >
+        <action
+            android:id="@+id/action_FTEReview_to_FTEView"
+            app:destination="@id/FTEView" />
+    </fragment>
     <fragment
         android:id="@+id/FTESelectCreate"
         android:name="com.loopbreakr.cogstruct.insights.findthinkingerrors.fragments.FTESelectCreate"
@@ -44,5 +48,9 @@
         android:id="@+id/FTEView"
         android:name="com.loopbreakr.cogstruct.insights.findthinkingerrors.fragments.FTEView"
         android:label="fte_fragment_view"
-        tools:layout="@layout/fte_fragment_view" />
+        tools:layout="@layout/fte_fragment_view" >
+        <action
+            android:id="@+id/action_FTEView_to_FTECreate"
+            app:destination="@id/FTECreate" />
+    </fragment>
 </navigation>

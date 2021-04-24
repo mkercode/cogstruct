@@ -116,6 +116,12 @@ public class FTECreate extends Fragment {
         reviewButton.setOnClickListener( v -> controller.navigate(R.id.action_FTECreate_to_FTEReview));
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        setViewPager();
+    }
+
     private int getItem(int i) {
         return viewPager.getCurrentItem() + i;
     }

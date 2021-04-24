@@ -32,7 +32,7 @@
         android:id="@+id/vp_bwt_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:checked="@={viewModel.bwtIsChecked}"
         android:text="@string/general_select_prompt"
         android:textColor="@color/colorGreenText"

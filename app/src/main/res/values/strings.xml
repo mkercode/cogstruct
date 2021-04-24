@@ -58,7 +58,7 @@
     <string name="tj_movie_image_description">Movie Image</string>
     <string name="tj_emotion_description">What is the main emotion you experienced at the time?</string>
     <string name="review_button_text">Review</string>
-    <string name="tj_review_title">Review</string>
+    <string name="general_review_title">Review</string>
     <string name="tj_review_description">Review Your Answers</string>
     <string name="field_optional">Field Optional</string>
     <string name="field_required">Field Required!</string>
@@ -200,7 +200,9 @@
     <string name="disqualifying_positive_title">Disqualifying the Positive</string>
     <string name="vp_dp_description">When we disqualify the positive, we minimize positive things about ourselves, our achievements, the situation, or others. We may say that the good things \"don\'t count\", and make up excuses for them not being significant</string>
     <string name="generalization_title">Generalization</string>
-    <string name="vp_g_description">When we generalize, we make broad assumptions about something due to some experiences we had. This can take the form of assuming a bad outcome, or seeing patterns which do not exist.</string>
+    <string name="vp_g_description">When we generalize, we make broad assumptions about something due to some experiences we had. This can take the form of assuming a bad outcome, or seeing patterns which do not exist</string>
     <string name="personalization_title">Personalization</string>
     <string name="vp_p_description">When we engage in personalization, we can blame ourselves for things that we are logically not responsible for or are not in out control</string>
+    <string name="general_thought_indicator">Thought:</string>
+    <string name="fte_thinking_error_indicator">Thinking errors:</string>
 </resources>
