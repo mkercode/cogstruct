@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.dynamic.SupportFragmentWrapper;
 import com.loopbreakr.cogstruct.R;
@@ -83,8 +84,15 @@ public class FTEReview extends Fragment {
                 controller.navigate(R.id.FTECreate);
         });
         submitButton.setOnClickListener(v ->{
-            ((FTEActivity)requireActivity()).sendToFirestore(thought, teList);
-            requireActivity().finish();
+            //logic to only submit data if the user has chosen atleast one thinking error
+            if(teList.isEmpty() || teList.equals(null)){
+                Toast.makeText(requireActivity().getApplicationContext(), "Please choose a thinking error!", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                ((FTEActivity)requireActivity()).sendToFirestore(thought, teList);
+                Toast.makeText(requireActivity().getApplicationContext(), "Saved in entries", Toast.LENGTH_SHORT).show();
+                requireActivity().finish();
+            }
         });
 
     }

@@ -74,8 +74,8 @@ public class FTEVPViewModel extends ViewModel {
     }
 
     public void setDisplayList(String stringData){
+        displayList = "";
         if(!stringData.isEmpty() && !stringData.equals(null)){
-            displayList = "";
             String[] strings = stringData.split("\\s*,\\s*");
             for(String string: strings){
                 displayList = displayList + "-" + string + "\n" + "\n";
