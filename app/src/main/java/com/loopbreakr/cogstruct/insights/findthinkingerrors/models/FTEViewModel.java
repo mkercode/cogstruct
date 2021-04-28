@@ -24,7 +24,10 @@ public class FTEViewModel extends ViewModel {
         fteThoughtViewList = new ArrayList<>();
         for(DocumentSnapshot snapshot: fteViewSnapShotList){
             if(snapshot.contains("thought")){
-                fteThoughtViewList.add(snapshot.getString("thought"));
+                String currThought = snapshot.getString("thought");
+                if(!fteThoughtViewList.contains(currThought)){
+                    fteThoughtViewList.add(currThought);
+                }
             }
         }
         return fteThoughtViewList;
