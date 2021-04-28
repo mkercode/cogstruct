@@ -20,19 +20,11 @@ public class FTEViewModel extends ViewModel {
     public void setFteCreateSnapshotList(List<DocumentSnapshot> input) { fteCreateSnapShotList = input; }
     public void setFteThought(String input){ fteThought = input; }
 
-    public List<String> getFteThoughtViewList(){
+    public List<String> getFteViewThoughtList(){
         fteThoughtViewList = new ArrayList<>();
         for(DocumentSnapshot snapshot: fteViewSnapShotList){
-            if(snapshot.contains("thoughts")){
-                String tempString = snapshot.getString("thoughts");
-                String[] tempList = tempString.split("\\s*,\\s*");
-
-                for(String string: tempList){
-                    String currThought = string.trim();
-                    if(!fteThoughtViewList.contains(currThought)){
-                        fteThoughtViewList.add(currThought);
-                    }
-                }
+            if(snapshot.contains("thought")){
+                fteThoughtViewList.add(snapshot.getString("thought"));
             }
         }
         return fteThoughtViewList;

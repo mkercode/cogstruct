@@ -59,7 +59,7 @@ public class FTESelectView extends Fragment {
         findViews(view);
         setBackToolBar();
         setButons();
-        //getViewModelData();
+        getViewModelData();
     }
 
     private void findViews(View view) {
@@ -80,9 +80,8 @@ public class FTESelectView extends Fragment {
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseFirestore.getInstance()
-                .collection("forms")
+                .collection("thinkingErrors")
                 .whereEqualTo("userId", auth.getCurrentUser().getUid())
-                .whereNotEqualTo("thoughts", null)
                 .get().addOnFailureListener(e -> Log.e("ERROR QUERY", "setViewModelData: ",e ))
                 .addOnSuccessListener(queryDocumentSnapshots -> setViewModel(queryDocumentSnapshots.getDocuments()));
     }
@@ -95,14 +94,14 @@ public class FTESelectView extends Fragment {
         }
         else {
             noDataText.setVisibility(View.GONE);
-            fteViewModel.setFteCreateSnapshotList(snapshots);
-            setRecyclerview(fteViewModel.getFteThoughtCreateList());
+            fteViewModel.setFteViewSnapshotList(snapshots);
+            setRecyclerview(fteViewModel.getFteViewThoughtList());
         }
     }
 
     //create recyclerview from viewmodel data
-    private void setRecyclerview(List<String> behaviorsList) {
-        thoughtList = behaviorsList;
+    private void setRecyclerview(List<String> thoughts) {
+        thoughtList = thoughts;
         InsightsRecyclerAdapter behaviorRecyclerAdapter = new InsightsRecyclerAdapter(thoughtList);
 
         thoughtRecyclerview.setAdapter(behaviorRecyclerAdapter);
@@ -110,7 +109,7 @@ public class FTESelectView extends Fragment {
 
         behaviorRecyclerAdapter.setOnItemClickListener(position -> {
             fteViewModel.setFteThought(thoughtList.get(position));
-            (Navigation.findNavController(requireView())).navigate(R.id.action_FTESelectCreate_to_FTECreate);
+            (Navigation.findNavController(requireView())).navigate(R.id.action_FTESelectView_to_FTEView);
         });
     }
 }
