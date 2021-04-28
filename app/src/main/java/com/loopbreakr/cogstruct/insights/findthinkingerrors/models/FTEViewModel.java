@@ -15,7 +15,6 @@ public class FTEViewModel extends ViewModel {
     private String fteThought;
 
 
-
     public void setFteViewSnapshotList(List<DocumentSnapshot> input) { fteViewSnapShotList = input; }
     public void setFteCreateSnapshotList(List<DocumentSnapshot> input) { fteCreateSnapShotList = input; }
     public void setFteThought(String input){ fteThought = input; }

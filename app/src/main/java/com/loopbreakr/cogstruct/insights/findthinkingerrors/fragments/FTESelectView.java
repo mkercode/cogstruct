@@ -74,6 +74,7 @@ public class FTESelectView extends Fragment {
 
     private void setButons() {
         createEntry.setOnClickListener(v -> (Navigation.findNavController(requireView())).navigate(R.id.action_FTESelectView_to_FTESelectCreate));
+        fteViewModel.setFteViewSnapshotList(null);
     }
 
     private void getViewModelData() {
@@ -109,6 +110,7 @@ public class FTESelectView extends Fragment {
 
         behaviorRecyclerAdapter.setOnItemClickListener(position -> {
             fteViewModel.setFteThought(thoughtList.get(position));
+            fteViewModel.setFteCreateSnapshotList(null);
             (Navigation.findNavController(requireView())).navigate(R.id.action_FTESelectView_to_FTEView);
         });
     }
