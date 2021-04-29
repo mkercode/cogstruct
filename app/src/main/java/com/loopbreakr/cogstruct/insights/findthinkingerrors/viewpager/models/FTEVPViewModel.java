@@ -104,16 +104,15 @@ public class FTEVPViewModel extends ViewModel {
 
     public void initalizeData(String data){
         setDisplayList(data);
-        List<String> tempList = Arrays.asList(data.split("\\s*,\\s*"));
 
-        checkedList = Arrays.asList(bwtIsChecked, dpIsChecked, ffIsChecked, fotpIsChecked, genIsChecked, mfIsChecked, perIsChecked, ssIsChecked);
-        nameList = Arrays.asList("Black and White Thinking", "Disqualifying the Positive", "Fallacy of Fairness", "Focusing on the Past", "Generalization", "Mental Filter", "Personalization", "Should Statements");
-
-        for(int i = 0; i < checkedList.size(); i++){
-            if(tempList.contains(nameList.get(i))){
-                checkedList.set(i, true);
-            }
-        }
+        setBwtIsChecked(data.contains("Black and White Thinking"));
+        setDpIsChecked(data.contains("Disqualifying the Positive"));
+        setFfIsChecked(data.contains("Fallacy of Fairness"));
+        setFotpIsChecked(data.contains("Focusing on the Past"));
+        setGenIsChecked(data.contains("Generalization"));
+        setMfIsChecked(data.contains("Mental Filter"));
+        setPerIsChecked(data.contains("Personalization"));
+        setSsIsChecked(data.contains("Should Statements"));
     }
 
 

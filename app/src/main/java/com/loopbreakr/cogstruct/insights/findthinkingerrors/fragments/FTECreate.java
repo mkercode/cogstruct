@@ -32,6 +32,7 @@ import com.loopbreakr.cogstruct.insights.findthinkingerrors.viewpager.fragments.
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.viewpager.fragments.FTE_MF;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.viewpager.fragments.FTE_P;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.viewpager.fragments.FTE_SS;
+import com.loopbreakr.cogstruct.insights.findthinkingerrors.viewpager.models.FTEVPViewModel;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -55,6 +56,7 @@ public class FTECreate extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         fteViewModel = new ViewModelProvider(requireActivity()).get(FTEViewModel.class);
+
     }
 
     @Override
@@ -109,10 +111,7 @@ public class FTECreate extends Fragment {
 
         //set host fragment navigation
         NavController controller = Navigation.findNavController(requireView());
-        backButton.setOnClickListener(v ->{
-            controller.popBackStack(R.id.FTESelectCreate, true);
-            controller.navigate(R.id.FTESelectCreate);
-        });
+        backButton.setOnClickListener(v -> requireActivity().onBackPressed());
         reviewButton.setOnClickListener( v -> controller.navigate(R.id.action_FTECreate_to_FTEReview));
     }
 

@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
@@ -22,6 +23,7 @@ import com.loopbreakr.cogstruct.insights.findthinkingerrors.adapters.EntryRecycl
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.models.FTEViewModel;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.objects.FTEDisplayObject;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.objects.FTEObject;
+import com.loopbreakr.cogstruct.insights.findthinkingerrors.viewpager.models.FTEVPViewModel;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -101,7 +103,10 @@ public class FTEView extends Fragment {
 
             }
             else{
-
+                fteViewModel.setFteThought(entries.get(position).getThought());
+                FTEVPViewModel ftevpViewModel =  new ViewModelProvider(requireActivity()).get(FTEVPViewModel.class);
+                ftevpViewModel.initalizeData(entries.get(position).getThinkingErrors());
+                Navigation.findNavController(requireView()).navigate(R.id.action_FTEView_to_FTECreate);
             }
         });
     }

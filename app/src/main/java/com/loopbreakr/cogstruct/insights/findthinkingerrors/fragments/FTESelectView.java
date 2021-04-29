@@ -25,6 +25,7 @@ import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.insights.adapters.InsightsRecyclerAdapter;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.activities.FTEActivity;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.models.FTEViewModel;
+import com.loopbreakr.cogstruct.insights.findthinkingerrors.viewpager.models.FTEVPViewModel;
 
 import java.util.List;
 
@@ -75,9 +76,17 @@ public class FTESelectView extends Fragment {
     private void setButons() {
         createEntry.setOnClickListener(v -> {
             (Navigation.findNavController(requireView())).navigate(R.id.action_FTESelectView_to_FTESelectCreate);
-            fteViewModel.setEditDocumentSnapshot(null);
+            restartData();
         });
         fteViewModel.setFteViewSnapshotList(null);
+    }
+
+    //clear any existing data from edit operations during the lifecycle from the viewmodels
+    private void restartData() {
+        fteViewModel.setFteViewSnapshotList(null);
+        fteViewModel.setEditDocumentSnapshot(null);
+        FTEVPViewModel ftevpViewModel = new ViewModelProvider(requireActivity()).get(FTEVPViewModel.class);
+        ftevpViewModel.initalizeData("CLEARING");
     }
 
     private void getViewModelData() {
@@ -112,7 +121,6 @@ public class FTESelectView extends Fragment {
 
         behaviorRecyclerAdapter.setOnItemClickListener(position -> {
             fteViewModel.setFteThought(thoughtList.get(position));
-            fteViewModel.setFteCreateSnapshotList(null);
             (Navigation.findNavController(requireView())).navigate(R.id.action_FTESelectView_to_FTEView);
         });
     }

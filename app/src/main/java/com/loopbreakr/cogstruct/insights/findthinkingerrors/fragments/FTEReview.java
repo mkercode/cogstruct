@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.dynamic.SupportFragmentWrapper;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.badbehaviors.activities.BBActivity;
 import com.loopbreakr.cogstruct.databinding.FteFragmentReviewBinding;
@@ -35,6 +36,7 @@ public class FTEReview extends Fragment {
     private Button editButton, submitButton;
     private String teList;
     private String thought;
+    private NavController controller;
 
 
     public FTEReview() {
@@ -78,24 +80,41 @@ public class FTEReview extends Fragment {
     }
 
     private void setButtons() {
-        NavController controller = Navigation.findNavController(requireView());
+        controller = Navigation.findNavController(requireView());
         editButton.setOnClickListener(v ->{
                 controller.popBackStack(R.id.FTECreate, true);
                 controller.navigate(R.id.FTECreate);
         });
         submitButton.setOnClickListener(v ->{
+
             //logic to only submit data if the user has chosen atleast one thinking error
             if(teList.isEmpty() || teList.equals(null)){
                 Toast.makeText(requireActivity().getApplicationContext(), "Please choose a thinking error!", Toast.LENGTH_SHORT).show();
             }
+
             else{
+                //check if editing a document, if so update and if not create new
                 if (fteViewModel.getEditDocumentSnapshot() == null){
                     ((FTEActivity)requireActivity()).sendToFirestore(thought, teList);
                     Toast.makeText(requireActivity().getApplicationContext(), "Saved in entries", Toast.LENGTH_SHORT).show();
-                    requireActivity().finish();
                 }
+                else{
+                    fteViewModel.getEditDocumentSnapshot().getReference().update(
+                            "thinkingErrors", teList)
+                            .addOnFailureListener(e -> Log.e("UPDATING FTE", "FAILED. ALL FIELDS OF " , e)).addOnSuccessListener(aVoid -> Log.d("UPDATING IB LOG", "SUCCESS"));
+                    Toast.makeText(requireActivity().getApplicationContext(), "Updated entry", Toast.LENGTH_SHORT).show();
+                }
+                restartActivity();
             }
         });
+    }
 
+    private void restartActivity(){
+        fteViewModel.setFteCreateSnapshotList(null);
+        fteViewModel.setFteViewSnapshotList(null);
+        fteViewModel.setEditDocumentSnapshot(null);
+        ftevpViewModel.initalizeData("CLEARING");
+        controller.popBackStack(R.id.FTESelectView, true);
+        controller.navigate(R.id.FTESelectView);
     }
 }
