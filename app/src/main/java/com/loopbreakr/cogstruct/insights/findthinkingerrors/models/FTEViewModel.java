@@ -10,6 +10,7 @@ import java.util.List;
 public class FTEViewModel extends ViewModel {
     private List<DocumentSnapshot> fteViewSnapShotList = new ArrayList<>();
     private List<DocumentSnapshot> fteCreateSnapShotList = new ArrayList<>();
+    private DocumentSnapshot editDocumentSnapshot;
     private List<String> fteThoughtCreateList;
     private List<String> fteThoughtViewList;
     private String fteThought;
@@ -18,6 +19,7 @@ public class FTEViewModel extends ViewModel {
     public void setFteViewSnapshotList(List<DocumentSnapshot> input) { fteViewSnapShotList = input; }
     public void setFteCreateSnapshotList(List<DocumentSnapshot> input) { fteCreateSnapShotList = input; }
     public void setFteThought(String input){ fteThought = input; }
+    public void setEditDocumentSnapshot(DocumentSnapshot input){editDocumentSnapshot = input;}
 
     public List<String> getFteViewThoughtList(){
         fteThoughtViewList = new ArrayList<>();
@@ -51,6 +53,7 @@ public class FTEViewModel extends ViewModel {
 
     public List<DocumentSnapshot> getFteViewSnapShotList() { return fteViewSnapShotList; }
     public List<DocumentSnapshot> getFteCreateSnapShotList() { return fteCreateSnapShotList; }
+    public DocumentSnapshot getEditDocumentSnapshot(){return  editDocumentSnapshot;}
 
     public String getFteThought(){ return fteThought; }
 }

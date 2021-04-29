@@ -205,4 +205,5 @@
     <string name="vp_p_description">When we engage in personalization, we can blame ourselves for things that we are logically not responsible for or are not in out control</string>
     <string name="general_thought_indicator">Thought:</string>
     <string name="fte_thinking_error_indicator">Thinking errors:</string>
+    <string name="general_popup_menu">Popup menu button</string>
 </resources>

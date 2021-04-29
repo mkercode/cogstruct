@@ -78,7 +78,6 @@ public class FTESelectView extends Fragment {
     }
 
     private void getViewModelData() {
-
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseFirestore.getInstance()
                 .collection("thinkingErrors")
