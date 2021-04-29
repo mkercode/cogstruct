@@ -73,7 +73,10 @@ public class FTESelectView extends Fragment {
     private void setBackToolBar() { ((FTEActivity)requireActivity()).fteSetToolbar(backToolbar);}
 
     private void setButons() {
-        createEntry.setOnClickListener(v -> (Navigation.findNavController(requireView())).navigate(R.id.action_FTESelectView_to_FTESelectCreate));
+        createEntry.setOnClickListener(v -> {
+            (Navigation.findNavController(requireView())).navigate(R.id.action_FTESelectView_to_FTESelectCreate);
+            fteViewModel.setEditDocumentSnapshot(null);
+        });
         fteViewModel.setFteViewSnapshotList(null);
     }
 

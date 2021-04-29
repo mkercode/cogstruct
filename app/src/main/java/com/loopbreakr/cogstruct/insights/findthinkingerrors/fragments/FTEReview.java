@@ -89,9 +89,11 @@ public class FTEReview extends Fragment {
                 Toast.makeText(requireActivity().getApplicationContext(), "Please choose a thinking error!", Toast.LENGTH_SHORT).show();
             }
             else{
-                ((FTEActivity)requireActivity()).sendToFirestore(thought, teList);
-                Toast.makeText(requireActivity().getApplicationContext(), "Saved in entries", Toast.LENGTH_SHORT).show();
-                requireActivity().finish();
+                if (fteViewModel.getEditDocumentSnapshot() == null){
+                    ((FTEActivity)requireActivity()).sendToFirestore(thought, teList);
+                    Toast.makeText(requireActivity().getApplicationContext(), "Saved in entries", Toast.LENGTH_SHORT).show();
+                    requireActivity().finish();
+                }
             }
         });
 
