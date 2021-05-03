@@ -25,7 +25,7 @@ import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 
 public class UiFragment extends Fragment {
     private NavController navController;
-    private CardView thoughtJournalCard, prosConsCard, howdIGetHereCard, badBehaviorsCard, identifyBarriersCard, abcsCard;
+    private CardView thoughtJournalCard, prosConsCard, howdIGetHereCard, badBehaviorsCard, identifyBarriersCard;
     private ImageView logsIcon, insightsIcon, learnMoreIcon, aboutIcon;
 
 
@@ -74,7 +74,6 @@ public class UiFragment extends Fragment {
         howdIGetHereCard = view.findViewById(R.id.howd_i_get_here_card);
         badBehaviorsCard = view.findViewById(R.id.negative_thoughts_card);
         identifyBarriersCard = view.findViewById(R.id.identify_barriers_card);
-        abcsCard = view.findViewById(R.id.abcs_card);
         //find bottom menu icons
         logsIcon = view.findViewById(R.id.logs_image);
         insightsIcon = view.findViewById(R.id.insights_image);
@@ -89,7 +88,6 @@ public class UiFragment extends Fragment {
         howdIGetHereCard.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_HIGHViewFragment));
         badBehaviorsCard.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_BBViewFragment));
         identifyBarriersCard.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_IBViewFragment));
-        abcsCard.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_ABCViewFragment));
         insightsIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_insightsFragment));
         learnMoreIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_learnMoreFragment));
         aboutIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_aboutFragment));

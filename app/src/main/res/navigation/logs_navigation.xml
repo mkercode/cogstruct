@@ -24,9 +24,6 @@
         <action
             android:id="@+id/action_allLogsFragment_to_IBLogFragment"
             app:destination="@id/IBLogFragment" />
-        <action
-            android:id="@+id/action_allLogsFragment_to_ABCLogFragment"
-            app:destination="@id/ABCLogFragment" />
     </fragment>
     <fragment
         android:id="@+id/tjLogFragment"
@@ -73,11 +70,6 @@
             android:id="@+id/action_IBLogFragment_to_IBLogEditFragment"
             app:destination="@id/IBLogEditFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/ABCLogFragment"
-        android:name="com.loopbreakr.cogstruct.logs.fragments.ABCLogsFragment"
-        android:label="fragment_abc_log"
-        tools:layout="@layout/logs_fragment_abc" />
     <fragment
         android:id="@+id/TJLogEditFragment"
         android:name="com.loopbreakr.cogstruct.logs.fragments.TJLogsEditFragment"

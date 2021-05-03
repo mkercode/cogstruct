@@ -20,6 +20,8 @@ import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.TjFragmentPageThreeBinding;
 import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
 
+import org.jetbrains.annotations.NotNull;
+
 
 public class TJPageThree extends Fragment {
     private TJViewModel tjViewModel;
@@ -37,7 +39,7 @@ public class TJPageThree extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.tj_fragment_page_three, container, false);

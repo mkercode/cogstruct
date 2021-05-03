@@ -19,6 +19,8 @@ import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.IbFragmentPageFourBinding;
 import com.loopbreakr.cogstruct.identifybarriers.models.IBViewModel;
 
+import org.jetbrains.annotations.NotNull;
+
 
 public class IBPageFour extends Fragment {
     private IbFragmentPageFourBinding binding;
@@ -37,7 +39,7 @@ public class IBPageFour extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.ib_fragment_page_four, container, false);

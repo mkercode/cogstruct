@@ -31,7 +31,6 @@ public class BBLogsFragment extends Fragment {
     private LogsFragmentBbBinding binding;
     private LogsViewModel logsViewModel;
     private BBViewModel bbViewModel;
-    private BBObject bbObject;
 
     public BBLogsFragment() {
         // Required empty public constructor
@@ -89,7 +88,7 @@ public class BBLogsFragment extends Fragment {
     }
 
     private void setViewModelData() {
-        bbObject = logsViewModel.getSnapshot().toObject(BBObject.class);
+        BBObject bbObject = logsViewModel.getSnapshot().toObject(BBObject.class);
         bbViewModel.setBBLog(bbObject);
     }
 }
