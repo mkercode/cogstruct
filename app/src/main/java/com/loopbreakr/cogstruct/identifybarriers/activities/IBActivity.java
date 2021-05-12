@@ -19,6 +19,7 @@ import com.loopbreakr.cogstruct.identifybarriers.objects.IBObject;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class IBActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener {
 
@@ -34,7 +35,9 @@ public class IBActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
     public void sendToFirestore(String behavior, String nesscessaryAction, String barrierType, String barrier, String solution){
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         String dateCreated = getTimeDate();
-        IBObject ibEntry= new IBObject(dateCreated,userId,behavior,nesscessaryAction,barrierType,barrier,solution);
+        String timeStamp = getTimeStamp();
+
+        IBObject ibEntry= new IBObject(dateCreated,userId,behavior,nesscessaryAction,barrierType,barrier,solution, timeStamp);
         FirebaseFirestore.getInstance().collection("forms").add(ibEntry).addOnSuccessListener(documentReference ->
                 Log.d("ADDING ENTRY...", "SUCCESS ADDING THOUGHT JOURNAL ENTRY: " + ibEntry.toString()))
                 .addOnFailureListener(e -> Log.e("ADDING ENTRY...", "FAILURE ADDING THOUGHT JOURNAL ENTRY: " + ibEntry.toString() + "... ERROR: ", e));
@@ -44,6 +47,10 @@ public class IBActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
 
     private String getTimeDate() {
         return DateFormat.getDateTimeInstance().format(new Date());
+    }
+
+    private String getTimeStamp(){
+        return String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
     }
 
     private void closeActivity() {

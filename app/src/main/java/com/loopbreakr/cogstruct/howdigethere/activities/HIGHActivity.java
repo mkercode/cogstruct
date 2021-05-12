@@ -17,6 +17,7 @@ import com.loopbreakr.cogstruct.howdigethere.objects.HIGHObject;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class HIGHActivity extends AppCompatActivity {
 
@@ -31,7 +32,8 @@ public class HIGHActivity extends AppCompatActivity {
     public void sendToFirestore(String behavior, String triggerEvent, String emotion, float emotionRating, String thoughts, String vulnerabilities, String reliefs, String consequences, String solutions, String repairs){
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         String dateCreated = getTimeDate();
-        HIGHObject highEntry = new HIGHObject(dateCreated,userId,behavior,triggerEvent,emotion,emotionRating,thoughts,vulnerabilities,reliefs,consequences,solutions,repairs);
+        String timeStamp = getTimeStamp();
+        HIGHObject highEntry = new HIGHObject(dateCreated,userId,behavior,triggerEvent,emotion,emotionRating,thoughts,vulnerabilities,reliefs,consequences,solutions,repairs, timeStamp);
         FirebaseFirestore.getInstance().collection("forms").add(highEntry).addOnSuccessListener(documentReference ->
                 Log.d("ADDING ENTRY...", "SUCCESS ADDING HIGH ENTRY: " + highEntry.toString()))
                 .addOnFailureListener(e -> Log.e("ADDING ENTRY...", "FAILURE ADDING HIGH ENTRY: " + highEntry.toString() + "... ERROR: ", e));
@@ -40,6 +42,10 @@ public class HIGHActivity extends AppCompatActivity {
 
     private String getTimeDate() {
         return DateFormat.getDateTimeInstance().format(new Date());
+    }
+
+    private String getTimeStamp(){
+        return String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
     }
 
     private void closeActivity() {

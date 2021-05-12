@@ -21,6 +21,7 @@ import com.loopbreakr.cogstruct.insights.findthinkingerrors.objects.FTEObject;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 public class FTEActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener{
 
@@ -68,7 +69,9 @@ public class FTEActivity extends AppCompatActivity implements FirebaseAuth.AuthS
     public void sendToFirestore(String thought, String thinkingErrors){
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         String dateCreated = getTimeDate();
-        FTEObject fteEntry = new FTEObject(dateCreated,userId,thought, thinkingErrors);
+        String timeStamp = getTimeStamp();
+
+        FTEObject fteEntry = new FTEObject(dateCreated,userId,thought, thinkingErrors, timeStamp);
         FirebaseFirestore.getInstance().collection("thinkingErrors").add(fteEntry).addOnSuccessListener(documentReference ->
                 Log.d("ADDING ENTRY...", "SUCCESS ADDING HIGH ENTRY: " + fteEntry.toString()))
                 .addOnFailureListener(e -> Log.e("ADDING ENTRY...", "FAILURE ADDING HIGH ENTRY: " +fteEntry.toString() + "... ERROR: ", e));
@@ -76,5 +79,9 @@ public class FTEActivity extends AppCompatActivity implements FirebaseAuth.AuthS
 
     private String getTimeDate() {
         return DateFormat.getDateTimeInstance().format(new Date());
+    }
+
+    private String getTimeStamp(){
+        return String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
     }
 }

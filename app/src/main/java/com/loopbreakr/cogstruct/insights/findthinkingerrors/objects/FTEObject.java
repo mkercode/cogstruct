@@ -5,15 +5,17 @@ public class FTEObject {
     private String userId;
     private String thought;
     private String thinkingErrors;
+    private String timeStamp;
 
     public FTEObject() {
     }
 
-    public FTEObject(String dateCreated, String userId, String thought, String thinkingErrors) {
+    public FTEObject(String dateCreated, String userId, String thought, String thinkingErrors, String timeStamp) {
         this.dateCreated = dateCreated;
         this.userId = userId;
         this.thought = thought;
         this.thinkingErrors = thinkingErrors;
+        this.timeStamp = timeStamp;
     }
 
     public String getDateCreated() { return dateCreated; }
@@ -24,4 +26,12 @@ public class FTEObject {
     public void setThought(String thought) { this.thought = thought; }
     public String getThinkingErrors() { return thinkingErrors; }
     public void setThinkingErrors(String thinkingErrors) { this.thinkingErrors = thinkingErrors; }
+
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
 }

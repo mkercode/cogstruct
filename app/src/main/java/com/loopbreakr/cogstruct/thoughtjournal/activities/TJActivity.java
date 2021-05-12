@@ -20,6 +20,7 @@ import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 
 public class TJActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener {
@@ -35,7 +36,8 @@ public class TJActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
     public void sendToFirestore(String location, String time, String people, String situation, String behavior, String emotion, float emotionRating, String emotionDetail, String thoughts){
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         String dateCreated = getTimeDate();
-        ThoughtJournalObject thoughtJournalEntry = new ThoughtJournalObject(dateCreated,userId,location,time,people,situation,behavior,emotion,emotionRating,emotionDetail,thoughts);
+        String timeStamp = getTimeStamp();
+        ThoughtJournalObject thoughtJournalEntry = new ThoughtJournalObject(dateCreated,userId,location,time,people,situation,behavior,emotion,emotionRating,emotionDetail,thoughts, timeStamp);
         FirebaseFirestore.getInstance().collection("forms").add(thoughtJournalEntry).addOnSuccessListener(documentReference ->
                 Log.d("ADDING ENTRY...", "SUCCESS ADDING THOUGHT JOURNAL ENTRY: " + thoughtJournalEntry.toString()))
                 .addOnFailureListener(e -> Log.e("ADDING ENTRY...", "FAILURE ADDING THOUGHT JOURNAL ENTRY: " + thoughtJournalEntry.toString() + "... ERROR: ", e));
@@ -44,6 +46,10 @@ public class TJActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
 
     private String getTimeDate() {
         return DateFormat.getDateTimeInstance().format(new Date());
+    }
+
+    private String getTimeStamp(){
+        return String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
     }
 
     private void closeActivity() {

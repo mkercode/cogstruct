@@ -17,9 +17,10 @@ public class ThoughtJournalObject {
     private float emotionRating;
     private String emotionDetail;
     private String thoughts;
+    private String timeStamp;
 
 
-    public ThoughtJournalObject(String dateCreated, String userId, String location, String time, String people, String situation, String behavior, String emotion, float emotionRating, String emotionDetail, String thoughts) {
+    public ThoughtJournalObject(String dateCreated, String userId, String location, String time, String people, String situation, String behavior, String emotion, float emotionRating, String emotionDetail, String thoughts, String timeStamp) {
         this.formName = "Thought Journal";
         this.dateCreated = dateCreated;
         this.userId = userId;
@@ -32,6 +33,7 @@ public class ThoughtJournalObject {
         this.emotionRating = emotionRating;
         this.emotionDetail = emotionDetail;
         this.thoughts = thoughts;
+        this.timeStamp = timeStamp;
     }
 
     public ThoughtJournalObject() {
@@ -106,4 +108,11 @@ public class ThoughtJournalObject {
     }
     public void setEmotionRating(float emotionRating) { this.emotionRating = emotionRating; }
 
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
 }

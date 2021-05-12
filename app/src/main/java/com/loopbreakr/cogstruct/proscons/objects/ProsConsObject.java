@@ -9,11 +9,12 @@ public class ProsConsObject {
     private String dontChangePros;
     private String changeCons;
     private String dontChangeCons;
+    private String timeStamp;
 
     public ProsConsObject() {
     }
 
-    public ProsConsObject(String dateCreated, String userId, String behavior, String changePros, String dontChangePros, String changeCons, String dontChangeCons) {
+    public ProsConsObject(String dateCreated, String userId, String behavior, String changePros, String dontChangePros, String changeCons, String dontChangeCons, String timeStamp) {
         this.formName = "Pros and Cons";
         this.dateCreated = dateCreated;
         this.userId = userId;
@@ -22,6 +23,7 @@ public class ProsConsObject {
         this.dontChangePros = dontChangePros;
         this.changeCons = changeCons;
         this.dontChangeCons = dontChangeCons;
+        this.timeStamp = timeStamp;
     }
 
     public String getFormName() { return formName; }
@@ -39,6 +41,13 @@ public class ProsConsObject {
     public String getChangeCons() { return changeCons; }
     public void setChangeCons(String changeCons) { this.changeCons = changeCons; }
     public String getDontChangeCons() { return dontChangeCons; }
-    public void setDontChangeCons(String dontChangeCons) { this.dontChangeCons = dontChangeCons;
+    public void setDontChangeCons(String dontChangeCons) { this.dontChangeCons = dontChangeCons; }
+
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
     }
 }

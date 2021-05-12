@@ -21,6 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.insights.adapters.InsightsRecyclerAdapter;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.activities.FTEActivity;
@@ -93,7 +94,7 @@ public class FTESelectView extends Fragment {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseFirestore.getInstance()
                 .collection("thinkingErrors")
-                .whereEqualTo("userId", auth.getCurrentUser().getUid())
+                .whereEqualTo("userId", auth.getCurrentUser().getUid()).orderBy("timeStamp", Query.Direction.DESCENDING)
                 .get().addOnFailureListener(e -> Log.e("ERROR QUERY", "setViewModelData: ",e ))
                 .addOnSuccessListener(queryDocumentSnapshots -> setViewModel(queryDocumentSnapshots.getDocuments()));
     }

@@ -15,10 +15,11 @@ public class HIGHObject {
     private String consequences;
     private String solutions;
     private String repairs;
+    private String timeStamp;
 
     public HIGHObject() { }
 
-    public HIGHObject(String dateCreated, String userId, String behavior, String triggerEvent, String emotion, float emotionRating, String thoughts, String vulnerabilities, String reliefs, String consequences, String solutions, String repairs) {
+    public HIGHObject(String dateCreated, String userId, String behavior, String triggerEvent, String emotion, float emotionRating, String thoughts, String vulnerabilities, String reliefs, String consequences, String solutions, String repairs, String timeStamp) {
         this.formName = "How'd I Get Here?";
         this.dateCreated = dateCreated;
         this.userId = userId;
@@ -32,6 +33,7 @@ public class HIGHObject {
         this.consequences = consequences;
         this.solutions = solutions;
         this.repairs = repairs;
+        this.timeStamp = timeStamp;
     }
 
     public String getFormName() { return formName; }
@@ -60,4 +62,12 @@ public class HIGHObject {
     public void setSolutions(String solutions) { this.solutions = solutions; }
     public String getRepairs() { return repairs; }
     public void setRepairs(String repairs) { this.repairs = repairs; }
+
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
 }

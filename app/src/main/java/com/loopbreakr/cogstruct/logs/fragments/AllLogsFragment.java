@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.core.OrderBy;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
@@ -58,7 +59,8 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
     public void createRecyclerView(FirebaseUser user){
         Query query = FirebaseFirestore.getInstance()
                 .collection("forms")
-                .whereEqualTo("userId", user.getUid());
+                .whereEqualTo("userId", user.getUid())
+                .orderBy("timeStamp", Query.Direction.DESCENDING);
 
         //build firestore recycler options
         FirestoreRecyclerOptions<LogsPreview> options = new FirestoreRecyclerOptions.Builder<LogsPreview>()
@@ -113,9 +115,6 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
                 navId = R.id.action_allLogsFragment_to_IBLogFragment;
                 break;
 
-            case "ABC's":
-                navId = R.id.action_allLogsFragment_to_ABCLogFragment;
-                break;
         }
         return navId;
     }

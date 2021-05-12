@@ -19,6 +19,7 @@ import com.loopbreakr.cogstruct.proscons.objects.ProsConsObject;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class PCActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener {
 
@@ -33,7 +34,8 @@ public class PCActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
     public void sendToFirestore(String behavior, String changePros, String dontChangePros, String changeCons, String dontChangeCons){
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         String dateCreated = getTimeDate();
-        ProsConsObject prosConsEntry = new ProsConsObject(dateCreated,userId, behavior, changePros, dontChangePros, changeCons, dontChangeCons);
+        String timeStamp = getTimeStamp();
+        ProsConsObject prosConsEntry = new ProsConsObject(dateCreated,userId, behavior, changePros, dontChangePros, changeCons, dontChangeCons, timeStamp);
         FirebaseFirestore.getInstance().collection("forms").add(prosConsEntry).addOnSuccessListener(documentReference ->
                 Log.d("ADDING ENTRY...", "SUCCESS ADDING THOUGHT JOURNAL ENTRY: " + prosConsEntry.toString()))
                 .addOnFailureListener(e -> Log.e("ADDING ENTRY...", "FAILURE ADDING THOUGHT JOURNAL ENTRY: " + prosConsEntry.toString() + "... ERROR: ", e));
@@ -43,6 +45,10 @@ public class PCActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
 
     private String getTimeDate() {
         return DateFormat.getDateTimeInstance().format(new Date());
+    }
+
+    private String getTimeStamp(){
+        return String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
     }
 
     private void closeActivity() {
