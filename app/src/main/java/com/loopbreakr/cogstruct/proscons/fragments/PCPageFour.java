@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.PcFragmentPageFourBinding;
@@ -66,7 +67,14 @@ public class PCPageFour extends Fragment {
             controller.popBackStack(R.id.PCPageThree, true);
             controller.navigate(R.id.PCPageThree);
         });
-        submitButton.setOnClickListener(v -> submitData());
+        submitButton.setOnClickListener(v -> {
+            if(pcViewModel.getPCBehavior() == null || pcViewModel.getPCBehavior().equals("")){
+                Toast.makeText(this.requireActivity().getApplicationContext(), "Please enter the behavior!", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                submitData();
+            }
+        });
     }
 
     private void submitData() {

@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.badbehaviors.activities.BBActivity;
@@ -67,7 +68,14 @@ public class BBReview extends Fragment {
             controller.popBackStack(R.id.BBPageFour, true);
             controller.navigate(R.id.BBPageFour);
         });
-        submitButton.setOnClickListener(v -> submitData());
+        submitButton.setOnClickListener(v -> {
+            if(bbViewModel.getBbBehavior() == null || bbViewModel.getBbBehavior().equals("")){
+                Toast.makeText(this.requireActivity().getApplicationContext(), "Please enter the behavior!", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                submitData();
+            }
+        });
     }
 
     private void submitData() {
