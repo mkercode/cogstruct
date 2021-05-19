@@ -11,6 +11,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.loopbreakr.cogstruct.home.activities.LoginActivity;
 import com.loopbreakr.cogstruct.home.activities.MainActivity;
@@ -38,9 +39,7 @@ public class TJActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
         String dateCreated = getTimeDate();
         String timeStamp = getTimeStamp();
         ThoughtJournalObject thoughtJournalEntry = new ThoughtJournalObject(dateCreated,userId,location,time,people,situation,behavior,emotion,emotionRating,emotionDetail,thoughts, timeStamp);
-        FirebaseFirestore.getInstance().collection("forms").add(thoughtJournalEntry).addOnSuccessListener(documentReference ->
-                Log.d("ADDING ENTRY...", "SUCCESS ADDING THOUGHT JOURNAL ENTRY: " + thoughtJournalEntry.toString()))
-                .addOnFailureListener(e -> Log.e("ADDING ENTRY...", "FAILURE ADDING THOUGHT JOURNAL ENTRY: " + thoughtJournalEntry.toString() + "... ERROR: ", e));
+        FirebaseFirestore.getInstance().collection("forms").add(thoughtJournalEntry).addOnFailureListener(this::sendException);
         closeActivity();
     }
 
@@ -81,5 +80,10 @@ public class TJActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         this.finish();
+    }
+
+    private void sendException(Throwable e){
+        FirebaseCrashlytics.getInstance().recordException(e);
+        Toast.makeText(this, "Error, could not save worksheet.", Toast.LENGTH_SHORT).show();
     }
 }

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.loopbreakr.cogstruct.home.activities.MainActivity;
 import com.loopbreakr.cogstruct.R;
@@ -35,11 +36,10 @@ public class BBActivity extends AppCompatActivity {
         String timeStamp = getTimeStamp();
 
         BBObject bbEntry = new BBObject(dateCreated,userId,behavior,environmentals,distractions,solutions, timeStamp);
-        FirebaseFirestore.getInstance().collection("forms").add(bbEntry).addOnSuccessListener(documentReference ->
-                Log.d("ADDING ENTRY...", "SUCCESS ADDING HIGH ENTRY: " + bbEntry.toString()))
-                .addOnFailureListener(e -> Log.e("ADDING ENTRY...", "FAILURE ADDING HIGH ENTRY: " + bbEntry.toString() + "... ERROR: ", e));
+        FirebaseFirestore.getInstance().collection("forms").add(bbEntry).addOnFailureListener(this::sendException);
         closeActivity();
     }
+
 
     private String getTimeDate() {
         return DateFormat.getDateTimeInstance().format(new Date());
@@ -55,4 +55,10 @@ public class BBActivity extends AppCompatActivity {
         startActivity(intent);
         this.finish();
     }
+
+    private void sendException(Throwable e){
+        FirebaseCrashlytics.getInstance().recordException(e);
+            Toast.makeText(this, "Error, could not save worksheet.", Toast.LENGTH_SHORT).show();
+    }
+
 }

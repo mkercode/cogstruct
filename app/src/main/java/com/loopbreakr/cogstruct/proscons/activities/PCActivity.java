@@ -11,6 +11,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.loopbreakr.cogstruct.home.activities.LoginActivity;
 import com.loopbreakr.cogstruct.home.activities.MainActivity;
@@ -36,9 +37,7 @@ public class PCActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
         String dateCreated = getTimeDate();
         String timeStamp = getTimeStamp();
         ProsConsObject prosConsEntry = new ProsConsObject(dateCreated,userId, behavior, changePros, dontChangePros, changeCons, dontChangeCons, timeStamp);
-        FirebaseFirestore.getInstance().collection("forms").add(prosConsEntry).addOnSuccessListener(documentReference ->
-                Log.d("ADDING ENTRY...", "SUCCESS ADDING THOUGHT JOURNAL ENTRY: " + prosConsEntry.toString()))
-                .addOnFailureListener(e -> Log.e("ADDING ENTRY...", "FAILURE ADDING THOUGHT JOURNAL ENTRY: " + prosConsEntry.toString() + "... ERROR: ", e));
+        FirebaseFirestore.getInstance().collection("forms").add(prosConsEntry).addOnFailureListener(this::sendException);
 
         closeActivity();
     }
@@ -80,5 +79,10 @@ public class PCActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         this.finish();
+    }
+
+    private void sendException(Throwable e){
+        FirebaseCrashlytics.getInstance().recordException(e);
+        Toast.makeText(this, "Error, could not save worksheet.", Toast.LENGTH_SHORT).show();
     }
 }

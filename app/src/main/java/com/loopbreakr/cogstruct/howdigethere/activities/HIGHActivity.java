@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.loopbreakr.cogstruct.home.activities.MainActivity;
 import com.loopbreakr.cogstruct.R;
@@ -34,9 +35,7 @@ public class HIGHActivity extends AppCompatActivity {
         String dateCreated = getTimeDate();
         String timeStamp = getTimeStamp();
         HIGHObject highEntry = new HIGHObject(dateCreated,userId,behavior,triggerEvent,emotion,emotionRating,thoughts,vulnerabilities,reliefs,consequences,solutions,repairs, timeStamp);
-        FirebaseFirestore.getInstance().collection("forms").add(highEntry).addOnSuccessListener(documentReference ->
-                Log.d("ADDING ENTRY...", "SUCCESS ADDING HIGH ENTRY: " + highEntry.toString()))
-                .addOnFailureListener(e -> Log.e("ADDING ENTRY...", "FAILURE ADDING HIGH ENTRY: " + highEntry.toString() + "... ERROR: ", e));
+        FirebaseFirestore.getInstance().collection("forms").add(highEntry).addOnFailureListener(this::sendException);
         closeActivity();
     }
 
@@ -53,5 +52,10 @@ public class HIGHActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         this.finish();
+    }
+
+    private void sendException(Throwable e){
+        FirebaseCrashlytics.getInstance().recordException(e);
+        Toast.makeText(this, "Error, could not save worksheet.", Toast.LENGTH_SHORT).show();
     }
 }
