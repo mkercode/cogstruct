@@ -24,6 +24,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.adapters.SimpleRecyclerAdapter;
 import com.loopbreakr.cogstruct.databinding.LogsFragmentPcEditBinding;
+import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
 import com.loopbreakr.cogstruct.proscons.models.PCViewModel;
 
@@ -179,7 +180,7 @@ public class PCLogEditFragment extends Fragment {
                 "dontChangePros", pcViewModel.getDontChangeProsString(),
                 "changeCons", pcViewModel.getChangeConsString(),
                 "dontChangeCons", pcViewModel.getDontChangeConsString())
-                .addOnFailureListener(e -> Log.e("UPDATING PROS AND CONS", "FAILED. ALL FIELDS OF " + logSnapshot.getData() , e)).addOnSuccessListener(aVoid -> Log.d("UPDATING PROS AND CONS", "SUCCESS. ALL FIELDS OF " + logSnapshot.getData()));
+                .addOnFailureListener(e -> ((LogsActivity)requireActivity()).handleFailure(e, "EDIT"));
 
     }
 

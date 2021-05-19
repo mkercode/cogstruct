@@ -22,6 +22,7 @@ import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.LogsFragmentIbBinding;
 import com.loopbreakr.cogstruct.identifybarriers.objects.IBObject;
 import com.loopbreakr.cogstruct.identifybarriers.models.IBViewModel;
+import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
 
 import org.jetbrains.annotations.NotNull;
@@ -76,8 +77,7 @@ public class IBLogsFragment extends Fragment {
                 case R.id.action_deleteLog:
                     DocumentSnapshot snapshot = logsViewModel.getSnapshot();
                     snapshot.getReference().delete().addOnFailureListener(e ->
-                            Log.e("DELETING...", "deleteSnapshot: " + snapshot.getData(), e)).addOnSuccessListener(aVoid ->
-                            Log.d("DELETING...", "deleteSnapshot: " + snapshot.getData()));
+                            ((LogsActivity)requireActivity()).handleFailure(e, "FETCH"));
                     controller.popBackStack(R.id.allLogsFragment, true);
                     controller.navigate(R.id.allLogsFragment);
                     return true;

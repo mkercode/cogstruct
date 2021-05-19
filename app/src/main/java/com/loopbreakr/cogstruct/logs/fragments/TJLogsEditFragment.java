@@ -21,6 +21,7 @@ import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.LogsFragmentTjEditBinding;
+import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
 import com.loopbreakr.cogstruct.logs.models.TJLogViewModel;
 
@@ -155,6 +156,7 @@ public class TJLogsEditFragment extends Fragment {
                 "emotion", tjViewModel.getTjLogEmotion(),
                 "emotionRating", tjViewModel.getTjLogEmotionRating(),
                 "emotionDetail", tjViewModel.getTjLogEmotionDetail(),
-                "thoughts", tjViewModel.getTjLogThoughtText()).addOnFailureListener(e -> Log.e("UPDATING THOUGHTJOURNAL", "FAILED. ALL FIELDS OF " + logSnapshot.getData() , e)).addOnSuccessListener(aVoid -> Log.d("UPDATING THOUGHTJOURNAL", "SUCCESS. ALL FIELDS OF " + logSnapshot.getData()));
+                "thoughts", tjViewModel.getTjLogThoughtText()).addOnFailureListener(e ->
+                ((LogsActivity)requireActivity()).handleFailure(e, "EDIT"));
     }
     }

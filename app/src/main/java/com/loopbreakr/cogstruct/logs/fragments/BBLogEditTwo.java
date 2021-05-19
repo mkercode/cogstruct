@@ -23,6 +23,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.adapters.SimpleRecyclerAdapter;
 import com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel;
+import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
 
 import java.util.ArrayList;
@@ -141,6 +142,7 @@ public class BBLogEditTwo extends Fragment {
                 "environmentals", bbViewModel.getBbEnvironmentalsString(),
                 "distractions", bbViewModel.getBbDistractionsString(),
                 "solutions", bbViewModel.getBbSolutionsString())
-                .addOnFailureListener(e -> Log.e("UPDATING BAD BEHAVIORS", "FAILED. ALL FIELDS OF " + logSnapshot.getData() , e)).addOnSuccessListener(aVoid -> Log.d("UPDATE BAD BEHAVIORS", "SUCCESS. ALL FIELDS OF " + logSnapshot.getData()));
+                .addOnFailureListener(e -> ((LogsActivity)requireActivity()).handleFailure(e, "EDIT"));
+
     }
 }

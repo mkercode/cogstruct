@@ -23,6 +23,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.adapters.SimpleRecyclerAdapter;
 import com.loopbreakr.cogstruct.howdigethere.models.HIGHViewModel;
+import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
 
 import java.util.ArrayList;
@@ -153,6 +154,6 @@ public class HIGHLogEditThreeFragment extends Fragment {
                 "consequences", highViewModel.getHighConsequencesString(),
                 "solutions", highViewModel.getHighConsequencesString(),
                 "repairs", highViewModel.getHighRepairsString())
-                .addOnFailureListener(e -> Log.e("UPDATING...", "FAILED. ALL FIELDS OF " + logSnapshot.getData() , e)).addOnSuccessListener(aVoid -> Log.d("UPDATE HOWD I GET HERE", "SUCCESS. ALL FIELDS OF " + logSnapshot.getData()));
+                .addOnFailureListener(e -> ((LogsActivity)requireActivity()).handleFailure(e, "EDIT"));
     }
 }

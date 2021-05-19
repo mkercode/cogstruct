@@ -20,6 +20,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.LogsFragmentIbEditBinding;
 import com.loopbreakr.cogstruct.identifybarriers.models.IBViewModel;
+import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
 
 import org.jetbrains.annotations.NotNull;
@@ -85,7 +86,6 @@ public class IBLogEditFragment extends Fragment {
                 "barrierType", ibViewModel.getIbBarrierType(),
                 "barrier", ibViewModel.getIbBarrier(),
                 "solution",ibViewModel.getIbSolution())
-                .addOnFailureListener(e -> Log.e("UPDATING IB LOG", "FAILED. ALL FIELDS OF " + logSnapshot.getData() , e)).addOnSuccessListener(aVoid -> Log.d("UPDATING IB LOG", "SUCCESS. ALL FIELDS OF " + logSnapshot.getData()));
-
+                .addOnFailureListener(e -> ((LogsActivity)requireActivity()).handleFailure(e, "EDIT"));
     }
 }
