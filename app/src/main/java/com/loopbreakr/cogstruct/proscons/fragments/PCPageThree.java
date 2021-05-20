@@ -72,7 +72,7 @@ public class PCPageThree extends Fragment {
         prosList = new ArrayList<>();
         prosList.addAll(pcViewModel.getDontChangePros());
         consList = new ArrayList<>();
-        consList.addAll(pcViewModel.getDontChangePros());
+        consList.addAll(pcViewModel.getDontChangeCons());
 
         SimpleRecyclerAdapter prosRecyclerAdapter = new SimpleRecyclerAdapter(prosList);
         SimpleRecyclerAdapter consRecyclerAdapter = new SimpleRecyclerAdapter(consList);
