@@ -57,7 +57,7 @@ public class LogsActivity extends AppCompatActivity implements FirebaseAuth.Auth
         //send exception to firebase
         FirebaseCrashlytics.getInstance().recordException(e);
 
-        //log exception to user, navigate back if fetching
+        //display exception to user, navigate back if fetching
         if(type.equals("FETCH")){
             Toast.makeText(this, "Error, could not fetch log.", Toast.LENGTH_SHORT).show();
             navController.popBackStack(R.id.allLogsFragment, true);

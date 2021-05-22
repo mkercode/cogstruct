@@ -95,7 +95,8 @@ public class FTESelectView extends Fragment {
         FirebaseFirestore.getInstance()
                 .collection("thinkingErrors")
                 .whereEqualTo("userId", auth.getCurrentUser().getUid()).orderBy("timeStamp", Query.Direction.DESCENDING)
-                .get().addOnFailureListener(e -> Log.e("ERROR QUERY", "setViewModelData: ",e ))
+                .get()
+                .addOnFailureListener(e -> ((FTEActivity)requireActivity()).handleFailure(e, "FETCH"))
                 .addOnSuccessListener(queryDocumentSnapshots -> setViewModel(queryDocumentSnapshots.getDocuments()));
     }
 

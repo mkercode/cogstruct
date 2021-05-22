@@ -18,6 +18,7 @@ import android.widget.ProgressBar;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.FteFragmentViewBinding;
+import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.activities.FTEActivity;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.adapters.EntryRecyclerAdapter;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.models.FTEViewModel;
@@ -94,12 +95,10 @@ public class FTEView extends Fragment {
         entryRecyclerAdapter.setOnItemClickListener((position, action) -> {
             if(action.equals("Delete")){
                 DocumentSnapshot snapshot = entries.get(position).getSnapshot();
-                snapshot.getReference().delete().addOnSuccessListener(aVoid -> {
-                    entries.remove(position);
+                snapshot.getReference().delete().addOnSuccessListener(aVoid -> { entries.remove(position);
                     entryRecyclerAdapter.notifyDataSetChanged();
                 })
-                        .addOnFailureListener(e ->
-                        Log.e("DELETING...", "deleteSnapshot: " + snapshot.getData(), e));
+                .addOnFailureListener(e -> ((FTEActivity)requireActivity()).handleFailure(e, "DELETE"));
 
             }
             else{

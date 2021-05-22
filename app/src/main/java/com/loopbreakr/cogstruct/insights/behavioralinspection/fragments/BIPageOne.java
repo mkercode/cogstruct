@@ -22,6 +22,8 @@ import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
 import com.loopbreakr.cogstruct.insights.adapters.InsightsRecyclerAdapter;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.models.BIViewModel;
+import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
+
 import java.util.List;
 
 
@@ -74,7 +76,7 @@ public class BIPageOne extends Fragment {
             FirebaseFirestore.getInstance()
                     .collection("forms")
                     .whereEqualTo("userId", auth.getCurrentUser().getUid())
-                    .get().addOnFailureListener(e -> Log.e("ERROR QUERY", "setViewModelData: ",e ))
+                    .get().addOnFailureListener(e -> ((BIActivity)requireActivity()).handleFailure(e))
                     .addOnSuccessListener(queryDocumentSnapshots -> setViewModel(queryDocumentSnapshots.getDocuments()));
     }
 

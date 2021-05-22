@@ -12,6 +12,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.badbehaviors.objects.BBObject;
@@ -24,14 +25,14 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class FTEActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener{
-
+    NavController fteController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fte_activity);
         NavHostFragment findThinkingErrors = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fte_container);
-        NavController fteController = findThinkingErrors.getNavController();
+        fteController = findThinkingErrors.getNavController();
     }
 
     @Override
@@ -72,9 +73,7 @@ public class FTEActivity extends AppCompatActivity implements FirebaseAuth.AuthS
         String timeStamp = getTimeStamp();
 
         FTEObject fteEntry = new FTEObject(dateCreated,userId,thought, thinkingErrors, timeStamp);
-        FirebaseFirestore.getInstance().collection("thinkingErrors").add(fteEntry).addOnSuccessListener(documentReference ->
-                Log.d("ADDING ENTRY...", "SUCCESS ADDING HIGH ENTRY: " + fteEntry.toString()))
-                .addOnFailureListener(e -> Log.e("ADDING ENTRY...", "FAILURE ADDING HIGH ENTRY: " +fteEntry.toString() + "... ERROR: ", e));
+        FirebaseFirestore.getInstance().collection("thinkingErrors").add(fteEntry).addOnFailureListener(e -> handleFailure(e, "CREATE"));
     }
 
     private String getTimeDate() {
@@ -83,5 +82,29 @@ public class FTEActivity extends AppCompatActivity implements FirebaseAuth.AuthS
 
     private String getTimeStamp(){
         return String.valueOf(TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()));
+    }
+
+    //handle failure of firebase operations
+    public void handleFailure(Throwable e, String type){
+        //send exception to firebase
+        FirebaseCrashlytics.getInstance().recordException(e);
+
+        //display exception to user, navigate back if fetching
+        switch (type) {
+            case "FETCH":
+                Toast.makeText(this, "Error, could not fetch data.", Toast.LENGTH_SHORT).show();
+                fteController.popBackStack(R.id.allLogsFragment, true);
+                fteController.navigate(R.id.allLogsFragment);
+                break;
+            case "EDIT":
+                Toast.makeText(this, "Error, could not edit thinking errors.", Toast.LENGTH_SHORT).show();
+                break;
+            case "DELETE":
+                Toast.makeText(this, "Error, could not delete thinking errors.", Toast.LENGTH_SHORT).show();
+                break;
+            case "CREATE":
+                Toast.makeText(this, "Error, could not create thinking error entry.", Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 }

@@ -23,6 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.insights.adapters.InsightsRecyclerAdapter;
+import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
 import com.loopbreakr.cogstruct.insights.gameplan.activities.GPActivity;
 import com.loopbreakr.cogstruct.insights.gameplan.models.GPViewModel;
 
@@ -81,7 +82,7 @@ public class GPPageOne extends Fragment {
         FirebaseFirestore.getInstance()
                 .collection("forms")
                 .whereEqualTo("userId", auth.getCurrentUser().getUid()).orderBy("timeStamp", Query.Direction.DESCENDING)
-                .get().addOnFailureListener(e -> Log.e("ERROR QUERY", "setViewModelData: ",e ))
+                .get().addOnFailureListener(e -> ((GPActivity)requireActivity()).handleFailure(e))
                 .addOnSuccessListener(queryDocumentSnapshots -> setViewModel(queryDocumentSnapshots.getDocuments()));
     }
 
@@ -108,7 +109,6 @@ public class GPPageOne extends Fragment {
 
         behaviorRecyclerAdapter.setOnItemClickListener(position -> {
             gpViewModel.setGpBehavior(behaviorList.get(position));
-            Log.d("BEHAVIOR", "setRecyclerview: " + gpViewModel.getGpBehavior());
             (Navigation.findNavController(requireView())).navigate(R.id.action_GPPageOne_to_GPPageTwo);
         });
     }

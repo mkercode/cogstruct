@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.loopbreakr.cogstruct.home.activities.LoginActivity;
 import com.loopbreakr.cogstruct.R;
 
@@ -59,5 +60,10 @@ public class BIActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         this.finish();
+    }
+
+    //handle failure of data query
+    public void handleFailure(Throwable e){
+        FirebaseCrashlytics.getInstance().recordException(e);
     }
 }

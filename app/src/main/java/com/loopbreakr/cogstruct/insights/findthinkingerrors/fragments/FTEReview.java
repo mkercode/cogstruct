@@ -101,7 +101,7 @@ public class FTEReview extends Fragment {
                 else{
                     fteViewModel.getEditDocumentSnapshot().getReference().update(
                             "thinkingErrors", teList)
-                            .addOnFailureListener(e -> Log.e("UPDATING FTE", "FAILED. ALL FIELDS OF " , e)).addOnSuccessListener(aVoid -> Log.d("UPDATING IB LOG", "SUCCESS"));
+                            .addOnFailureListener(e -> ((FTEActivity)requireActivity()).handleFailure(e, "EDIT"));
                     Toast.makeText(requireActivity().getApplicationContext(), "Updated entry", Toast.LENGTH_SHORT).show();
                 }
                 restartActivity();
