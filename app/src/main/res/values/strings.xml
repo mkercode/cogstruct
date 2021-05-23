@@ -206,4 +206,12 @@
     <string name="general_thought_indicator">Thought:</string>
     <string name="fte_thinking_error_indicator">Thinking errors:</string>
     <string name="general_popup_menu">Popup menu button</string>
+
+    <string name="about_text">CogStruct is an app based on clinical Cognitive Behavioral Therapy (CBT) created to help anyone target unhelpful behaviors, thoughts, and emotions. CogStruct provides a paperless solution to CBT, by allowing you to do CBT based activities on your phone! \nUsing CogStruct, you can easily fill out worksheets that may help you understand the driving forces behind your unhelpful behaviors, so you can be better equipped to come up with strategies to work on them. In addition, CogStruct allows you to gain valuable insights, by organizing all your worksheet input into helpful graphs and categories.</string>
+    <string name="about_title">About</string>
+    <string name="about_privacy">We take your privacy very seriously, and never share your data with any third party. When you enter information on the app, your data is stored in your account using an instance of Googles own secure database, with enhanced privacy rules to make sure that your data is safe.</string>
+    <string name="privacy_title">Privacy</string>
+    <string name="disclaimer_title">Disclaimer</string>
+    <string name="disclaimer_text">Please note that CogStruct is intended to serve as a potential supplement to ones mental health. This app is in no way a replacement for therapy or professional help, and can not serve as a sole resource for ones therapy.\nIn addition, CogStruct is not intended to be used for life threatening issues, if you or someone you know is in a life threatening or harmful situation please do not hesitate to call 911, or the applicable emergency number for your region.</string>
+
 </resources>
