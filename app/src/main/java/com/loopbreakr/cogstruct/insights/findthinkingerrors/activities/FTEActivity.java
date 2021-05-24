@@ -89,12 +89,10 @@ public class FTEActivity extends AppCompatActivity implements FirebaseAuth.AuthS
         //send exception to firebase
         FirebaseCrashlytics.getInstance().recordException(e);
 
-        //display exception to user, navigate back if fetching
+        //display exception to user
         switch (type) {
             case "FETCH":
                 Toast.makeText(this, "Error, could not fetch data.", Toast.LENGTH_SHORT).show();
-                fteController.popBackStack(R.id.allLogsFragment, true);
-                fteController.navigate(R.id.allLogsFragment);
                 break;
             case "EDIT":
                 Toast.makeText(this, "Error, could not edit thinking errors.", Toast.LENGTH_SHORT).show();
