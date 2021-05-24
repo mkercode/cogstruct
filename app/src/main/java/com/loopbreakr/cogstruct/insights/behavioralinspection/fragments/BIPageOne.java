@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
 import com.loopbreakr.cogstruct.insights.adapters.InsightsRecyclerAdapter;
@@ -75,7 +76,7 @@ public class BIPageOne extends Fragment {
             FirebaseAuth auth = FirebaseAuth.getInstance();
             FirebaseFirestore.getInstance()
                     .collection("forms")
-                    .whereEqualTo("userId", auth.getCurrentUser().getUid())
+                    .whereEqualTo("userId", auth.getCurrentUser().getUid()).orderBy("timeStamp", Query.Direction.DESCENDING)
                     .get().addOnFailureListener(e -> ((BIActivity)requireActivity()).handleFailure(e))
                     .addOnSuccessListener(queryDocumentSnapshots -> setViewModel(queryDocumentSnapshots.getDocuments()));
     }

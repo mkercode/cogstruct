@@ -77,8 +77,7 @@ public class FTESelectCreate extends Fragment {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseFirestore.getInstance()
                 .collection("forms")
-                .whereEqualTo("userId", auth.getCurrentUser().getUid()).orderBy("timeStamp", Query.Direction.DESCENDING)
-                .get()
+                .whereEqualTo("userId", auth.getCurrentUser().getUid()).orderBy("timeStamp", Query.Direction.DESCENDING).get()
                 .addOnFailureListener(e -> ((FTEActivity)requireActivity()).handleFailure(e, "FETCH"))
                 .addOnSuccessListener(queryDocumentSnapshots -> setViewModel(queryDocumentSnapshots.getDocuments()));
     }
