@@ -7,7 +7,6 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,12 +32,12 @@ public class IBActivity extends AppCompatActivity implements FirebaseAuth.AuthSt
     }
 
 
-    public void sendToFirestore(String behavior, String nesscessaryAction, String barrierType, String barrier, String solution){
+    public void sendToFirestore(String behavior, String nesscessaryAction, String barrierType, String barrier, String solutions){
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         String dateCreated = getTimeDate();
         String timeStamp = getTimeStamp();
 
-        IBObject ibEntry= new IBObject(dateCreated,userId,behavior,nesscessaryAction,barrierType,barrier,solution, timeStamp);
+        IBObject ibEntry= new IBObject(dateCreated,userId,behavior,nesscessaryAction,barrierType,barrier,solutions, timeStamp);
         FirebaseFirestore.getInstance().collection("forms").add(ibEntry).addOnFailureListener(this::sendException);
         closeActivity();
     }

@@ -241,7 +241,7 @@
         android:gravity="top"
         android:padding="4dp"
         style="@style/optionalText"
-        android:text="@={viewModel.ibSolution}"
+        android:text="@={viewModel.ibSolutions}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ib_ps_halfway_point"
         app:layout_constraintTop_toTopOf="@+id/ib_problem_solving_description" />

@@ -9,14 +9,14 @@ public class IBObject {
     private String necessaryAction;
     private String barrierType;
     private String barrier;
-    private String solution;
+    private String solutions;
     private String timeStamp;
 
     public IBObject(){
 
     }
 
-    public IBObject(String dateCreated, String userId, String behavior, String necessaryAction, String barrierType, String barrier, String solution, String timeStamp) {
+    public IBObject(String dateCreated, String userId, String behavior, String necessaryAction, String barrierType, String barrier, String solutions, String timeStamp) {
         this.formName = "Identify Barriers";
         this.dateCreated = dateCreated;
         this.userId = userId;
@@ -24,7 +24,7 @@ public class IBObject {
         this.necessaryAction = necessaryAction;
         this.barrierType = barrierType;
         this.barrier = barrier;
-        this.solution = solution;
+        this.solutions = solutions;
         this.timeStamp = timeStamp;
     }
 
@@ -35,7 +35,7 @@ public class IBObject {
     public void setNecessaryAction(String necessaryAction) { this.necessaryAction = necessaryAction; }
     public void setBarrierType(String barrierType) { this.barrierType = barrierType; }
     public void setBarrier(String barrier) { this.barrier = barrier; }
-    public void setSolution(String solution) { this.solution = solution; }
+    public void setSolutions(String solutions) { this.solutions = solutions; }
 
     public String getFormName() { return formName; }
     public String getDateCreated() { return dateCreated; }
@@ -44,7 +44,7 @@ public class IBObject {
     public String getNecessaryAction() { return necessaryAction; }
     public String getBarrierType() { return barrierType; }
     public String getBarrier() { return barrier; }
-    public String getSolution() { return solution; }
+    public String getSolutions() { return solutions; }
 
     public String getTimeStamp() {
         return timeStamp;

@@ -54,19 +54,11 @@ public class LoginActivity extends AppCompatActivity {
         if (requestCode == AUTHUI_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 // We have signed in the user or we have a new user
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                Log.d(TAG, "onActivityResult: " + user.toString());
 
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 this.finish();
 
-            } else {
-                // Signing in failed
-                IdpResponse response = IdpResponse.fromResultIntent(data);
-                if (response == null) {
-                    Log.d(TAG, "onActivityResult: the user has cancelled the sign in request");
-                }
             }
         }
     }

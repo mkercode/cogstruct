@@ -226,7 +226,7 @@
         android:maxLines="3"
         android:minLines="3"
         android:padding="4dp"
-        android:text="@={viewModel.ibSolution}"
+        android:text="@={viewModel.ibSolutions}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ib_edit_problem_solving_description" />

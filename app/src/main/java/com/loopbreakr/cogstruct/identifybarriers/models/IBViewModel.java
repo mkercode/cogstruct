@@ -30,7 +30,7 @@ public class IBViewModel extends ViewModel {
         ibNescessaryAction = ibObject.getNecessaryAction();
         ibBarrierType = ibObject.getBarrierType();
         ibBarrier = ibObject.getBarrier();
-        ibSolution = ibObject.getSolution();
+        ibSolution = ibObject.getSolutions();
 
         initializeLogRadioButtons(ibBarrierType);
     }
@@ -110,8 +110,8 @@ public class IBViewModel extends ViewModel {
         ibThinkingIsEnabled = input;
     }
 
-    public void setIbSolution(String input){ ibSolution = input;}
-    public String getIbSolution() { return ibSolution; }
+    public void setIbSolutions(String input){ ibSolution = input;}
+    public String getIbSolutions() { return ibSolution; }
     public String getIbNescessaryAction() { return ibNescessaryAction; }
     public String getIbBehavior() { return ibBehavior; }
     public String getIbWillingBarrier() { return ibWillingBarrier; }

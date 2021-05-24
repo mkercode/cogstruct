@@ -68,7 +68,7 @@ public class IBProblemSolving extends Fragment {
         NavController controller = Navigation.findNavController(requireView());
         editButton.setOnClickListener(v -> controller.navigateUp());
         submitButton.setOnClickListener(v -> {
-          if(ibViewModel.getIbBehavior() != null && ibViewModel.getIbBarrier() != null && ibViewModel.getIbNescessaryAction() != null && ibViewModel.getIbSolution() != null){
+          if(ibViewModel.getIbBehavior() != null && ibViewModel.getIbBarrier() != null && ibViewModel.getIbNescessaryAction() != null && ibViewModel.getIbSolutions() != null){
               submitData();
           }
           else{
@@ -79,7 +79,7 @@ public class IBProblemSolving extends Fragment {
     }
 
     private void submitData() {
-        ((IBActivity)requireActivity()).sendToFirestore(ibViewModel.getIbBehavior(),ibViewModel.getIbNescessaryAction(),ibViewModel.getIbBarrierType(),ibViewModel.getIbBarrier(),ibViewModel.getIbSolution());
+        ((IBActivity)requireActivity()).sendToFirestore(ibViewModel.getIbBehavior(),ibViewModel.getIbNescessaryAction(),ibViewModel.getIbBarrierType(),ibViewModel.getIbBarrier(),ibViewModel.getIbSolutions());
     }
 
 

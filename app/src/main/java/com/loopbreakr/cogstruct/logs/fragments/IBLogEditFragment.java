@@ -85,7 +85,7 @@ public class IBLogEditFragment extends Fragment {
                 "necessaryAction", ibViewModel.getIbNescessaryAction(),
                 "barrierType", ibViewModel.getIbBarrierType(),
                 "barrier", ibViewModel.getIbBarrier(),
-                "solution",ibViewModel.getIbSolution())
+                "solution",ibViewModel.getIbSolutions())
                 .addOnFailureListener(e -> ((LogsActivity)requireActivity()).handleFailure(e, "EDIT"));
     }
 }

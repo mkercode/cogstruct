@@ -141,7 +141,6 @@ public class PCLogEditFragment extends Fragment {
         dontChangeConsRecyclerAdapter.setOnItemClickListener(position -> {
             dontChangeConsList.remove(position);
             dontChangeConsRecyclerAdapter.notifyDataSetChanged();
-            Log.d("Delete: ", dontChangeConsList.toString());
         });
     }
 
