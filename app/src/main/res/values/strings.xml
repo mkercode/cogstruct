@@ -18,10 +18,10 @@
     <string name="identify_barriers_icon_description">Identify barriers icon</string>
 
     <string name="thought_journal_description">Thought journals can help you recognize and change unhelpful thought patterns. The purpose of this exercise is to get you into the habit of paying attention to your thoughts.</string>
-    <string name="abcs_description">The ABC\'s stand for Activating events, Beliefs, and Conequences. The purpose of this activity to recognize the link between the things that happen to us, unhelpful beliefs/thoughts, and the consequences of these thoughts and events.</string>
-    <string name="bad_behaviors_description">Already identified the unhelpful behavior you\'dlike to change? In this activity we will problem solve… and try to prevent the behavior next time an urge pops up!</string>
+    <string name="abcs_description">The ABC\'s stand for Activating events, Beliefs, and Consequences. The purpose of this activity to recognize the link between the things that happen to us, unhelpful beliefs/thoughts, and the consequences of these thoughts and events.</string>
+    <string name="bad_behaviors_description">Already identified the unhelpful behavior you\'d like to change? In this activity we will problem solve… and try to prevent the behavior next time an urge pops up!</string>
     <string name="howd_i_get_here_description">This activity can help you analyze the chain of events and reactions that contributed to a behavior step by step. So we can prevent it next time.</string>
-    <string name="identify_barriers_description">What about good/effective bahaviors? When there was a helpful behavior or action that we planned to do but didn\'t, this activity can helps identify what stopped us from doing it.</string>
+    <string name="identify_barriers_description">What about good/effective behaviors? When there was a helpful behavior or action that we planned to do but didn\'t, this activity can helps identify what stopped us from doing it.</string>
     <string name="pros_and_cons_description">This activity can help you look at things objectively by weighing the pros and cons of continuing or stopping engagement in a specific thought, behavior, or habit.</string>
     >
 
@@ -214,4 +214,13 @@
     <string name="disclaimer_title">Disclaimer</string>
     <string name="disclaimer_text">Please note that CogStruct is intended to serve as a potential supplement to ones mental health. This app is in no way a replacement for therapy or professional help, and can not serve as a sole resource for ones therapy.\nIn addition, CogStruct is not intended to be used for life threatening issues, if you or someone you know is in a life threatening or harmful situation please do not hesitate to call 911, or the applicable emergency number for your region.</string>
 
+    <string name="learn_more_title">Learn More</string>
+    <string name="cbt_title">CBT</string>
+    <string name="cbt_description">Cogstruct is based on Cognitive Behavioral Therapy (CBT). Unlike some other (equally helpful) forms of therapy, CBT focuses on the present. It is designed to examine ones thoughts, behaviors, and emotions in a structured manner. By doing so, one may identify cognitive distortions, understand and regulate their emotional responses, and come up with techniques to change their behaviors.</string>
+    <string name="worksheets_title">More Activities</string>
+    <string name="worksheets_description">While the CBT-based worksheets on this app may be a good start or supplement to an existing therapy plan, there are a lot of resources you can utilize if you want to delve deeper. Many mental health professionals are certified in this form of therapy, and would be able to help you explore more. You can also find many more CBT worksheets and exercises for free online, and even more from certified sites for a small subscription fee. </string>
+    <string name="objectivity_title">Objectivity</string>
+    <string name="objectivity_description">Some people find it hard to be objective when doing CBT or CBT-based exercises alone. It is always a good idea to have a trained mental health professionals to discuss your responses to the worksheets with. If this is not possible, some people find it helpful to discuss their responses with an understanding friend or family member.</string>
+    <string name="other_therapies_title">Other Therapies</string>
+    <string name="other_therapies_description">If you enjoy the CBT-based exercises on this app, you may want to look into other forms of therapy. Dialectical Behavioral Therapy (DBT) is based on CBT, but focuses on the emotional and social factors. DBT can help people regulate unhelpful emotions, and come up with coping strategies to deal with them and their effects on thoughts and behaviors. DBT can also help people with problems, practice distress tolerance, acceptance, and mindfulness. /nLike CBT, many mental health professionals are trained in this kind of therapy, and free resources exist online if you wish to get a glimpse as to what it entails.</string>
 </resources>
