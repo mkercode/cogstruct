@@ -24,6 +24,7 @@ import com.loopbreakr.cogstruct.howdigethere.models.HIGHViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class HIGHPageFive extends Fragment {
@@ -106,16 +107,13 @@ public class HIGHPageFive extends Fragment {
 
         NavController controller = Navigation.findNavController(requireView());
 
-        backButton.setOnClickListener(v ->{
-            controller.popBackStack(R.id.HIGHPageFour, true);
-            controller.navigate(R.id.HIGHPageFour);
-        });
+        backButton.setOnClickListener(v -> controller.navigateUp());
         nextButton.setOnClickListener(v -> controller.navigate(R.id.action_HIGHPageFive_to_HIGHPageSix));
     }
 
     private void addToList(List<String> list) {
         EditText addEntryText = new EditText(getActivity());
-        new AlertDialog.Builder(getActivity()).setTitle("Add Entry")
+        new AlertDialog.Builder(requireActivity()).setTitle("Add Entry")
                 .setView(addEntryText)
                 .setPositiveButton("Add", (dialog, which) ->
                         list.add(addEntryText.getText().toString())).setNegativeButton("Cancel", null).show();

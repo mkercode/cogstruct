@@ -62,11 +62,8 @@ public class PCPageFour extends Fragment {
     }
 
     private void setButtons() {
-        editButton.setOnClickListener(v ->{
-            NavController controller = Navigation.findNavController(requireView());
-            controller.popBackStack(R.id.PCPageThree, true);
-            controller.navigate(R.id.PCPageThree);
-        });
+        NavController controller = Navigation.findNavController(requireView());
+        editButton.setOnClickListener(v -> controller.navigateUp());
         submitButton.setOnClickListener(v -> {
             if(pcViewModel.getPCBehavior() == null || pcViewModel.getPCBehavior().equals("")){
                 Toast.makeText(this.requireActivity().getApplicationContext(), "Please enter the behavior!", Toast.LENGTH_SHORT).show();

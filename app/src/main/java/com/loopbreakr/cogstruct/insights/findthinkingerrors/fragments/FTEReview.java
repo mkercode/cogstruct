@@ -81,14 +81,11 @@ public class FTEReview extends Fragment {
 
     private void setButtons() {
         controller = Navigation.findNavController(requireView());
-        editButton.setOnClickListener(v ->{
-                controller.popBackStack(R.id.FTECreate, true);
-                controller.navigate(R.id.FTECreate);
-        });
+        editButton.setOnClickListener(v -> controller.navigateUp());
         submitButton.setOnClickListener(v ->{
 
             //logic to only submit data if the user has chosen atleast one thinking error
-            if(teList.isEmpty() || teList.equals(null)){
+            if(teList.isEmpty()){
                 Toast.makeText(requireActivity().getApplicationContext(), "Please choose a thinking error!", Toast.LENGTH_SHORT).show();
             }
 

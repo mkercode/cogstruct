@@ -63,10 +63,7 @@ public class TJPageFour extends Fragment {
 
     private void setButtons() {
         NavController controller = Navigation.findNavController(requireView());
-        backButton.setOnClickListener(v -> {
-            controller.popBackStack(R.id.tjPageThree, true);
-            controller.navigate(R.id.tjPageThree);
-        });
+        backButton.setOnClickListener(v -> controller.navigateUp());
         nextButton.setOnClickListener(v -> controller.navigate(R.id.action_tjPageFour_to_tjPageFive));
     }
 }

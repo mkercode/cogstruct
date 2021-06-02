@@ -63,10 +63,7 @@ public class HIGHPageTwo extends Fragment {
 
     private void setButtons() {
         NavController controller = Navigation.findNavController(requireView());
-        backButton.setOnClickListener(v ->{
-            controller.popBackStack(R.id.HIGHPageOne, true);
-            controller.navigate(R.id.HIGHPageOne);
-        });
+        backButton.setOnClickListener(v -> controller.navigateUp());
         nextButton.setOnClickListener(v -> controller.navigate(R.id.action_HIGHPageTwo_to_HIGHPageThree));
     }
 }

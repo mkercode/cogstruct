@@ -63,10 +63,7 @@ public class HIGHReview extends Fragment {
 
     private void setButtons() {
         NavController controller = Navigation.findNavController(requireView());
-        editButton.setOnClickListener(v ->{
-            controller.popBackStack(R.id.HIGHPageSix, true);
-            controller.navigate(R.id.HIGHPageSix);
-        });
+        editButton.setOnClickListener(v -> controller.navigateUp());
         submitButton.setOnClickListener(v -> {
             if(highViewModel.getHighBehavior() == null || highViewModel.getHighBehavior().equals("")){
                 Toast.makeText(this.requireActivity().getApplicationContext(), "Please enter the behavior!", Toast.LENGTH_SHORT).show();

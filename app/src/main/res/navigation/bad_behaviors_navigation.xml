@@ -46,4 +46,10 @@
         android:name="com.loopbreakr.cogstruct.badbehaviors.fragments.BBReview"
         android:label="bb_fragment_review"
         tools:layout="@layout/bb_fragment_review" />
+    <action
+        android:id="@+id/action_bad_behaviors_navigation_pop"
+        app:enterAnim="@anim/fui_slide_in_right"
+        app:popUpTo="@id/bad_behaviors_navigation"
+        app:popUpToInclusive="true"
+        app:exitAnim="@anim/fui_slide_out_left" />
 </navigation>

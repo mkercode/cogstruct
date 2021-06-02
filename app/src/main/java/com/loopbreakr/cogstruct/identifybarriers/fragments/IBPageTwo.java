@@ -61,10 +61,7 @@ public class IBPageTwo extends Fragment {
 
     private void setButtons() {
         NavController controller = Navigation.findNavController(requireView());
-        backButton.setOnClickListener(v ->{
-            controller.popBackStack(R.id.IBPageOne, true);
-            controller.navigate(R.id.IBPageOne);
-        });
+        backButton.setOnClickListener(v -> controller.navigateUp());
         nextButton.setOnClickListener(v ->{
             if(ibViewModel.getIbBarrierType().equals("Willingness")){
                 controller.navigate(R.id.action_IBPageTwo_to_IBProblemSolving);

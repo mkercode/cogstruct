@@ -21,6 +21,7 @@ import com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class BBPageThree extends Fragment {
@@ -88,16 +89,13 @@ public class BBPageThree extends Fragment {
 
         NavController controller = Navigation.findNavController(requireView());
 
-        backButton.setOnClickListener(v ->{
-            controller.popBackStack(R.id.BBPageTwo, true);
-            controller.navigate(R.id.BBPageTwo);
-        });
+        backButton.setOnClickListener(v -> controller.navigateUp());
         nextButton.setOnClickListener(v -> controller.navigate(R.id.action_BBPageThree_to_BBPageFour));
     }
 
     private void addToList(List<String> list) {
         EditText addEntryText = new EditText(getActivity());
-        new AlertDialog.Builder(getActivity()).setTitle("Add Entry")
+        new AlertDialog.Builder(requireActivity()).setTitle("Add Entry")
                 .setView(addEntryText)
                 .setPositiveButton("Add", (dialog, which) ->
                         list.add(addEntryText.getText().toString())).setNegativeButton("Cancel", null).show();

@@ -23,6 +23,7 @@ import com.loopbreakr.cogstruct.adapters.SimpleRecyclerAdapter;
 import com.loopbreakr.cogstruct.proscons.models.PCViewModel;
 
 import java.util.List;
+import java.util.Objects;
 
 
 public class PCPageTwo extends Fragment {
@@ -88,7 +89,6 @@ public class PCPageTwo extends Fragment {
     }
 
     private void setButtons() {
-
         addPro.setOnClickListener(v -> {
             addToList(prosList);
             pcViewModel.setChangePros(prosList);
@@ -99,17 +99,13 @@ public class PCPageTwo extends Fragment {
         });
 
         NavController controller = Navigation.findNavController(requireView());
-        backButton.setOnClickListener(v ->{
-            controller.popBackStack(R.id.PCPageOne, true);
-            controller.navigate(R.id.PCPageOne);
-        });
-
+        backButton.setOnClickListener(v -> controller.navigateUp());
         nextButton.setOnClickListener(v -> controller.navigate(R.id.action_PCPageTwo_to_PCPageThree));
     }
 
     private void addToList(List<String> list) {
         EditText addEntryText = new EditText(getActivity());
-        new AlertDialog.Builder(getActivity()).setTitle("Add Entry")
+        new AlertDialog.Builder(requireActivity()).setTitle("Add Entry")
                 .setView(addEntryText)
                 .setPositiveButton("Add", (dialog, which) ->
                         list.add(addEntryText.getText().toString())).setNegativeButton("Cancel", null).show();

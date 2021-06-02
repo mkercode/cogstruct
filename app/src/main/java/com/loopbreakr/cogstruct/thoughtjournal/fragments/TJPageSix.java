@@ -69,13 +69,8 @@ public class TJPageSix extends Fragment{
     }
 
     private void setButtons() {
-
-        editButton.setOnClickListener(v ->{
-            NavController controller = Navigation.findNavController(requireView());
-            controller.popBackStack(R.id.tjPageFive, true);
-            controller.navigate(R.id.tjPageFive);
-        });
-
+        NavController controller = Navigation.findNavController(requireView());
+        editButton.setOnClickListener(v -> controller.navigateUp());
         submitButton.setOnClickListener(v ->{
             if(!requiredInputs.contains("") &&!requiredInputs.contains(null) && !tjViewModel.getThoughtList().isEmpty()){
                 submitData();

@@ -21,6 +21,7 @@ import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class TJPageFive extends Fragment {
     private TJViewModel tjViewModel;
@@ -78,8 +79,7 @@ public class TJPageFive extends Fragment {
         NavController controller = Navigation.findNavController(requireView());
         backButton.setOnClickListener(v ->{
             updateThoughtList();
-            controller.popBackStack(R.id.tjPageFour, true);
-            controller.navigate(R.id.tjPageFour);
+            controller.navigateUp();
         });
         reviewButton.setOnClickListener(v ->{
             updateThoughtList();
@@ -109,7 +109,7 @@ public class TJPageFive extends Fragment {
 
     private void addToList() {
         EditText addEntryText = new EditText(getActivity());
-        new AlertDialog.Builder(getActivity()).setTitle("Add Thought")
+        new AlertDialog.Builder(requireActivity()).setTitle("Add Thought")
                 .setView(addEntryText)
                 .setPositiveButton("Add", (dialog, which) ->{
                     thoughtList.add(addEntryText.getText().toString());
@@ -120,7 +120,7 @@ public class TJPageFive extends Fragment {
     private void editInList(String thought, Chip chip) {
         EditText addEntryText = new EditText(getActivity());
         addEntryText.setText(thought);
-        new AlertDialog.Builder(getActivity()).setTitle("Edit Thought")
+        new AlertDialog.Builder(requireActivity()).setTitle("Edit Thought")
                 .setView(addEntryText)
                 .setPositiveButton("Add", (dialog, which) ->{
                     thoughtList.set(thoughtList.indexOf(thought), addEntryText.getText().toString());

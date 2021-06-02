@@ -64,10 +64,7 @@ public class BBReview extends Fragment {
 
     private void setButtons() {
         NavController controller = Navigation.findNavController(requireView());
-        editButton.setOnClickListener(v ->{
-            controller.popBackStack(R.id.BBPageFour, true);
-            controller.navigate(R.id.BBPageFour);
-        });
+        editButton.setOnClickListener(v -> controller.navigateUp());
         submitButton.setOnClickListener(v -> {
             if(bbViewModel.getBbBehavior() == null || bbViewModel.getBbBehavior().equals("")){
                 Toast.makeText(this.requireActivity().getApplicationContext(), "Please enter the behavior!", Toast.LENGTH_SHORT).show();

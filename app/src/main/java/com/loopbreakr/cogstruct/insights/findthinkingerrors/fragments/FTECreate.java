@@ -111,7 +111,7 @@ public class FTECreate extends Fragment {
 
         //set host fragment navigation
         NavController controller = Navigation.findNavController(requireView());
-        backButton.setOnClickListener(v -> requireActivity().onBackPressed());
+        backButton.setOnClickListener(v -> controller.navigateUp());
         reviewButton.setOnClickListener( v -> controller.navigate(R.id.action_FTECreate_to_FTEReview));
     }
 
