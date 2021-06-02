@@ -75,8 +75,7 @@ public class BBLogEditTwo extends Fragment {
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_done_edit_log) {
                 updateFirestoreDocument();
-                controller.popBackStack(R.id.allLogsFragment, true);
-                controller.navigate(R.id.allLogsFragment);
+                controller.navigateUp();
                 return true;
             }
             return super.onOptionsItemSelected(item);

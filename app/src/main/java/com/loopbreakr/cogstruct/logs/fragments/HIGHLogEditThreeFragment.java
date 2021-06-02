@@ -78,8 +78,7 @@ public class HIGHLogEditThreeFragment extends Fragment {
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_done_edit_high) {
                 updateFirestoreDocument();
-                controller.popBackStack(R.id.allLogsFragment, true);
-                controller.navigate(R.id.allLogsFragment);
+                controller.navigateUp();
                 return true;
             }
             else if(item.getItemId() == R.id.action_next_edit_high){

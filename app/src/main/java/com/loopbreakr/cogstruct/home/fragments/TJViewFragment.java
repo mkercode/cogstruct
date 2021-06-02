@@ -17,6 +17,8 @@ import android.widget.Button;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.thoughtjournal.activities.TJActivity;
 
+import java.util.Objects;
+
 
 public class TJViewFragment extends Fragment {
     private Button beginButton;
@@ -59,11 +61,11 @@ public class TJViewFragment extends Fragment {
     private void setBackToolBar(View view) {
         Toolbar backToolbar = view.findViewById(R.id.back_toolbar);
 
-        ((AppCompatActivity)getActivity()).setSupportActionBar(backToolbar);
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+        ((AppCompatActivity) requireActivity()).setSupportActionBar(backToolbar);
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
 
         backToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        backToolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
+        backToolbar.setNavigationOnClickListener(v -> requireActivity().onBackPressed());
     }
 
 

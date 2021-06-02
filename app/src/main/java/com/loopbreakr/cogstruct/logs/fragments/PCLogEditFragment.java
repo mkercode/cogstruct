@@ -32,6 +32,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class PCLogEditFragment extends Fragment {
@@ -78,7 +79,7 @@ public class PCLogEditFragment extends Fragment {
         NavController controller = Navigation.findNavController(requireView());
         Toolbar toolbar = view.findViewById(R.id.edit_logs_toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
+        toolbar.setNavigationOnClickListener(v -> ((LogsActivity)requireActivity()).handleBack());
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_done_edit_log) {
                 updateFirestoreDocument();
@@ -165,7 +166,7 @@ public class PCLogEditFragment extends Fragment {
 
     private void addToList(List<String> list) {
         EditText addEntryText = new EditText(getActivity());
-        new AlertDialog.Builder(getActivity()).setTitle("Add Entry")
+        new AlertDialog.Builder(requireActivity()).setTitle("Add Entry")
                 .setView(addEntryText)
                 .setPositiveButton("Add", (dialog, which) ->
                         list.add(addEntryText.getText().toString())).setNegativeButton("Cancel", null).show();

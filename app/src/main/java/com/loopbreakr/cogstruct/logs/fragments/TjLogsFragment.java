@@ -72,7 +72,7 @@ public class TjLogsFragment extends Fragment {
     private void setToolbar(View view) {
         Toolbar toolbar = view.findViewById(R.id.logsToolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
+        toolbar.setNavigationOnClickListener(v -> ((LogsActivity)requireActivity()).handleBack());
         toolbar.setOverflowIcon(ContextCompat.getDrawable(requireActivity(),R.drawable.ic_white_dots));
         toolbar.setOnMenuItemClickListener(item -> {
             NavController controller = Navigation.findNavController(requireView());
@@ -84,8 +84,7 @@ public class TjLogsFragment extends Fragment {
                     DocumentSnapshot snapshot = logsViewModel.getSnapshot();
                     snapshot.getReference().delete().addOnFailureListener(e ->
                             ((LogsActivity)requireActivity()).handleFailure(e, "FETCH"));
-                    controller.popBackStack(R.id.allLogsFragment, true);
-                    controller.navigate(R.id.allLogsFragment);
+                    controller.navigateUp();
                     return true;
                 default:
                     return super.onOptionsItemSelected(item);

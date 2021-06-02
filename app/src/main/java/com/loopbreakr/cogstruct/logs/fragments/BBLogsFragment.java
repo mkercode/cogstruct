@@ -78,8 +78,7 @@ public class BBLogsFragment extends Fragment {
                     DocumentSnapshot snapshot = logsViewModel.getSnapshot();
                     snapshot.getReference().delete().addOnFailureListener(e ->
                             ((LogsActivity)requireActivity()).handleFailure(e, "FETCH"));
-                    controller.popBackStack(R.id.allLogsFragment, true);
-                    controller.navigate(R.id.allLogsFragment);
+                    controller.navigateUp();
                     return true;
                 default:
                     return super.onOptionsItemSelected(item);

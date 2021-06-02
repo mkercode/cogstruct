@@ -28,6 +28,7 @@ import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class HIGHLogEditTwoFragment extends Fragment {
@@ -70,7 +71,7 @@ public class HIGHLogEditTwoFragment extends Fragment {
         NavController controller = Navigation.findNavController(requireView());
         Toolbar toolbar = view.findViewById(R.id.edit_high_logs_toolbar_two);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
+        toolbar.setNavigationOnClickListener(v -> ((LogsActivity)requireActivity()).handleBack());
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_done_edit_high) {
                 updateFirestoreDocument();
@@ -135,7 +136,7 @@ public class HIGHLogEditTwoFragment extends Fragment {
 
     private void addToList(List<String> list) {
         EditText addEntryText = new EditText(getActivity());
-        new AlertDialog.Builder(getActivity()).setTitle("Add Entry")
+        new AlertDialog.Builder(requireActivity()).setTitle("Add Entry")
                 .setView(addEntryText)
                 .setPositiveButton("Add", (dialog, which) ->
                         list.add(addEntryText.getText().toString())).setNegativeButton("Cancel", null).show();

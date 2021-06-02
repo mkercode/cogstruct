@@ -34,11 +34,9 @@ public class HIGHPageFive extends Fragment {
     private RecyclerView reliefRecyclerView, consequenceRecyclerView;
     private List<String> reliefsList, consequencesList;
 
-
     public HIGHPageFive() {
         // Required empty public constructor
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

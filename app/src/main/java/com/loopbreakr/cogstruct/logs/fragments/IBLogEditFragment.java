@@ -66,12 +66,11 @@ public class IBLogEditFragment extends Fragment {
         NavController controller = Navigation.findNavController(requireView());
         Toolbar toolbar = view.findViewById(R.id.edit_logs_toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
+        toolbar.setNavigationOnClickListener(v -> ((LogsActivity)requireActivity()).handleBack());
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_done_edit_log) {
                 updateFirestoreDocument();
-                controller.popBackStack(R.id.allLogsFragment, true);
-                controller.navigate(R.id.allLogsFragment);
+                controller.navigateUp();
                 return true;
             }
             return super.onOptionsItemSelected(item);

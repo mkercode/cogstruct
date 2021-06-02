@@ -27,6 +27,7 @@ public class BBActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bb_activity);
         NavHostFragment badbehavior = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.bb_container);
+        assert badbehavior != null;
         NavController badbehaviorNavController = badbehavior.getNavController();
     }
 

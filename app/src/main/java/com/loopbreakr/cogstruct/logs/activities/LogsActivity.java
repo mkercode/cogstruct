@@ -2,6 +2,7 @@ package com.loopbreakr.cogstruct.logs.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -53,6 +54,15 @@ public class LogsActivity extends AppCompatActivity implements FirebaseAuth.Auth
         }
     }
 
+    public void setToolbar(Toolbar toolbar, int id){
+
+    }
+
+
+    public void handleBack(){
+        navController.navigateUp();
+    }
+
     public void handleFailure(Throwable e, String type){
         //send exception to firebase
         FirebaseCrashlytics.getInstance().recordException(e);
@@ -60,8 +70,7 @@ public class LogsActivity extends AppCompatActivity implements FirebaseAuth.Auth
         //display exception to user, navigate back if fetching
         if(type.equals("FETCH")){
             Toast.makeText(this, "Error, could not fetch log.", Toast.LENGTH_SHORT).show();
-            navController.popBackStack(R.id.allLogsFragment, true);
-            navController.navigate(R.id.allLogsFragment);
+            navController.navigateUp();
         }
         else if(type.equals("EDIT")){
             Toast.makeText(this, "Error, could not edit log.", Toast.LENGTH_SHORT).show();
