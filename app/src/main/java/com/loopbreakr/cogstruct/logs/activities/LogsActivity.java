@@ -76,11 +76,6 @@ public class LogsActivity extends AppCompatActivity implements FirebaseAuth.Auth
         });
     }
 
-
-    public void handleBack(){
-        navController.navigateUp();
-    }
-
     public void handleFailure(Throwable e, String type){
         //send exception to firebase
         FirebaseCrashlytics.getInstance().recordException(e);

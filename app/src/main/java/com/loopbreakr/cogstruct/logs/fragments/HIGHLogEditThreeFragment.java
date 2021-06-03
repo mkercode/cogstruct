@@ -74,7 +74,7 @@ public class HIGHLogEditThreeFragment extends Fragment {
         NavController controller = Navigation.findNavController(requireView());
         Toolbar toolbar = view.findViewById(R.id.edit_high_logs_toolbar_three);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setNavigationOnClickListener(v -> getActivity().onBackPressed());
+        toolbar.setNavigationOnClickListener(v -> controller.navigateUp());
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_done_edit_high) {
                 updateFirestoreDocument();

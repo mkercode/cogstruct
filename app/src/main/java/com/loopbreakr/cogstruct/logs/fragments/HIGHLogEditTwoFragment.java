@@ -71,7 +71,7 @@ public class HIGHLogEditTwoFragment extends Fragment {
         NavController controller = Navigation.findNavController(requireView());
         Toolbar toolbar = view.findViewById(R.id.edit_high_logs_toolbar_two);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setNavigationOnClickListener(v -> ((LogsActivity)requireActivity()).handleBack());
+        toolbar.setNavigationOnClickListener(v -> controller.navigateUp());
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_done_edit_high) {
                 updateFirestoreDocument();
