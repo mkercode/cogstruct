@@ -64,7 +64,7 @@ public class HIGHLogsFragment extends Fragment {
     }
 
     private void setToolbar(View view) {
-        ((LogsActivity)requireActivity()).setToolbar(view.findViewById(R.id.logsToolbar), "VIEW", R.id.action_HIGHLogFragment_to_HIGHLogEditOneFragment, logsViewModel.getSnapshot());
+        ((LogsActivity)requireActivity()).setViewToolbar(view.findViewById(R.id.logsToolbar), R.id.action_HIGHLogFragment_to_HIGHLogEditOneFragment, logsViewModel.getSnapshot());
     }
 
     private void setViewModelData() {

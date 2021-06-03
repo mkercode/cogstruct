@@ -64,7 +64,7 @@ public class BBLogsFragment extends Fragment {
     }
 
     private void setToolbar(View view) {
-        ((LogsActivity)requireActivity()).setToolbar(view.findViewById(R.id.logsToolbar), "VIEW", R.id.action_BBLogFragment_to_BBLogEditOne, logsViewModel.getSnapshot());
+        ((LogsActivity)requireActivity()).setViewToolbar(view.findViewById(R.id.logsToolbar), R.id.action_BBLogFragment_to_BBLogEditOne, logsViewModel.getSnapshot());
     }
 
     private void setViewModelData() {

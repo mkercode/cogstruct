@@ -57,26 +57,22 @@ public class LogsActivity extends AppCompatActivity implements FirebaseAuth.Auth
         }
     }
 
-    public void setToolbar(Toolbar toolbar, String type, int actionID, DocumentSnapshot snapshot){
+    //set toolbar for all view fragments
+    public void setViewToolbar(Toolbar toolbar, int actionID, DocumentSnapshot snapshot){
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         toolbar.setNavigationOnClickListener(v -> navController.navigateUp());
-        if(type.equals("VIEW")){
-            toolbar.setOverflowIcon(ContextCompat.getDrawable(this, R.drawable.ic_white_dots));
-        }
+        toolbar.setOverflowIcon(ContextCompat.getDrawable(this, R.drawable.ic_white_dots));
 
         toolbar.setOnMenuItemClickListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.action_editLog :
-                    navController.navigate(actionID);
-                    return true;
-                case R.id.action_deleteLog:
-                    snapshot.getReference().delete().addOnFailureListener(e ->
-                            handleFailure(e, "FETCH"));
-                    navController.navigateUp();
-                    return true;
-                default:
-                    return super.onOptionsItemSelected(item);
+            if(item.getItemId() == R.id.action_editLog){
+                navController.navigate(actionID);
             }
+            else if(item.getItemId() == R.id.action_deleteLog){
+                snapshot.getReference().delete().addOnFailureListener(e ->
+                        handleFailure(e, "FETCH"));
+                navController.navigateUp();
+            }
+            return super.onOptionsItemSelected(item);
         });
     }
 
