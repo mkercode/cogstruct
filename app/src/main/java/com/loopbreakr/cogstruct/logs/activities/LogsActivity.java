@@ -3,6 +3,8 @@ package com.loopbreakr.cogstruct.logs.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.lifecycle.ViewModel;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -12,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.home.activities.LoginActivity;
 import com.loopbreakr.cogstruct.R;
 
@@ -54,8 +57,27 @@ public class LogsActivity extends AppCompatActivity implements FirebaseAuth.Auth
         }
     }
 
-    public void setToolbar(Toolbar toolbar, int id){
+    public void setToolbar(Toolbar toolbar, String type, int actionID, DocumentSnapshot snapshot){
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        toolbar.setNavigationOnClickListener(v -> navController.navigateUp());
+        if(type.equals("VIEW")){
+            toolbar.setOverflowIcon(ContextCompat.getDrawable(this, R.drawable.ic_white_dots));
+        }
 
+        toolbar.setOnMenuItemClickListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.action_editLog :
+                    navController.navigate(actionID);
+                    return true;
+                case R.id.action_deleteLog:
+                    snapshot.getReference().delete().addOnFailureListener(e ->
+                            handleFailure(e, "FETCH"));
+                    navController.navigateUp();
+                    return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+            }
+        });
     }
 
 

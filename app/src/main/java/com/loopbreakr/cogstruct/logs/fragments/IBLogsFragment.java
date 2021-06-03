@@ -64,26 +64,7 @@ public class IBLogsFragment extends Fragment {
     }
 
     private void setToolbar(View view) {
-        Toolbar toolbar = view.findViewById(R.id.logsToolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setNavigationOnClickListener(v -> ((LogsActivity)requireActivity()).handleBack());
-        toolbar.setOverflowIcon(ContextCompat.getDrawable(requireActivity(),R.drawable.ic_white_dots));
-        toolbar.setOnMenuItemClickListener(item -> {
-            NavController controller = Navigation.findNavController(requireView());
-            switch (item.getItemId()) {
-                case R.id.action_editLog :
-                    controller.navigate(R.id.action_IBLogFragment_to_IBLogEditFragment);
-                    return true;
-                case R.id.action_deleteLog:
-                    DocumentSnapshot snapshot = logsViewModel.getSnapshot();
-                    snapshot.getReference().delete().addOnFailureListener(e ->
-                            ((LogsActivity)requireActivity()).handleFailure(e, "FETCH"));
-                    controller.navigateUp();
-                    return true;
-                default:
-                    return super.onOptionsItemSelected(item);
-            }
-        });
+        ((LogsActivity)requireActivity()).setToolbar(view.findViewById(R.id.logsToolbar), "VIEW", R.id.action_IBLogFragment_to_IBLogEditFragment, logsViewModel.getSnapshot());
     }
 
     private void setViewModelData() {
