@@ -47,7 +47,8 @@ public class FTECreate extends Fragment {
     private FteFragmentCreateBinding binding;
     private ImageView vpBack, vpNext;
     private Button backButton, reviewButton;
-    private ViewPager viewPager;
+    private ViewPager2 viewPager;
+    FTEViewPagerAdapter adapter;
     List<Fragment> fragmentList;
 
     public FTECreate() { }
@@ -76,7 +77,7 @@ public class FTECreate extends Fragment {
     }
 
     private void setViewPager() {
-        FTEViewPagerAdapter adapter =  new  FTEViewPagerAdapter(requireActivity().getSupportFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        adapter = new FTEViewPagerAdapter(this.requireActivity());
         // add the fragments to viewpager adapter
         fragmentList = Arrays.asList(new FTE_BWT(), new FTE_DP(), new FTE_SS(), new FTE_FF(), new FTE_FOTP(), new FTE_G(), new FTE_MF(),new FTE_P());
         for(Fragment fragment: fragmentList){

@@ -63,7 +63,7 @@
         app:layout_constraintTop_toTopOf="@id/app_bar_head"
         android:contentDescription="@string/general_next_icon_description" />
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/fte_viewpager"
         android:layout_width="0dp"
         android:layout_height="0dp"
