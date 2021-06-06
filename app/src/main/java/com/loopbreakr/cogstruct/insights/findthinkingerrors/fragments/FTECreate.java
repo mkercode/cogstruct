@@ -44,6 +44,7 @@ import static androidx.fragment.app.FragmentStatePagerAdapter.BEHAVIOR_RESUME_ON
 
 public class FTECreate extends Fragment {
     private FTEViewModel fteViewModel;
+    private FTEVPViewModel ftevpViewModel;
     private FteFragmentCreateBinding binding;
     private ImageView vpBack, vpNext;
     private Button backButton, reviewButton;
@@ -57,6 +58,7 @@ public class FTECreate extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         fteViewModel = new ViewModelProvider(requireActivity()).get(FTEViewModel.class);
+        ftevpViewModel = new ViewModelProvider(requireActivity()).get(FTEVPViewModel.class);
 
     }
 
@@ -112,7 +114,10 @@ public class FTECreate extends Fragment {
 
         //set host fragment navigation
         NavController controller = Navigation.findNavController(requireView());
-        backButton.setOnClickListener(v -> controller.navigateUp());
+        backButton.setOnClickListener(v -> {
+            controller.navigateUp();
+            ftevpViewModel.clearData();
+        });
         reviewButton.setOnClickListener( v -> controller.navigate(R.id.action_FTECreate_to_FTEReview));
     }
 

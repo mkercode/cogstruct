@@ -115,5 +115,10 @@ public class FTEVPViewModel extends ViewModel {
         setSsIsChecked(data.contains("Should Statements"));
     }
 
+    public void clearData(){
+        //set all to false
+        setBwtIsChecked(false);setDpIsChecked(false);setFfIsChecked(false);setFotpIsChecked(false);setGenIsChecked(false);setMfIsChecked(false);setPerIsChecked(false);setSsIsChecked(false);
+    }
+
 
 }
