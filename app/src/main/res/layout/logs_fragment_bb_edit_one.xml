@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="viewModel"
             type="com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".logs.fragments.BBLogEditOne">
 
     <androidx.appcompat.widget.Toolbar
@@ -24,6 +24,17 @@
         app:menu="@menu/logs_high_edit_menu"
         app:popupTheme="@style/PopupMenuStyle" />
 
+    <TextView
+        android:id="@+id/bb_log_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:text="@string/bad_behaviors_title"
+        android:textColor="@color/colorGreenText"
+        android:textSize="36sp"
+        app:layout_constraintTop_toBottomOf="@+id/edit_bb_logs_toolbar_one" />
+
 
     <TextView
         android:id="@+id/bb_log_edit_behavior_question"
@@ -37,7 +48,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_bb_logs_toolbar_one" />
+        app:layout_constraintTop_toBottomOf="@+id/bb_log_title" />
 
     <EditText
         android:id="@+id/bb_log_edit_behavior"
@@ -50,6 +61,7 @@
         app:layout_constraintStart_toStartOf="@+id/bb_log_edit_behavior_question"
         app:layout_constraintTop_toBottomOf="@+id/bb_log_edit_behavior_question"
         android:autofillHints=""
+        android:labelFor="@+id/bb_log_edit_behavior_question"
         android:text="@={viewModel.bbBehavior}"
         android:inputType="textMultiLine|textAutoCorrect" />
 
