@@ -16,10 +16,6 @@ public class BBViewModel extends ViewModel {
     private List<String> bbDistractions = new ArrayList<>();
     private List<String> bbSolutions = new ArrayList<>();
 
-    private String displayBbEnvironmentals;
-    private String displayBbDistractions;
-    private String displayBbSolutions;
-
     public void setBBLog(BBObject bbLog){
         setBbBehavior(bbLog.getBehavior());
         setBbEnvironmentals(Arrays.asList(bbLog.getEnvironmentals().split("\\s*,\\s*")));
@@ -33,9 +29,12 @@ public class BBViewModel extends ViewModel {
     public void setBbDistractions(List<String> input) { bbDistractions = input; }
     public void setBbSolutions(List<String> input) { bbSolutions = input; }
 
-    public void setDisplayBbEnvironmentals(String input) { displayBbEnvironmentals = input; }
-    public void setDisplayBbDistractions(String input) { displayBbDistractions = input; }
-    public void setDisplayBbSolutions(String input) { displayBbSolutions = input; }
+    public void setDisplayBbEnvironmentals(String input) {
+    }
+    public void setDisplayBbDistractions(String input) {
+    }
+    public void setDisplayBbSolutions(String input) {
+    }
 
     public String getBbBehavior() { return bbBehavior; }
     public List<String> getBbEnvironmentals() { return bbEnvironmentals; }

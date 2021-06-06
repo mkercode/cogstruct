@@ -25,13 +25,6 @@ public class HIGHViewModel extends ViewModel {
     private List<String> highSolutions = new ArrayList<>();
     private List<String> highRepairs = new ArrayList<>();
 
-    private String displayHighThoughts;
-    private String displayHighVulnerabilities;
-    private String displayHighReliefs;
-    private String displayHighConsequences;
-    private String displayHighSolutions;
-    private String displayHighRepairs;
-
 
     public void setHIGHLog(HIGHObject highLog){
         setHighBehavior(highLog.getBehavior());
@@ -94,12 +87,18 @@ public class HIGHViewModel extends ViewModel {
     public void setHighSolutions(List<String> input) { highSolutions = input;}
     public void setHighRepairs(List<String> input) { highRepairs = input; }
 
-    public void setDisplayHighThoughts(String input) { displayHighThoughts = input; }
-    public void setDisplayHighVulnerabilities(String input) { displayHighVulnerabilities = input; }
-    public void setDisplayHighReliefs(String input) { displayHighReliefs = input; }
-    public void setDisplayHighConsequences(String input) { displayHighConsequences = input; }
-    public void setDisplayHighSolutions(String input) { displayHighSolutions = input; }
-    public void setDisplayHighRepairs(String input) { displayHighRepairs = input; }
+    public void setDisplayHighThoughts(String input) {
+    }
+    public void setDisplayHighVulnerabilities(String input) {
+    }
+    public void setDisplayHighReliefs(String input) {
+    }
+    public void setDisplayHighConsequences(String input) {
+    }
+    public void setDisplayHighSolutions(String input) {
+    }
+    public void setDisplayHighRepairs(String input) {
+    }
 
 
     public String getHighBehavior(){return highBehavior;}

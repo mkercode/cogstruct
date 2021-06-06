@@ -1,14 +1,11 @@
 package com.loopbreakr.cogstruct.insights.findthinkingerrors.adapters;
 
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,7 +17,7 @@ import java.util.List;
 
 public class EntryRecyclerAdapter extends RecyclerView.Adapter<EntryRecyclerAdapter.ViewHolder>{
     EntryListener entryListener;
-    List<FTEDisplayObject> entriesList;
+    final List<FTEDisplayObject> entriesList;
 
     public EntryRecyclerAdapter(List<FTEDisplayObject> entriesList) {
         this.entriesList = entriesList;
@@ -38,9 +35,9 @@ public class EntryRecyclerAdapter extends RecyclerView.Adapter<EntryRecyclerAdap
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView dateTextView;
-        TextView errorsTextView;
-        ImageView popupButton;
+        final TextView dateTextView;
+        final TextView errorsTextView;
+        final ImageView popupButton;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

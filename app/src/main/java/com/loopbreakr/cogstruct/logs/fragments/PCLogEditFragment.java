@@ -13,7 +13,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +31,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 
 public class PCLogEditFragment extends Fragment {
@@ -41,7 +39,6 @@ public class PCLogEditFragment extends Fragment {
     private ArrayList<String> changeProsList, dontChangeProsList, changeConsList, dontChangeConsList;
     private FloatingActionButton addChangePro, addDontChangePro, addChangeCon, addDontChangeCon;
     private RecyclerView changeProsRecyclerView, changeConsRecyclerView, dontChangeProsRecyclerView, dontChangeConsRecyclerView;
-    private LogsFragmentPcEditBinding binding;
 
     public PCLogEditFragment() {
         // Required empty public constructor
@@ -59,7 +56,7 @@ public class PCLogEditFragment extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_pc_edit, container, false);
+        com.loopbreakr.cogstruct.databinding.LogsFragmentPcEditBinding binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_pc_edit, container, false);
         binding.setViewModel(pcViewModel);
         return binding.getRoot();
 

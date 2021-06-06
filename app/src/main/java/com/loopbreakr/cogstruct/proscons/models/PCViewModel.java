@@ -19,11 +19,6 @@ public class PCViewModel extends ViewModel {
     private List<String> dontChangePros = new ArrayList<>();
     private List<String> dontChangeCons = new ArrayList<>();
 
-    private String displayChangePros;
-    private String displayChangeCons;
-    private String displayDontChangePros;
-    private String displayDontChangeCons;
-
     public void setProsCons(ProsConsObject prosCons){
         setPCBehavior(prosCons.getBehavior());
         setChangePros(Arrays.asList(prosCons.getChangePros().split("\\s*,\\s*")));
@@ -57,10 +52,14 @@ public class PCViewModel extends ViewModel {
 
 
     //getters/setters/methods for displaying lists in review sections
-    public void setDisplayChangePros(String input){ displayChangePros = input; }
-    public void setDisplayChangeCons(String input){ displayChangeCons = input; }
-    public void setDisplayDontChangePros(String input){ displayDontChangePros = input; }
-    public void setDisplayDontChangeCons(String input){ displayDontChangeCons = input; }
+    public void setDisplayChangePros(String input){
+    }
+    public void setDisplayChangeCons(String input){
+    }
+    public void setDisplayDontChangePros(String input){
+    }
+    public void setDisplayDontChangeCons(String input){
+    }
 
     public String getDisplayChangePros() { return createPCDisplayList(changePros); }
     public String getDisplayChangeCons() { return createPCDisplayList(changeCons); }

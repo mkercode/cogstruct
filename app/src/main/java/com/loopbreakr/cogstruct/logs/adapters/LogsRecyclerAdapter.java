@@ -3,7 +3,6 @@ package com.loopbreakr.cogstruct.logs.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,7 +14,7 @@ import com.loopbreakr.cogstruct.logs.objects.LogsPreview;
 
 public class LogsRecyclerAdapter extends FirestoreRecyclerAdapter<LogsPreview, LogsRecyclerAdapter.LogsViewHolder> {
 
-    LogsListener logsListener;
+    final LogsListener logsListener;
 
     public LogsRecyclerAdapter(@NonNull FirestoreRecyclerOptions<LogsPreview> options, LogsListener logsListener) {
         super(options);
@@ -38,7 +37,8 @@ public class LogsRecyclerAdapter extends FirestoreRecyclerAdapter<LogsPreview, L
     }
 
     class LogsViewHolder extends RecyclerView.ViewHolder{
-        TextView formNameText, dateText;
+        final TextView formNameText;
+        final TextView dateText;
         public LogsViewHolder(@NonNull View itemView) {
             super(itemView);
             formNameText = itemView.findViewById(R.id.formNameTextView);

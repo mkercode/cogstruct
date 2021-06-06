@@ -12,7 +12,6 @@ import java.util.Map;
 public class GPViewModel extends ViewModel {
     private List<DocumentSnapshot> gpSnapShotList = new ArrayList<>();
     private List<String> gpBehaviorList;
-    private List<String> gpChangeList;
     private String gpBehavior;
     private String gpChange;
     private String gpChangeDisplay;
@@ -33,7 +32,7 @@ public class GPViewModel extends ViewModel {
     public void setGpBehavior(String input){ gpBehavior = input; }
 
     public List<String> getGpChangeList(List<DocumentSnapshot> snapshotList, String behavior) {
-        gpChangeList = new ArrayList<>();
+        List<String> gpChangeList = new ArrayList<>();
         for (DocumentSnapshot snapshot : snapshotList) {
             if (snapshot.getString("behavior").equals(behavior)) {
                 //check document snapshots that equal that behavior for relevant inspection variables, add them to the list

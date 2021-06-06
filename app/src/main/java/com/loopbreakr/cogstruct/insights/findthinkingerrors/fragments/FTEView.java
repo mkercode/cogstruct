@@ -7,18 +7,15 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.FteFragmentViewBinding;
-import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.activities.FTEActivity;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.adapters.EntryRecyclerAdapter;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.models.FTEViewModel;
@@ -33,7 +30,6 @@ import java.util.List;
 
 
 public class FTEView extends Fragment {
-    private FteFragmentViewBinding binding;
     private FTEViewModel fteViewModel;
     private RecyclerView entryRecyclerview;
     private ProgressBar loadingBar;
@@ -52,7 +48,7 @@ public class FTEView extends Fragment {
     @Override
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fte_fragment_view, container, false);
+        com.loopbreakr.cogstruct.databinding.FteFragmentViewBinding binding = DataBindingUtil.inflate(inflater, R.layout.fte_fragment_view, container, false);
         binding.setViewModel(fteViewModel);
         return binding.getRoot();
     }
@@ -104,7 +100,7 @@ public class FTEView extends Fragment {
             else{
                 fteViewModel.setFteThought(entries.get(position).getThought());
                 FTEVPViewModel ftevpViewModel =  new ViewModelProvider(requireActivity()).get(FTEVPViewModel.class);
-                ftevpViewModel.initalizeData(entries.get(position).getThinkingErrors());
+                ftevpViewModel.initializeData(entries.get(position).getThinkingErrors());
                 Navigation.findNavController(requireView()).navigate(R.id.action_FTEView_to_FTECreate);
             }
         });

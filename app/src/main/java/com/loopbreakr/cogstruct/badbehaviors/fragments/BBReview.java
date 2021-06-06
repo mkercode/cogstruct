@@ -25,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 
 
 public class BBReview extends Fragment {
-    private BbFragmentReviewBinding binding;
     private BBViewModel bbViewModel;
     private Button editButton, submitButton;
 
@@ -45,7 +44,7 @@ public class BBReview extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.bb_fragment_review, container, false);
+        com.loopbreakr.cogstruct.databinding.BbFragmentReviewBinding binding = DataBindingUtil.inflate(inflater, R.layout.bb_fragment_review, container, false);
         binding.setViewModel(bbViewModel);
         return binding.getRoot();
     }

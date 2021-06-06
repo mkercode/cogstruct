@@ -4,20 +4,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel;
 import com.loopbreakr.cogstruct.badbehaviors.objects.BBObject;
@@ -29,7 +23,6 @@ import org.jetbrains.annotations.NotNull;
 
 
 public class BBLogsFragment extends Fragment {
-    private LogsFragmentBbBinding binding;
     private LogsViewModel logsViewModel;
     private BBViewModel bbViewModel;
 
@@ -51,7 +44,7 @@ public class BBLogsFragment extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_bb, container, false);
+        com.loopbreakr.cogstruct.databinding.LogsFragmentBbBinding binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_bb, container, false);
         binding.setViewModel(bbViewModel);
         return binding.getRoot();
     }

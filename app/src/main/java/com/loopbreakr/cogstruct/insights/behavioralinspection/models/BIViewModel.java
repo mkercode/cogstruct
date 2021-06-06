@@ -5,15 +5,12 @@ import androidx.lifecycle.ViewModel;
 import com.google.firebase.firestore.DocumentSnapshot;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class BIViewModel extends ViewModel {
     private List<DocumentSnapshot> biSnapShotList = new ArrayList<>();
     private List<String> biBehaviorList;
-    private List<String> biInspectionList;
     private String biBehavior;
     private String biInspection;
     private String biInspectionDisplay;
@@ -36,7 +33,7 @@ public class BIViewModel extends ViewModel {
     public void setBiBehavior(String input){ biBehavior = input; }
 
     public List<String> getBiInspectionList(List<DocumentSnapshot> snapshotList, String behavior) {
-        biInspectionList = new ArrayList<>();
+        List<String> biInspectionList = new ArrayList<>();
         for (DocumentSnapshot snapshot : snapshotList) {
             if (snapshot.getString("behavior").equals(behavior)) {
                 //check document snapshots that equal that behavior for relevant inspection variables, add them to the list

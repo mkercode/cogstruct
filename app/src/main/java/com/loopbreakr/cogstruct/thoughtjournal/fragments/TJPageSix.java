@@ -30,7 +30,6 @@ public class TJPageSix extends Fragment{
     private TJViewModel tjViewModel;
     private List<String> requiredInputs;
     private Button editButton, submitButton;
-    private TjFragmentPageSixBinding binding;
 
     public TJPageSix() {
         // Required empty public constructor
@@ -46,7 +45,7 @@ public class TJPageSix extends Fragment{
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.tj_fragment_page_six, container, false);
+        com.loopbreakr.cogstruct.databinding.TjFragmentPageSixBinding binding = DataBindingUtil.inflate(inflater, R.layout.tj_fragment_page_six, container, false);
         binding.setViewModel(tjViewModel);
         return binding.getRoot();
     }

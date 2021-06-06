@@ -35,7 +35,6 @@ import java.util.Map;
 
 public class BIPageThree extends Fragment {
     private BIViewModel biViewModel;
-    private BiFragmentPageThreeBinding binding;
     private Toolbar backToolbar;
     private RecyclerView factorRecyclerview;
     private PieChart pieChart;
@@ -61,7 +60,7 @@ public class BIPageThree extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.bi_fragment_page_three, container, false);
+        com.loopbreakr.cogstruct.databinding.BiFragmentPageThreeBinding binding = DataBindingUtil.inflate(inflater, R.layout.bi_fragment_page_three, container, false);
         binding.setViewModel(biViewModel);
         return binding.getRoot();
     }

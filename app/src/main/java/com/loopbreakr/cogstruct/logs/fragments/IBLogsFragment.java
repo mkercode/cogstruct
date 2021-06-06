@@ -4,20 +4,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.LogsFragmentIbBinding;
 import com.loopbreakr.cogstruct.identifybarriers.objects.IBObject;
@@ -29,10 +23,8 @@ import org.jetbrains.annotations.NotNull;
 
 
 public class IBLogsFragment extends Fragment {
-    private LogsFragmentIbBinding binding;
     private LogsViewModel logsViewModel;
     private IBViewModel ibViewModel;
-    private IBObject ibLog;
 
     public IBLogsFragment() {
         // Required empty public constructor
@@ -51,7 +43,7 @@ public class IBLogsFragment extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_ib, container, false);
+        com.loopbreakr.cogstruct.databinding.LogsFragmentIbBinding binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_ib, container, false);
         binding.setViewModel(ibViewModel);
         return binding.getRoot();
     }
@@ -68,7 +60,7 @@ public class IBLogsFragment extends Fragment {
     }
 
     private void setViewModelData() {
-        ibLog = logsViewModel.getSnapshot().toObject(IBObject.class);
+        IBObject ibLog = logsViewModel.getSnapshot().toObject(IBObject.class);
         ibViewModel.setIBLog(ibLog);
     }
 }

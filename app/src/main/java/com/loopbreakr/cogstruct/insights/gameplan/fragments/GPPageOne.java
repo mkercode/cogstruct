@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +22,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.insights.adapters.InsightsRecyclerAdapter;
-import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
 import com.loopbreakr.cogstruct.insights.gameplan.activities.GPActivity;
 import com.loopbreakr.cogstruct.insights.gameplan.models.GPViewModel;
 

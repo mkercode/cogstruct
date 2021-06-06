@@ -25,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 
 
 public class IBProblemSolving extends Fragment {
-    private IbFragmentProblemSolvingBinding binding;
     private IBViewModel ibViewModel;
     private Button editButton, submitButton;
 
@@ -44,7 +43,7 @@ public class IBProblemSolving extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.ib_fragment_problem_solving, container, false);
+        com.loopbreakr.cogstruct.databinding.IbFragmentProblemSolvingBinding binding = DataBindingUtil.inflate(inflater, R.layout.ib_fragment_problem_solving, container, false);
         binding.setViewModel(ibViewModel);
         return binding.getRoot();
     }

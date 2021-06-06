@@ -21,7 +21,6 @@ import java.util.Objects;
 
 
 public class TJViewFragment extends Fragment {
-    private Button beginButton;
 
     public TJViewFragment() {
         // Required empty public constructor
@@ -49,7 +48,7 @@ public class TJViewFragment extends Fragment {
     }
 
     private void setBeginButton(View view) {
-        beginButton = view.findViewById(R.id.begin_button);
+        Button beginButton = view.findViewById(R.id.begin_button);
         beginButton.setOnClickListener(v -> openActivity());
     }
 

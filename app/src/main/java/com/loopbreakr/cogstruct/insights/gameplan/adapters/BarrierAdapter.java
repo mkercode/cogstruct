@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class BarrierAdapter extends RecyclerView.Adapter<BarrierAdapter.BarrierViewHolder>{
 
-    private ArrayList<Barrier> barrierList;
+    private final ArrayList<Barrier> barrierList;
 
     public BarrierAdapter(ArrayList<Barrier> barrierList){ this.barrierList = barrierList; }
 
@@ -25,8 +25,8 @@ public class BarrierAdapter extends RecyclerView.Adapter<BarrierAdapter.BarrierV
 
     public static class BarrierViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView barrier;
-        public TextView barrierType;
+        public final TextView barrier;
+        public final TextView barrierType;
 
         public BarrierViewHolder(@NonNull View itemView) {
             super(itemView);

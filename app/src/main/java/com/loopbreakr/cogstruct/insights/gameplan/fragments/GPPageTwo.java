@@ -17,7 +17,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
 import com.loopbreakr.cogstruct.insights.adapters.InsightsRecyclerAdapter;
 import com.loopbreakr.cogstruct.insights.gameplan.activities.GPActivity;
 import com.loopbreakr.cogstruct.insights.gameplan.models.GPViewModel;

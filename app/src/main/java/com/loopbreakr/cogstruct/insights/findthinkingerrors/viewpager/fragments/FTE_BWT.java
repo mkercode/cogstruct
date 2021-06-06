@@ -18,7 +18,6 @@ import org.jetbrains.annotations.NotNull;
 
 
 public class FTE_BWT extends Fragment {
-    private FteViewpagerBwtBinding binding;
     private FTEVPViewModel ftevpViewModel;
 
     public FTE_BWT() {
@@ -35,7 +34,7 @@ public class FTE_BWT extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fte_viewpager_bwt, container, false);
+        com.loopbreakr.cogstruct.databinding.FteViewpagerBwtBinding binding = DataBindingUtil.inflate(inflater, R.layout.fte_viewpager_bwt, container, false);
         binding.setViewModel(ftevpViewModel);
         return binding.getRoot();
     }

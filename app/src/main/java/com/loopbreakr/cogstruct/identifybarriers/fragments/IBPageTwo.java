@@ -24,7 +24,6 @@ import org.jetbrains.annotations.NotNull;
 
 
 public class IBPageTwo extends Fragment {
-    private IbFragmentPageTwoBinding binding;
     private IBViewModel ibViewModel;
     private Button backButton, nextButton;
 
@@ -42,7 +41,7 @@ public class IBPageTwo extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.ib_fragment_page_two, container, false);
+        com.loopbreakr.cogstruct.databinding.IbFragmentPageTwoBinding binding = DataBindingUtil.inflate(inflater, R.layout.ib_fragment_page_two, container, false);
         binding.setViewModel(ibViewModel);
         return binding.getRoot();
     }

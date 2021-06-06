@@ -23,7 +23,7 @@ public class TJViewModel extends ViewModel {
     private List<String> thoughtList = new ArrayList<>();
 
     //enable/disable people edittext based on radiobutton option
-    private boolean tjIsEnabled = true;
+    private final boolean tjIsEnabled = true;
 
 //dummy value for review display
     private String displayThoughts;

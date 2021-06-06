@@ -15,7 +15,7 @@ import java.util.List;
 
 public class SimpleRecyclerAdapter extends RecyclerView.Adapter<SimpleRecyclerAdapter.ViewHolder> {
 
-    List<String> simpleList;
+    final List<String> simpleList;
     OnItemClickListener rowListener;
 
     public SimpleRecyclerAdapter(List<String> simpleList) {
@@ -45,8 +45,8 @@ public class SimpleRecyclerAdapter extends RecyclerView.Adapter<SimpleRecyclerAd
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
-        TextView textView;
-        ImageView rowDelete;
+        final TextView textView;
+        final ImageView rowDelete;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.simple_textview);

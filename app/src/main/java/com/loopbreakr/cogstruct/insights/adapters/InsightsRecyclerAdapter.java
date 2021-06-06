@@ -12,7 +12,7 @@ import java.util.List;
 
 public class InsightsRecyclerAdapter extends RecyclerView.Adapter<InsightsRecyclerAdapter.ViewHolder> {
 
-    List<String> insightsList;
+    final List<String> insightsList;
     InsightsRecyclerAdapter.OnItemClickListener rowListener;
 
     public InsightsRecyclerAdapter(List<String> insightsList) {
@@ -42,7 +42,7 @@ public class InsightsRecyclerAdapter extends RecyclerView.Adapter<InsightsRecycl
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
+        final TextView textView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

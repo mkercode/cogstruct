@@ -6,17 +6,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -39,13 +36,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 import java.util.List;
 
-import static androidx.fragment.app.FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
-
 
 public class FTECreate extends Fragment {
     private FTEViewModel fteViewModel;
     private FTEVPViewModel ftevpViewModel;
-    private FteFragmentCreateBinding binding;
     private ImageView vpBack, vpNext;
     private Button backButton, reviewButton;
     private ViewPager2 viewPager;
@@ -65,7 +59,7 @@ public class FTECreate extends Fragment {
     @Override
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fte_fragment_create, container, false);
+        com.loopbreakr.cogstruct.databinding.FteFragmentCreateBinding binding = DataBindingUtil.inflate(inflater, R.layout.fte_fragment_create, container, false);
         binding.setViewModel(fteViewModel);
         return binding.getRoot();
     }

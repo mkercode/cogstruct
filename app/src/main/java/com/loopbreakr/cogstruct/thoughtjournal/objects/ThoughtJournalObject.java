@@ -1,9 +1,5 @@
 package com.loopbreakr.cogstruct.thoughtjournal.objects;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class ThoughtJournalObject {
     private String formName;
     private String dateCreated;

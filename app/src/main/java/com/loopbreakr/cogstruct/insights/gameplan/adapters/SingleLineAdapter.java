@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class SingleLineAdapter extends RecyclerView.Adapter<SingleLineAdapter.ViewHolder>{
-    List<String> changeFactorList;
+    final List<String> changeFactorList;
 
     public SingleLineAdapter(List<String> changeFactorList) {
         this.changeFactorList = changeFactorList;
@@ -36,7 +36,7 @@ public class SingleLineAdapter extends RecyclerView.Adapter<SingleLineAdapter.Vi
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textView;
+        final TextView textView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

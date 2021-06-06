@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import android.view.ViewGroup;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.GpFragmentSimpleListBinding;
 import com.loopbreakr.cogstruct.insights.gameplan.activities.GPActivity;
-import com.loopbreakr.cogstruct.insights.gameplan.adapters.BarrierAdapter;
 import com.loopbreakr.cogstruct.insights.gameplan.adapters.SingleLineAdapter;
 import com.loopbreakr.cogstruct.insights.gameplan.models.GPViewModel;
 
@@ -30,7 +28,6 @@ import java.util.List;
 
 public class GPSimpleList extends Fragment {
     private GPViewModel gpViewModel;
-    private GpFragmentSimpleListBinding binding;
     private Toolbar backToolbar;
     private List<String> changeFactorList;
     private RecyclerView changeListRecyclerview;
@@ -49,7 +46,7 @@ public class GPSimpleList extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.gp_fragment_simple_list, container, false);
+        com.loopbreakr.cogstruct.databinding.GpFragmentSimpleListBinding binding = DataBindingUtil.inflate(inflater, R.layout.gp_fragment_simple_list, container, false);
         binding.setViewModel(gpViewModel);
         return binding.getRoot();
     }

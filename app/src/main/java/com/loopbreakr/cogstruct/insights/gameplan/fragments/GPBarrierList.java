@@ -14,12 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.github.mikephil.charting.data.PieEntry;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.GpFragmentBarrierListBinding;
-import com.loopbreakr.cogstruct.insights.adapters.LegendRecyclerAdapter;
-import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
-import com.loopbreakr.cogstruct.insights.behavioralinspection.objects.Factor;
 import com.loopbreakr.cogstruct.insights.gameplan.activities.GPActivity;
 import com.loopbreakr.cogstruct.insights.gameplan.adapters.BarrierAdapter;
 import com.loopbreakr.cogstruct.insights.gameplan.models.GPViewModel;
@@ -34,7 +30,6 @@ import java.util.Map;
 
 public class GPBarrierList extends Fragment {
     private GPViewModel gpViewModel;
-    private GpFragmentBarrierListBinding binding;
     private Toolbar backToolbar;
     private Map<String, String> barrierMap;
     ArrayList<Barrier> barriers;
@@ -55,7 +50,7 @@ public class GPBarrierList extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.gp_fragment_barrier_list, container, false);
+        com.loopbreakr.cogstruct.databinding.GpFragmentBarrierListBinding binding = DataBindingUtil.inflate(inflater, R.layout.gp_fragment_barrier_list, container, false);
         binding.setViewModel(gpViewModel);
         return binding.getRoot();
     }

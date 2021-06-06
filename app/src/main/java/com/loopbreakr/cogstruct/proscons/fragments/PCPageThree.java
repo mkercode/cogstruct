@@ -24,7 +24,6 @@ import com.loopbreakr.cogstruct.proscons.models.PCViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 
 public class PCPageThree extends Fragment {

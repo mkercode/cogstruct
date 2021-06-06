@@ -4,20 +4,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.LogsFragmentHighBinding;
 import com.loopbreakr.cogstruct.howdigethere.objects.HIGHObject;
@@ -29,10 +23,8 @@ import org.jetbrains.annotations.NotNull;
 
 
 public class HIGHLogsFragment extends Fragment {
-    private LogsFragmentHighBinding binding;
     private LogsViewModel logsViewModel;
     private HIGHViewModel highViewModel;
-    private HIGHObject highObject;
 
     public HIGHLogsFragment() {
         // Required empty public constructor
@@ -51,7 +43,7 @@ public class HIGHLogsFragment extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_high, container, false);
+        com.loopbreakr.cogstruct.databinding.LogsFragmentHighBinding binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_high, container, false);
         binding.setViewModel(highViewModel);
         return binding.getRoot();
     }
@@ -68,7 +60,7 @@ public class HIGHLogsFragment extends Fragment {
     }
 
     private void setViewModelData() {
-        highObject = logsViewModel.getSnapshot().toObject(HIGHObject.class);
+        HIGHObject highObject = logsViewModel.getSnapshot().toObject(HIGHObject.class);
         highViewModel.setHIGHLog(highObject);
     }
 }

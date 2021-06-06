@@ -23,7 +23,6 @@ import com.loopbreakr.cogstruct.adapters.SimpleRecyclerAdapter;
 import com.loopbreakr.cogstruct.proscons.models.PCViewModel;
 
 import java.util.List;
-import java.util.Objects;
 
 
 public class PCPageTwo extends Fragment {

@@ -4,20 +4,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.LogsFragmentTjBinding;
 import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
@@ -31,8 +25,6 @@ import org.jetbrains.annotations.NotNull;
 public class TjLogsFragment extends Fragment {
     private LogsViewModel logsViewModel;
     private TJLogViewModel tjViewModel;
-    private ThoughtJournalObject thoughtJournalLog;
-    private LogsFragmentTjBinding binding;
 
 
     public TjLogsFragment() {
@@ -52,7 +44,7 @@ public class TjLogsFragment extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_tj, container, false);
+        com.loopbreakr.cogstruct.databinding.LogsFragmentTjBinding binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_tj, container, false);
         binding.setViewModel(tjViewModel);
         return binding.getRoot();
     }
@@ -65,7 +57,7 @@ public class TjLogsFragment extends Fragment {
     }
 
     private void setViewModelData() {
-        thoughtJournalLog = logsViewModel.getSnapshot().toObject(ThoughtJournalObject.class);
+        ThoughtJournalObject thoughtJournalLog = logsViewModel.getSnapshot().toObject(ThoughtJournalObject.class);
         tjViewModel.setThoughtJournal(thoughtJournalLog);
     }
 

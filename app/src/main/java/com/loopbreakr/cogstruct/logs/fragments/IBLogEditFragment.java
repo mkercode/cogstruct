@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +26,6 @@ import org.jetbrains.annotations.NotNull;
 
 
 public class IBLogEditFragment extends Fragment {
-    private LogsFragmentIbEditBinding binding;
     private LogsViewModel logsViewModel;
     private IBViewModel ibViewModel;
 
@@ -48,7 +46,7 @@ public class IBLogEditFragment extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_ib_edit, container, false);
+        com.loopbreakr.cogstruct.databinding.LogsFragmentIbEditBinding binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_ib_edit, container, false);
         binding.setViewModel(ibViewModel);
         return binding.getRoot();
     }

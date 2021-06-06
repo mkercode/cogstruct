@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,7 +86,7 @@ public class FTESelectView extends Fragment {
         fteViewModel.setFteViewSnapshotList(null);
         fteViewModel.setEditDocumentSnapshot(null);
         FTEVPViewModel ftevpViewModel = new ViewModelProvider(requireActivity()).get(FTEVPViewModel.class);
-        ftevpViewModel.initalizeData("CLEARING");
+        ftevpViewModel.initializeData("CLEARING");
     }
 
     private void getViewModelData() {

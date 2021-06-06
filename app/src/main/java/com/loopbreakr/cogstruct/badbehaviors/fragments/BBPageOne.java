@@ -25,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 
 
 public class BBPageOne extends Fragment {
-    private BbFragmentPageOneBinding binding;
     private BBViewModel bbViewModel;
     private Button returnButton, nextButton;
 
@@ -44,7 +43,7 @@ public class BBPageOne extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.bb_fragment_page_one, container, false);
+        com.loopbreakr.cogstruct.databinding.BbFragmentPageOneBinding binding = DataBindingUtil.inflate(inflater, R.layout.bb_fragment_page_one, container, false);
         binding.setViewModel(bbViewModel);
         return binding.getRoot();
     }

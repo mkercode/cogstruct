@@ -3,7 +3,6 @@ package com.loopbreakr.cogstruct.logs.models;
 import androidx.lifecycle.ViewModel;
 
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 
 public class LogsViewModel extends ViewModel {
     private DocumentSnapshot snapshot;

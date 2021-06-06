@@ -16,7 +16,6 @@ import android.widget.Button;
 
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.activities.FTEActivity;
-import com.loopbreakr.cogstruct.insights.gameplan.activities.GPActivity;
 
 import java.util.Objects;
 

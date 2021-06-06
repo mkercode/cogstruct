@@ -12,7 +12,7 @@ import com.loopbreakr.cogstruct.insights.behavioralinspection.objects.Factor;
 import java.util.ArrayList;
 
 public class LegendRecyclerAdapter extends RecyclerView.Adapter<LegendRecyclerAdapter.LegendViewHolder>{
-    private ArrayList<Factor> factorList;
+    private final ArrayList<Factor> factorList;
 
     public LegendRecyclerAdapter(ArrayList<Factor> factorList){
         this.factorList = factorList;
@@ -28,10 +28,10 @@ public class LegendRecyclerAdapter extends RecyclerView.Adapter<LegendRecyclerAd
 
     public static class LegendViewHolder extends RecyclerView.ViewHolder {
 
-        public View legendColor;
-        public TextView legendFactor;
-        public TextView legendNumTimes;
-        public TextView legendPercentage;
+        public final View legendColor;
+        public final TextView legendFactor;
+        public final TextView legendNumTimes;
+        public final TextView legendPercentage;
 
         public LegendViewHolder(@NonNull View itemView) {
             super(itemView);

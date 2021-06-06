@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.TjFragmentPageTwoBinding;
@@ -26,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 public class TJPageTwo extends Fragment {
     private TJViewModel tjViewModel;
     private Button backButton, nextButton;
-    private TjFragmentPageTwoBinding binding;
 
 
     public TJPageTwo() {
@@ -43,7 +41,7 @@ public class TJPageTwo extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.tj_fragment_page_two, container, false);
+        com.loopbreakr.cogstruct.databinding.TjFragmentPageTwoBinding binding = DataBindingUtil.inflate(inflater, R.layout.tj_fragment_page_two, container, false);
         binding.setViewModel(tjViewModel);
         return binding.getRoot();
     }

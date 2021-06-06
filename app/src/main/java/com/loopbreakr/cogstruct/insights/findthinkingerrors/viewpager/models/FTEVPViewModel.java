@@ -17,9 +17,6 @@ public class FTEVPViewModel extends ViewModel {
     private boolean perIsChecked;
     private boolean ssIsChecked;
 
-    private List<Boolean> checkedList;
-    private List<String> nameList;
-
     private String displayList;
 
     public void setThought(String input){thought = input;}
@@ -88,8 +85,8 @@ public class FTEVPViewModel extends ViewModel {
     public String getCheckedNameString(){
         List<String> selectedList = new ArrayList<>();
 
-        checkedList = Arrays.asList(bwtIsChecked, dpIsChecked, ffIsChecked, fotpIsChecked, genIsChecked, mfIsChecked, perIsChecked, ssIsChecked);
-        nameList = Arrays.asList("Black and White Thinking", "Disqualifying the Positive", "Fallacy of Fairness", "Focusing on the Past", "Generalization", "Mental Filter", "Personalization", "Should Statements");
+        List<Boolean> checkedList = Arrays.asList(bwtIsChecked, dpIsChecked, ffIsChecked, fotpIsChecked, genIsChecked, mfIsChecked, perIsChecked, ssIsChecked);
+        List<String> nameList = Arrays.asList("Black and White Thinking", "Disqualifying the Positive", "Fallacy of Fairness", "Focusing on the Past", "Generalization", "Mental Filter", "Personalization", "Should Statements");
 
         for(int i = 0; i < checkedList.size(); i++){
             if(checkedList.get(i)){
@@ -102,7 +99,7 @@ public class FTEVPViewModel extends ViewModel {
         return selectedString;
     }
 
-    public void initalizeData(String data){
+    public void initializeData(String data){
         setDisplayList(data);
 
         setBwtIsChecked(data.contains("Black and White Thinking"));

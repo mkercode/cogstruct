@@ -24,7 +24,6 @@ import com.loopbreakr.cogstruct.howdigethere.models.HIGHViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 
 public class HIGHPageFour extends Fragment {

@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,14 +29,12 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class TJLogsEditFragment extends Fragment {
     private LogsViewModel logsViewModel;
     private TJLogViewModel tjViewModel;
     private ChipGroup thoughtChipGroup;
     private Button addThoughtButton;
-    private LogsFragmentTjEditBinding binding;
     private List<String> thoughtList;
 
     public TJLogsEditFragment() {
@@ -54,7 +52,7 @@ public class TJLogsEditFragment extends Fragment {
     @Override
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_tj_edit, container, false);
+        com.loopbreakr.cogstruct.databinding.LogsFragmentTjEditBinding binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_tj_edit, container, false);
         binding.setViewModel(tjViewModel);
         return binding.getRoot();
     }

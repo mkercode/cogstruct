@@ -27,7 +27,6 @@ import org.jetbrains.annotations.NotNull;
 public class PCPageFour extends Fragment {
     private PCViewModel pcViewModel;
     private Button editButton, submitButton;
-    private PcFragmentPageFourBinding binding;
 
     public PCPageFour() {
         // Required empty public constructor
@@ -44,7 +43,7 @@ public class PCPageFour extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.pc_fragment_page_four, container, false);
+        com.loopbreakr.cogstruct.databinding.PcFragmentPageFourBinding binding = DataBindingUtil.inflate(inflater, R.layout.pc_fragment_page_four, container, false);
         binding.setViewModel(pcViewModel);
         return binding.getRoot();
     }

@@ -11,8 +11,6 @@ public class FTEViewModel extends ViewModel {
     private List<DocumentSnapshot> fteViewSnapShotList = new ArrayList<>();
     private List<DocumentSnapshot> fteCreateSnapShotList = new ArrayList<>();
     private DocumentSnapshot editDocumentSnapshot;
-    private List<String> fteThoughtCreateList;
-    private List<String> fteThoughtViewList;
     private String fteThought;
 
 
@@ -22,7 +20,7 @@ public class FTEViewModel extends ViewModel {
     public void setEditDocumentSnapshot(DocumentSnapshot input){editDocumentSnapshot = input;}
 
     public List<String> getFteViewThoughtList(){
-        fteThoughtViewList = new ArrayList<>();
+        List<String> fteThoughtViewList = new ArrayList<>();
         for(DocumentSnapshot snapshot: fteViewSnapShotList){
             if(snapshot.contains("thought")){
                 String currThought = snapshot.getString("thought");
@@ -35,7 +33,7 @@ public class FTEViewModel extends ViewModel {
     }
 
     public List<String> getFteThoughtCreateList(){
-        fteThoughtCreateList = new ArrayList<>();
+        List<String> fteThoughtCreateList = new ArrayList<>();
         for(DocumentSnapshot snapshot: fteCreateSnapShotList){
             if(snapshot.contains("thoughts")){
                 String tempString = snapshot.getString("thoughts");

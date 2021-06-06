@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.databinding.TjFragmentPageThreeBinding;
@@ -26,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 public class TJPageThree extends Fragment {
     private TJViewModel tjViewModel;
     private Button backButton, nextButton;
-    private TjFragmentPageThreeBinding binding;
 
     public TJPageThree() {
         // Required empty public constructor
@@ -42,7 +40,7 @@ public class TJPageThree extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.tj_fragment_page_three, container, false);
+        com.loopbreakr.cogstruct.databinding.TjFragmentPageThreeBinding binding = DataBindingUtil.inflate(inflater, R.layout.tj_fragment_page_three, container, false);
         binding.setViewModel(tjViewModel);
         return binding.getRoot();
     }

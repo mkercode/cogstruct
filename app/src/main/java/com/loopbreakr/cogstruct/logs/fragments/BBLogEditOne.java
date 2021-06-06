@@ -13,7 +13,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,11 +31,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 
 public class BBLogEditOne extends Fragment {
-    private LogsFragmentBbEditOneBinding binding;
     private LogsViewModel logsViewModel;
     private BBViewModel bbViewModel;
     private FloatingActionButton addEnvironmental;
@@ -62,7 +59,7 @@ public class BBLogEditOne extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_bb_edit_one, container, false);
+        com.loopbreakr.cogstruct.databinding.LogsFragmentBbEditOneBinding binding = DataBindingUtil.inflate(inflater, R.layout.logs_fragment_bb_edit_one, container, false);
         binding.setViewModel(bbViewModel);
         return binding.getRoot();
     }

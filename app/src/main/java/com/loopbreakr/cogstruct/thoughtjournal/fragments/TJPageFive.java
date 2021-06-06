@@ -21,7 +21,6 @@ import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class TJPageFive extends Fragment {
     private TJViewModel tjViewModel;

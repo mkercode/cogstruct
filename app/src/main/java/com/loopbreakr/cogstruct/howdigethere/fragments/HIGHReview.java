@@ -27,7 +27,6 @@ import org.jetbrains.annotations.NotNull;
 public class HIGHReview extends Fragment {
     private HIGHViewModel highViewModel;
     private Button editButton, submitButton;
-    private HighFragmentReviewBinding binding;
 
     public HIGHReview() {
         // Required empty public constructor
@@ -44,7 +43,7 @@ public class HIGHReview extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.high_fragment_review, container, false);
+        com.loopbreakr.cogstruct.databinding.HighFragmentReviewBinding binding = DataBindingUtil.inflate(inflater, R.layout.high_fragment_review, container, false);
         binding.setViewModel(highViewModel);
         return binding.getRoot();
     }

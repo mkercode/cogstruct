@@ -24,7 +24,6 @@ import org.jetbrains.annotations.NotNull;
 public class TJPageOne extends Fragment {
     private TJViewModel tjViewModel;
     private Button returnButton, nextButton;
-    private TjFragmentPageOneBinding binding;
 
     public TJPageOne() { }
 
@@ -38,7 +37,7 @@ public class TJPageOne extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.tj_fragment_page_one, container, false);
+        com.loopbreakr.cogstruct.databinding.TjFragmentPageOneBinding binding = DataBindingUtil.inflate(inflater, R.layout.tj_fragment_page_one, container, false);
         binding.setViewModel(tjViewModel);
         return binding.getRoot();
     }

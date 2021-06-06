@@ -25,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 public class HIGHPageTwo extends Fragment {
     private HIGHViewModel highViewModel;
     private Button backButton, nextButton;
-    private HighFragmentPageTwoBinding binding;
 
 
     public HIGHPageTwo() {
@@ -44,7 +43,7 @@ public class HIGHPageTwo extends Fragment {
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.high_fragment_page_two, container, false);
+        com.loopbreakr.cogstruct.databinding.HighFragmentPageTwoBinding binding = DataBindingUtil.inflate(inflater, R.layout.high_fragment_page_two, container, false);
         binding.setViewModel(highViewModel);
         return binding.getRoot();
     }
