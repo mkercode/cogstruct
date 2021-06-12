@@ -15,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.GpFragmentSimpleListBinding;
 import com.loopbreakr.cogstruct.insights.gameplan.activities.GPActivity;
 import com.loopbreakr.cogstruct.insights.gameplan.adapters.SingleLineAdapter;
 import com.loopbreakr.cogstruct.insights.gameplan.models.GPViewModel;

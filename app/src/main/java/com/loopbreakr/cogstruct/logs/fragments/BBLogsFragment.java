@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel;
 import com.loopbreakr.cogstruct.badbehaviors.objects.BBObject;
-import com.loopbreakr.cogstruct.databinding.LogsFragmentBbBinding;
 import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
 

@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.LogsFragmentHighBinding;
 import com.loopbreakr.cogstruct.howdigethere.objects.HIGHObject;
 import com.loopbreakr.cogstruct.howdigethere.models.HIGHViewModel;
 import com.loopbreakr.cogstruct.logs.activities.LogsActivity;

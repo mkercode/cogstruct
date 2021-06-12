@@ -19,7 +19,6 @@ import android.widget.Toast;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.badbehaviors.activities.BBActivity;
 import com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel;
-import com.loopbreakr.cogstruct.databinding.BbFragmentReviewBinding;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@SuppressWarnings("EmptyMethod")
 public class PCViewModel extends ViewModel {
 
     private ProsConsObject prosCons;

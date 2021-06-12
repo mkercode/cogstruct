@@ -23,7 +23,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.adapters.SimpleRecyclerAdapter;
 import com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel;
-import com.loopbreakr.cogstruct.databinding.LogsFragmentBbEditOneBinding;
 import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
 

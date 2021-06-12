@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.LogsFragmentIbEditBinding;
 import com.loopbreakr.cogstruct.identifybarriers.models.IBViewModel;
 import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;

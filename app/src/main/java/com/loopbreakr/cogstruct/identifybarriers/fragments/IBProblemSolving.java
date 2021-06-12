@@ -17,7 +17,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.IbFragmentProblemSolvingBinding;
 import com.loopbreakr.cogstruct.identifybarriers.activities.IBActivity;
 import com.loopbreakr.cogstruct.identifybarriers.models.IBViewModel;
 

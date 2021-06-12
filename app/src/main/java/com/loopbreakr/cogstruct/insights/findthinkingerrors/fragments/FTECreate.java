@@ -18,7 +18,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.FteFragmentCreateBinding;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.models.FTEViewModel;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.viewpager.adapters.FTEViewPagerAdapter;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.viewpager.fragments.FTE_BWT;

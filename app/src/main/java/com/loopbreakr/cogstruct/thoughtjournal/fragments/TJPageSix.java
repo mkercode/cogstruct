@@ -16,7 +16,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.TjFragmentPageSixBinding;
 import com.loopbreakr.cogstruct.thoughtjournal.activities.TJActivity;
 import com.loopbreakr.cogstruct.thoughtjournal.models.TJViewModel;
 

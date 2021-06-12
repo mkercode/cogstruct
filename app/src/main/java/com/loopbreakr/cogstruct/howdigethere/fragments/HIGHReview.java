@@ -17,7 +17,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.HighFragmentReviewBinding;
 import com.loopbreakr.cogstruct.howdigethere.activities.HIGHActivity;
 import com.loopbreakr.cogstruct.howdigethere.models.HIGHViewModel;
 

@@ -26,6 +26,8 @@ import com.loopbreakr.cogstruct.logs.adapters.LogsRecyclerAdapter;
 import com.loopbreakr.cogstruct.logs.objects.LogsPreview;
 import com.loopbreakr.cogstruct.thoughtjournal.objects.ThoughtJournalObject;
 
+import java.util.Objects;
+
 public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateListener, LogsRecyclerAdapter.LogsListener {
     private LogsViewModel logsViewModel;
     private RecyclerView recyclerView;
@@ -88,7 +90,7 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
     //save snapshot fields to object and get corresponding form fragment for that object in a case/switch statement
     private int getSnapshotData(DocumentSnapshot snapshot){
         int navId = 0;
-        switch (snapshot.getString("formName")){
+        switch (Objects.requireNonNull(snapshot.getString("formName"))){
             case "Thought Journal":
                 thoughtJournalLog = snapshot.toObject(ThoughtJournalObject.class);
                 logsViewModel.setSnapshot(snapshot);

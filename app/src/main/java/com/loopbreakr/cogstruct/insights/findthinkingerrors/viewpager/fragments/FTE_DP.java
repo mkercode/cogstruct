@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 
 import com.loopbreakr.cogstruct.R;
 
-import com.loopbreakr.cogstruct.databinding.FteViewpagerDpBinding;
 import com.loopbreakr.cogstruct.insights.findthinkingerrors.viewpager.models.FTEVPViewModel;
 
 import org.jetbrains.annotations.NotNull;

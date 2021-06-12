@@ -22,7 +22,6 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/insights_title"
         android:layout_width="fill_parent"
         android:layout_height="100dp"
         android:fontFamily="casual"
@@ -35,7 +34,6 @@
 
     <!--Activity container !-->
     <GridLayout
-        android:id="@+id/insightsActivityContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="2"

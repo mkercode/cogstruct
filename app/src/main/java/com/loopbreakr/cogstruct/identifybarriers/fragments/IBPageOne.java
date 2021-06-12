@@ -18,7 +18,6 @@ import android.widget.Button;
 
 import com.loopbreakr.cogstruct.home.activities.MainActivity;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.IbFragmentPageOneBinding;
 import com.loopbreakr.cogstruct.identifybarriers.models.IBViewModel;
 
 import org.jetbrains.annotations.NotNull;

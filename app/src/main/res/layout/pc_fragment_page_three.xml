@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="24dp"
-        android:text="If I Don't Change"
+        android:text="@string/pc_dont_change_string"
         android:textColor="@color/colorGreenText"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:gravity="center"
-        android:text="How will continuing the behavior impact my life?"
+        android:text="@string/pc_dont_change_description"
         android:textColor="@color/colorGreenText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,6 @@
 
 
     <TextView
-        android:id="@+id/pc_dont_change_pros_question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -70,7 +69,6 @@
         app:layout_constraintTop_toTopOf="@+id/add_dont_change_pro" />
 
     <TextView
-        android:id="@+id/pc_dont_change_cons_question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/cons"
@@ -91,7 +89,8 @@
         android:src="@drawable/ic_add"
         app:backgroundTint="#f15a29"
         app:layout_constraintEnd_toEndOf="@+id/dont_change_pros_recyclerview"
-        app:layout_constraintTop_toBottomOf="@+id/pc_dont_change_question" />
+        app:layout_constraintTop_toBottomOf="@+id/pc_dont_change_question"
+        android:focusable="true" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_dont_change_con"
@@ -104,7 +103,8 @@
         android:src="@drawable/ic_minus"
         app:backgroundTint="#00aeef"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pc_dont_change_question" />
+        app:layout_constraintTop_toBottomOf="@+id/pc_dont_change_question"
+        android:focusable="true" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dont_change_cons_recyclerview"

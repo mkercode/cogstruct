@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.HighFragmentPageTwoBinding;
 import com.loopbreakr.cogstruct.howdigethere.models.HIGHViewModel;
 
 import org.jetbrains.annotations.NotNull;

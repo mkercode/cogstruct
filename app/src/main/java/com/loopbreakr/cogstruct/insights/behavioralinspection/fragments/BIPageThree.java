@@ -21,7 +21,6 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.BiFragmentPageThreeBinding;
 import com.loopbreakr.cogstruct.insights.adapters.LegendRecyclerAdapter;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.activities.BIActivity;
 import com.loopbreakr.cogstruct.insights.behavioralinspection.models.BIViewModel;
@@ -149,13 +148,13 @@ public class BIPageThree extends Fragment {
 
             String factorString = data.getDataSet().getEntryForIndex(i).getLabel();
 
-            float numtimes = data.getDataSet().getEntryForIndex(i).getValue();
-            float percentage = (numtimes/data.getYValueSum())*100;
+            float numTimes = data.getDataSet().getEntryForIndex(i).getValue();
+            float percentage = (numTimes/data.getYValueSum())*100;
             String percentString = ((int) percentage) + " %";
 
             int color = data.getDataSet().getColor(i);
 
-            Factor tempFactor = new Factor(color, factorString, (int) numtimes, percentString, behavior);
+            Factor tempFactor = new Factor(color, factorString, (int) numTimes, percentString, behavior);
             factors.add(tempFactor);
         }
 

@@ -17,7 +17,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.PcFragmentPageFourBinding;
 import com.loopbreakr.cogstruct.proscons.models.PCViewModel;
 import com.loopbreakr.cogstruct.proscons.activities.PCActivity;
 

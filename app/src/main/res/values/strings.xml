@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">CogStruct</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <string name="thought_journal_title">Thought Journal</string>
     <string name="how_d_i_get_here_title">How\'d I get Here?</string>
     <string name="pros_and_cons_title">Pros and Cons</string>
@@ -51,8 +49,6 @@
     <string name="with_others">With others</string>
     <string name="alone">Alone</string>
     <string name="tj_thoughts_description">What was going through your mind at the moment? </string>
-    <string name="tj_thoughts_hint">Enter thoughts here!</string>
-    <string name="submit_button_text">Submit</string>
     <string name="thoughts_title">Thoughts</string>
     <string name="tj_thoughts_image_description">Thought Bubble Image</string>
     <string name="tj_movie_image_description">Movie Image</string>
@@ -60,8 +56,6 @@
     <string name="review_button_text">Review</string>
     <string name="general_review_title">Review</string>
     <string name="tj_review_description">Review Your Answers</string>
-    <string name="field_optional">Field Optional</string>
-    <string name="field_required">Field Required!</string>
     <string name="submit_button">Submit</string>
     <string name="edit_button">Edit</string>
     <string name="thoughts_review_question">What were my thoughts?</string>
@@ -73,22 +67,18 @@
     <string name="people_review_question">Who was I with?</string>
     <string name="time_review_question">When did it happen?</string>
     <string name="place_review_question">Where did it happen?</string>
-    <string name="edit_icon">Edit Icon</string>
-    <string name="review_text">Review Text</string>
     <string name="logs_behavior_question">What was the unhelpful behavior?</string>
     <string name="logs_situation_question">Situation details:</string>
     <string name="logs_main_emotion_question">What was the main emotion experienced?</string>
     <string name="ilog_emotion_intensity_question">Intensity rating:</string>
     <string name="log_additional_details">Additional details:</string>
     <string name="log_thougths_question">Thoughts experienced:</string>
-    <string name="logs_empty_field">Field not completed.</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
     <string name="sadness">Sadness</string>
     <string name="anger">Anger</string>
     <string name="fear">Fear</string>
     <string name="happiness">Happiness</string>
-    <string name="plus">+</string>
     <string name="pc_page_one_title">Behavior</string>
     <string name="pc_page_two_title">If I Change</string>
     <string name="pc_behavior_description">What is the behavior you want to change?</string>
@@ -110,24 +100,20 @@
     <string name="ib_page_two_title">Willingness</string>
     <string name="ib_willingness_description">Was I willing to do the preventative measure or action on the previous page?</string>
     <string name="ib_thought_title">Thought</string>
-    <string name="ib_problem_solving_question">What can you do next time to overcome this barrier?</string>
     <string name="ib_behavior_review_question">Unhelpful action or behavior</string>
     <string name="ib_problem_solvie_question">What could have I done to prevent it?</string>
     <string name="ib_barrier_type_review_question">Barrier type</string>
     <string name="ib_barrier_review_question">Barrier</string>
-    <string name="ib_prioblem_solving_fab_description">Add possible Solution</string>
     <string name="ib_problem_solving_review_description">Review Answers and Problem Solve!</string>
     <string name="problem_solving_title_general">Problem Solve</string>
     <string name="ib_page_four_title">Final Barriers</string>
     <string name="add_thought_description">Add thought</string>
     <string name="add_thought_prompt">Add thoughts</string>
-    <string name="thoughts_experienced_title">Thoughts Experienced</string>
     <string name="high_page_one_title">What Happened?</string>
     <string name="behavior_hint_general">Enter the unhelpful behavior or action you engaged in here</string>
     <string name="prompting_event_hint_general">Enter what happened or what was going on</string>
     <string name="behavior_question_general">What was the behavior?</string>
     <string name="high_trigger_event_question">What was the trigger event that led you to engage in it?</string>
-    <string name="high_page_two_title">Thoughts and Feelings</string>
     <string name="high_emotion_question">What is the main emotion you felt before engaging?</string>
     <string name="thoughts_prior_question_general">What was going through your mind prior to engaging in the behavior or action?</string>
     <string name="vulnerability_title">Vulnerabilities</string>
@@ -167,7 +153,6 @@
     <string name="bb_logs_environmentals_question">What can you do about your space that can help prevent you from engaging?</string>
     <string name="bb_logs_distractions_question">What can you do in the moment to distract you from engaging?</string>
     <string name="bb_logs_solutions_question">What can you do that will prevent you from engaging in the future?</string>
-    <string name="bb_logs_behavior_question_short">Behavior you want to stop engaging in:</string>
     <string name="insights_title">Insights</string>
     <string name="behavioral_inspection_description">Gain insights on your unhelpful behaviors, and say goodbye to doing all the detective work yourself! This section connects all the dots for you using your past entries</string>
     <string name="behavioral_inspection_title">Behavioral Inspection</string>
@@ -223,4 +208,10 @@
     <string name="objectivity_description">Some people find it hard to be objective when doing CBT or CBT-based exercises alone. It is always a good idea to have a trained mental health professionals to discuss your responses to the worksheets with. If this is not possible, some people find it helpful to discuss their responses with an understanding friend or family member.</string>
     <string name="other_therapies_title">Other Therapies</string>
     <string name="other_therapies_description">If you enjoy the CBT-based exercises on this app, you may want to look into other forms of therapy. Dialectical Behavioral Therapy (DBT) is based on CBT, but focuses on the emotional and social factors. DBT can help people regulate unhelpful emotions, and come up with coping strategies to deal with them and their effects on thoughts and behaviors. DBT can also help people with problems, practice distress tolerance, acceptance, and mindfulness. /nLike CBT, many mental health professionals are trained in this kind of therapy, and free resources exist online if you wish to get a glimpse as to what it entails.</string>
+    <string name="done_button_string">Done</string>
+    <string name="by_activity_button">By Activity:</string>
+    <string name="all_button_string">All</string>
+    <string name="pc_dont_change_string">If I Don\'t Change</string>
+    <string name="pc_dont_change_description">How will continuing the behavior impact my life?</string>
+    <string name="pc_change_description">How will changing it impact my life?</string>
 </resources>

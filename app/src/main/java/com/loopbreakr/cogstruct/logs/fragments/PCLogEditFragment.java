@@ -22,7 +22,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.adapters.SimpleRecyclerAdapter;
-import com.loopbreakr.cogstruct.databinding.LogsFragmentPcEditBinding;
 import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
 import com.loopbreakr.cogstruct.proscons.models.PCViewModel;

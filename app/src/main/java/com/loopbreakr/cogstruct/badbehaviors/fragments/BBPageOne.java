@@ -19,7 +19,6 @@ import android.widget.Button;
 import com.loopbreakr.cogstruct.home.activities.MainActivity;
 import com.loopbreakr.cogstruct.R;
 import com.loopbreakr.cogstruct.badbehaviors.models.BBViewModel;
-import com.loopbreakr.cogstruct.databinding.BbFragmentPageOneBinding;
 
 import org.jetbrains.annotations.NotNull;
 

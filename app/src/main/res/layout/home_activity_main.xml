@@ -7,7 +7,6 @@
     tools:context=".home.activities.MainActivity">
 
     <LinearLayout
-        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:background="@drawable/rounded_toolbar_header"
@@ -17,7 +16,6 @@
 
     <!-- REPLACES THE HOME UI !-->
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/homeUI"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

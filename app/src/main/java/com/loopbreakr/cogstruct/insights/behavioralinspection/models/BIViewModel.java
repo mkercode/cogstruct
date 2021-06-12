@@ -24,7 +24,7 @@ public class BIViewModel extends ViewModel {
         biBehaviorList = new ArrayList<>();
         for(DocumentSnapshot snapshot: snapshotList){
             String currBehavior = snapshot.getString("behavior").trim();
-            if(currBehavior != null && !currBehavior.isEmpty() && !biBehaviorList.contains(currBehavior)){
+            if(!currBehavior.isEmpty() && !biBehaviorList.contains(currBehavior)){
                 biBehaviorList.add(currBehavior);
             }
         }

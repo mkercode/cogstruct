@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@SuppressWarnings("EmptyMethod")
 public class HIGHViewModel extends ViewModel {
 
     private String highBehavior;

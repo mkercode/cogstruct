@@ -18,7 +18,6 @@ import android.widget.Button;
 
 import com.loopbreakr.cogstruct.home.activities.MainActivity;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.PcFragmentPageOneBinding;
 import com.loopbreakr.cogstruct.proscons.models.PCViewModel;
 
 import org.jetbrains.annotations.NotNull;

@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
-        android:text="How will changing it impact my life?"
+        android:text="@string/pc_change_description"
         android:textColor="@color/colorGreenText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +56,6 @@
 
 
     <TextView
-        android:id="@+id/pc_change_pros_question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -69,7 +68,6 @@
         app:layout_constraintTop_toTopOf="@+id/add_change_pro" />
 
     <TextView
-        android:id="@+id/pc_change_cons_question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/cons"
@@ -90,7 +88,8 @@
         app:backgroundTint="#f15a29"
         app:layout_constraintEnd_toEndOf="@+id/change_pros_recyclerview"
         app:layout_constraintTop_toBottomOf="@+id/pc_change_question"
-        android:contentDescription="@string/add_pro" />
+        android:contentDescription="@string/add_pro"
+        android:focusable="true" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_change_con"
@@ -102,7 +101,8 @@
         android:src="@drawable/ic_minus"
         app:backgroundTint="#00aeef"
         app:layout_constraintEnd_toEndOf="@+id/change_cons_recyclerview"
-        app:layout_constraintTop_toBottomOf="@+id/pc_change_question" />
+        app:layout_constraintTop_toBottomOf="@+id/pc_change_question"
+        android:focusable="true" />
 
 
     <androidx.recyclerview.widget.RecyclerView

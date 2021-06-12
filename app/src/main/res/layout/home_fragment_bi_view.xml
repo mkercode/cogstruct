@@ -45,7 +45,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/behavioral_inspection_icon"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"

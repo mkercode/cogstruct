@@ -20,7 +20,6 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.LogsFragmentTjEditBinding;
 import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 import com.loopbreakr.cogstruct.logs.models.LogsViewModel;
 import com.loopbreakr.cogstruct.logs.models.TJLogViewModel;

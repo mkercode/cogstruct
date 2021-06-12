@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.loopbreakr.cogstruct.R;
-import com.loopbreakr.cogstruct.databinding.LogsFragmentIbBinding;
 import com.loopbreakr.cogstruct.identifybarriers.objects.IBObject;
 import com.loopbreakr.cogstruct.identifybarriers.models.IBViewModel;
 import com.loopbreakr.cogstruct.logs.activities.LogsActivity;

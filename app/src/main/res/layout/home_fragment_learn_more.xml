@@ -35,7 +35,6 @@
         app:layout_constraintTop_toBottomOf="@+id/learn_more_title">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -145,7 +144,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/objectivity_description" />
 
             <TextView
-                android:id="@+id/other_therapies_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
