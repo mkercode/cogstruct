@@ -163,7 +163,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="@string/ilog_emotion_intensity_question"
+                android:text="@string/logs_emotion_intensity_question"
                 android:textColor="@color/colorGreenText"
                 android:textSize="18sp" />
 

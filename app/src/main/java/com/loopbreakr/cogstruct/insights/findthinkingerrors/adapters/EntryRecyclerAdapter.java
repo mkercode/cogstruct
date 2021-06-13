@@ -1,5 +1,6 @@
 package com.loopbreakr.cogstruct.insights.findthinkingerrors.adapters;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,7 @@ public class EntryRecyclerAdapter extends RecyclerView.Adapter<EntryRecyclerAdap
         final TextView errorsTextView;
         final ImageView popupButton;
 
+        @SuppressLint("NonConstantResourceId")
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             dateTextView = itemView.findViewById(R.id.date_created_textview);

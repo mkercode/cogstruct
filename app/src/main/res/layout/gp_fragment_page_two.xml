@@ -29,7 +29,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Select Info"
+            android:text="@string/gp_select_info_prompt"
             android:textColor="@color/colorWhite"
             android:textSize="20sp" />
     </LinearLayout>

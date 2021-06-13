@@ -73,9 +73,9 @@
     <string name="logs_behavior_question">What was the unhelpful behavior?</string>
     <string name="logs_situation_question">Situation details:</string>
     <string name="logs_main_emotion_question">What was the main emotion experienced?</string>
-    <string name="ilog_emotion_intensity_question">Intensity rating:</string>
+    <string name="logs_emotion_intensity_question">Intensity rating:</string>
     <string name="log_additional_details">Additional details:</string>
-    <string name="log_thougths_question">Thoughts experienced:</string>
+    <string name="log_thoughts_question">Thoughts experienced:</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
     <string name="sadness">Sadness</string>
@@ -89,7 +89,7 @@
     <string name="add_pro">Add pro</string>
     <string name="cons">Cons</string>
     <string name="pros">Pros</string>
-    <string name="pc_not_chamging_question">How will not changing it impact my life?</string>
+    <string name="pc_not_changing_question">How will not changing it impact my life?</string>
     <string name="required_text">(Required)</string>
     <string name="tj_emotion_details_description">Optional: go into details about how you felt.</string>
     <string name="tj_emotion_details_hint">I.e multiple emotions, bodily sensations, emotional actions, etc</string>
@@ -104,7 +104,6 @@
     <string name="ib_willingness_description">Was I willing to do the preventative measure or action on the previous page?</string>
     <string name="ib_thought_title">Thought</string>
     <string name="ib_behavior_review_question">Unhelpful action or behavior</string>
-    <string name="ib_problem_solvie_question">What could have I done to prevent it?</string>
     <string name="ib_barrier_type_review_question">Barrier type</string>
     <string name="ib_barrier_review_question">Barrier</string>
     <string name="ib_problem_solving_review_description">Review Answers and Problem Solve!</string>
@@ -121,7 +120,7 @@
     <string name="thoughts_prior_question_general">What was going through your mind prior to engaging in the behavior or action?</string>
     <string name="vulnerability_title">Vulnerabilities</string>
     <string name="add_vulnerability_factors_description">Add vulnerability factors</string>
-    <string name="high_vulnerability_question">What are some things going on (in yoruself, others, or your environment) that made you vulnerable to engaging?</string>
+    <string name="high_vulnerability_question">What are some things going on (in yourself, others, or your environment) that made you vulnerable to engaging?</string>
     <string name="high_vulnerability_prompt">Add vulnerability factors</string>
     <string name="aftermath_title">Aftermath</string>
     <string name="consequences_prompt_general">Add consequences</string>
@@ -197,7 +196,7 @@
 
     <string name="about_text">CogStruct is an app based on clinical Cognitive Behavioral Therapy (CBT) created to help anyone target unhelpful behaviors, thoughts, and emotions. CogStruct provides a paperless solution to CBT, by allowing you to do CBT based activities on your phone! \nUsing CogStruct, you can easily fill out worksheets that may help you understand the driving forces behind your unhelpful behaviors, so you can be better equipped to come up with strategies to work on them. In addition, CogStruct allows you to gain valuable insights, by organizing all your worksheet input into helpful graphs and categories.</string>
     <string name="about_title">About</string>
-    <string name="about_privacy">We take your privacy very seriously, and never share your data with any third party. When you enter information on the app, your data is stored in your account using an instance of Googles own secure database, with enhanced privacy rules to make sure that your data is safe.</string>
+    <string name="about_privacy">We take your privacy very seriously, and never share your data with any third party. When you enter information on the app, your data is stored in your account using an instance of Google\'s own secure database, with enhanced privacy rules to make sure that your data is safe.</string>
     <string name="privacy_title">Privacy</string>
     <string name="disclaimer_title">Disclaimer</string>
     <string name="disclaimer_text">Please note that CogStruct is intended to serve as a potential supplement to ones mental health. This app is in no way a replacement for therapy or professional help, and can not serve as a sole resource for ones therapy.\nIn addition, CogStruct is not intended to be used for life threatening issues, if you or someone you know is in a life threatening or harmful situation please do not hesitate to call 911, or the applicable emergency number for your region.</string>
@@ -230,4 +229,40 @@
     <string name="ib_problem_solving_question">What can I do next time to overcome the barrier?</string>
     <string name="ib_willingness_title">Willingness</string>
     <string name="ib_action_title">Action</string>
+    <string name="general_choose_behavior_prompt">Choose Behavior</string>
+    <string name="bi_inspect_title">Inspect</string>
+    <string name="gp_select_info_prompt">Select Info</string>
+    <string name="high_thoughts_review">Thoughts experienced:</string>
+    <string name="high_vulnerability_review">Vulnerability factors:</string>
+    <string name="high_reliefs_review">Short term reliefs:</string>
+    <string name="high_consequences_review">Long term consequences:</string>
+    <string name="high_solutions_review">Possible solutions:</string>
+    <string name="high_repairs_review">Possible ways to repair the situation:</string>
+    <string name="toolbar_logout">Logout</string>
+    <string name="ib_encouragement">You got this far!</string>
+    <string name="ib_final_barrier_question">You were both willing to do the preventative behavior or action and aware of it at the time. \n\nWhat stopped you from doing it?</string>
+    <string name="ib_barrier_prompt">Enter what got in the way</string>
+    <string name="ib_thought_question">Did the thought of doing the preventative measure or action come to mind?</string>
+    <string name="ib_barrier_question">If no… \nWhat got in the way?</string>
+    <string name="ib_thought_barrier_hint">Enter what got in the way of thinking of doing the preventative behavior or action at the time</string>
+    <string name="ib_will_barrier_hint">Enter what got in the way of being willing to do said action</string>
+    <string name="logo_icon_description">Logo icon</string>
+    <string name="logreg_prompt">Sign in or up!</string>
+    <string name="logs_high_behavior_question">What was the unhelpful behavior/action you engaged in?</string>
+    <string name="logs_high_trigger_question">Trigger Event:</string>
+    <string name="logs_high_intensity_question">Intensity rating:</string>
+    <string name="logs_high_vulnerability_question">Vulnerabilities::</string>
+    <string name="logs_high_reliefs_question">Short term reliefs:</string>
+    <string name="logs_high_consequences_question">Long term consequences:</string>
+    <string name="logs_high_solutions_question">Preventive solutions:</string>
+    <string name="logs_high_repairs_question">Ways to repair the situation:</string>
+    <string name="general_add_solutions_prompt">Add solutions</string>
+    <string name="logs_high_thoughts_question">Thoughts:</string>
+    <string name="pc_review_change">If I Change</string>
+    <string name="pc_review_dont_change">If I Don\'t Change</string>
+    <string name="pc_review_pros">Pros (+)</string>
+    <string name="pc_review_cons">Cons (-)</string>
+    <string name="pc_behavior_prompt">Enter behavior here</string>
+    <string name="bi_times_occurred">Times occurred:</string>
+    <string name="bi_percentage">Total percentage:</string>
 </resources>

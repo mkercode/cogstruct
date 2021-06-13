@@ -20,12 +20,12 @@
 
 
     <TextView
-        android:id="@+id/high_log_edit_reliefs_question"
+        android:id="@+id/high_log_edit_solutions_question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="Preventive solutions:"
+        android:text="@string/logs_high_solutions_question"
         android:textColor="@color/colorGreenText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
         android:focusable="true"
         app:backgroundTint="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/high_log_edit_reliefs_question"
+        app:layout_constraintTop_toBottomOf="@+id/high_log_edit_solutions_question"
         app:srcCompat="@drawable/ic_add" />
 
     <TextView
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:gravity="end"
-        android:text="Add solutions"
+        android:text="@string/general_add_solutions_prompt"
         android:textColor="@color/colorGreenText"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/high_log_add_solution"
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="Ways to repair the situation:"
+        android:text="@string/logs_high_repairs_question"
         android:textColor="@color/colorGreenText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -214,7 +214,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:padding="4dp"
-                    android:text="@string/ilog_emotion_intensity_question"
+                    android:text="@string/logs_emotion_intensity_question"
                     android:textColor="@color/colorGreenText"
                     android:textSize="15sp" />
                 <TextView
@@ -264,7 +264,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:padding="4dp"
-                    android:text="Thoughts experienced:"
+                    android:text="@string/high_thoughts_review"
                     android:textColor="@color/colorGreenText"
                     android:textSize="15sp" />
                 <TextView
@@ -311,7 +311,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:padding="4dp"
-                    android:text="Vulnerability factors:"
+                    android:text="@string/high_vulnerability_review"
                     android:textColor="@color/colorGreenText"
                     android:textSize="15sp" />
                 <TextView
@@ -359,7 +359,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:padding="4dp"
-                    android:text="Short term reliefs:"
+                    android:text="@string/high_reliefs_review"
                     android:textColor="@color/colorGreenText"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -398,7 +398,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:padding="4dp"
-                    android:text="Long term consequences:"
+                    android:text="@string/high_consequences_review"
                     android:textColor="@color/colorGreenText"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -438,7 +438,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:padding="4dp"
-                    android:text="Possible solutions:"
+                    android:text="@string/high_solutions_review"
                     android:textColor="@color/colorGreenText"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -477,7 +477,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:padding="4dp"
-                    android:text="Possible ways to repair the situation:"
+                    android:text="@string/high_repairs_review"
                     android:textColor="@color/colorGreenText"
                     android:textSize="15sp" />
             </LinearLayout>

@@ -4,7 +4,7 @@
 
 
     <item
-        android:title="Logout"
+        android:title="@string/toolbar_logout"
         android:id="@+id/action_logout"
         app:showAsAction="never"
         />

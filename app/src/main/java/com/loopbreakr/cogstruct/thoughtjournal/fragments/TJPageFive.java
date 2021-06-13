@@ -56,7 +56,7 @@ public class TJPageFive extends Fragment {
 
     private void findViews(View view) {
         addThoughtButton = view.findViewById(R.id.add_thought_button);
-        thoughtChipGroup = view.findViewById(R.id.tj_thought_chipgroup);
+        thoughtChipGroup = view.findViewById(R.id.tj_thought_chipGroup);
         backButton = view.findViewById(R.id.page_five_back);
         reviewButton = view.findViewById(R.id.tj_review);
     }

@@ -61,7 +61,7 @@
         android:autofillHints=""
         android:ems="15"
         android:gravity="top"
-        android:hint="Enter behavior here"
+        android:hint="@string/pc_behavior_prompt"
         android:inputType="textAutoCorrect|textMultiLine"
         android:maxLines="4"
         android:minLines="4"

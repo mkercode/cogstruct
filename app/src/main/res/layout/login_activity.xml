@@ -14,11 +14,11 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="64dp"
-        android:contentDescription="Logo icon"
+        android:contentDescription="@string/logo_icon_description"
         app:layout_constraintBottom_toTopOf="@+id/logreg_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descripton"
+        app:layout_constraintTop_toBottomOf="@+id/description"
         app:srcCompat="@drawable/logo_with_hardhat" />
 
     <Button
@@ -27,13 +27,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:fontFamily="monospace"
-        android:text="Sign in or up! "
+        android:text="@string/logreg_prompt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/descripton"
+        android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"

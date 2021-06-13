@@ -51,16 +51,14 @@ public class IBViewModel extends ViewModel {
     }
     public void setIbBarrierTypeRadioId(int input) {ibBarrierTypeRadioId = input;
         //set the radio id in IB log edit fragment
-        switch (input){
-            case R.id.ib_will_type_log:
-                setIbBarrierType("Willingness");
-                break;
-            case R.id.ib_thought_type_log:
-                setIbBarrierType("Thought");
-                break;
-            case R.id.ib_action_type_log:
-                setIbBarrierType("Action");
-                break;
+        if(input == R.id.ib_will_type_log){
+            setIbBarrierType("Willingness");
+        }
+        else if(input == R.id.ib_thought_type_log){
+            setIbBarrierType("Thought");
+        }
+        else if( input == R.id.ib_action_type_log){
+            setIbBarrierType("Action");
         }
     }
     public int getIbBarrierTypeRadioId() { return ibBarrierTypeRadioId; }

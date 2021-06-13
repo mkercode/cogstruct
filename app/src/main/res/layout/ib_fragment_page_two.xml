@@ -90,7 +90,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
-            android:text="If no... \nWhat got in the way?"
+            android:text="@string/ib_barrier_question"
             android:textColor="@color/colorGreenText"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +106,7 @@
             android:ems="15"
 
             android:gravity="top"
-            android:hint="Enter what got in the way of being willing to do said action"
+            android:hint="@string/ib_will_barrier_hint"
             android:inputType="textAutoCorrect|textMultiLine"
             android:maxLines="4"
             android:minLines="4"

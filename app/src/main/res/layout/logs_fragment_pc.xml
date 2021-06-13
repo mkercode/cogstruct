@@ -54,7 +54,7 @@ tools:context=".logs.fragments.PCLogsFragment">
     android:layout_height="wrap_content"
     android:layout_margin="12dp"
     android:padding="4dp"
-    android:text="Target behavior:"
+    android:text="@string/logs_pc_behavior_question"
     android:textColor="@color/colorGreenText"
     android:textSize="15sp"
     app:layout_constraintBottom_toBottomOf="@+id/pc_behavior_log_container"
@@ -127,7 +127,7 @@ tools:context=".logs.fragments.PCLogsFragment">
             android:layout_marginBottom="2dp"
             android:background="@color/colorWhite"
             android:padding="4dp"
-            android:text="If I Change"
+            android:text="@string/pc_review_change"
             android:textColor="@color/colorGreenText" />
 
         <TextView
@@ -142,7 +142,7 @@ tools:context=".logs.fragments.PCLogsFragment">
             android:layout_marginBottom="2dp"
             android:background="@color/colorWhite"
             android:padding="4dp"
-            android:text="If I Don't Change"
+            android:text="@string/pc_review_dont_change"
             android:textColor="@color/colorGreenText" />
 
         <TextView
@@ -157,7 +157,7 @@ tools:context=".logs.fragments.PCLogsFragment">
             android:layout_marginBottom="2dp"
             android:background="@color/colorWhite"
             android:padding="4dp"
-            android:text="Pros (+)"
+            android:text="@string/pc_review_pros"
             android:textColor="@color/colorGreenText" />
 
         <TextView
@@ -201,7 +201,7 @@ tools:context=".logs.fragments.PCLogsFragment">
             android:layout_marginBottom="4dp"
             android:background="@color/colorWhite"
             android:padding="4dp"
-            android:text="Cons (-)"
+            android:text="@string/pc_review_cons"
             android:textColor="@color/colorGreenText" />
 
         <TextView

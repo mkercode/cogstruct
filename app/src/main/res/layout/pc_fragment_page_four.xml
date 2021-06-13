@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
             name="viewModel"
             type="com.loopbreakr.cogstruct.proscons.models.PCViewModel" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".proscons.fragments.PCPageFour">
 
     <Space
@@ -54,7 +54,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:padding="4dp"
-        android:text="Target behavior:"
+        android:text="@string/logs_pc_behavior_question"
         android:textColor="@color/colorGreenText"
         android:textSize="15sp"
         app:layout_constraintEnd_toStartOf="@+id/space2"
@@ -123,7 +123,7 @@
                 android:layout_marginBottom="2dp"
                 android:background="@color/colorWhite"
                 android:padding="4dp"
-                android:text="If I Change"
+                android:text="@string/pc_review_change"
                 android:textColor="@color/colorGreenText" />
 
             <TextView
@@ -138,7 +138,7 @@
                 android:layout_marginBottom="2dp"
                 android:background="@color/colorWhite"
                 android:padding="4dp"
-                android:text="If I Don't Change"
+                android:text="@string/pc_review_dont_change"
                 android:textColor="@color/colorGreenText" />
 
             <TextView
@@ -153,7 +153,7 @@
                 android:layout_marginBottom="2dp"
                 android:background="@color/colorWhite"
                 android:padding="4dp"
-                android:text="Pros (+)"
+                android:text="@string/pc_review_pros"
                 android:textColor="@color/colorGreenText" />
 
             <TextView
@@ -197,7 +197,7 @@
                 android:layout_marginBottom="4dp"
                 android:background="@color/colorWhite"
                 android:padding="4dp"
-                android:text="Cons (-)"
+                android:text="@string/pc_review_cons"
                 android:textColor="@color/colorGreenText" />
 
             <TextView
