@@ -65,7 +65,8 @@
             android:layout_margin="16dp"
             android:text="@string/place_review_question"
             android:textColor="@color/colorGreenText"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:labelFor="@id/place_edit_log"/>
 
 
         <EditText
@@ -79,7 +80,8 @@
             android:ems="15"
             android:minLines="2"
             android:maxLines="2"
-            android:text="@={viewModel.tjLogLocation}"/>
+            android:text="@={viewModel.tjLogLocation}"
+            android:autofillHints="" />
 
 
         <TextView
@@ -187,7 +189,8 @@
             android:layout_margin="8dp"
             android:text="@string/tj_page_one_people_hint"
             android:textColor="@color/colorGreenText"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:labelFor="@id/people_edit_log"/>
 
         <EditText
             android:id="@+id/people_edit_log"
@@ -200,7 +203,8 @@
             android:ems="15"
             android:minLines="2"
             android:maxLines="2"
-            android:text="@={viewModel.tjLogPeopleDisplay}"/>
+            android:text="@={viewModel.tjLogPeopleDisplay}"
+            android:autofillHints="" />
 
         <TextView
             android:id="@+id/situation_log_question"
@@ -209,7 +213,8 @@
             android:layout_margin="16dp"
             android:text="@string/logs_situation_question"
             android:textColor="@color/colorGreenText"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:labelFor="@id/situation_edit_log"/>
 
         <EditText
             android:id="@+id/situation_edit_log"
@@ -222,7 +227,8 @@
             android:ems="15"
             android:minLines="2"
             android:maxLines="2"
-            android:text="@={viewModel.tjLogSituation}"/>
+            android:text="@={viewModel.tjLogSituation}"
+            android:autofillHints="" />
 
         <TextView
             android:id="@+id/behavior_log_question"
@@ -233,7 +239,8 @@
             android:textColor="@color/colorGreenText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/situation_log" />
+            app:layout_constraintTop_toBottomOf="@+id/situation_log"
+            android:labelFor="@id/behavior_edit_log"/>
 
         <EditText
             android:id="@+id/behavior_edit_log"
@@ -247,7 +254,7 @@
             android:minLines="2"
             android:maxLines="2"
             android:text="@={viewModel.tjLogBehavior}"
-            />
+            android:autofillHints="" />
 
         <TextView
             android:id="@+id/emotion_log_question"
@@ -334,7 +341,8 @@
             android:textColor="@color/colorGreenText"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emotion_rating_log" />
+            app:layout_constraintTop_toBottomOf="@+id/emotion_rating_log"
+            android:labelFor="@id/emotion_details_edit_log"/>
 
         <EditText
             android:id="@+id/emotion_details_edit_log"
@@ -347,7 +355,8 @@
             android:ems="15"
             android:minLines="2"
             android:maxLines="2"
-            android:text="@={viewModel.tjLogEmotionDetail}"/>
+            android:text="@={viewModel.tjLogEmotionDetail}"
+            android:autofillHints="" />
 
 
 
@@ -395,7 +404,7 @@
                 android:background="@drawable/rounded_button_background"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
-                android:text="Add Thought" />
+                android:text="@string/add_thought_prompt" />
         </RelativeLayout>
     </LinearLayout>
     </ScrollView>

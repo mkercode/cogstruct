@@ -12,7 +12,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:text="form_name"
         android:textColor="@color/colorGreenText"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="date_created"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/formNameTextView"
@@ -41,6 +39,7 @@
         app:layout_constraintEnd_toStartOf="@+id/formNameTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logs_icon" />
+        app:srcCompat="@drawable/logs_icon"
+        android:contentDescription="@string/logs_preview_icon_desc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

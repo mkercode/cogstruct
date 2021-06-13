@@ -24,13 +24,14 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:focusable="true"
-                app:srcCompat="@drawable/logs_icon" />
+                app:srcCompat="@drawable/logs_icon"
+                android:contentDescription="@string/logs_icon_desc" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="Logs"
+                android:text="@string/logs_title"
                 android:textAlignment="center"
                 android:textColor="@color/colorWhite"
                 android:textSize="13sp" />
@@ -53,13 +54,14 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 app:srcCompat="@drawable/insights_icon"
-                android:focusable="true" />
+                android:focusable="true"
+                android:contentDescription="@string/insights_icon_desc" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="Insights"
+                android:text="@string/insights_title"
                 android:textAlignment="center"
                 android:textColor="@color/colorWhite"
                 android:textSize="13sp" />
@@ -83,13 +85,14 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 app:srcCompat="@drawable/learn_more_icon"
-                android:focusable="true" />
+                android:focusable="true"
+                android:contentDescription="@string/learn_more_icon_desc" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="Learn More"
+                android:text="@string/learn_more_title"
                 android:textAlignment="center"
                 android:textColor="@color/colorWhite"
                 android:textSize="13sp" />
@@ -113,13 +116,14 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 app:srcCompat="@drawable/logo_hat_icon"
-                android:focusable="true" />
+                android:focusable="true"
+                android:contentDescription="@string/about_icon_desc" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="About"
+                android:text="@string/about_title"
                 android:textAlignment="center"
                 android:textColor="@color/colorWhite"
                 android:textSize="13sp" />

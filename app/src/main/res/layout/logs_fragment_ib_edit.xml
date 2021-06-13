@@ -64,20 +64,6 @@
 
 
     <TextView
-        android:id="@+id/ib_edit_problem_solving_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:padding="4dp"
-        android:text="What can I do next time to overcome the barrier?"
-        android:textColor="@color/colorGreenText"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_barrier_edit_log" />
-
-
-    <TextView
         android:id="@+id/ib_edit_behavior_log_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -88,7 +74,8 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_edit_log_date" />
+        app:layout_constraintTop_toBottomOf="@+id/ib_edit_log_date"
+        android:labelFor="@id/ib_edit_behavior_log"/>
 
     <EditText
         android:id="@+id/ib_edit_behavior_log"
@@ -103,8 +90,8 @@
         android:text="@={viewModel.ibBehavior}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_edit_behavior_log_question" />
-
+        app:layout_constraintTop_toBottomOf="@+id/ib_edit_behavior_log_question"
+        android:autofillHints="" />
 
 
 
@@ -119,7 +106,8 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_edit_behavior_log" />
+        app:layout_constraintTop_toBottomOf="@+id/ib_edit_behavior_log"
+        android:labelFor="@id/ib_edit_action_log"/>
 
 
     <EditText
@@ -135,7 +123,8 @@
         android:text="@={viewModel.ibNescessaryAction}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_edit_action_log_question" />
+        app:layout_constraintTop_toBottomOf="@+id/ib_edit_action_log_question"
+        android:autofillHints="" />
 
 
 
@@ -166,7 +155,7 @@
             android:id="@+id/ib_will_type_log"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Willingness"
+            android:text="@string/ib_willingness_title"
             android:textColor="@color/lightGrey"
             android:textSize="16sp" />
 
@@ -174,7 +163,7 @@
             android:id="@+id/ib_thought_type_log"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thought"
+            android:text="@string/ib_thought_title"
             android:textColor="@color/lightGrey"
             android:textSize="16sp" />
 
@@ -182,7 +171,7 @@
             android:id="@+id/ib_action_type_log"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Action"
+            android:text="@string/ib_action_title"
             android:textColor="@color/lightGrey"
             android:textSize="16sp" />
     </RadioGroup>
@@ -199,7 +188,8 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_behavior_type_log_radiogroup" />
+        app:layout_constraintTop_toBottomOf="@+id/ib_behavior_type_log_radiogroup"
+        android:labelFor="@id/ib_barrier_edit_log"/>
 
     <EditText
         android:id="@+id/ib_barrier_edit_log"
@@ -213,8 +203,22 @@
         android:text="@={viewModel.ibBarrier}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_barrier_edit_log_question" />
+        app:layout_constraintTop_toBottomOf="@+id/ib_barrier_edit_log_question"
+        android:autofillHints="" />
 
+    <TextView
+        android:id="@+id/ib_edit_problem_solving_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:padding="4dp"
+        android:text="@string/logs_ib_problem_solving_question"
+        android:textColor="@color/colorGreenText"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ib_barrier_edit_log"
+        android:labelFor="@id/ib_solution_edit_log"/>
 
     <EditText
         android:id="@+id/ib_solution_edit_log"
@@ -229,7 +233,8 @@
         android:text="@={viewModel.ibSolutions}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_edit_problem_solving_description" />
+        app:layout_constraintTop_toBottomOf="@+id/ib_edit_problem_solving_question"
+        android:autofillHints="" />
 
 
     <Space

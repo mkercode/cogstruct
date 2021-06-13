@@ -37,6 +37,7 @@
     <string name="evening">Evening</string>
     <string name="at_night">At night</string>
     <string name="place_hint">Hint: A specific place, i.e home</string>
+
     <string name="tj_page_one_title">Situation</string>
     <string name="tj_page_two_title">Details</string>
     <string name="tj_details_hint">Hint: Re-tell the events that occurred objectively, as if you are watching them in a movie</string>
@@ -56,8 +57,10 @@
     <string name="review_button_text">Review</string>
     <string name="general_review_title">Review</string>
     <string name="tj_review_description">Review Your Answers</string>
+
     <string name="submit_button">Submit</string>
     <string name="edit_button">Edit</string>
+
     <string name="thoughts_review_question">What were my thoughts?</string>
     <string name="details_review_question">Details:</string>
     <string name="intensity_review_question">Intensity:</string>
@@ -214,4 +217,17 @@
     <string name="pc_dont_change_string">If I Don\'t Change</string>
     <string name="pc_dont_change_description">How will continuing the behavior impact my life?</string>
     <string name="pc_change_description">How will changing it impact my life?</string>
+    <string name="logs_icon_desc">Logs icon</string>
+    <string name="insights_icon_desc">Insights icon</string>
+    <string name="learn_more_icon_desc">Learn more icon</string>
+    <string name="about_icon_desc">About icon</string>
+    <string name="logs_preview_icon_desc">Logs preview icon</string>
+    <string name="logs_ib_problem_solving_question">What can I do next time to overcome the barrier?</string>
+    <string name="logs_pc_behavior_question">Behavior to change:</string>
+    <string name="ib_solution_hint">Enter possible solution</string>
+    <string name="pc_change_question">How will changing it impact my life?</string>
+    <string name="logs_title">Logs</string>
+    <string name="ib_problem_solving_question">What can I do next time to overcome the barrier?</string>
+    <string name="ib_willingness_title">Willingness</string>
+    <string name="ib_action_title">Action</string>
 </resources>

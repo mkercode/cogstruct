@@ -1,5 +1,6 @@
 package com.loopbreakr.cogstruct.insights.behavioralinspection.objects;
 
+@SuppressWarnings("unused")
 public class Factor {
     private int factorColor;
     private String Factor;

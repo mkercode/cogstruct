@@ -65,7 +65,8 @@
                 android:layout_margin="16dp"
                 android:text="@string/unhelpful_behavior_action_general"
                 android:textColor="@color/colorGreenText"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:labelFor="@id/high_behavior_edit_log"/>
 
 
             <EditText
@@ -90,7 +91,8 @@
                 android:layout_margin="16dp"
                 android:text="@string/trigger_event_general"
                 android:textColor="@color/colorGreenText"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:labelFor="@id/high_trigger_edit_log"/>
 
             <EditText
                 android:id="@+id/high_trigger_edit_log"
