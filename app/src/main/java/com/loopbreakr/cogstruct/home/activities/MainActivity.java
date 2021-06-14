@@ -1,6 +1,7 @@
 package com.loopbreakr.cogstruct.home.activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,6 +53,18 @@ public class MainActivity extends AppCompatActivity implements FirebaseAuth.Auth
 
     public void signOutClicked(){
         AuthUI.getInstance().signOut(this);
+    }
+
+
+    public void sendEmail(){
+        Intent send = new Intent(Intent.ACTION_SENDTO);
+        String uriText = "mailto:" + Uri.encode("loopbreak@loopbreakr.com") +
+                "?subject=" + Uri.encode("Suggestion") +
+                "&body=" + Uri.encode("");
+        Uri uri = Uri.parse(uriText);
+
+        send.setData(uri);
+        startActivity(Intent.createChooser(send, "Send email"));
     }
 
 }

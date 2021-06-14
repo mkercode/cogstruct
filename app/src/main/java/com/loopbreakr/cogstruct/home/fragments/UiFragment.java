@@ -15,9 +15,11 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.badbehaviors.activities.BBActivity;
 import com.loopbreakr.cogstruct.home.activities.LoginActivity;
 import com.loopbreakr.cogstruct.home.activities.MainActivity;
 import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
@@ -27,6 +29,7 @@ public class UiFragment extends Fragment {
     private NavController navController;
     private CardView thoughtJournalCard, prosConsCard, howdIGetHereCard, badBehaviorsCard, identifyBarriersCard;
     private ImageView logsIcon, insightsIcon, learnMoreIcon, aboutIcon;
+    private Button suggestionButton;
 
 
     public UiFragment() {
@@ -79,7 +82,8 @@ public class UiFragment extends Fragment {
         insightsIcon = view.findViewById(R.id.insights_image);
         learnMoreIcon = view.findViewById(R.id.learn_more_image);
         aboutIcon = view.findViewById(R.id.about_image);
-
+        //find email suggestion button
+        suggestionButton = view.findViewById(R.id.suggestion_button);
     }
 
     private void setListenerBehavior() {
@@ -95,12 +99,7 @@ public class UiFragment extends Fragment {
             Intent intent = new Intent(this.requireActivity(), LogsActivity.class);
             startActivity(intent);
         });
-    }
-
-    private void logOut(){
-        Intent intent = new Intent(this.requireActivity(), LoginActivity.class);
-        startActivity(intent);
-        requireActivity().finish();
+        suggestionButton.setOnClickListener(v-> ((MainActivity)requireActivity()).sendEmail());
     }
 
 }
