@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 import com.loopbreakr.cogstruct.R;
+import com.loopbreakr.cogstruct.logs.activities.LogsActivity;
 
 public class MainActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener{
 
@@ -65,6 +66,11 @@ public class MainActivity extends AppCompatActivity implements FirebaseAuth.Auth
 
         send.setData(uri);
         startActivity(Intent.createChooser(send, "Send email"));
+    }
+
+    public void openLogs(){
+        Intent intent = new Intent(this, LogsActivity.class);
+        startActivity(intent);
     }
 
 }

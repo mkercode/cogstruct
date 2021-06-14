@@ -95,10 +95,8 @@ public class UiFragment extends Fragment {
         insightsIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_insightsFragment));
         learnMoreIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_learnMoreFragment));
         aboutIcon.setOnClickListener(v -> navController.navigate(R.id.action_fragmentCbtActivities_to_aboutFragment));
-        logsIcon.setOnClickListener(v ->{
-            Intent intent = new Intent(this.requireActivity(), LogsActivity.class);
-            startActivity(intent);
-        });
+
+        logsIcon.setOnClickListener(v -> ((MainActivity)requireActivity()).openLogs());
         suggestionButton.setOnClickListener(v-> ((MainActivity)requireActivity()).sendEmail());
     }
 
