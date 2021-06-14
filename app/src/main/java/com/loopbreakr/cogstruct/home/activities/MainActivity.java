@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements FirebaseAuth.Auth
     }
 
 
+    //method to send suggestion, referenced in ui fragment
     public void sendEmail(){
         Intent send = new Intent(Intent.ACTION_SENDTO);
         String uriText = "mailto:" + Uri.encode("loopbreak@loopbreakr.com") +
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements FirebaseAuth.Auth
         startActivity(Intent.createChooser(send, "Send email"));
     }
 
+    //method to open logs activity, referenced in ui fragment
     public void openLogs(){
         Intent intent = new Intent(this, LogsActivity.class);
         startActivity(intent);
