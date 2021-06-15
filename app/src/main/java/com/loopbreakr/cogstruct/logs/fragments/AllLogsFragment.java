@@ -1,5 +1,6 @@
 package com.loopbreakr.cogstruct.logs.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,6 +34,8 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
     private LogsViewModel logsViewModel;
     private RecyclerView recyclerView;
     private LogsRecyclerAdapter logsRecyclerAdapter;
+    private Button allLogs, tjLogs, pcLogs, highLogs, bbLogs, ibLogs;
+    private FirebaseUser user;
     ThoughtJournalObject thoughtJournalLog;
 
     public AllLogsFragment() { }
@@ -51,28 +55,73 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setRecyclerView(view);
+        findViews(view);
+        setButtons();
     }
 
-    private void setRecyclerView(View view) {
+    //recreate RV on navigation change
+    @Override
+    public void onResume() {
+        super.onResume();
+        String form = logsViewModel.getFormFilter();
+        //ensure RV is recreated on navigation change is pressed by clearing the form filter
+        logsViewModel.setFormFilter("");
+        createRecyclerView(user,form);
+    }
+
+    private void findViews(View view) {
+        //find RV to populate
         recyclerView = view.findViewById(R.id.all_logs_recyclerview);
+        //find buttons to filter
+        allLogs = view.findViewById(R.id.all_logs);
+        tjLogs = view.findViewById(R.id.tj_logs);
+        pcLogs = view.findViewById(R.id.pc_logs);
+        ibLogs = view.findViewById(R.id.ib_logs);
+        bbLogs = view.findViewById(R.id.bb_logs);
+        highLogs = view.findViewById(R.id.high_logs);
     }
 
-    public void createRecyclerView(FirebaseUser user){
-        Query query = FirebaseFirestore.getInstance()
-                .collection("forms")
-                .whereEqualTo("userId", user.getUid())
-                .orderBy("timeStamp", Query.Direction.DESCENDING);
+    private void setButtons() {
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        allLogs.setOnClickListener(v-> createRecyclerView(user,"all"));
+        tjLogs.setOnClickListener(v -> createRecyclerView(user,"Thought Journal"));
+        pcLogs.setOnClickListener(v -> createRecyclerView(user,"Pros and Cons"));
+        ibLogs.setOnClickListener(v -> createRecyclerView(user,"Identify Barriers"));
+        bbLogs.setOnClickListener(v -> createRecyclerView(user, "Bad Behaviors"));
+        highLogs.setOnClickListener(v -> createRecyclerView(user, "How'd I Get Here?"));
+    }
 
-        //build firestore recycler options
-        FirestoreRecyclerOptions<LogsPreview> options = new FirestoreRecyclerOptions.Builder<LogsPreview>()
-                .setQuery(query, LogsPreview.class)
-                .build();
+    public void createRecyclerView(FirebaseUser user, String filterName){
+        if(!filterName.equals(logsViewModel.getFormFilter()) || logsViewModel.isRunStatus()){
+            logsViewModel.setFormFilter(filterName);
+            Query query;
+            if(filterName.equals("all")){
+                query = FirebaseFirestore.getInstance()
+                        .collection("forms")
+                        .whereEqualTo("userId", user.getUid())
+                        .orderBy("timeStamp", Query.Direction.DESCENDING);
+                if(logsViewModel.isRunStatus()){
+                    logsViewModel.setRunStatus(false);
+                }
+            }
+            else{
+                query = FirebaseFirestore.getInstance()
+                        .collection("forms")
+                        .whereEqualTo("userId", user.getUid())
+                        .whereEqualTo("formName", filterName)
+                        .orderBy("timeStamp", Query.Direction.DESCENDING);
+            }
 
-        //bind to adapter
-        logsRecyclerAdapter = new LogsRecyclerAdapter(options, this);
-        recyclerView.setAdapter(logsRecyclerAdapter);
-        logsRecyclerAdapter.startListening();
+            //build firestore recycler options
+            FirestoreRecyclerOptions<LogsPreview> options = new FirestoreRecyclerOptions.Builder<LogsPreview>()
+                    .setQuery(query, LogsPreview.class)
+                    .build();
+
+            //bind to adapter
+            logsRecyclerAdapter = new LogsRecyclerAdapter(options, this);
+            recyclerView.setAdapter(logsRecyclerAdapter);
+            logsRecyclerAdapter.startListening();
+        }
     }
 
     //handle click behavior
@@ -144,7 +193,7 @@ public class AllLogsFragment extends Fragment implements FirebaseAuth.AuthStateL
             ((LogsActivity)requireActivity()).logOut();
         }
         //recreate recyclerview when state changed
-        createRecyclerView(firebaseAuth.getCurrentUser());
+        createRecyclerView(firebaseAuth.getCurrentUser(), logsViewModel.getFormFilter());
     }
 
 
